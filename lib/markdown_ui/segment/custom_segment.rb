@@ -1,14 +1,14 @@
 # coding: UTF-8
 
 module MarkdownUI
-  class CenterAlignedContainer
+  class CustomSegment
     def initialize(element, content)
       @element = element
       @content = content
     end
 
     def render
-      klass = "ui #{@element} center aligned container".downcase.split(" ").uniq
+      klass = "ui #{@element} segment".downcase.split(" ").uniq
 
       "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
     end

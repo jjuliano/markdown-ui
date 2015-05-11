@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 module MarkdownUI
   class CustomContainer
     def initialize(element, content)

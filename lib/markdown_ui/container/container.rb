@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 module MarkdownUI
   class Container
     def initialize(element, content)
@@ -23,9 +25,9 @@ module MarkdownUI
 
     def render
       if @mode.container?
-        MarkdownUI::StandardContainer.new(@element, @content).render
-
-        if @mode.left? && @mode.aligned?
+        if @element.length == "container".length
+          MarkdownUI::StandardContainer.new(@element, @content).render
+        elsif @mode.left? && @mode.aligned?
           MarkdownUI::LeftAlignedContainer.new(@element, @content).render
         elsif @mode.right? && @mode.aligned?
           MarkdownUI::RightAlignedContainer.new(@element, @content).render

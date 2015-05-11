@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 module MarkdownUI
   class RightAlignedContainer
     def initialize(element, content)
