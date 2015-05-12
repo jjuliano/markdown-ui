@@ -1,10 +1,10 @@
-require "markdown_ui/version"
+require "markdown-ui/version"
 
 # coding: UTF-8
 require 'redcarpet'
 require 'ostruct'
 
-['markdown_ui/**/*.rb'].each do |dir|
+['markdown-ui/**/*.rb'].each do |dir|
   Dir[File.join(File.dirname(__FILE__), dir)].sort.each { |f| require_relative f }
 end
 

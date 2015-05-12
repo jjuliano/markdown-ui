@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'markdown_ui/version'
+require 'markdown-ui/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "markdown_ui"
+  spec.name          = "markdown-ui"
   spec.version       = MarkdownUI::VERSION
   spec.authors       = ["Joel Bryan Juliano"]
   spec.email         = ["joelbryan.juliano@gmail.com"]

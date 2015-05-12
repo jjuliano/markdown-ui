@@ -19,7 +19,7 @@ require 'redcarpet/render_strip'
 require 'redcarpet/render_man'
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'markdown_ui'
+require 'markdown-ui'
 
 class Redcarpet::TestCase < Test::Unit::TestCase
   def assert_renders(html, markdown)
