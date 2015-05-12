@@ -35,11 +35,17 @@ module MarkdownUI
           :text?    => !(content_type =~ /text/i).nil?,
           :icon?    => !(content_type =~ /icon/i).nil?,
           :flag?    => !(content_type =~ /flag/i).nil?,
-          :image?   => !(content_type =~ /image/i).nil?
+          :image?   => !(content_type =~ /image/i).nil?,
+          :header?  => !(content_type =~ /header/i).nil?
         )
 
-        return MarkdownUI::Content::Text.new(actual_content, klass).render if mode.text?
-        return MarkdownUI::Content::Icon.new(actual_content, klass).render if mode.icon?
+        if mode.text?
+          MarkdownUI::Content::Text.new(actual_content, klass).render
+        elsif mode.icon?
+          MarkdownUI::Content::Icon.new(actual_content, klass).render
+        elsif mode.header?
+          MarkdownUI::Content::Header.new(actual_content, klass).render
+        end
       end
 
     end

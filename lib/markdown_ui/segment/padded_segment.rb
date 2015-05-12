@@ -1,12 +1,12 @@
 module MarkdownUI
-  class HorizontalSegment
+  class PaddedSegment
     def initialize(element, content)
       @element = element
       @content = content
     end
 
     def render
-      klass = "ui #{@element} horizontal segment".downcase.split(" ").uniq
+      klass = "ui #{@element} padded segment".downcase.split(" ").uniq
 
       "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
     end

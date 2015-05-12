@@ -2,16 +2,16 @@
 
 module MarkdownUI
   module Content
-    class Icon
+    class Header
       def initialize(content, klass = nil)
-        @content = content.downcase
+        @content = content
         @klass = klass.downcase if klass
       end
 
       def render
-        klass = "#{@content} #{@klass} icon".squeeze(' ').strip
+        klass = "#{@klass} header".downcase.split(" ").uniq
 
-        "<i class=\"#{klass}\"></i>"
+        "<div class=\"#{klass.join(" ").strip}\">#{@content.strip}</div>\n"
       end
     end
   end

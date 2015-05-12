@@ -8,7 +8,7 @@ module MarkdownUI
     def render
       klass = "ui #{@element} vertical segment".downcase.split(" ").uniq
 
-      return "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
+      "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
     end
   end
 end

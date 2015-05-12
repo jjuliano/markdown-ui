@@ -36,7 +36,10 @@ module MarkdownUI
         :focusable? => ui_element.grep(/focusable/i).any?,
         :animated?  => ui_element.grep(/animated/i).any?,
         :labeled?   => ui_element.grep(/labeled/i).any?,
-        :basic?     => ui_element.grep(/basic/i).any?
+        :basic?     => ui_element.grep(/basic/i).any?,
+
+        :message?   => ui_element.grep(/message/i).any?,
+        :warning?   => ui_element.grep(/warning/i).any?
       )
 
       # Buttons
@@ -57,6 +60,13 @@ module MarkdownUI
       elsif mode.button? && mode.animated?
         visible_content, hidden_content = ui_content.split(";")
         MarkdownUI::AnimatedButton.new(visible_content, hidden_content, ui_class).render
+
+      # Message
+
+      elsif mode.message? && ui_element.size > 2
+        MarkdownUI::CustomMessage.new(ui_element.join(" "), ui_content, ui_class).render
+      elsif mode.message? && standard_message?(mode)
+        MarkdownUI::Message.new(ui_content, ui_class).render
       end
 
     end
@@ -77,7 +87,7 @@ module MarkdownUI
     end
 
     def header(text, level)
-      "<h#{level} class=\"ui header\">#{text.strip}</h#{level}>"
+      MarkdownUI::Header.new(text, level).render
     end
 
     protected
@@ -85,5 +95,10 @@ module MarkdownUI
     def standard_button?(mode)
       mode.button? && !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic?
     end
+
+    def standard_message?(mode)
+      mode.message? && !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic?
+    end
+
   end
 end

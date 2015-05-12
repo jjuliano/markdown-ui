@@ -38,7 +38,6 @@ module MarkdownUI
         else
           MarkdownUI::CustomContainer.new(@element, @content).render
         end
-
       end
     end
 
