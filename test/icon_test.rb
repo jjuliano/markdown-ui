@@ -9,7 +9,7 @@
 #   def test_icon
 #     markdown = "_"
 #     output = @parser.render(markdown)
-#     assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+#     assert_equal "<div class=\"ui klass button\">Follow</div>", output
 #   end
 # end
 

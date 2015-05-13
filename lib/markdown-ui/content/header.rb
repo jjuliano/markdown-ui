@@ -5,13 +5,14 @@ module MarkdownUI
     class Header
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass.downcase if klass
+        @klass = klass
       end
 
       def render
-        klass = "#{@klass} header".downcase.split(" ").uniq
+        klass = "#{@klass} header"
+        content = @content.strip
 
-        "<div class=\"#{klass.join(" ").strip}\">#{@content.strip}</div>\n"
+        MarkdownUI::StandardTag.new(content, klass).render
       end
     end
   end

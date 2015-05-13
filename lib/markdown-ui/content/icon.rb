@@ -4,14 +4,20 @@ module MarkdownUI
   module Content
     class Icon
       def initialize(content, klass = nil)
-        @content = content.downcase
-        @klass = klass.downcase if klass
+        @content = content
+        @klass = klass
       end
 
       def render
-        klass = "#{@content} #{@klass} icon".squeeze(' ').strip
+        content = @content.downcase
+        klass = MarkdownUI::KlassUtil.new("#{@content} #{@klass} icon").klass
 
-        "<i class=\"#{klass}\"></i>"
+        output = []
+        output << "<i"
+        output << klass
+        output << "></i>"
+
+        output.join
       end
     end
   end

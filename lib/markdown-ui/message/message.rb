@@ -1,15 +1,26 @@
-# coding: UTF-8
-
 module MarkdownUI
   class Message
-    def initialize(content, klass = nil)
-      @klass = klass.downcase if klass
-      @content = MarkdownUI::Content::Parser.new(content).parse
+    def initialize(element, content, klass)
+      @element = element
+      @content = content
+      @klass = klass
     end
 
     def render
-      klass = "ui #{@klass} message".squeeze(' ').strip
-      "<div class=\"#{klass}\">#{@content.strip}</div>\n"
+      element = @element
+      klass = @klass
+      content = @content
+
+      mode = OpenStruct.new(
+        :warning?   => element.grep(/warning/i).any?
+      )
+
+      if element.size > 2
+        MarkdownUI::CustomMessage.new(element.join(" "), content, klass).render
+      else
+        MarkdownUI::StandardMessage.new(content, klass).render
+      end
     end
+
   end
 end

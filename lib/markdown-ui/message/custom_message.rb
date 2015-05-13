@@ -3,14 +3,17 @@
 module MarkdownUI
   class CustomMessage
     def initialize(element, content, klass = nil)
-      @element = element.downcase
-      @klass = klass.downcase if klass
-      @content = MarkdownUI::Content::Parser.new(content).parse
+      @element = element
+      @klass = klass
+      @content = content
     end
 
     def render
-      klass = "ui #{@element} #{@klass} message".split(" ")
-      "<div class=\"#{klass.uniq.join(" ")}\">#{@content.strip}</div>\n"
+      content = MarkdownUI::Content::Parser.new(@content).parse
+      element = @element.downcase
+      klass = "ui #{@element} #{@klass} message"
+
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end

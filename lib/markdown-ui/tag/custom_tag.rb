@@ -1,23 +1,25 @@
 # coding: UTF-8
 
 module MarkdownUI
-  class FocusableButton
-    def initialize(content, klass = nil)
+  class CustomTag
+    def initialize(tag, content, klass = nil)
+      @tag = tag
       @klass = klass
       @content = content
     end
 
     def render
+      klass = MarkdownUI::KlassUtil.new("#{@klass}").klass
+      tag = @tag.downcase.strip
       content = MarkdownUI::Content::Parser.new(@content).parse
-      klass = MarkdownUI::KlassUtil.new("ui #{@klass} button").klass
 
       output = []
-      output << "<button"
+      output << "<#{tag}"
       output << "#{klass}>"
       output << content
-      output << "</button>"
+      output << "</#{tag}>"
 
-      output.join
+      output.join(" ")
     end
   end
 end

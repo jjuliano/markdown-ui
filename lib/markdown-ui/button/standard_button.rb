@@ -4,12 +4,14 @@ module MarkdownUI
   class StandardButton
     def initialize(content, klass = nil)
       @klass = klass
-      @content = MarkdownUI::Content::Parser.new(content).parse
+      @content = content
     end
 
     def render
       klass = "ui #{@klass} button"
-      "<div class=\"#{klass.squeeze(' ').strip}\">#{@content}</div>\n"
+      content = MarkdownUI::Content::Parser.new(@content).parse
+
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end

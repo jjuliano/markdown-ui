@@ -8,9 +8,10 @@ module MarkdownUI
     end
 
     def render
-      klass = "ui #{@element} container".downcase.split(" ").uniq
+      klass = "ui #{@element} container"
+      content = @content.strip
 
-      "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end

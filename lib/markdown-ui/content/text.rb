@@ -9,15 +9,15 @@ module MarkdownUI
       end
 
       def render
-        content = @content.strip
+        content = if @klass
+          klass = "#{@klass}"
 
-        if @klass
-          klass = @klass.squeeze(' ').strip
-
-          "<div class=\"#{klass.downcase}\">#{content}</div>"
+          MarkdownUI::StandardTag.new(@content, klass).render
         else
-        "#{content}"
+          "#{@content.strip}"
         end
+
+        content
       end
     end
   end

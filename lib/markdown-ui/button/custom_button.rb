@@ -3,14 +3,18 @@
 module MarkdownUI
   class CustomButton
     def initialize(element, content, klass = nil)
-      @element = element.downcase
-      @klass = klass.downcase if klass
-      @content = MarkdownUI::Content::Parser.new(content).parse
+      @element = element
+      @klass = klass
+      @content = content
     end
 
     def render
-      klass = "ui #{@element} #{@klass} button".split(" ")
-      "<div class=\"#{klass.uniq.join(" ")}\">#{@content.strip}</div>\n"
+      element = @element.strip
+      content = MarkdownUI::Content::Parser.new(@content).parse
+      klass = "ui #{element} #{@klass} button"
+
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end
+

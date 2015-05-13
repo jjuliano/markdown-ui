@@ -6,8 +6,17 @@ module MarkdownUI
     end
 
     def render
-      klass = "ui #{@klass} header".downcase.split(" ").uniq
-      "<h#{@level} class=\"#{klass.join(" ").strip}\">#{@text}</h#{@level}>"
+      text = @text.strip
+      klass = MarkdownUI::KlassUtil.new("ui #{@klass} header").klass
+      level = @level
+
+      output = []
+      output << "<h#{@level}"
+      output << klass
+      output <<">#{@text}"
+      output << "</h#{level}>"
+
+      output.join
     end
   end
 end

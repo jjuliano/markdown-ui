@@ -2,6 +2,7 @@ require "markdown-ui/version"
 
 # coding: UTF-8
 require 'redcarpet'
+require 'nokogiri'
 require 'ostruct'
 
 ['markdown-ui/**/*.rb'].each do |dir|
@@ -18,87 +19,63 @@ module MarkdownUI
 
     def double_emphasis(text)
       args = text.split("|")
-      ui_element = args[0].split(" ")
+      element = args[0].split(" ")
 
-      ui_content = if args[1].strip =~ /\,/
+      content = if args[1].strip =~ /\,/
         args[1].split(",")
       else
         args[1].strip
       end
 
-      ui_class = args.size > 2 ? args[2].downcase : nil
+      klass = args.size > 2 ? args[2].downcase : nil
 
-      mode = OpenStruct.new(
-        :button?    => ui_element.grep(/button/i).any?,
-        :icon?      => ui_element.grep(/icon/i).any?,
-        :flag?      => ui_element.grep(/flag/i).any?,
-        :image?     => ui_element.grep(/image/i).any?,
-        :focusable? => ui_element.grep(/focusable/i).any?,
-        :animated?  => ui_element.grep(/animated/i).any?,
-        :labeled?   => ui_element.grep(/labeled/i).any?,
-        :basic?     => ui_element.grep(/basic/i).any?,
-
-        :message?   => ui_element.grep(/message/i).any?,
-        :warning?   => ui_element.grep(/warning/i).any?
-      )
-
-      # Buttons
-
-      if standard_button?(mode) && ui_element.size > 2
-        MarkdownUI::CustomButton.new(ui_element.join(" "), ui_content, ui_class).render
-      elsif mode.button? && standard_button?(mode)
-        MarkdownUI::StandardButton.new(ui_content, ui_class).render
-      elsif mode.button? && mode.icon? && mode.labeled?
-        icon, label = ui_content
-        MarkdownUI::LabeledIconButton.new(icon, label, ui_class).render
-      elsif mode.button? && mode.icon? && !mode.labeled?
-        MarkdownUI::IconButton.new(ui_content, ui_class).render
-      elsif mode.button? && mode.focusable?
-        MarkdownUI::FocusableButton.new(ui_content, ui_class).render
-      elsif mode.button? && mode.basic?
-        MarkdownUI::BasicButton.new(ui_content, ui_class).render
-      elsif mode.button? && mode.animated?
-        visible_content, hidden_content = ui_content.split(";")
-        MarkdownUI::AnimatedButton.new(visible_content, hidden_content, ui_class).render
-
-      # Message
-
-      elsif mode.message? && ui_element.size > 2
-        MarkdownUI::CustomMessage.new(ui_element.join(" "), ui_content, ui_class).render
-      elsif mode.message? && standard_message?(mode)
-        MarkdownUI::Message.new(ui_content, ui_class).render
-      end
-
+      HTMLFormatter.new(
+        case element.join(" ")
+          when /button/i
+            MarkdownUI::Button.new(element, content, klass).render
+          when /message/i
+            MarkdownUI::Message.new(element, content, klass).render
+          when /tag/i
+            MarkdownUI::Tag.new(element[0].downcase, content, klass).render
+        end
+      ).to_html
     end
 
-    def block_quote(content)
-      ui_element, actual_content = content.split(':')
+    def block_quote(text)
+      element, content = text.split(':')
 
-      case ui_element
-        when /segment/i
-          MarkdownUI::Segment.new(ui_element, actual_content).render
-        when /container/i
-          MarkdownUI::Container.new(ui_element, actual_content).render
-      end
+      HTMLFormatter.new(
+        case element
+          when /segment/i
+            MarkdownUI::Segment.new(element, content).render
+          when /container/i
+            MarkdownUI::Container.new(element, content).render
+          when /buttons/i
+            MarkdownUI::Buttons.new(element, content).render
+        end
+      ).to_html
     end
 
     def quote(text)
-      "<p>#{text}</p>"
+      HTMLFormatter.new(
+        "<p>#{text}</p>"
+      ).to_html
     end
 
     def header(text, level)
-      MarkdownUI::Header.new(text, level).render
+      HTMLFormatter.new(
+        MarkdownUI::Header.new(text, level).render
+      ).to_html
+    end
+  end
+
+  class HTMLFormatter
+    def initialize(text)
+      @doc = Nokogiri::XML(text, &:noblanks).to_xhtml(indent: 2)
     end
 
-    protected
-
-    def standard_button?(mode)
-      mode.button? && !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic?
+    def to_html
+      @doc
     end
-
-    def standard_message?(mode)
-      mode.message? && !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic?
-    end
-
   end
 end

@@ -6,9 +6,11 @@ module MarkdownUI
     end
 
     def render
-      klass = "ui #{@element} stacked segment".downcase.split(" ").uniq
+      element = @element.strip
+      content = @content.strip
+      klass = "ui #{element} stacked segment"
 
-      "<div class=\"#{klass.join(" ").strip}\">#{@content}</div>\n"
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end
