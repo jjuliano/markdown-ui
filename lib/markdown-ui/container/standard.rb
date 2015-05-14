@@ -1,14 +1,14 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class LeftAlignedContainer
+module MarkdownUI::Container
+  class Standard
     def initialize(element, content)
       @element = element
       @content = content
     end
 
     def render
-      klass = "ui #{@element} left aligned container"
+      klass = "ui #{@element} container"
       content = @content.strip
 
       MarkdownUI::StandardTag.new(content, klass).render

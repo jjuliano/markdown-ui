@@ -1,14 +1,14 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class CenterAlignedContainer
+module MarkdownUI::Container
+  class Custom
     def initialize(element, content)
       @element = element
       @content = content
     end
 
     def render
-      klass = "ui #{@element} center aligned container"
+      klass = "ui #{@element} container"
       content = @content.strip
 
       MarkdownUI::StandardTag.new(content, klass).render

@@ -1,7 +1,7 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class TextContainer
+module MarkdownUI::Container
+  class Text
     def initialize(element, content)
       @element = element
       @content = content

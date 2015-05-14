@@ -1,7 +1,7 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class Container
+module MarkdownUI::Container
+  class Element
     def initialize(element, content)
       @element = element
       @content = content
@@ -20,17 +20,17 @@ module MarkdownUI
       )
 
       if element.length == "container".length
-        MarkdownUI::StandardContainer.new(element, content).render
+        MarkdownUI::Container::Standard.new(element, content).render
       elsif mode.left? && mode.aligned?
-        MarkdownUI::LeftAlignedContainer.new(element, content).render
+        MarkdownUI::Container::Alignment::Left.new(element, content).render
       elsif mode.right? && mode.aligned?
-        MarkdownUI::RightAlignedContainer.new(element, content).render
+        MarkdownUI::Container::Alignment::Right.new(element, content).render
       elsif mode.center? && mode.aligned?
-        MarkdownUI::CenterAlignedContainer.new(element, content).render
+        MarkdownUI::Container::Alignment::Center.new(element, content).render
       elsif mode.text?
-        MarkdownUI::TextContainer.new(element, content).render
+        MarkdownUI::Container::Text.new(element, content).render
       else
-        MarkdownUI::CustomContainer.new(element, content).render
+        MarkdownUI::Container::Custom.new(element, content).render
       end
     end
 
