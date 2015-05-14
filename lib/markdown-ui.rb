@@ -56,7 +56,7 @@ module MarkdownUI
           when /container/i
             MarkdownUI::Container::Element.new(element, content).render
           when /buttons/i
-            MarkdownUI::Button::Group::Element.new(element, content).render
+            MarkdownUI::Button::Group::Buttons::Element.new(element, content).render
           when /button/i
             MarkdownUI::Button::Element.new(element, content).render
         end
