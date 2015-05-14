@@ -1,5 +1,5 @@
-module MarkdownUI
-  class Buttons
+module MarkdownUI::Button::Group
+  class Element
     def initialize(element, content)
       @element = element
       @content = content
@@ -13,11 +13,11 @@ module MarkdownUI
       )
 
       if element.length == "buttons".length
-        MarkdownUI::StandardButtons.new(element, content).render
+        MarkdownUI::Button::Group::Standard.new(element, content).render
       elsif mode.icon?
-        MarkdownUI::IconButtons.new(element, content).render
+        MarkdownUI::Button::Group::Icon.new(element, content).render
       else
-        MarkdownUI::CustomButtons.new(element, content).render
+        MarkdownUI::Button::Group::Custom.new(element, content).render
       end
     end
 

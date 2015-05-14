@@ -1,7 +1,5 @@
-# coding: UTF-8
-
-module MarkdownUI
-  class CustomButtons
+module MarkdownUI::Button::Group
+  class Standard
     def initialize(element, content)
       @element = element
       @content = content
