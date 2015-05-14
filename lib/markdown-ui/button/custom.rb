@@ -1,7 +1,7 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class CustomButton
+module MarkdownUI::Button
+  class Custom
     def initialize(element, content, klass = nil)
       @element = element
       @klass = klass
@@ -9,7 +9,7 @@ module MarkdownUI
     end
 
     def render
-      element = @element.strip
+      element = @element.join(" ").strip
       content = MarkdownUI::Content::Parser.new(@content).parse
       klass = "ui #{element} #{@klass} button"
 

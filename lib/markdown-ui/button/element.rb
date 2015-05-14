@@ -1,13 +1,18 @@
-module MarkdownUI
-  class Button
-    def initialize(element, content, klass)
+module MarkdownUI::Button
+  class Element
+    def initialize(element, content, klass = nil)
       @element = element
       @content = content
       @klass = klass
     end
 
     def render
-      element = @element
+      element = if @element.is_a? Array
+        @element
+      else
+        @element.split(" ")
+      end
+
       content = @content
       klass = @klass
 
@@ -21,22 +26,21 @@ module MarkdownUI
         :basic?     => element.grep(/basic/i).any?
       )
 
-      if element.size > 2 && standard_button?(mode)
-        MarkdownUI::CustomButton.new(element.join(" "), content, klass).render
+      if standard_button?(mode) && element.size > 1
+        MarkdownUI::Button::Custom.new(element, content, klass).render
       elsif mode.icon? && mode.labeled?
         icon, label = content
-        MarkdownUI::LabeledIconButton.new(icon, label, klass).render
+        MarkdownUI::Button::LabeledIcon.new(icon, label, klass).render
       elsif mode.icon? && !mode.labeled?
-        MarkdownUI::IconButton.new(content, klass).render
+        MarkdownUI::Button::Icon.new(content, klass).render
       elsif mode.focusable?
-        MarkdownUI::FocusableButton.new(content, klass).render
+        MarkdownUI::Button::Focusable.new(content, klass).render
       elsif mode.basic?
-        MarkdownUI::BasicButton.new(content, klass).render
+        MarkdownUI::Button::Basic.new(content, klass).render
       elsif mode.animated?
-        visible_content, hidden_content = content.split(";")
-        MarkdownUI::AnimatedButton.new(visible_content, hidden_content, klass).render
-      else
-        MarkdownUI::StandardButton.new(content, klass).render
+        MarkdownUI::Button::Animated.new(content, klass).render
+      elsif standard_button?(mode)
+        MarkdownUI::Button::Standard.new(content, klass).render
       end
     end
 

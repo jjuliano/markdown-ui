@@ -1,7 +1,7 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class FocusableButton
+module MarkdownUI::Button
+  class Focusable
     def initialize(content, klass = nil)
       @klass = klass
       @content = content

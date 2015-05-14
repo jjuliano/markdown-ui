@@ -9,8 +9,6 @@ module MarkdownUI
       end
 
       def parse
-        return [nil,nil] if @content.nil?
-
         if @content.is_a? Array
           final_content = []
 
@@ -21,10 +19,14 @@ module MarkdownUI
 
           final_content.join
         else
-          content = @content.split(":")
+          content = if !(@content =~ /\:/).nil?
+            @content.split(":")
+          else
+            @content.split("\n")
+          end
+
           process(content)
         end
-
       end
 
       def process(content)
@@ -45,6 +47,8 @@ module MarkdownUI
           MarkdownUI::Content::Icon.new(actual_content, klass).render
         elsif mode.header?
           MarkdownUI::Content::Header.new(actual_content, klass).render
+        else
+          MarkdownUI::Content::Custom.new(content.join(" "), klass).render
         end
       end
 

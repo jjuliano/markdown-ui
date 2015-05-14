@@ -1,15 +1,23 @@
 module MarkdownUI
   class StandardTag
-    def initialize(content, klass = nil)
+    def initialize(content, klass = nil, data = nil)
       @klass = klass
       @content = content
+      @data = data
     end
 
     def render
-      content = @content.strip
+      content = @content.strip unless @content.nil?
       klass = MarkdownUI::KlassUtil.new(@klass).klass
 
-      "<div#{klass}>#{content}</div>"
+      data = if @data
+        _data, attribute, value = @data.split(":")
+        " data-#{attribute}=\"#{value}\""
+      else
+        nil
+      end
+
+      "<div#{klass}#{data}>#{content}</div>"
     end
   end
 end

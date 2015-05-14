@@ -17,6 +17,10 @@ module MarkdownUI
       text
     end
 
+    def emphasis(text)
+      MarkdownUI::Content::Icon.new(text).render
+    end
+
     def double_emphasis(text)
       args = text.split("|")
       element = args[0].split(" ")
@@ -27,16 +31,17 @@ module MarkdownUI
         args[1].strip
       end
 
-      klass = args.size > 2 ? args[2].downcase : nil
+      klass = !args[2].nil? ? args[2].downcase : nil
+      data_attributes = !args[3].nil? ? args[3].downcase : nil
 
       HTMLFormatter.new(
         case element.join(" ")
           when /button/i
-            MarkdownUI::Button.new(element, content, klass).render
+            MarkdownUI::Button::Element.new(element, content, klass).render
           when /message/i
             MarkdownUI::Message.new(element, content, klass).render
           when /tag/i
-            MarkdownUI::Tag.new(element[0].downcase, content, klass).render
+            MarkdownUI::Tag.new(element[0].downcase, content, klass, data_attributes).render
         end
       ).to_html
     end
@@ -52,6 +57,8 @@ module MarkdownUI
             MarkdownUI::Container.new(element, content).render
           when /buttons/i
             MarkdownUI::Buttons.new(element, content).render
+          when /button/i
+            MarkdownUI::Button::Element.new(element, content).render
         end
       ).to_html
     end

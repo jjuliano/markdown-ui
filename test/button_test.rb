@@ -7,9 +7,32 @@ class ButtonTest < Redcarpet::TestCase
   end
 
   def test_standard_button
-    markdown = "__Standard Button|Text:Follow|Klass__"
+    markdown = "__Button|Text:Follow|Klass__"
     output = @parser.render(markdown)
     assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+  end
+
+  def test_standard_button_alternative
+    markdown =
+<<-EOS
+> Klass Button:
+> Follow
+EOS
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+  end
+
+  def test_standard_button_alternative_with_icon
+    markdown =
+<<-EOS
+> Klass Button:
+> _Right Arrow Icon_
+> Follow
+EOS
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui klass button\"><i class=\"right arrow icon\"></i> Follow</div>\n", output
   end
 
   def test_standard_button_without_standard_mode_defined
@@ -30,6 +53,16 @@ class ButtonTest < Redcarpet::TestCase
     assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
   end
 
+  def test_focusable_button_alternative
+    markdown =
+<<-EOS
+> Focusable Button:
+> Focusable Button
+EOS
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui button\">Focusable Button</button>\n", output
+  end
+
   def test_focusable_button_without_klass
     markdown = "__Focusable Button|Text:Focusable Button__"
     output = @parser.render(markdown)
@@ -37,21 +70,57 @@ class ButtonTest < Redcarpet::TestCase
   end
 
   def test_focusable_class_button
-    markdown = "__Standard Button|Text:Focusable Button|Focusable__"
+    markdown = "__Button|Text:Focusable Button|Focusable__"
     output = @parser.render(markdown)
     assert_equal "<div class=\"ui focusable button\">Focusable Button</div>\n", output
   end
 
   def test_ordinality
-    markdown1 = "__Standard Button|Text:Save|Primary__"
-    markdown2 = "__Standard Button|Text:Discard__"
+    markdown1 = "__Button|Text:Save|Primary__"
+    markdown2 = "__Button|Text:Discard__"
     output1 = @parser.render(markdown1)
     output2 = @parser.render(markdown2)
     assert_equal "<div class=\"ui primary button\">Save</div>\n", output1
     assert_equal "<div class=\"ui button\">Discard</div>\n", output2
 
-    markdown3 = "__Standard Button|Text:Save|Secondary__"
-    markdown4 = "__Standard Button|Text:Discard__"
+    markdown3 = "__Button|Text:Save|Secondary__"
+    markdown4 = "__Button|Text:Discard__"
+    output3 = @parser.render(markdown3)
+    output4 = @parser.render(markdown4)
+    assert_equal "<div class=\"ui secondary button\">Save</div>\n", output3
+    assert_equal "<div class=\"ui button\">Discard</div>\n", output4
+  end
+
+  def test_ordinality_alternative
+    markdown1 =
+<<-EOS
+> Primary Button:
+> Save
+EOS
+
+    markdown2 =
+<<-EOS
+> Button:
+> Discard
+EOS
+
+    output1 = @parser.render(markdown1)
+    output2 = @parser.render(markdown2)
+    assert_equal "<div class=\"ui primary button\">Save</div>\n", output1
+    assert_equal "<div class=\"ui button\">Discard</div>\n", output2
+
+    markdown3 =
+<<-EOS
+> Secondary Button:
+> Save
+EOS
+
+    markdown4 =
+<<-EOS
+> Button:
+> Discard
+EOS
+
     output3 = @parser.render(markdown3)
     output4 = @parser.render(markdown4)
     assert_equal "<div class=\"ui secondary button\">Save</div>\n", output3
@@ -62,6 +131,30 @@ class ButtonTest < Redcarpet::TestCase
     markdown = "__Animated Button|Text:Next;Icon:Right Arrow__"
     output = @parser.render(markdown)
     assert_equal "<div class=\"ui animated button\">\n  <div class=\"visible content\">Next</div>\n  <div class=\"hidden content\">\n    <i class=\"right arrow icon\"></i>\n  </div>\n</div>\n", output
+  end
+
+  def test_animated_alternative
+    markdown =
+<<-EOS
+> Animated Button:
+> Next;
+> _Right Arrow Icon_
+EOS
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui animated button\">\n  <div class=\"visible content\">Next</div>\n  <div class=\"hidden content\">\n    <i class=\"right arrow icon\"></i>\n  </div>\n</div>\n", output
+  end
+
+  def test_animated_alternative_versa
+    markdown =
+<<-EOS
+> Animated Button:
+> _Right Arrow Icon_;
+> Next
+EOS
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui animated button\">\n  <div class=\"visible content\">\n    <i class=\"right arrow icon\"></i>\n  </div>\n  <div class=\"hidden content\">Next</div>\n</div>\n", output
   end
 
   def test_animated_with_klass
@@ -90,6 +183,16 @@ class ButtonTest < Redcarpet::TestCase
 
   def test_icon_button
     markdown = "__Icon Button|Icon:Cloud__"
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui icon button\">\n  <i class=\"cloud icon\"></i>\n</div>\n", output
+  end
+
+  def test_icon_button_alternative
+    markdown =
+<<-EOS
+> Icon Button:
+> _Cloud Icon_
+EOS
     output = @parser.render(markdown)
     assert_equal "<div class=\"ui icon button\">\n  <i class=\"cloud icon\"></i>\n</div>\n", output
   end
@@ -226,15 +329,16 @@ EOS
     assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">Cancel</div>\n  <div class=\"or\"></div>\n  <div class=\"ui positive button\">Save</div>\n</div>\n", output
   end
 
-end
+  def test_icon_group_conditionals_with_data_attributes
+    markdown =
+<<-EOS
+> Icon Buttons:
+> __Button|Text: un__
+> __Div Tag||Or|Data:Text:ou__
+> __Button|Text: deux|Positive__
+EOS
 
-# ### Data Text
-#     > Buttons:::
-#     > __Button|Conditional|Text > un|Data Text > Ou|Primary > Text > deux__
-#
-#     <div class="ui buttons">
-#       <div class="ui button">un</div>
-#       <div class="or" data-text="ou"></div>
-#       <div class="ui positive button">deux</div>
-#     </div>
-#
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">un</div>\n  <div class=\"or\" data-text=\"ou\"></div>\n  <div class=\"ui positive button\">deux</div>\n</div>\n", output
+  end
+end

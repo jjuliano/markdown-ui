@@ -1,7 +1,7 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class BasicButton
+module MarkdownUI::Button
+  class Basic
     def initialize(content, klass = nil)
       @klass = klass
       @content = content

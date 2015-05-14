@@ -1,11 +1,10 @@
 # coding: UTF-8
 
-module MarkdownUI
-  class AnimatedButton
-    def initialize(visible_content, hidden_content, klass = nil)
+module MarkdownUI::Button
+  class Animated
+    def initialize(content, klass = nil)
       @klass = klass
-      @visible_content = visible_content
-      @hidden_content = hidden_content
+      @visible_content, @hidden_content = content.split(";")
     end
 
     def render
