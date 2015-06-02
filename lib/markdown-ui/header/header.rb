@@ -11,10 +11,18 @@ module MarkdownUI
       level = @level
 
       output = []
-      output << "<h#{@level}"
-      output << klass
-      output <<">#{@text}"
-      output << "</h#{level}>"
+
+      if @level > 0
+        output << "<h#{@level}"
+        output << klass
+        output <<">#{@text}"
+        output << "</h#{level}>"
+      else
+        output << "<div"
+        output << klass
+        output <<">#{@text}"
+        output << "</div>"
+      end
 
       output.join
     end

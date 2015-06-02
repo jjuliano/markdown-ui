@@ -42,6 +42,8 @@ module MarkdownUI
             MarkdownUI::Message.new(element, content, klass).render
           when /tag/i
             MarkdownUI::Tag.new(element[0].downcase, content, klass, data_attributes).render
+          when /header/i
+            MarkdownUI::Header.new(content, 0).render
         end
       ).to_html
     end
@@ -59,8 +61,16 @@ module MarkdownUI
             MarkdownUI::Button::Group::Buttons::Element.new(element, content).render
           when /button/i
             MarkdownUI::Button::Element.new(element, content).render
+          when /message/i
+            MarkdownUI::Message.new(element, content).render
         end
       ).to_html
+    end
+
+    def list(content, list_type)
+      klass = "ui"
+
+      MarkdownUI::Content::List.new(content, klass, list_type).render
     end
 
     def quote(text)

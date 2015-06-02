@@ -34,11 +34,14 @@ module MarkdownUI
         klass = content[2] if content.size > 2
 
         mode = OpenStruct.new(
-          :text?    => !(content_type =~ /text/i).nil?,
-          :icon?    => !(content_type =~ /icon/i).nil?,
-          :flag?    => !(content_type =~ /flag/i).nil?,
-          :image?   => !(content_type =~ /image/i).nil?,
-          :header?  => !(content_type =~ /header/i).nil?
+          :text?      => !(content_type =~ /text/i).nil?,
+          :icon?      => !(content_type =~ /icon/i).nil?,
+          :flag?      => !(content_type =~ /flag/i).nil?,
+          :image?     => !(content_type =~ /image/i).nil?,
+          :header?    => !(content_type =~ /header/i).nil?,
+          :list?      => !(content_type =~ /list/i).nil?,
+          :unordered? => !(content_type =~ /unordered/i).nil?,
+          :ordered?   => !(content_type =~ /ordered/i).nil?
         )
 
         if mode.text?
@@ -47,6 +50,12 @@ module MarkdownUI
           MarkdownUI::Content::Icon.new(actual_content, klass).render
         elsif mode.header?
           MarkdownUI::Content::Header.new(actual_content, klass).render
+        elsif mode.list? && mode.ordered?
+          MarkdownUI::Content::List.new(actual_content, klass, :ordered).render
+        elsif mode.list? && mode.unordered?
+          MarkdownUI::Content::List.new(actual_content, klass, :unordered).render
+        elsif mode.list?
+          MarkdownUI::Content::List.new(actual_content, klass).render
         else
           MarkdownUI::Content::Custom.new(content.join(" "), klass).render
         end

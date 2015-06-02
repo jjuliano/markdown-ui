@@ -1,20 +1,20 @@
 # coding: UTF-8
 
 module MarkdownUI
-  class CustomMessage
-    def initialize(element, content, klass = nil)
-      @element = element
+  class ListMessage
+    def initialize(content, klass = nil)
       @klass = klass
       @content = content
     end
 
     def render
-      element = @element.join(" ").strip
+      # puts "KLASS: #{@klass}"
+      # puts "CONTENT: #{@content}"
+      #
+      klass = "ui #{@klass} message"
       content = MarkdownUI::Content::Parser.new(@content).parse
-      klass = "ui #{element} #{@klass} message"
 
       MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end
-
