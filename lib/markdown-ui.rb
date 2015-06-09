@@ -31,13 +31,22 @@ module MarkdownUI
         args[1].strip
       end
 
-      klass = !args[2].nil? ? args[2].downcase : nil
+      klass = if args[0].strip =~ /\./
+        k = args[0].split(".")
+        k.reverse!
+        k.shift
+      else
+        !args[2].nil? ? args[2].downcase : nil
+      end
+
       data_attributes = !args[3].nil? ? args[3].downcase : nil
 
-      HTMLFormatter.new(
+      html do
         case element.join(" ")
           when /button/i
             MarkdownUI::Button::Element.new(element, content, klass).render
+          when /menu/i
+            MarkdownUI::Menu::Element.new(element, content, klass).render
           when /message/i
             MarkdownUI::Message.new(element, content, klass).render
           when /tag/i
@@ -45,13 +54,13 @@ module MarkdownUI
           when /header/i
             MarkdownUI::Header.new(content, 0).render
         end
-      ).to_html
+      end
     end
 
     def block_quote(text)
       element, content = text.split(':')
 
-      HTMLFormatter.new(
+      html do
         case element
           when /segment/i
             MarkdownUI::Segment.new(element, content).render
@@ -61,29 +70,38 @@ module MarkdownUI
             MarkdownUI::Button::Group::Buttons::Element.new(element, content).render
           when /button/i
             MarkdownUI::Button::Element.new(element, content).render
+          when /menu/i
+            MarkdownUI::Menu::Element.new(element, content).render
           when /message/i
             MarkdownUI::Message.new(element, content).render
         end
-      ).to_html
+      end
     end
 
     def list(content, list_type)
       klass = "ui"
+      html { MarkdownUI::Content::List.new(content, klass, list_type).render }
+    end
 
-      MarkdownUI::Content::List.new(content, klass, list_type).render
+    def link(link, klass, content)
+      _klass = "ui #{klass}"
+      html { MarkdownUI::Content::Item.new(content, _klass, link).render }
     end
 
     def quote(text)
-      HTMLFormatter.new(
-        "<p>#{text}</p>"
-      ).to_html
+      html { "<p>#{text}</p>" }
     end
 
     def header(text, level)
-      HTMLFormatter.new(
-        MarkdownUI::Header.new(text, level).render
-      ).to_html
+      html { MarkdownUI::Header.new(text, level).render }
     end
+
+    protected
+
+    def html(&block)
+      HTMLFormatter.new(yield).to_html
+    end
+
   end
 
   class HTMLFormatter

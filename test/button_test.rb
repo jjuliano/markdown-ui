@@ -12,6 +12,12 @@ class ButtonTest < Redcarpet::TestCase
     assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
   end
 
+  def test_standard_button_2
+    markdown = "__Button.Klass|Text:Follow__"
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+  end
+
   def test_standard_button_alternative
     markdown =
 <<-EOS
@@ -35,12 +41,6 @@ EOS
     assert_equal "<div class=\"ui klass button\"><i class=\"right arrow icon\"></i> Follow</div>\n", output
   end
 
-  def test_standard_button_without_standard_mode_defined
-    markdown = "__Button|Text:Follow|Klass__"
-    output = @parser.render(markdown)
-    assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
-  end
-
   def test_standard_button_without_klass
     markdown = "__Button|Text:Follow__"
     output = @parser.render(markdown)
@@ -49,6 +49,12 @@ EOS
 
   def test_focusable_button
     markdown = "__Focusable Button|Text:Focusable Button|Focusable__"
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
+  end
+
+  def test_focusable_button_2
+    markdown = "__Button.Focusable|Text:Focusable Button__"
     output = @parser.render(markdown)
     assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
   end
