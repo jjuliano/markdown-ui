@@ -1,6 +1,6 @@
+# coding: UTF-8
 require "markdown-ui/version"
 
-# coding: UTF-8
 require 'redcarpet'
 require 'nokogiri'
 require 'ostruct'
@@ -64,6 +64,10 @@ module MarkdownUI
         case element
           when /segment/i
             MarkdownUI::Segment.new(element, content).render
+          when /grid/i
+            MarkdownUI::Grid.new(element, content).render
+          when /column/i
+            MarkdownUI::Column.new(element, content).render
           when /container/i
             MarkdownUI::Container::Element.new(element, content).render
           when /buttons/i
@@ -74,6 +78,8 @@ module MarkdownUI
             MarkdownUI::Menu::Element.new(element, content).render
           when /message/i
             MarkdownUI::Message.new(element, content).render
+          when /label/i
+            MarkdownUI::Label::Element.new(element, content).render
         end
       end
     end
@@ -96,10 +102,18 @@ module MarkdownUI
       html { MarkdownUI::Header.new(text, level).render }
     end
 
+    def table_cell(content, alignment)
+      body, klass = content.split(":")
+
+      "<div class=\"ui #{klass}column\">#{body}</div>"
+    end
+
     protected
 
-    def html(&block)
-      HTMLFormatter.new(yield).to_html
+    def html
+      if block_given?
+        HTMLFormatter.new(yield).to_html
+      end
     end
 
   end

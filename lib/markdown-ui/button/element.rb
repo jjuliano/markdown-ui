@@ -14,7 +14,12 @@ module MarkdownUI::Button
       end
 
       content = @content
-      klass = @klass
+
+      klass = if @klass.nil?
+        element.join(" ").strip
+      else
+        @klass
+      end
 
       mode = OpenStruct.new(
         :icon?      => element.grep(/icon/i).any?,

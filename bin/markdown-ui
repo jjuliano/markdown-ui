@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "markdown-ui"
+
+parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true)
+
+f = File.open(ARGV.first, 'r')
+puts <<-EOS
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="http://www.semantic-ui.com/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://www.semantic-ui.com/dist/semantic.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    code { white-space:pre }
+  </style>
+</head>
+
+<body>
+EOS
+
+  puts parser.render f.read
+
+puts <<-EOS
+</body>
+</html>
+EOS
+f.close

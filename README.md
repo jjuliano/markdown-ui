@@ -1,3 +1,20 @@
+Priorities:
+
+√ Button
+√ Segment
+√ Message
+√ Container
+√ Header
+
+Menu
+Card
+Progress
+Input
+Checkbox
+Text Input
+Radiobutton
+Sidebar
+
 # MarkdownUI
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/markdown-ui`. To experiment with that code, run `bin/console` for an interactive prompt.

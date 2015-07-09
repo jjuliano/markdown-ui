@@ -66,13 +66,13 @@ EOS
 > Focusable Button
 EOS
     output = @parser.render(markdown)
-    assert_equal "<button class=\"ui button\">Focusable Button</button>\n", output
+    assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
   end
 
   def test_focusable_button_without_klass
     markdown = "__Focusable Button|Text:Focusable Button__"
     output = @parser.render(markdown)
-    assert_equal "<button class=\"ui button\">Focusable Button</button>\n", output
+    assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
   end
 
   def test_focusable_class_button
