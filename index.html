@@ -1,0 +1,366 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    code { white-space:pre }
+  </style>
+</head>
+
+<body>
+<div class="ui inverted blue segment">
+  <div class="ui inverted blue menu">
+    <a class="ui basic item">Markdown UI</a>
+    <div class="ui inverted blue right menu">
+      <a class="ui item">Docs</a>
+      <a class="ui item">About</a>
+      <a class="ui item">Github</a>
+      <a class="ui item">Install</a>
+    </div>
+  </div>
+</div>
+
+<!-- -->
+<div class="ui container">
+<!-- -->
+  <div class="ui inverted attached blue very padded segment">
+    <h1 class="ui header">Markdown UI</h1>
+    <h3 class="ui header">Responsive User Interfaces in Markdown</h3>
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+<!-- -->
+    <div class="ui equal width grid">
+      <div class="ui column">
+        <p>A framework for creating responsive UI&rsquo;s for mobile and web using Markdown Syntax. It is a tool for Rapid Prototyping UI&rsquo;s for Single-page and Multiple-page apps, and allows to write UI&rsquo;s only once and then translate it to Semantic UI 2.0, BootStrap 3 (coming soon), Foundation (coming soon), etc.</p>
+        <p>It helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness!</p>
+      </div>
+<!-- -->
+      <div class="ui column">
+        <div class="ui inverted segment">
+          <code>&gt; Pointing Menu&#xFF1A;</code>
+          <br />
+          <code>&gt; [Home](#home "active")</code>
+          <br />
+          <code>&gt; [Messages](#messages)</code>
+          <br />
+          <code>&gt; [Friends](#friends)</code>
+          <br />
+          <code>&gt; &gt; Right Menu&#xFF1A;</code>
+          <br />
+          <code>&gt; &gt; [Logout](#logout)</code>
+          <br />
+          <br />
+          <code>__Button|Add Friend__</code>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui segment">
+    <h1 class="ui center aligned header">Buttons</h1>
+  </div>
+<!-- -->
+  <div class="ui segment">
+    <h3 class="ui header">Button</h3>
+    <p>Standard Button</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Standard Button</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui button">Follow</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Button|Follow__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Standard Button with Custom Class</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui follow-button button">Follow</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment"><code>__Follow-Button Button|Follow__</code><br />or<br /><code>__Button|Follow|Follow-Button__</code></div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Focusable Button</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <button class="ui focusable button">Follow</button>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Focusable Button|Follow__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+    <h3 class="ui header">Emphasis</h3>
+    <p>A button can be formatted to show different levels of emphasis</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Emphasis</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui primary button">Save</div>
+      <div class="ui button">Discard</div>
+      <p></p>
+      <div class="ui secondary button">Save</div>
+      <div class="ui button">Discard</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Button|Save|Primary__
+__Button|Discard__
+__Button|Save|Secondary__
+__Button|Discard__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+    <h3 class="ui header">Animated</h3>
+    <p>A button can animate to show hidden content</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Animated</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui animated button">
+        <div class="visible content">Next</div>
+        <div class="hidden content">
+          <i class="right arrow icon"></i>
+        </div>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Animated Button|Text&#xFF1A;Next;Icon&#xFF1A;Right Arrow__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Vertical Animated</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui vertical animated button">
+        <div class="visible content">
+          <i class="shop icon"></i>
+        </div>
+        <div class="hidden content">Shop</div>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Vertical Animated Button|Icon&#xFF1A;Shop;Text&#xFF1A;Shop__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Fade Animated</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui fade animated button">
+        <div class="visible content">Sign-up for a Pro account</div>
+        <div class="hidden content">$12.99 a month</div>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment"><code>__Fade Animated Button|Text&#xFF1A;Sign-up for a Pro account;Text&#xFF1A;$12.99 a month__</code><br /> or <br />
+<code>__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__</code></div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+    <h3 class="ui header">Icon</h3>
+    <p>A button can have only an icon</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Icon Button</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui icon button">
+        <i class="cloud icon"></i>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Icon Button|Icon&#xFF1A;Cloud__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+    <h3 class="ui header">Labeled Icon</h3>
+    <p>A button can have an icon and a label</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Labeled Icon</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui labeled icon button"><i class="pause icon"></i>Pause</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Labeled Icon Button|Icon&#xFF1A;Pause,Text&#xFF1A;Pause__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui attached segment">
+    <h3 class="ui header">Basic Button</h3>
+    <p>A basic button is less pronounced</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Basic Button</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui basic button"><i class="user icon"></i>Add Friend</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Basic Button|Icon&#xFF1A;User,Text&#xFF1A;Add Friend__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui html top attached segment">
+      <div class="ui top attached label">Basic Button</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <div class="ui basic black button">Black</div>
+      <div class="ui basic yellow button">Yellow</div>
+      <div class="ui basic green button">Green</div>
+      <div class="ui basic blue button">Blue</div>
+      <div class="ui basic orange button">Orange</div>
+      <div class="ui basic purple button">Purple</div>
+      <div class="ui basic pink button">Pink</div>
+      <div class="ui basic red button">Red</div>
+      <div class="ui basic teal button">Teal</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment">
+        <code>
+__Button|Text&#xFF1A;Black|Basic Black__
+__Button|Text&#xFF1A;Yellow|Basic Yellow__
+__Button|Text&#xFF1A;Green|Basic Green__
+__Button|Text&#xFF1A;Blue|Basic Blue__
+__Button|Text&#xFF1A;Orange|Basic Orange__
+__Button|Text&#xFF1A;Purple|Basic Purple__
+__Button|Text&#xFF1A;Pink|Basic Pink__
+__Button|Text&#xFF1A;Red|Basic Red__
+__Button|Text&#xFF1A;Teal|Basic Teal__
+</code>
+      </div>
+    </div>
+<!-- -->
+  </div>
+</div>
+</body>
+</html>
