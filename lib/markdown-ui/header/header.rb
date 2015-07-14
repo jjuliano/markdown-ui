@@ -14,13 +14,13 @@ module MarkdownUI
 
       if @level > 0
         output << "<h#{@level}"
-        output << klass
-        output <<"> #{@text}"
+        output << klass + ">"
+        output << "#{@text}"
         output << "</h#{level}>"
       else
         output << "<div"
-        output << klass
-        output <<"> #{@text}"
+        output << klass + ">"
+        output << "#{@text}"
         output << "</div>"
       end
 
