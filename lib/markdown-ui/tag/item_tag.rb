@@ -9,6 +9,7 @@ module MarkdownUI
     def render
       content, @data = @content.split(";")
       klass = MarkdownUI::KlassUtil.new(@klass).klass
+      link = " href=\"#{@link.strip}\""
 
       data = if @data
         _data, attribute, value = @data.split(":")
@@ -17,7 +18,7 @@ module MarkdownUI
         nil
       end
 
-      "<a#{klass}#{data}>#{content}</a>"
+      "<a#{klass}#{data}#{link}>#{content}</a>"
     end
   end
 end
