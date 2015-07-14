@@ -5,7 +5,7 @@
 > > > [Docs](#docs)
 > > > [About](#about)
 > > > [Github](#github)
-> > > [Install](#logout)
+> > > [Install](#install)
 
 <!-- -->
 
@@ -40,6 +40,16 @@
 > > > > > ```> > [Logout](#logout)``` <br />
 > > > > > <br />
 > > > > > ```__Button|Add Friend__```
+>
+> <!-- -->
+>
+> > Attached Segment:
+> > ##Installation
+> > ```gem install markdown-ui```
+> > ##Usage
+> > ```markdown-ui index.md > index.html```
+> > ##Github
+> > github.com/jjuliano/markdown-ui
 >
 > <!-- -->
 >
