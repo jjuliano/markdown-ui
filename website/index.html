@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <link rel="stylesheet" href="http://www.semantic-ui.com/dist/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="http://www.semantic-ui.com/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.js"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,19 +17,54 @@
 </head>
 
 <body>
+<div class="ui inverted blue segment">
+  <div class="ui inverted blue menu">
+    <a class="ui basic item">Markdown UI</a>
+    <div class="ui inverted blue right menu">
+      <a class="ui item">Docs</a>
+      <a class="ui item">About</a>
+      <a class="ui item">Github</a>
+      <a class="ui item">Install</a>
+    </div>
+  </div>
+</div>
+
+<!-- -->
 <div class="ui container">
 <!-- -->
-  <div class="ui attached inverted segment">
-    <p></p>
-    <h1 class="ui center aligned header">Markdown UI makes it very easy to create <br /> Responsive UI interfaces using Markdown syntax</h1>
-    <p></p>
+  <div class="ui inverted attached blue very padded segment">
+    <h1 class="ui header">Markdown UI</h1>
+    <h3 class="ui header">Responsive User Interfaces in Markdown</h3>
   </div>
 <!-- -->
-  <div class="ui attached segment"><h1 class="ui header">Advantages</h1><i class="check icon"></i> Create Responsive UI&rsquo;s for Mobile and Web using Markdown <br />
-<i class="check icon"></i> Rapid Prototyping <br />
-<i class="check icon"></i> UI for Single-Page Apps <br />
-<i class="check icon"></i> Less Cognitive Load + Productivity = Happiness!<br />
-<i class="check icon"></i> Text Editor BrainStorming <br /></div>
+  <div class="ui attached segment">
+<!-- -->
+    <div class="ui equal width grid">
+      <div class="ui column">
+        <p>A framework for creating responsive UI&rsquo;s for mobile and web using Markdown Syntax. It is a tool for Rapid Prototyping UI&rsquo;s for Single-page and Multiple-page apps, and allows to write UI&rsquo;s only once and then translate it to Semantic UI 2.0, BootStrap 3 (coming soon), Foundation (coming soon), etc.</p>
+        <p>It helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness!</p>
+      </div>
+<!-- -->
+      <div class="ui column">
+        <div class="ui inverted segment">
+          <code>&gt; Pointing Menu&#xFF1A;</code>
+          <br />
+          <code>&gt; [Home](#home "active")</code>
+          <br />
+          <code>&gt; [Messages](#messages)</code>
+          <br />
+          <code>&gt; [Friends](#friends)</code>
+          <br />
+          <code>&gt; &gt; Right Menu&#xFF1A;</code>
+          <br />
+          <code>&gt; &gt; [Logout](#logout)</code>
+          <br />
+          <br />
+          <code>__Button|Add Friend__</code>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- -->
   <div class="ui segment">
     <h1 class="ui center aligned header">Buttons</h1>
@@ -52,9 +87,11 @@
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Button|Follow__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -69,13 +106,10 @@ __Button|Follow__
       <div class="ui follow-button button">Follow</div>
     </div>
 <!-- -->
-    <div class="ui left aligned ten wide column"><h5 class="ui header">Markdown Syntax</h5><code>
-__Follow-Button Button|Follow__
-</code>
-or
-<code>
-__Button|Follow|Follow-Button__
-</code></div>
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment"><code>__Follow-Button Button|Follow__</code><br />or<br /><code>__Button|Follow|Follow-Button__</code></div>
+    </div>
 <!-- -->
   </div>
 <!-- -->
@@ -91,9 +125,11 @@ __Button|Follow|Follow-Button__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Focusable Button|Follow__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -119,12 +155,14 @@ __Focusable Button|Follow__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Button|Save|Primary__
 __Button|Discard__
 __Button|Save|Secondary__
 __Button|Discard__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -151,9 +189,11 @@ __Button|Discard__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Animated Button|Text&#xFF1A;Next;Icon&#xFF1A;Right Arrow__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -175,9 +215,11 @@ __Animated Button|Text&#xFF1A;Next;Icon&#xFF1A;Right Arrow__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Vertical Animated Button|Icon&#xFF1A;Shop;Text&#xFF1A;Shop__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -195,13 +237,11 @@ __Vertical Animated Button|Icon&#xFF1A;Shop;Text&#xFF1A;Shop__
       </div>
     </div>
 <!-- -->
-    <div class="ui left aligned ten wide column"><h5 class="ui header">Markdown Syntax</h5><code>
-__Fade Animated Button|Text&#xFF1A;Sign-up for a Pro account;Text&#xFF1A;$12.99 a month__
-</code>
-or <br />
-<code>
-__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__
-</code></div>
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted segment"><code>__Fade Animated Button|Text&#xFF1A;Sign-up for a Pro account;Text&#xFF1A;$12.99 a month__</code><br /> or <br />
+<code>__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__</code></div>
+    </div>
 <!-- -->
   </div>
 <!-- -->
@@ -224,9 +264,11 @@ __Fade Animated Button|Sign-up for a Pro account;$12.99 a month__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Icon Button|Icon&#xFF1A;Cloud__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -248,9 +290,11 @@ __Icon Button|Icon&#xFF1A;Cloud__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Labeled Icon Button|Icon&#xFF1A;Pause,Text&#xFF1A;Pause__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -272,9 +316,11 @@ __Labeled Icon Button|Icon&#xFF1A;Pause,Text&#xFF1A;Pause__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Basic Button|Icon&#xFF1A;User,Text&#xFF1A;Add Friend__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -299,7 +345,8 @@ __Basic Button|Icon&#xFF1A;User,Text&#xFF1A;Add Friend__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <code>
+      <div class="ui inverted segment">
+        <code>
 __Button|Text&#xFF1A;Black|Basic Black__
 __Button|Text&#xFF1A;Yellow|Basic Yellow__
 __Button|Text&#xFF1A;Green|Basic Green__
@@ -310,6 +357,7 @@ __Button|Text&#xFF1A;Pink|Basic Pink__
 __Button|Text&#xFF1A;Red|Basic Red__
 __Button|Text&#xFF1A;Teal|Basic Teal__
 </code>
+      </div>
     </div>
 <!-- -->
   </div>

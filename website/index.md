@@ -1,21 +1,45 @@
+> Inverted Blue Segment:
+> > Inverted Blue Menu:
+> > [Markdown UI](#home "basic")
+> > > Inverted Blue Right Menu:
+> > > [Docs](#docs)
+> > > [About](#about)
+> > > [Github](#github)
+> > > [Install](#logout)
+
+<!-- -->
+
 > Container:
 >
 > <!-- -->
 >
-> > Attached Inverted Segment:
-> > " "
-> > # Markdown UI makes it very easy to create <br /> Responsive UI interfaces using Markdown syntax:Center Aligned
-> > " "
+> > Inverted Attached Blue Very Padded Segment:
+> > # Markdown UI
+> > ### Responsive User Interfaces in Markdown
 >
 > <!-- -->
 >
 > > Attached Segment:
-> > # Advantages
-> > _Check Icon_ Create Responsive UI's for Mobile and Web using Markdown <br />
-> > _Check Icon_ Rapid Prototyping <br />
-> > _Check Icon_ UI for Single-Page Apps <br />
-> > _Check Icon_ Less Cognitive Load + Productivity = Happiness!<br />
-> > _Check Icon_ Text Editor BrainStorming <br />
+> >
+> > <!-- -->
+> >
+> > > Equal Width Grid:
+> > > > Column:
+> > > > "A framework for creating responsive UI's for mobile and web using Markdown Syntax. It is a tool for Rapid Prototyping UI's for Single-page and Multiple-page apps, and allows to write UI's only once and then translate it to Semantic UI 2.0, BootStrap 3 (coming soon), Foundation (coming soon), etc."
+> > > > "It helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness!"
+> > >
+> > > <!-- -->
+> > >
+> > > > Column:
+> > > > > Inverted Segment:
+> > > > > ```> Pointing Menu：``` <br />
+> > > > > ```> [Home](#home "active")``` <br />
+> > > > > ```> [Messages](#messages)``` <br />
+> > > > > ```> [Friends](#friends)``` <br />
+> > > > > ```> > Right Menu：``` <br />
+> > > > > ```> > [Logout](#logout)``` <br />
+> > > > > <br />
+> > > > > ```__Button|Add Friend__```
 >
 > <!-- -->
 >
@@ -45,9 +69,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Button|Follow__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Button|Follow__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -69,13 +94,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Follow-Button Button|Follow__
-> > > ```
-> > > or
-> > > ```
-> > > __Button|Follow|Follow-Button__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```__Follow-Button Button|Follow__```
+> > > > <br />or<br />
+> > > > ```__Button|Follow|Follow-Button__```
 > >
 > > <!-- -->
 > >
@@ -97,9 +119,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Focusable Button|Follow__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Focusable Button|Follow__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -129,12 +152,13 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Button|Save|Primary__
-> > > __Button|Discard__
-> > > __Button|Save|Secondary__
-> > > __Button|Discard__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Button|Save|Primary__
+> > > > __Button|Discard__
+> > > > __Button|Save|Secondary__
+> > > > __Button|Discard__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -162,9 +186,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Animated Button|Text：Next;Icon：Right Arrow__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Animated Button|Text：Next;Icon：Right Arrow__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -186,9 +211,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Vertical Animated Button|Icon：Shop;Text：Shop__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Vertical Animated Button|Icon：Shop;Text：Shop__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -210,13 +236,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Fade Animated Button|Text：Sign-up for a Pro account;Text：$12.99 a month__
-> > > ```
-> > > or <br />
-> > > ```
-> > > __Fade Animated Button|Sign-up for a Pro account;$12.99 a month__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```__Fade Animated Button|Text：Sign-up for a Pro account;Text：$12.99 a month__```
+> > > > <br /> or <br />
+> > > > ```__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__```
 > >
 > > <!-- -->
 > >
@@ -244,9 +267,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Icon Button|Icon：Cloud__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Icon Button|Icon：Cloud__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -274,9 +298,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Labeled Icon Button|Icon：Pause,Text：Pause__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Labeled Icon Button|Icon：Pause,Text：Pause__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -304,9 +329,10 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Basic Button|Icon：User,Text：Add Friend__
-> > > ```
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Basic Button|Icon：User,Text：Add Friend__
+> > > > ```
 > >
 > > <!-- -->
 > >
@@ -336,16 +362,17 @@
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
-> > > ```
-> > > __Button|Text：Black|Basic Black__
-> > > __Button|Text：Yellow|Basic Yellow__
-> > > __Button|Text：Green|Basic Green__
-> > > __Button|Text：Blue|Basic Blue__
-> > > __Button|Text：Orange|Basic Orange__
-> > > __Button|Text：Purple|Basic Purple__
-> > > __Button|Text：Pink|Basic Pink__
-> > > __Button|Text：Red|Basic Red__
-> > > __Button|Text：Teal|Basic Teal__
+> > > > Inverted Segment:
+> > > > ```
+> > > > __Button|Text：Black|Basic Black__
+> > > > __Button|Text：Yellow|Basic Yellow__
+> > > > __Button|Text：Green|Basic Green__
+> > > > __Button|Text：Blue|Basic Blue__
+> > > > __Button|Text：Orange|Basic Orange__
+> > > > __Button|Text：Purple|Basic Purple__
+> > > > __Button|Text：Pink|Basic Pink__
+> > > > __Button|Text：Red|Basic Red__
+> > > > __Button|Text：Teal|Basic Teal__
 > > > ```
 > >
 > > <!-- -->
