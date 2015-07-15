@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jjuliano/markdown-ui.svg)](https://travis-ci.org/jjuliano/markdown-ui)
+
 # MarkdownUI
 
 Write UI/UX in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
