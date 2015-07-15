@@ -1,0 +1,70 @@
+0.1.1 - 07-15-15
+  * Rspec Test Fixes
+  * Deleted empty files
+  * Added the website script
+
+0.1.0 - 07-14-15
+  * Added Buttons via '__Button|Text__'
+
+    The following buttons are implemented
+    - standard
+    - focusable
+    - ordinality
+    - animated
+    - vertical animated
+    - animated fade
+    - icon button
+    - labeled icon button
+    - basic icon
+    - custom button
+    - inverted button
+    - basic inverted button
+    - group buttons
+    - icon group buttons
+    - icon group conditionals
+
+  * Added Container via '> Container:'
+
+    The following container options are implemented
+    - container
+    - text container
+    - text alignment
+    - custom container
+
+  * Added Icon via '_named icon_'
+  * Added Label
+  * Added Menu via '> Menu:'
+
+    The following menus are implemented
+    - menu
+    - secondary menu
+    - pointing menu
+    - secondary pointing menu
+    - tabular menu
+    - tabular attached menu
+    - vertical fluid tabular menu
+    - text menu
+    - vertical menu
+    - pagination menu
+
+  * Added Message via '__Message__'
+
+    The following message types are implemented
+
+    - message
+    - list message
+
+  * Added Segment via '> Segment:'
+
+    The following segment types are implemented
+
+    - segment
+    - vertical segment
+    - horizontal segment
+    - stacked segment
+    - piled segment
+    - disabled state
+    - loading state
+    - inverted variation
+    - attached variation
+    - padded

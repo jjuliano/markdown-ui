@@ -16,7 +16,7 @@ class MenuTest < Redcarpet::TestCase
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui three item menu\">\n  <a class=\"ui active item\">Editorials</a>\n  <a class=\"ui item\">Reviews</a>\n  <a class=\"ui item\">Upcoming Events</a>\n</div>\n", output
+    assert_equal "<div class=\"ui three item menu\">\n  <a class=\"ui active item\" href=\"#\">Editorials</a>\n  <a class=\"ui item\" href=\"#\">Reviews</a>\n  <a class=\"ui item\" href=\"#\">Upcoming Events</a>\n</div>\n", output
   end
 
   def test_menu_alternative
@@ -26,7 +26,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui three item menu\">\n  <a class=\"ui active item\">Editorials</a>\n  <a class=\"ui item\">Reviews</a>\n  <a class=\"ui item\">Upcoming Events</a>\n</div>\n", output
+    assert_equal "<div class=\"ui three item menu\">\n  <a class=\"ui active item\" href=\"#\">Editorials</a>\n  <a class=\"ui item\" href=\"#\">Reviews</a>\n  <a class=\"ui item\" href=\"#\">Upcoming Events</a>\n</div>\n", output
   end
 
   def test_secondary_menu
@@ -41,7 +41,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui secondary menu\">\n  <a class=\"ui active item\">Home</a>\n  <a class=\"ui item\">Messages</a>\n  <a class=\"ui item\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\">Logout</a>\n  </div>\n</div>\n", output
+    assert_equal "<div class=\"ui secondary menu\">\n  <a class=\"ui active item\" href=\"#\">Home</a>\n  <a class=\"ui item\" href=\"#\">Messages</a>\n  <a class=\"ui item\" href=\"#\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\" href=\"#\">Logout</a>\n  </div>\n</div>\n", output
   end
 
   def test_pointing_menu
@@ -61,7 +61,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui pointing menu\">\n  <a class=\"ui active item\">Home</a>\n  <a class=\"ui item\">Messages</a>\n  <a class=\"ui item\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui segment\">\n  <p></p>\n</div>\n", output
+    assert_equal "<div class=\"ui pointing menu\">\n  <a class=\"ui active item\" href=\"#\">Home</a>\n  <a class=\"ui item\" href=\"#\">Messages</a>\n  <a class=\"ui item\" href=\"#\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\" href=\"#\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui segment\">\n  <p></p>\n</div>\n", output
   end
 
   def test_secondary_pointing_menu
@@ -81,7 +81,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui secondary pointing menu\">\n  <a class=\"ui active item\">Home</a>\n  <a class=\"ui item\">Messages</a>\n  <a class=\"ui item\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui segment\">\n  <p></p>\n</div>\n", output
+    assert_equal "<div class=\"ui secondary pointing menu\">\n  <a class=\"ui active item\" href=\"#\">Home</a>\n  <a class=\"ui item\" href=\"#\">Messages</a>\n  <a class=\"ui item\" href=\"#\">Friends</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\" href=\"#\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui segment\">\n  <p></p>\n</div>\n", output
   end
 
   def test_tabular_menu
@@ -93,7 +93,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui tabular menu\">\n  <a class=\"ui active item\">Bio</a>\n  <a class=\"ui item\">Photos</a>\n</div>\n", output
+    assert_equal "<div class=\"ui tabular menu\">\n  <a class=\"ui active item\" href=\"#\">Bio</a>\n  <a class=\"ui item\" href=\"#\">Photos</a>\n</div>\n", output
   end
 
   def test_tabular_attached_menu
@@ -112,7 +112,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui top attached tabular menu\">\n  <a class=\"ui active item\">Bio</a>\n  <a class=\"ui item\">Photos</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui bottom attached segment\">\n  <p></p>\n</div>\n", output
+    assert_equal "<div class=\"ui top attached tabular menu\">\n  <a class=\"ui active item\" href=\"#\">Bio</a>\n  <a class=\"ui item\" href=\"#\">Photos</a>\n  <div class=\"ui right menu\">\n    <a class=\"ui item\" href=\"#\">Logout</a>\n  </div>\n</div>\n<p></p>\n<div class=\"ui bottom attached segment\">\n  <p></p>\n</div>\n", output
   end
 
   def test_vertical_fluid_tabular_menu
@@ -128,7 +128,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui grid\">\n  <div class=\"ui four wide column\">\n    <div class=\"ui vertical fluid tabular menu\">\n      <a class=\"ui active item\">Bio</a>\n      <a class=\"ui item\">Pics</a>\n      <a class=\"ui item\">Companies</a>\n      <a class=\"ui item\">Links</a>\n    </div>\n  </div>\n</div>\n", output
+    assert_equal "<div class=\"ui grid\">\n  <div class=\"ui four wide column\">\n    <div class=\"ui vertical fluid tabular menu\">\n      <a class=\"ui active item\" href=\"#\">Bio</a>\n      <a class=\"ui item\" href=\"#\">Pics</a>\n      <a class=\"ui item\" href=\"#\">Companies</a>\n      <a class=\"ui item\" href=\"#\">Links</a>\n    </div>\n  </div>\n</div>\n", output
   end
 
   def test_text_menu
@@ -141,7 +141,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui text menu\">\n  <a class=\"ui active item\">Closest</a>\n  <a class=\"ui item\">Most Comments</a>\n  <a class=\"ui item\">Most Popular</a>\n</div>\n", output
+    assert_equal "<div class=\"ui text menu\">\n  <a class=\"ui active item\" href=\"#\">Closest</a>\n  <a class=\"ui item\" href=\"#\">Most Comments</a>\n  <a class=\"ui item\" href=\"#\">Most Popular</a>\n</div>\n", output
   end
 
   def test_vertical_menu
@@ -154,7 +154,7 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui vertical menu\">\n  <a class=\"ui active teal item\">Inbox <div class=\"teal pointing left label\">1</div></a>\n  <a class=\"ui item\">Spam <div class=\"label\">51</div></a>\n  <a class=\"ui item\">Updates <div class=\"label\">1</div></a>\n</div>\n", output
+    assert_equal "<div class=\"ui vertical menu\">\n  <a class=\"ui active teal item\" href=\"#\">Inbox <div class=\"teal pointing left label\">1</div></a>\n  <a class=\"ui item\" href=\"#\">Spam <div class=\"label\">51</div></a>\n  <a class=\"ui item\" href=\"#\">Updates <div class=\"label\">1</div></a>\n</div>\n", output
   end
 
   def test_pagination_menu
@@ -169,6 +169,6 @@ EOS
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui pagination menu\">\n  <a class=\"ui active item\">1</a>\n  <a class=\"ui disabled item\">&hellip;</a>\n  <a class=\"ui item\">10</a>\n  <a class=\"ui item\">11</a>\n  <a class=\"ui item\">12</a>\n</div>\n", output
+    assert_equal "<div class=\"ui pagination menu\">\n  <a class=\"ui active item\" href=\"#\">1</a>\n  <a class=\"ui disabled item\" href=\"#\">&hellip;</a>\n  <a class=\"ui item\" href=\"#\">10</a>\n  <a class=\"ui item\" href=\"#\">11</a>\n  <a class=\"ui item\" href=\"#\">12</a>\n</div>\n", output
   end
 end

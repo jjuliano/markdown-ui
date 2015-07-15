@@ -1,4 +1,4 @@
-> Inverted Blue Segment:
+> Inverted Blue Segment Container:
 > > Inverted Blue Menu:
 > > [Markdown UI](#home "basic")
 > > > Inverted Blue Right Menu:
@@ -33,7 +33,7 @@
 > > > > Column:
 > > > > > Inverted Segment:
 > > > > > ```> Pointing Menu：``` <br />
-> > > > > ```> [Home](#home "active")``` <br />
+> > > > > ```> [Home](#root "active")``` <br />
 > > > > > ```> [Messages](#messages)``` <br />
 > > > > > ```> [Friends](#friends)``` <br />
 > > > > > ```> > Right Menu：``` <br />
@@ -48,8 +48,6 @@
 > > ```gem install markdown-ui```
 > > ##Usage
 > > ```markdown-ui index.md > index.html```
-> > ##Github
-> > github.com/jjuliano/markdown-ui
 >
 > <!-- -->
 >

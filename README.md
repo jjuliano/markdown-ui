@@ -1,6 +1,6 @@
-# MarkdownUI
+# Markdown UI
 
-Write UI/UX in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
+Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
 ## Installation
 
@@ -12,7 +12,7 @@ Write UI/UX in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/markdown-ui/fork )
+1. Fork it ( https://github.com/jjuliano/markdown-ui/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
