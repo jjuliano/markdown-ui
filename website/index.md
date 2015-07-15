@@ -2,10 +2,10 @@
 > > Inverted Blue Menu:
 > > [Markdown UI](#home "basic")
 > > > Inverted Blue Right Menu:
-> > > [Docs](#docs)
-> > > [About](#about)
+> > > [Docs](#docs "disabled")
+> > > [About](#about "disabled")
 > > > [Github](#github)
-> > > [Install](#install)
+> > > [Install](#install "disabled")
 
 <!-- -->
 
