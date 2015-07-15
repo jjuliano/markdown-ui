@@ -1,4 +1,6 @@
 0.1.1 - 07-15-15
+  * Fix items not containing href path
+  * Added more documentation for Buttons
   * Rspec Test Fixes
   * Deleted empty files
   * Added the website script
