@@ -102,16 +102,14 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Button|Follow|Follow-Button__
+> > > __Follow-Button-Class Button|Follow|Follow-Button-ID__
 > >
 > > <!-- -->
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ```__Follow-Button Button|Follow__```
-> > > > <br />or<br />
-> > > > ```__Button|Follow|Follow-Button__```
+> > > > ```__Follow-Button-Class Button|Follow|Follow-Button-ID__```
 > >
 > > <!-- -->
 > >
@@ -127,7 +125,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Focusable Button|Follow__
+> > > __Focusable Button|Follow|My-Focusable-Button__
 > >
 > > <!-- -->
 > >
@@ -135,7 +133,7 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Focusable Button|Follow__
+> > > > __Focusable Button|Follow|My-Focusable-Button__
 > > > > ```
 > >
 > > <!-- -->
@@ -160,9 +158,9 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Button|Save|Primary__   __Button|Discard__
+> > > __Primary Button|Save__   __Button|Discard__
 > > > " "
-> > > __Button|Save|Secondary__   __Button|Discard__
+> > > __Secondary Button|Save__   __Button|Discard__
 > >
 > > <!-- -->
 > >
@@ -170,9 +168,9 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Button|Save|Primary__
+> > > > __Primary Button|Save__
 > > > > __Button|Discard__
-> > > > __Button|Save|Secondary__
+> > > > __Secondary Button|Save__
 > > > > __Button|Discard__
 > > > > ```
 > >
@@ -198,7 +196,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Animated Button|Text:Next;Icon:Right Arrow__
+> > > __Animated Button|Next;Icon:Right Arrow__
 > >
 > > <!-- -->
 > >
@@ -206,7 +204,7 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Animated Button|Text：Next;Icon：Right Arrow__
+> > > > __Animated Button|Next;Icon：Right Arrow__
 > > > > ```
 > >
 > > <!-- -->
@@ -223,7 +221,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Vertical Animated Button|Icon:Shop;Text:Shop__
+> > > __Vertical Animated Button|Icon:Shop;Shop__
 > >
 > > <!-- -->
 > >
@@ -231,7 +229,7 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Vertical Animated Button|Icon：Shop;Text：Shop__
+> > > > __Vertical Animated Button|Icon：Shop;Shop__
 > > > > ```
 > >
 > > <!-- -->
@@ -255,7 +253,7 @@
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ```__Fade Animated Button|Text：Sign-up for a Pro account;Text：$12.99 a month__```
+> > > > ```__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__```
 > > > > <br /> or <br />
 > > > > ```__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__```
 > >
@@ -314,7 +312,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Labeled Icon Button|Icon:Pause,Text:Pause__
+> > > __Labeled Icon Button|Icon:Pause,Pause__
 > >
 > > <!-- -->
 > >
@@ -322,7 +320,7 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Labeled Icon Button|Icon：Pause,Text：Pause__
+> > > > __Labeled Icon Button|Icon：Pause,Pause__
 > > > > ```
 > >
 > > <!-- -->
@@ -347,7 +345,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Basic Button|Icon:User,Text:Add Friend__
+> > > __Basic Button|Icon:User,Add Friend__
 > >
 > > <!-- -->
 > >
@@ -355,7 +353,7 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Basic Button|Icon：User,Text：Add Friend__
+> > > > __Basic Button|Icon：User,Add Friend__
 > > > > ```
 > >
 > > <!-- -->
@@ -372,15 +370,15 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Button|Text: Black|Basic Black__
-> > > __Button|Text: Yellow|Basic Yellow__
-> > > __Button|Text: Green|Basic Green__
-> > > __Button|Text: Blue|Basic Blue__
-> > > __Button|Text: Orange|Basic Orange__
-> > > __Button|Text: Purple|Basic Purple__
-> > > __Button|Text: Pink|Basic Pink__
-> > > __Button|Text: Red|Basic Red__
-> > > __Button|Text: Teal|Basic Teal__
+> > > __Basic Black Button|Black__
+> > > __Basic Yellow Button|Yellow__
+> > > __Basic Green Button|Green__
+> > > __Basic Blue Button|Blue__
+> > > __Basic Orange Button|Orange__
+> > > __Basic Purple Button|Purple__
+> > > __Basic Pink Button|Pink__
+> > > __Basic Red Button|Red__
+> > > __Basic Teal Button|Teal__
 > >
 > > <!-- -->
 > >
@@ -388,15 +386,15 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```
-> > > > __Button|Text：Black|Basic Black__
-> > > > __Button|Text：Yellow|Basic Yellow__
-> > > > __Button|Text：Green|Basic Green__
-> > > > __Button|Text：Blue|Basic Blue__
-> > > > __Button|Text：Orange|Basic Orange__
-> > > > __Button|Text：Purple|Basic Purple__
-> > > > __Button|Text：Pink|Basic Pink__
-> > > > __Button|Text：Red|Basic Red__
-> > > > __Button|Text：Teal|Basic Teal__
+> > > __Basic Black Button|Black__
+> > > __Basic Yellow Button|Yellow__
+> > > __Basic Green Button|Green__
+> > > __Basic Blue Button|Blue__
+> > > __Basic Orange Button|Orange__
+> > > __Basic Purple Button|Purple__
+> > > __Basic Pink Button|Pink__
+> > > __Basic Red Button|Red__
+> > > __Basic Teal Button|Teal__
 > > > ```
 > >
 > > <!-- -->
@@ -422,16 +420,16 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
 > > > > Inverted Very Padded Segment:
-> > > > __Button|Text: Standard|Inverted__
-> > > > __Button|Text: Black|Inverted Black__
-> > > > __Button|Text: Yellow|Inverted Yellow__
-> > > > __Button|Text: Green|Inverted Green__
-> > > > __Button|Text: Blue|Inverted Blue__
-> > > > __Button|Text: Orange|Inverted Orange__
-> > > > __Button|Text: Purple|Inverted Purple__
-> > > > __Button|Text: Pink|Inverted Pink__
-> > > > __Button|Text: Red|Inverted Red__
-> > > > __Button|Text: Teal|Inverted Teal__
+> > > __Inverted Standard Button|Standard__
+> > > __Inverted Black Button|Black__
+> > > __Inverted Yellow Button|Yellow__
+> > > __Inverted Green Button|Green__
+> > > __Inverted Blue Button|Blue__
+> > > __Inverted Orange Button|Orange__
+> > > __Inverted Purple Button|Purple__
+> > > __Inverted Pink Button|Pink__
+> > > __Inverted Red Button|Red__
+> > > __Inverted Teal Button|Teal__
 > >
 > > <!-- -->
 > >
@@ -439,16 +437,16 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```> Inverted Segment：``` <br />
-> > > > ```> __Button|Text：Standard|Inverted__``` <br />
-> > > > ```> __Button|Text：Black|Inverted Black__``` <br />
-> > > > ```> __Button|Text：Yellow|Inverted Yellow__``` <br />
-> > > > ```> __Button|Text：Green|Inverted Green__``` <br />
-> > > > ```> __Button|Text：Blue|Inverted Blue__``` <br />
-> > > > ```> __Button|Text：Orange|Inverted Orange__``` <br />
-> > > > ```> __Button|Text：Purple|Inverted Purple__``` <br />
-> > > > ```> __Button|Text：Pink|Inverted Pink__``` <br />
-> > > > ```> __Button|Text：Red|Inverted Red__``` <br />
-> > > > ```> __Button|Text：Teal|Inverted Teal__```
+> > > > ```> __Button|Standard|Inverted__``` <br />
+> > > > ```> __Button|Black|Inverted Black__``` <br />
+> > > > ```> __Button|Yellow|Inverted Yellow__``` <br />
+> > > > ```> __Button|Green|Inverted Green__``` <br />
+> > > > ```> __Button|Blue|Inverted Blue__``` <br />
+> > > > ```> __Button|Orange|Inverted Orange__``` <br />
+> > > > ```> __Button|Purple|Inverted Purple__``` <br />
+> > > > ```> __Button|Pink|Inverted Pink__``` <br />
+> > > > ```> __Button|Red|Inverted Red__``` <br />
+> > > > ```> __Button|Teal|Inverted Teal__```
 > >
 > > <!-- -->
 > >
@@ -473,9 +471,9 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
 > > > > Buttons:
-> > > > __Button|Text: One|Standard__
-> > > > __Button|Text: Two|Standard__
-> > > > __Button|Text: Three|Standard__
+> > > > __Button|One|Standard__
+> > > > __Button|Two|Standard__
+> > > > __Button|Three|Standard__
 > >
 > > <!-- -->
 > >
@@ -483,9 +481,9 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```> Buttons：``` <br />
-> > > > ```> __Button|Text：One|Standard__``` <br />
-> > > > ```> __Button|Text：Two|Standard__``` <br />
-> > > > ```> __Button|Text：Three|Standard__```
+> > > > ```> __Standard Button|One__``` <br />
+> > > > ```> __Standard Button|Two__``` <br />
+> > > > ```> __Standard Button|Three__```
 > >
 > > <!-- -->
 > >
@@ -563,9 +561,9 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
 > > > > Icon Buttons:
-> > > > __Button|Text: Cancel__
+> > > > __Button|Cancel__
 > > > > __Div Tag||Or__
-> > > > __Button|Text: Save|Positive__
+> > > > __Positive Button|Save__
 > >
 > > <!-- -->
 > >
@@ -573,18 +571,18 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```> Icon Buttons：``` <br />
-> > > > ```> __Button|Text：Cancel__``` <br />
+> > > > ```> __Button|Cancel__``` <br />
 > > > > ```> __Div Tag||Or__``` <br />
-> > > > ```> __Button|Text：Save|Positive__```
+> > > > ```> __Positive Button|Save__```
 > >
 > > <!-- -->
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
 > > > > Icon Buttons:
-> > > > __Button|Text: un__
-> > > > __Div Tag||Or|Data:Text:ou__
-> > > > __Button|Text: deux|Positive__
+> > > > __Button|un__
+> > > > __Div Tag||Or|Data:ou__
+> > > > __Positive Button|deux|Positive-ID__
 > >
 > > <!-- -->
 > >
@@ -592,9 +590,9 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```> Icon Buttons：``` <br />
-> > > > ```> __Button|Text：un__``` <br />
-> > > > ```> __Div Tag|Or|Data：Text：ou__``` <br />
-> > > > ```> __Button|Text：deux|Positive__```
+> > > > ```> __Button|un__``` <br />
+> > > > ```> __Div Tag|Or|Data：ou__``` <br />
+> > > > ```> __Positive Button|deux|Positive-ID__```
 > >
 > > <!-- -->
 > >

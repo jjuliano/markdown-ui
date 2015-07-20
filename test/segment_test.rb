@@ -281,7 +281,7 @@ EOS
 
 " "
 
-__Warning Message|Icon:Warning,Text:You\'ve reached the end of this content segment\!|Bottom Attached__
+__Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of this content segment\!__
 EOS
     output = @parser.render(markdown)
     assert_equal "<h5 class=\"ui top attached header\">Dogs</h5>\n<div class=\"ui attached segment\">\n  <p>Dogs are one type of animal</p>\n</div>\n<p></p>\n<h5 class=\"ui attached header\">Cats</h5>\n<div class=\"ui attached segment\">\n  <p>Cats are thought of as being related to dogs, but only humans think this.</p>\n</div>\n<p></p>\n<h5 class=\"ui attached header\">Lions</h5>\n<div class=\"ui attached segment\">\n  <p>Humans don&rsquo;t think of lions as being like cats, but they are.</p>\n</div>\n<p></p>\n<div class=\"ui warning message bottom attached\"><i class=\"warning icon\"></i>You&rsquo;ve reached the end of this content segment!</div>\n", output

@@ -29,28 +29,28 @@ module MarkdownUI
         args[1].split(",")
       else
         args[1].strip
-      end
+      end if !args[1].nil?
 
       klass = if args[0].strip =~ /\./
         k = args[0].split(".")
         k.reverse!
         k.shift
-      else
-        !args[2].nil? ? args[2].downcase : nil
       end
+
+      _id = !args[2].nil? ? args[2].downcase : nil
 
       data_attributes = !args[3].nil? ? args[3].downcase : nil
 
       html do
         case element.join(" ")
           when /button/i
-            MarkdownUI::Button::Element.new(element, content, klass).render
+            MarkdownUI::Button::Element.new(element, content, klass, _id).render
           when /menu/i
             MarkdownUI::Menu::Element.new(element, content, klass).render
           when /message/i
             MarkdownUI::Message.new(element, content, klass).render
           when /tag/i
-            MarkdownUI::Tag.new(element[0].downcase, content, klass, data_attributes).render
+            MarkdownUI::Tag.new(element[0].downcase, content, _id, data_attributes).render
           when /header/i
             MarkdownUI::Header.new(content, 0).render
         end

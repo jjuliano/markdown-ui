@@ -1,14 +1,18 @@
 module MarkdownUI
   class StandardTag
-    def initialize(content, klass = nil, data = nil)
+    def initialize(content, klass = nil, _id = nil, data = nil)
       @klass = klass
       @content = content
       @data = data
+      @id = _id
     end
 
     def render
       content = @content.strip unless @content.nil?
-      klass = MarkdownUI::KlassUtil.new(@klass).klass
+      klass = MarkdownUI::KlassUtil.new(@klass).klass unless @klass.nil?
+      _id = if @id
+        " id=\"#{@id.split.join("-")}\""
+      end
 
       data = if @data
         _data, attribute, value = @data.split(":")
@@ -17,7 +21,7 @@ module MarkdownUI
         nil
       end
 
-      "<div#{klass}#{data}>#{content}</div>"
+      "<div#{_id}#{klass}#{data}>#{content}</div>"
     end
   end
 end

@@ -1,3 +1,8 @@
+0.1.2 - 07-20-15
+  * Add ID support for Buttons
+  * Updated tests and docs with ID support
+  * Add more support to mobile
+
 0.1.1 - 07-15-15
   * Fix items not containing href path
   * Added more documentation for Buttons

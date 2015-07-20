@@ -7,15 +7,15 @@ class ButtonTest < Redcarpet::TestCase
   end
 
   def test_standard_button
-    markdown = "__Button|Text:Follow|Klass__"
+    markdown = "__Klass Button|Text:Follow|ID__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+    assert_equal "<div id=\"id\" class=\"ui klass button\">Follow</div>\n", output
   end
 
   def test_standard_button_2
-    markdown = "__Button.Klass|Text:Follow__"
+    markdown = "__Button.Klass|Text:Follow|My ID__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui klass button\">Follow</div>\n", output
+    assert_equal "<div id=\"my-id\" class=\"ui klass button\">Follow</div>\n", output
   end
 
   def test_standard_button_alternative
@@ -50,7 +50,7 @@ EOS
   def test_focusable_button
     markdown = "__Focusable Button|Text:Focusable Button|Focusable__"
     output = @parser.render(markdown)
-    assert_equal "<button class=\"ui focusable button\">Focusable Button</button>\n", output
+    assert_equal "<button id=\"focusable\" class=\"ui focusable button\">Focusable Button</button>\n", output
   end
 
   def test_focusable_button_2
@@ -76,24 +76,24 @@ EOS
   end
 
   def test_focusable_class_button
-    markdown = "__Button|Text:Focusable Button|Focusable__"
+    markdown = "__Button.Focusable|Text:Focusable Button|Focusable__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui focusable button\">Focusable Button</div>\n", output
+    assert_equal "<button id=\"focusable\" class=\"ui focusable button\">Focusable Button</button>\n", output
   end
 
   def test_ordinality
-    markdown1 = "__Button|Text:Save|Primary__"
+    markdown1 = "__Primary Button|Text:Save|Primary__"
     markdown2 = "__Button|Text:Discard__"
     output1 = @parser.render(markdown1)
     output2 = @parser.render(markdown2)
-    assert_equal "<div class=\"ui primary button\">Save</div>\n", output1
+    assert_equal "<div id=\"primary\" class=\"ui primary button\">Save</div>\n", output1
     assert_equal "<div class=\"ui button\">Discard</div>\n", output2
 
-    markdown3 = "__Button|Text:Save|Secondary__"
+    markdown3 = "__Secondary Button|Text:Save|Secondary__"
     markdown4 = "__Button|Text:Discard__"
     output3 = @parser.render(markdown3)
     output4 = @parser.render(markdown4)
-    assert_equal "<div class=\"ui secondary button\">Save</div>\n", output3
+    assert_equal "<div id=\"secondary\" class=\"ui secondary button\">Save</div>\n", output3
     assert_equal "<div class=\"ui button\">Discard</div>\n", output4
   end
 
@@ -164,27 +164,27 @@ EOS
   end
 
   def test_animated_with_klass
-    markdown = "__Animated Button|Text:Next;Icon:Right Arrow|Klass__"
+    markdown = "__Animated Klass Button|Text:Next;Icon:Right Arrow|This is an ID__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui klass animated button\">\n  <div class=\"visible content\">Next</div>\n  <div class=\"hidden content\">\n    <i class=\"right arrow icon\"></i>\n  </div>\n</div>\n", output
+    assert_equal "<div id=\"this-is-an-id\" class=\"ui animated klass button\">\n  <div class=\"visible content\">Next</div>\n  <div class=\"hidden content\">\n    <i class=\"right arrow icon\"></i>\n  </div>\n</div>\n", output
   end
 
   def test_vertical_animated
-    markdown = "__Animated Button|Icon:Shop;Text:Shop|Vertical__"
+    markdown = "__Vertical Animated Button|Icon:Shop;Text:Shop|Vertical__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui vertical animated button\">\n  <div class=\"visible content\">\n    <i class=\"shop icon\"></i>\n  </div>\n  <div class=\"hidden content\">Shop</div>\n</div>\n", output
+    assert_equal "<div id=\"vertical\" class=\"ui vertical animated button\">\n  <div class=\"visible content\">\n    <i class=\"shop icon\"></i>\n  </div>\n  <div class=\"hidden content\">Shop</div>\n</div>\n", output
   end
 
   def test_animated_fade
-    markdown = "__Animated Button|Text:Sign-up for a Pro account;Text:$12.99 a month|Fade__"
+    markdown = "__Fade Animated Button|Text:Sign-up for a Pro account;Text:$12.99 a month|Fade__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui fade animated button\">\n  <div class=\"visible content\">Sign-up for a Pro account</div>\n  <div class=\"hidden content\">$12.99 a month</div>\n</div>\n", output
+    assert_equal "<div id=\"fade\" class=\"ui fade animated button\">\n  <div class=\"visible content\">Sign-up for a Pro account</div>\n  <div class=\"hidden content\">$12.99 a month</div>\n</div>\n", output
   end
 
   def test_animated_fade_without_animated_mode_defined
-    markdown = "__Button|Text:Sign-up for a Pro account:Visible Content,Text:$12.99 a month:Hidden Content|Fade Animated__"
+    markdown = "__Fade Animated Button|Text:Sign-up for a Pro account:Visible Content,Text:$12.99 a month:Hidden Content|Fade Animated__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui fade animated button\">\n  <div class=\"visible content\">Sign-up for a Pro account</div>\n  <div class=\"hidden content\">$12.99 a month</div>\n</div>\n", output
+    assert_equal "<div id=\"fade-animated\" class=\"ui fade animated button\">\n  <div class=\"visible content\">Sign-up for a Pro account</div>\n  <div class=\"hidden content\">$12.99 a month</div>\n</div>\n", output
   end
 
   def test_icon_button
@@ -210,9 +210,9 @@ EOS
   end
 
   def test_icon_button_without_icon_mode_defined
-    markdown = "__Button|Icon:Cloud|Icon__"
+    markdown = "__Icon Button|Icon:Cloud|Icon__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui icon button\">\n  <i class=\"cloud icon\"></i>\n</div>\n", output
+    assert_equal "<div id=\"icon\" class=\"ui icon button\">\n  <i class=\"cloud icon\"></i>\n</div>\n", output
   end
 
   def test_labeled_icon_button
@@ -222,15 +222,15 @@ EOS
   end
 
   def test_labeled_icon_button_with_klass
-    markdown = "__Labeled Icon Button|Icon:Right Arrow,Text:Next|Right__"
+    markdown = "__Right Labeled Icon Button|Icon:Right Arrow,Text:Next|Right__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui right labeled icon button\"><i class=\"right arrow icon\"></i>Next</div>\n", output
+    assert_equal "<div id=\"right\" class=\"ui right labeled icon button\"><i class=\"right arrow icon\"></i>Next</div>\n", output
   end
 
   def test_labeled_icon_button_without_icon_mode_defined
-    markdown = "__Button|Icon:Pause,Text:Pause|Labeled Icon__"
+    markdown = "__Labeled Icon Button|Icon:Pause,Text:Pause|Labeled Icon__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui labeled icon button\"><i class=\"pause icon\"></i>Pause</div>\n", output
+    assert_equal "<div id=\"labeled-icon\" class=\"ui labeled icon button\"><i class=\"pause icon\"></i>Pause</div>\n", output
   end
 
   def test_basic_icon
@@ -240,9 +240,9 @@ EOS
   end
 
   def test_basic_icon_without_basic_mode_defined
-    markdown = "__Button|Icon:User,Text:Add Friend|Basic__"
+    markdown = "__Basic Button|Icon:User,Text:Add Friend|Basic__"
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui basic button\"><i class=\"user icon\"></i>Add Friend</div>\n", output
+    assert_equal "<div id=\"basic\" class=\"ui basic button\"><i class=\"user icon\"></i>Add Friend</div>\n", output
   end
 
   def test_custom_button
@@ -255,50 +255,50 @@ EOS
     markdown =
 <<-EOS
 > Inverted Segment:
-> __Button|Text: Standard|Inverted__
-> __Button|Text: Black|Inverted Black__
-> __Button|Text: Yellow|Inverted Yellow__
-> __Button|Text: Green|Inverted Green__
-> __Button|Text: Blue|Inverted Blue__
-> __Button|Text: Orange|Inverted Orange__
-> __Button|Text: Purple|Inverted Purple__
-> __Button|Text: Pink|Inverted Pink__
-> __Button|Text: Red|Inverted Red__
-> __Button|Text: Teal|Inverted Teal__
+> __Inverted Button|Text: Standard|Inverted__
+> __Inverted Black Button|Text: Black|Inverted Black__
+> __Inverted Yellow Button|Text: Yellow|Inverted Yellow__
+> __Inverted Green Button|Text: Green|Inverted Green__
+> __Inverted Blue Button|Text: Blue|Inverted Blue__
+> __Inverted Orange Button|Text: Orange|Inverted Orange__
+> __Inverted Purple Button|Text: Purple|Inverted Purple__
+> __Inverted Pink Button|Text: Pink|Inverted Pink__
+> __Inverted Red Button|Text: Red|Inverted Red__
+> __Inverted Teal Button|Text: Teal|Inverted Teal__
 EOS
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui inverted segment\">\n  <div class=\"ui inverted button\">Standard</div>\n  <div class=\"ui inverted black button\">Black</div>\n  <div class=\"ui inverted yellow button\">Yellow</div>\n  <div class=\"ui inverted green button\">Green</div>\n  <div class=\"ui inverted blue button\">Blue</div>\n  <div class=\"ui inverted orange button\">Orange</div>\n  <div class=\"ui inverted purple button\">Purple</div>\n  <div class=\"ui inverted pink button\">Pink</div>\n  <div class=\"ui inverted red button\">Red</div>\n  <div class=\"ui inverted teal button\">Teal</div>\n</div>\n", output
+    assert_equal "<div class=\"ui inverted segment\">\n  <div id=\"inverted\" class=\"ui inverted button\">Standard</div>\n  <div id=\"inverted-black\" class=\"ui inverted black button\">Black</div>\n  <div id=\"inverted-yellow\" class=\"ui inverted yellow button\">Yellow</div>\n  <div id=\"inverted-green\" class=\"ui inverted green button\">Green</div>\n  <div id=\"inverted-blue\" class=\"ui inverted blue button\">Blue</div>\n  <div id=\"inverted-orange\" class=\"ui inverted orange button\">Orange</div>\n  <div id=\"inverted-purple\" class=\"ui inverted purple button\">Purple</div>\n  <div id=\"inverted-pink\" class=\"ui inverted pink button\">Pink</div>\n  <div id=\"inverted-red\" class=\"ui inverted red button\">Red</div>\n  <div id=\"inverted-teal\" class=\"ui inverted teal button\">Teal</div>\n</div>\n", output
   end
 
   def test_basic_inverted_button
     markdown =
 <<-EOS
 > Inverted Segment:
-> __Button|Text: Basic|Basic__
-> __Button|Text: Black Basic|Basic Black__
-> __Button|Text: Yellow Basic|Basic Yellow__
-> __Button|Text: Green Basic|Basic Green__
-> __Button|Text: Blue Basic|Basic Blue__
-> __Button|Text: Orange Basic|Basic Orange__
-> __Button|Text: Purple Basic|Basic Purple__
-> __Button|Text: Pink Basic|Basic Pink__
-> __Button|Text: Red Basic|Basic Red__
-> __Button|Text: Teal Basic|Basic Teal__
+> __Basic Button|Text: Basic|Basic__
+> __Basic Black Button|Text: Black Basic|Basic Black__
+> __Basic Yellow Button|Text: Yellow Basic|Basic Yellow__
+> __Basic Green Button|Text: Green Basic|Basic Green__
+> __Basic Blue Button|Text: Blue Basic|Basic Blue__
+> __Basic Orange Button|Text: Orange Basic|Basic Orange__
+> __Basic Purple Button|Text: Purple Basic|Basic Purple__
+> __Basic Pink Button|Text: Pink Basic|Basic Pink__
+> __Basic Red Button|Text: Red Basic|Basic Red__
+> __Basic Teal Button|Text: Teal Basic|Basic Teal__
 EOS
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui inverted segment\">\n  <div class=\"ui basic button\">Basic</div>\n  <div class=\"ui basic black button\">Black Basic</div>\n  <div class=\"ui basic yellow button\">Yellow Basic</div>\n  <div class=\"ui basic green button\">Green Basic</div>\n  <div class=\"ui basic blue button\">Blue Basic</div>\n  <div class=\"ui basic orange button\">Orange Basic</div>\n  <div class=\"ui basic purple button\">Purple Basic</div>\n  <div class=\"ui basic pink button\">Pink Basic</div>\n  <div class=\"ui basic red button\">Red Basic</div>\n  <div class=\"ui basic teal button\">Teal Basic</div>\n</div>\n", output
+    assert_equal "<div class=\"ui inverted segment\">\n  <div id=\"basic\" class=\"ui basic button\">Basic</div>\n  <div id=\"basic-black\" class=\"ui basic black button\">Black Basic</div>\n  <div id=\"basic-yellow\" class=\"ui basic yellow button\">Yellow Basic</div>\n  <div id=\"basic-green\" class=\"ui basic green button\">Green Basic</div>\n  <div id=\"basic-blue\" class=\"ui basic blue button\">Blue Basic</div>\n  <div id=\"basic-orange\" class=\"ui basic orange button\">Orange Basic</div>\n  <div id=\"basic-purple\" class=\"ui basic purple button\">Purple Basic</div>\n  <div id=\"basic-pink\" class=\"ui basic pink button\">Pink Basic</div>\n  <div id=\"basic-red\" class=\"ui basic red button\">Red Basic</div>\n  <div id=\"basic-teal\" class=\"ui basic teal button\">Teal Basic</div>\n</div>\n", output
   end
 
   def test_group_buttons
     markdown =
 <<-EOS
 > Buttons:
-> __Button|Text: One|Standard__
-> __Button|Text: Two|Standard__
-> __Button|Text: Three|Standard__
+> __Standard Button|Text: One|Standard__
+> __Standard Button|Text: Two|Standard__
+> __Standard Button|Text: Three|Standard__
 EOS
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui buttons\">\n  <div class=\"ui standard button\">One</div>\n  <div class=\"ui standard button\">Two</div>\n  <div class=\"ui standard button\">Three</div>\n</div>\n", output
+    assert_equal "<div class=\"ui buttons\">\n  <div id=\"standard\" class=\"ui standard button\">One</div>\n  <div id=\"standard\" class=\"ui standard button\">Two</div>\n  <div id=\"standard\" class=\"ui standard button\">Three</div>\n</div>\n", output
   end
 
   def test_icon_group_buttons
@@ -328,11 +328,11 @@ EOS
 > Icon Buttons:
 > __Button|Text: Cancel__
 > __Div Tag||Or__
-> __Button|Text: Save|Positive__
+> __Positive Button|Text: Save|Positive__
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">Cancel</div>\n  <div class=\"or\"></div>\n  <div class=\"ui positive button\">Save</div>\n</div>\n", output
+    assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">Cancel</div>\n  <div class=\"or\"></div>\n  <div id=\"positive\" class=\"ui positive button\">Save</div>\n</div>\n", output
   end
 
   def test_icon_group_conditionals_with_data_attributes
@@ -341,10 +341,10 @@ EOS
 > Icon Buttons:
 > __Button|Text: un__
 > __Div Tag||Or|Data:Text:ou__
-> __Button|Text: deux|Positive__
+> __Positive Button|Text: deux|Positive__
 EOS
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">un</div>\n  <div class=\"or\" data-text=\"ou\"></div>\n  <div class=\"ui positive button\">deux</div>\n</div>\n", output
+    assert_equal "<div class=\"ui icon buttons\">\n  <div class=\"ui button\">un</div>\n  <div class=\"or\" data-text=\"ou\"></div>\n  <div id=\"positive\" class=\"ui positive button\">deux</div>\n</div>\n", output
   end
 end

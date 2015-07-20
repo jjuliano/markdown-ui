@@ -2,16 +2,18 @@
 
 module MarkdownUI::Button
   class Icon
-    def initialize(content, klass = nil)
+    def initialize(content, klass = nil, _id = nil)
       @klass = klass
+      @id = _id
       @content = content
     end
 
     def render
       content = MarkdownUI::Content::Parser.new(@content).parse
       klass = "ui #{@klass} icon button"
+      _id = @id
 
-      MarkdownUI::StandardTag.new(content, klass).render
+      MarkdownUI::StandardTag.new(content, klass, _id).render
     end
   end
 end

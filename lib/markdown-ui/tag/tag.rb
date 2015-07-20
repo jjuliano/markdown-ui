@@ -17,7 +17,7 @@ module MarkdownUI
 
     def render
       # if @mode.div?
-        MarkdownUI::StandardTag.new(@content, @klass, @data).render
+        MarkdownUI::StandardTag.new(@content, @klass, nil, @data).render
       # elsif @mode.span
       #   MarkdownUI::SpanTag.new(@content, @klass).render
       # elsif @mode.article
