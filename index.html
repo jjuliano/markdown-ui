@@ -110,12 +110,14 @@ __Button|Follow__
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui follow-button button">Follow</div>
+      <div id="follow-button-id" class="ui follow-button-class button">Follow</div>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment"><code>__Follow-Button Button|Follow__</code><br />or<br /><code>__Button|Follow|Follow-Button__</code></div>
+      <div class="ui inverted very padded segment">
+        <code>__Follow-Button-Class Button|Follow|Follow-Button-ID__</code>
+      </div>
     </div>
 <!-- -->
   </div>
@@ -127,14 +129,14 @@ __Button|Follow__
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <button class="ui focusable button">Follow</button>
+      <button id="my-focusable-button" class="ui focusable button">Follow</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Focusable Button|Follow__
+__Focusable Button|Follow|My-Focusable-Button__
 </code>
       </div>
     </div>
@@ -164,9 +166,9 @@ __Focusable Button|Follow__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Button|Save|Primary__
+__Primary Button|Save__
 __Button|Discard__
-__Button|Save|Secondary__
+__Secondary Button|Save__
 __Button|Discard__
 </code>
       </div>
@@ -198,7 +200,7 @@ __Button|Discard__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Animated Button|Text:Next;Icon:Right Arrow__
+__Animated Button|Next;Icon:Right Arrow__
 </code>
       </div>
     </div>
@@ -224,7 +226,7 @@ __Animated Button|Text:Next;Icon:Right Arrow__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Vertical Animated Button|Icon:Shop;Text:Shop__
+__Vertical Animated Button|Icon:Shop;Shop__
 </code>
       </div>
     </div>
@@ -246,7 +248,7 @@ __Vertical Animated Button|Icon:Shop;Text:Shop__
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment"><code>__Fade Animated Button|Text:Sign-up for a Pro account;Text:$12.99 a month__</code><br /> or <br />
+      <div class="ui inverted very padded segment"><code>__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__</code><br /> or <br />
 <code>__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__</code></div>
     </div>
 <!-- -->
@@ -299,7 +301,7 @@ __Icon Button|Icon:Cloud__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Labeled Icon Button|Icon:Pause,Text:Pause__
+__Labeled Icon Button|Icon:Pause,Pause__
 </code>
       </div>
     </div>
@@ -325,7 +327,7 @@ __Labeled Icon Button|Icon:Pause,Text:Pause__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Basic Button|Icon:User,Text:Add Friend__
+__Basic Button|Icon:User,Add Friend__
 </code>
       </div>
     </div>
@@ -354,15 +356,15 @@ __Basic Button|Icon:User,Text:Add Friend__
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Button|Text:Black|Basic Black__
-__Button|Text:Yellow|Basic Yellow__
-__Button|Text:Green|Basic Green__
-__Button|Text:Blue|Basic Blue__
-__Button|Text:Orange|Basic Orange__
-__Button|Text:Purple|Basic Purple__
-__Button|Text:Pink|Basic Pink__
-__Button|Text:Red|Basic Red__
-__Button|Text:Teal|Basic Teal__
+__Basic Black Button|Black__
+__Basic Yellow Button|Yellow__
+__Basic Green Button|Green__
+__Basic Blue Button|Blue__
+__Basic Orange Button|Orange__
+__Basic Purple Button|Purple__
+__Basic Pink Button|Pink__
+__Basic Red Button|Red__
+__Basic Teal Button|Teal__
 </code>
       </div>
     </div>
@@ -382,7 +384,7 @@ __Button|Text:Teal|Basic Teal__
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui inverted very padded segment">
-        <div class="ui inverted button">Standard</div>
+        <div class="ui inverted standard button">Standard</div>
         <div class="ui inverted black button">Black</div>
         <div class="ui inverted yellow button">Yellow</div>
         <div class="ui inverted green button">Green</div>
@@ -400,25 +402,25 @@ __Button|Text:Teal|Basic Teal__
       <div class="ui inverted very padded segment">
         <code>&gt; Inverted Segment:</code>
         <br />
-        <code>&gt; __Button|Text:Standard|Inverted__</code>
+        <code>&gt; __Button|Standard|Inverted__</code>
         <br />
-        <code>&gt; __Button|Text:Black|Inverted Black__</code>
+        <code>&gt; __Button|Black|Inverted Black__</code>
         <br />
-        <code>&gt; __Button|Text:Yellow|Inverted Yellow__</code>
+        <code>&gt; __Button|Yellow|Inverted Yellow__</code>
         <br />
-        <code>&gt; __Button|Text:Green|Inverted Green__</code>
+        <code>&gt; __Button|Green|Inverted Green__</code>
         <br />
-        <code>&gt; __Button|Text:Blue|Inverted Blue__</code>
+        <code>&gt; __Button|Blue|Inverted Blue__</code>
         <br />
-        <code>&gt; __Button|Text:Orange|Inverted Orange__</code>
+        <code>&gt; __Button|Orange|Inverted Orange__</code>
         <br />
-        <code>&gt; __Button|Text:Purple|Inverted Purple__</code>
+        <code>&gt; __Button|Purple|Inverted Purple__</code>
         <br />
-        <code>&gt; __Button|Text:Pink|Inverted Pink__</code>
+        <code>&gt; __Button|Pink|Inverted Pink__</code>
         <br />
-        <code>&gt; __Button|Text:Red|Inverted Red__</code>
+        <code>&gt; __Button|Red|Inverted Red__</code>
         <br />
-        <code>&gt; __Button|Text:Teal|Inverted Teal__</code>
+        <code>&gt; __Button|Teal|Inverted Teal__</code>
       </div>
     </div>
 <!-- -->
@@ -437,9 +439,9 @@ __Button|Text:Teal|Basic Teal__
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui buttons">
-        <div class="ui standard button">One</div>
-        <div class="ui standard button">Two</div>
-        <div class="ui standard button">Three</div>
+        <div id="standard" class="ui button">One</div>
+        <div id="standard" class="ui button">Two</div>
+        <div id="standard" class="ui button">Three</div>
       </div>
     </div>
 <!-- -->
@@ -448,11 +450,11 @@ __Button|Text:Teal|Basic Teal__
       <div class="ui inverted very padded segment">
         <code>&gt; Buttons:</code>
         <br />
-        <code>&gt; __Button|Text:One|Standard__</code>
+        <code>&gt; __Standard Button|One__</code>
         <br />
-        <code>&gt; __Button|Text:Two|Standard__</code>
+        <code>&gt; __Standard Button|Two__</code>
         <br />
-        <code>&gt; __Button|Text:Three|Standard__</code>
+        <code>&gt; __Standard Button|Three__</code>
       </div>
     </div>
 <!-- -->
@@ -551,11 +553,11 @@ __Button|Text:Teal|Basic Teal__
       <div class="ui inverted very padded segment">
         <code>&gt; Icon Buttons:</code>
         <br />
-        <code>&gt; __Button|Text:Cancel__</code>
+        <code>&gt; __Button|Cancel__</code>
         <br />
         <code>&gt; __Div Tag||Or__</code>
         <br />
-        <code>&gt; __Button|Text:Save|Positive__</code>
+        <code>&gt; __Positive Button|Save__</code>
       </div>
     </div>
 <!-- -->
@@ -563,8 +565,8 @@ __Button|Text:Teal|Basic Teal__
       <h5 class="ui header">Preview</h5>
       <div class="ui icon buttons">
         <div class="ui button">un</div>
-        <div class="or" data-text="ou"></div>
-        <div class="ui positive button">deux</div>
+        <div class="or" data-ou=""></div>
+        <div id="positive-id" class="ui positive button">deux</div>
       </div>
     </div>
 <!-- -->
@@ -573,11 +575,11 @@ __Button|Text:Teal|Basic Teal__
       <div class="ui inverted very padded segment">
         <code>&gt; Icon Buttons:</code>
         <br />
-        <code>&gt; __Button|Text:un__</code>
+        <code>&gt; __Button|un__</code>
         <br />
-        <code>&gt; __Div Tag|Or|Data:Text:ou__</code>
+        <code>&gt; __Div Tag|Or|Data:ou__</code>
         <br />
-        <code>&gt; __Button|Text:deux|Positive__</code>
+        <code>&gt; __Positive Button|deux|Positive-ID__</code>
       </div>
     </div>
 <!-- -->
