@@ -1,3 +1,7 @@
+0.1.3 - 07-21-15
+  * Add Bundler as a dependency
+  * Updated Documentations
+
 0.1.2 - 07-20-15
   * Add ID support for Buttons
   * Updated tests and docs with ID support
