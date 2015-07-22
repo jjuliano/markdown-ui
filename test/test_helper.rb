@@ -21,6 +21,9 @@ require 'redcarpet/render_man'
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'markdown-ui'
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 class Redcarpet::TestCase < Test::Unit::TestCase
   def assert_renders(html, markdown)
     assert_equal html, render(markdown)
