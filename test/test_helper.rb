@@ -3,11 +3,10 @@ Encoding.default_internal = 'UTF-8' if defined? Encoding
 
 begin
   if ENV['COVERAGE']
+    require "codeclimate-test-reporter"
     require 'simplecov'
-    SimpleCov.start do
-      add_filter '/test/'
-      add_filter '/vendor/'
-    end
+    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter,CodeClimate::TestReporter::Formatter]
+    SimpleCov.start CodeClimate::TestReporter.configuration.profile
   end
 rescue LoadError
 end
@@ -20,9 +19,6 @@ require 'redcarpet/render_man'
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'markdown-ui'
-
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
 
 class Redcarpet::TestCase < Test::Unit::TestCase
   def assert_renders(html, markdown)

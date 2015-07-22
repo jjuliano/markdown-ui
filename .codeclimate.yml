@@ -33,16 +33,16 @@ engines:
 # For more details see here:
 # http://docs.codeclimate.com/article/289-configuring-your-repository-via-codeclimate-yml#platform
 
-# ratings:
-#   paths:
+ratings:
+  paths:
 #   - app/**
-#   - lib/**
+  - lib/**
 #   - "**.rb"
 #   - "**.go"
 
 # You can globally exclude files from being analyzed by any engine using the
 # exclude_paths key.
 
-#exclude_paths:
-#- spec/**
-#- vendor/**
+exclude_paths:
+- spec/**
+- vendor/**
