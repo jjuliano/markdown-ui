@@ -19,7 +19,7 @@ module MarkdownUI
       output << content
       output << "</#{tag}>"
 
-      output.join(" ")
+      output.join(' ')
     end
   end
 end

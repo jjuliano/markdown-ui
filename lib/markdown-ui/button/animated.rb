@@ -6,7 +6,7 @@ module MarkdownUI::Button
       @content = content
       @klass = klass
       @id = _id
-      @visible_content, @hidden_content = content.is_a?(Array) ? content : content.split(";")
+      @visible_content, @hidden_content = content.is_a?(Array) ? content : content.split(';')
     end
 
     def render

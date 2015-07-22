@@ -12,7 +12,7 @@ module MarkdownUI::Button
       content = MarkdownUI::Content::Parser.new(@content).parse
       klass = MarkdownUI::KlassUtil.new("ui #{@klass} button").klass
       _id = if @id
-        " id=\"#{@id.split.join("-")}\""
+        " id=\"#{@id.split.join('-')}\""
       end
 
       output = []

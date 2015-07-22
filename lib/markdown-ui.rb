@@ -1,5 +1,5 @@
 # coding: UTF-8
-require "markdown-ui/version"
+require 'markdown-ui/version'
 
 require 'redcarpet'
 require 'nokogiri'
@@ -22,17 +22,17 @@ module MarkdownUI
     end
 
     def double_emphasis(text)
-      args = text.split("|")
-      element = args[0].split(" ")
+      args = text.split('|')
+      element = args[0].split(' ')
 
       content = if args[1].strip =~ /\,/
-        args[1].split(",")
+        args[1].split(',')
       else
         args[1].strip
       end if !args[1].nil?
 
       klass = if args[0].strip =~ /\./
-        k = args[0].split(".")
+        k = args[0].split('.')
         k.reverse!
         k.shift
       end
@@ -42,7 +42,7 @@ module MarkdownUI
       data_attributes = !args[3].nil? ? args[3].downcase : nil
 
       html do
-        case element.join(" ")
+        case element.join(' ')
           when /button/i
             MarkdownUI::Button::Element.new(element, content, klass, _id).render
           when /menu/i
@@ -85,7 +85,7 @@ module MarkdownUI
     end
 
     def list(content, list_type)
-      klass = "ui"
+      klass = 'ui'
       html { MarkdownUI::Content::List.new(content, klass, list_type).render }
     end
 
@@ -103,7 +103,7 @@ module MarkdownUI
     end
 
     def table_cell(content, alignment)
-      body, klass = content.split(":")
+      body, klass = content.split(':')
 
       "<div class=\"ui #{klass}column\">#{body}</div>"
     end

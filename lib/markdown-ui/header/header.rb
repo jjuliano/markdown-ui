@@ -1,7 +1,7 @@
 module MarkdownUI
   class Header
     def initialize(text, level)
-      @text, @klass = text.split(":")
+      @text, @klass = text.split(':')
       @level = level
     end
 

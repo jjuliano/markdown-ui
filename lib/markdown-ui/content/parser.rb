@@ -13,14 +13,14 @@ module MarkdownUI
           final_content = []
 
           @content.each do |c|
-            content = c.split(":")
+            content = c.split(':')
             final_content << process(content)
           end
 
           final_content.join
         else
           content = if !(@content =~ /\:/).nil?
-            @content.split(":")
+            @content.split(':')
           else
             @content.split("\n")
           end
@@ -57,7 +57,7 @@ module MarkdownUI
         elsif mode.list?
           MarkdownUI::Content::List.new(actual_content, klass).render
         else
-          MarkdownUI::Content::Custom.new(content.join(" "), klass).render
+          MarkdownUI::Content::Custom.new(content.join(' '), klass).render
         end
       end
 

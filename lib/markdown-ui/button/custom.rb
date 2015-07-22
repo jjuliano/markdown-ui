@@ -10,7 +10,7 @@ module MarkdownUI::Button
     end
 
     def render
-      element = @element.join(" ").strip
+      element = @element.join(' ').strip
       content = MarkdownUI::Content::Parser.new(@content).parse
       klass = "ui #{element} #{@klass} button"
       _id = @id

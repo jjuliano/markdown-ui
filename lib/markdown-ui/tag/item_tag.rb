@@ -7,12 +7,12 @@ module MarkdownUI
     end
 
     def render
-      content, @data = @content.split(";")
+      content, @data = @content.split(';')
       klass = MarkdownUI::KlassUtil.new(@klass).klass
       link = " href=\"#{@link.strip}\""
 
       data = if @data
-        _data, attribute, value = @data.split(":")
+        _data, attribute, value = @data.split(':')
         " data-#{attribute}=\"#{value}\""
       else
         nil

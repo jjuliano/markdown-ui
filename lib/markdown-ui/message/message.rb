@@ -10,7 +10,7 @@ module MarkdownUI
       element = if @element.is_a? Array
         @element
       else
-        @element.split(" ")
+        @element.split(' ')
       end
 
       content = @content

@@ -8,11 +8,11 @@ module MarkdownUI
     end
 
     def render
-      content = @content.split(";")
+      content = @content.split(';')
       klass = MarkdownUI::KlassUtil.new(@klass).klass
 
       data = if @data
-        _data, attribute, value = @data.split(":")
+        _data, attribute, value = @data.split(':')
         " data-#{attribute}=\"#{value}\""
       else
         nil

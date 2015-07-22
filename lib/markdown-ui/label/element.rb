@@ -10,13 +10,13 @@ module MarkdownUI::Label
       element = if @element.is_a? Array
         @element
       else
-        @element.split(" ")
+        @element.split(' ')
       end
 
       content = @content
 
       klass = if @klass.nil?
-        element.join(" ").strip
+        element.join(' ').strip
       else
         @klass
       end
