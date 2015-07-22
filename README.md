@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/jjuliano/markdown-ui.svg)](https://travis-ci.org/jjuliano/markdown-ui)
 # Markdown UI
 
+[![Join the chat at https://gitter.im/jjuliano/markdown-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jjuliano/markdown-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
