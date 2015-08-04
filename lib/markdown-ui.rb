@@ -10,6 +10,9 @@ module MarkdownUI
     require 'markdown-ui-button'
     require 'markdown-ui-container'
     require 'markdown-ui-content'
+  end
+
+  module Collection
     require 'markdown-ui-grid'
   end
 end
@@ -22,6 +25,7 @@ module MarkdownUI
   class Renderer < Redcarpet::Render::HTML
     include Redcarpet::Render::SmartyPants
     include MarkdownUI::Element
+    include MarkdownUI::Collection
 
     def paragraph(text)
       text

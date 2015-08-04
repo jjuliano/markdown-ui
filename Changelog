@@ -1,8 +1,11 @@
 0.1.5
-  * Componentize Elements
-    - button
-    - container
-    - content
+  * Componentize
+    * Elements
+      - button
+      - container
+      - content
+    * Collections
+      - grid
 
 0.1.4 - 08-04-15
   * Documentation updates
