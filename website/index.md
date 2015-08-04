@@ -30,7 +30,7 @@
 > > > > > ```gem install markdown-ui```
 > > > > > ##Usage
 > > > > > ```markdown-ui index.mdui > index.html```
-> > > > > ##Framework
+> > > > > ##Credits
 > > > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
 > > > > > Credit goes to the people behind these wonderful framework and libraries.
 > > > > > ##Issues/Bugs

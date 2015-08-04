@@ -12,7 +12,7 @@ Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
 ## Usage
 
-    $ markdown-ui file.md
+    $ markdown-ui file.mdui
 
 ## Contributing
 
