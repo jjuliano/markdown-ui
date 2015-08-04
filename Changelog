@@ -1,7 +1,8 @@
 0.1.4
   * Documentation updates
   * Added Badges
-  * Make viewport to be mobile ready
+  * Optimize Viewport for Mobile
+  * Componentize Elements
 
 0.1.3 - 07-21-15
   * Add Bundler as a dependency
