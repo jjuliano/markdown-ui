@@ -618,7 +618,7 @@
 > > >
 > > > > Center Aligned Six Wide Column:
 > > > > ##### Preview
-> > > > > Icon Buttons:
+> > > > > Buttons:
 > > > > > __Button|Cancel__
 > > > > > __Div Tag||Or__
 > > > > > __Positive Button|Save__
@@ -628,7 +628,7 @@
 > > > > Left Aligned Ten Wide Column:
 > > > > ##### Markdown Syntax
 > > > > > Inverted Very Padded Segment:
-> > > > > ```> Icon Buttons：``` <br />
+> > > > > ```> Buttons：``` <br />
 > > > > > ```> __Button|Cancel__``` <br />
 > > > > > ```> __Div Tag||Or__``` <br />
 > > > > > ```> __Positive Button|Save__```
@@ -637,9 +637,9 @@
 > > >
 > > > > Center Aligned Six Wide Column:
 > > > > ##### Preview
-> > > > > Icon Buttons:
+> > > > > Buttons:
 > > > > > __Button|un__
-> > > > > __Div Tag||Or|Data:ou__
+> > > > > __Div Tag||Or|Data:Text:ou__
 > > > > > __Positive Button|deux|Positive-ID__
 > > >
 > > > <!-- -->
@@ -647,9 +647,9 @@
 > > > > Left Aligned Ten Wide Column:
 > > > > ##### Markdown Syntax
 > > > > > Inverted Very Padded Segment:
-> > > > > ```> Icon Buttons：``` <br />
+> > > > > ```> Buttons：``` <br />
 > > > > > ```> __Button|un__``` <br />
-> > > > > ```> __Div Tag|Or|Data：ou__``` <br />
+> > > > > ```> __Div Tag|Or|Data：Text：ou__``` <br />
 > > > > > ```> __Positive Button|deux|Positive-ID__```
 > > >
 > > > <!-- -->
