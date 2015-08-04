@@ -10,6 +10,7 @@ module MarkdownUI
     require 'markdown-ui-button'
     require 'markdown-ui-container'
     require 'markdown-ui-content'
+    require 'markdown-ui-grid'
   end
 end
 
