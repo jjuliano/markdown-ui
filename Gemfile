@@ -8,5 +8,5 @@ group :elements do
 end
 
 group :collections do
-  gem 'markdown-ui-grid',      :path => 'components/elements/markdown-ui-grid/'
+  gem 'markdown-ui-grid',      :path => 'components/collections/markdown-ui-grid/'
 end
