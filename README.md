@@ -21,3 +21,7 @@ Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jjuliano/markdown-ui/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
