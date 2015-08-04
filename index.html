@@ -22,10 +22,10 @@
 
 <body>
 <div class="ui center aligned container">
-  <div class="ui inverted blue segment container">
-    <div class="ui inverted blue menu">
+  <div class="ui inverted segment container">
+    <div class="ui inverted menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <div class="ui inverted blue right menu">
+      <div class="ui inverted right menu">
         <a class="ui disabled item" href="#docs">Docs</a>
         <a class="ui disabled item" href="#about">About</a>
         <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
@@ -36,18 +36,19 @@
 <!-- -->
   <div class="ui left aligned container">
 <!-- -->
-    <div class="ui inverted attached blue very padded segment">
+    <div class="ui inverted attached teal very padded segment">
       <h1 class="ui header">Markdown UI</h1>
-      <h3 class="ui header">Responsive User Interfaces in Markdown</h3>
+      <h3 class="ui header">Responsive UI in Markdown</h3>
     </div>
 <!-- -->
     <div class="ui attached segment">
 <!-- -->
       <div class="ui equal width grid">
-        <div class="ui column">
-          <p>A framework for creating responsive UI&rsquo;s for mobile and web using Markdown Syntax. It is a tool for Rapid Prototyping UI&rsquo;s for Single-page and Multiple-page apps, and allows to write UI&rsquo;s only once and then translate it to Semantic UI 2.0, BootStrap 3 (coming soon), Foundation (coming soon), etc.</p>
-          <p>It helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness!</p>
-        </div>
+        <div class="ui column"><h2 class="ui header">Installation</h2><code>gem install markdown-ui</code><h2 class="ui header">Usage</h2><code>markdown-ui index.mdui &gt; index.html</code><h2 class="ui header">Credits</h2>
+Markdown-UI uses <a class="ui item" href="http://www.semantic-ui.com">Semantic-UI http://www.semantic-ui.com</a>
+ syntax and framework, and ruby <code>redcarpet</code> library.
+Credit goes to the people behind these wonderful framework and libraries.<h2 class="ui header">Issues/Bugs</h2>
+<ul class="ui list"><li>Ongoing support for 80% of Semantic-UI elements/modules/components</li><li>The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)</li><li>Code is not DRY, needs refactoring / rewriting</li><li>Implimentation is subject to change</li></ul></div>
 <!-- -->
         <div class="ui column">
           <div class="ui inverted very padded segment">
@@ -70,11 +71,96 @@
       </div>
     </div>
 <!-- -->
-    <div class="ui attached segment">
-      <h2 class="ui header">Installation</h2>
-      <code>gem install markdown-ui</code>
-      <h2 class="ui header">Usage</h2>
-      <code>markdown-ui index.md &gt; index.html</code>
+    <h2 class="ui center aligned header">Cheat Sheet</h2>
+    <div class="ui equal width grid">
+      <div class="ui column">
+        <div class="ui basic segment">
+          <h5 class="ui header">Button</h5>
+          <div class="ui info message">
+            <code>__Button|Button Text__</code>
+          </div>
+<!-- -->
+          <h5 class="ui header">Container</h5>
+          <div class="ui info message">
+            <code>&gt; Container:</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Icon</h5>
+          <div class="ui info message">
+            <code>_Icon &lt;Name&gt;_</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Segment</h5>
+          <div class="ui info message">
+            <code>&gt; Segment:</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Menu</h5>
+          <div class="ui info message">
+            <code>&gt; Menu:</code>
+            <br />
+            <code>&gt; [Menu Item]</code>
+            <br />
+          </div>
+<!-- -->
+        </div>
+      </div>
+<!-- -->
+      <div class="ui column">
+        <div class="ui basic segment">
+          <h5 class="ui header">Item</h5>
+          <div class="ui info message">
+            <code>[Item](#URL_ID "class")</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Message</h5>
+          <div class="ui info message">
+            <code>__Message|Header:Message Header,Text:Message Text__</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Header</h5>
+          <div class="ui info message">
+            <code># H1, ## H2, ### H3, #### H4 ...</code>
+            <br />
+          </div>
+<!-- -->
+          <h5 class="ui header">Column / Grid / Row / Segment / Container</h5>
+          <div class="ui info message">
+            <code>&gt; Grid:</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+            <code>&gt; &lt;!-- --&gt;</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+            <code>&gt; &gt; Column:</code>
+            <br />
+            <code>&gt; &gt; Column 1</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+            <code>&gt; &lt;!-- --&gt;</code>
+            <br />
+            <code>&gt;</code>
+            <br />
+            <code>&gt; &gt; Column:</code>
+            <br />
+            <code>&gt; &gt; Column 2</code>
+            <br />
+          </div>
+<!-- -->
+        </div>
+      </div>
     </div>
 <!-- -->
     <div class="ui segment">
