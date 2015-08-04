@@ -5,6 +5,14 @@ require 'redcarpet'
 require 'nokogiri'
 require 'ostruct'
 
+module MarkdownUI
+  module Element
+    require 'markdown-ui-button'
+    require 'markdown-ui-container'
+    require 'markdown-ui-content'
+  end
+end
+
 ['markdown-ui/**/*.rb'].each do |dir|
   Dir[File.join(File.dirname(__FILE__), dir)].sort.each { |f| require_relative f }
 end
@@ -12,6 +20,7 @@ end
 module MarkdownUI
   class Renderer < Redcarpet::Render::HTML
     include Redcarpet::Render::SmartyPants
+    include MarkdownUI::Element
 
     def paragraph(text)
       text

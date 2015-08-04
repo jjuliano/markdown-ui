@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
-
-# Specify your gem's dependencies in markdown-ui.gemspec
 gemspec
+
+group :elements do
+  gem 'markdown-ui-button',    :path => 'components/elements/markdown-ui-button/'
+  gem 'markdown-ui-container', :path => 'components/elements/markdown-ui-container/'
+  gem 'markdown-ui-content',   :path => 'components/elements/markdown-ui-content/'
+end

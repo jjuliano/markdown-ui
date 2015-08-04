@@ -34,10 +34,11 @@
 > > > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
 > > > > > Credit goes to the people behind these wonderful framework and libraries.
 > > > > > ##Issues/Bugs
-> > > > > * Ongoing support for 80% of Semantic-UI elements/modules/components
+> > > > > * Ongoing support for Semantic-UI elements/modules/components
 > > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
-> > > > > * Code is not DRY, needs refactoring / rewriting
+> > > > > * Code is not DRY, needs refactoring.
 > > > > > * Implimentation is subject to change
+> > > > > * A separator in between two spaces is required on block elements to separate elements (see Column example)
 > > > >
 > > > > <!-- -->
 > > > >
@@ -88,6 +89,13 @@
 > > > > > > Info Message:
 > > > > > > ``` > Menu： ``` <br />
 > > > > > > ``` > [Menu Item] ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### List
+> > > > > > Info Message:
+> > > > > > ``` * List 1 ``` <br />
+> > > > > > ``` * List 2 ``` <br />
 > > > > >
 > > > > > <!-- -->
 > > > > >
