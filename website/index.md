@@ -1,8 +1,8 @@
 > Center Aligned Container:
-> > Inverted Blue Segment Container:
-> > > Inverted Blue Menu:
+> > Inverted Segment Container:
+> > > Inverted Menu:
 > > > [Markdown UI](#home "basic")
-> > > > Inverted Blue Right Menu:
+> > > > Inverted Right Menu:
 > > > > [Docs](#docs "disabled")
 > > > > [About](#about "disabled")
 > > > > [Github](#github)
@@ -14,9 +14,9 @@
 > >
 > > <!-- -->
 > >
-> > > Inverted Attached Blue Very Padded Segment:
+> > > Inverted Attached Teal Very Padded Segment:
 > > > # Markdown UI
-> > > ### Responsive User Interfaces in Markdown
+> > > ### Responsive UI in Markdown
 > >
 > > <!-- -->
 > >
@@ -26,8 +26,18 @@
 > > >
 > > > > Equal Width Grid:
 > > > > > Column:
-> > > > > "A framework for creating responsive UI's for mobile and web using Markdown Syntax. It is a tool for Rapid Prototyping UI's for Single-page and Multiple-page apps, and allows to write UI's only once and then translate it to Semantic UI 2.0, BootStrap 3 (coming soon), Foundation (coming soon), etc."
-> > > > > "It helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness!"
+> > > > > ##Installation
+> > > > > ```gem install markdown-ui```
+> > > > > ##Usage
+> > > > > ```markdown-ui index.mdui > index.html```
+> > > > > ##Framework
+> > > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
+> > > > > Credit goes to the people behind these wonderful framework and libraries.
+> > > > > ##Issues/Bugs
+> > > > > * Ongoing support for 80% of Semantic-UI elements/modules/components
+> > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
+> > > > > * Code is not DRY, needs refactoring / rewriting
+> > > > > * Implimentation is subject to change
 > > > >
 > > > > <!-- -->
 > > > >
@@ -41,25 +51,90 @@
 > > > > > > ```> > [Logout](#logout)``` <br />
 > > > > > > <br />
 > > > > > > ```__Button|Add Friend__```
->
->
 > >
 > > <!-- -->
 > >
-> > > Attached Segment:
-> > > ##Installation
-> > > ```gem install markdown-ui```
-> > > ##Usage
-> > > ```markdown-ui index.md > index.html```
->
->
+> > ##Cheat Sheet:Center Aligned
+> > > Equal Width Grid:
+> > > > Column:
+> > > > > Basic Segment:
+> > > > > ##### Button
+> > > > > > Info Message:
+> > > > > > ``` __Button|Button Text__ ```
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Container
+> > > > > > Info Message:
+> > > > > > ``` > Container： ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Icon
+> > > > > > Info Message:
+> > > > > > ``` _Icon <Name>_ ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Segment
+> > > > > > Info Message:
+> > > > > > ``` > Segment： ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Menu
+> > > > > > Info Message:
+> > > > > > ``` > Menu： ``` <br />
+> > > > > > ``` > [Menu Item] ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > >
+> > > <!-- -->
+> > >
+> > > > Column:
+> > > > > Basic Segment:
+> > > > > ##### Item
+> > > > > > Info Message:
+> > > > > > ``` [Item](#URL_ID "class") ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Message
+> > > > > > Info Message:
+> > > > > > ``` __Message|Header：Message Header,Text：Message Text__ ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Header
+> > > > > > Info Message:
+> > > > > > ``` # H1, ## H2, ### H3, #### H4 ... ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
+> > > > > ##### Column / Grid / Row / Segment / Container
+> > > > > > Info Message:
+> > > > > > ``` > Grid：``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > <!-- -->``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > > Column：``` <br />
+> > > > > > ``` > > Column 1 ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > <!-- -->``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > > Column：``` <br />
+> > > > > > ``` > > Column 2 ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > >
 > >
 > > <!-- -->
 > >
 > > > Segment:
 > > > # Buttons:Center Aligned
->
->
 > >
 > > <!-- -->
 > >
@@ -139,8 +214,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -177,8 +250,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -260,8 +331,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -293,8 +362,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -326,8 +393,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -400,8 +465,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -451,8 +514,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -488,8 +549,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
@@ -541,8 +600,6 @@
 > > >
 > > > <!-- -->
 > > >
->
->
 > >
 > > <!-- -->
 > >
