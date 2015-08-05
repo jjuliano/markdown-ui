@@ -1,3 +1,18 @@
+0.1.6 - 08-05-15
+  * Fix component not resolving components in CLI tool
+  * Componentize
+    * Elements
+      - button
+      - container
+      - content
+      - header
+      - label
+      - segment
+    * Collections
+      - grid
+      - menu
+      - message
+
 0.1.5 - 08-04-15
   * Componentize
     * Elements
