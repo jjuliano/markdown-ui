@@ -5,17 +5,8 @@ require 'redcarpet'
 require 'nokogiri'
 require 'ostruct'
 
-module MarkdownUI
-  module Element
-    require 'markdown-ui-button'
-    require 'markdown-ui-container'
-    require 'markdown-ui-content'
-  end
-
-  module Collection
-    require 'markdown-ui-grid'
-  end
-end
+require 'markdown-ui/element'
+require 'markdown-ui/collection'
 
 ['markdown-ui/**/*.rb'].each do |dir|
   Dir[File.join(File.dirname(__FILE__), dir)].sort.each { |f| require_relative f }
