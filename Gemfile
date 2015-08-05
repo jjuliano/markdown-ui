@@ -6,6 +6,7 @@ group :elements do
   gem 'markdown-ui-container', :path => 'components/elements/markdown-ui-container/'
   gem 'markdown-ui-content',   :path => 'components/elements/markdown-ui-content/'
   gem 'markdown-ui-header',    :path => 'components/elements/markdown-ui-header/'
+  gem 'markdown-ui-label',     :path => 'components/elements/markdown-ui-label/'
 end
 
 group :collections do
