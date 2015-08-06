@@ -2,24 +2,24 @@
 
 require "bundler/setup"
 require "markdown-ui"
+require "nokogiri"
 
 parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true)
 
 f = File.open(ARGV.first, 'r')
-puts <<-EOS
-<!doctype html>
 
+content = <<-EOS
 <!doctype html>
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.7/semantic.min.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.7/semantic.min.js"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,12 +30,10 @@ puts <<-EOS
 </head>
 
 <body>
-EOS
-
-  puts parser.render f.read
-
-puts <<-EOS
+  #{parser.render f.read}
 </body>
 </html>
 EOS
 f.close
+
+puts Nokogiri::HTML(content, &:noblanks).to_xhtml(indent: 2)

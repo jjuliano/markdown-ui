@@ -1,3 +1,9 @@
+0.1.7
+  * Parse generated HTML document using Nokogiri;
+  * Support Nokogiri 1.5 to 1.6
+  * Add Block-style syntax examples
+  * Fix documentation
+
 0.1.6 - 08-05-15
   * Fix component not resolving components in CLI tool
   * Componentize

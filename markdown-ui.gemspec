@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'markdown-ui/version'
+require "markdown-ui/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "markdown-ui"
@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/jjuliano/markdown-ui"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
+  # Prevent pushing this gem to RubyGems.org by setting "allowed_push_host", or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "https://rubygems.org"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
@@ -27,9 +27,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'bundler', '~> 1.10', '~> 1.9'
+  spec.add_dependency "bundler", "~> 1.10", "~> 1.9"
   spec.add_dependency "redcarpet", "~> 3.2"
-  spec.add_dependency "nokogiri", "~> 1.6"
+  spec.add_dependency "nokogiri", "~> 1.5", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "test-unit", "~> 3.0"
   spec.add_development_dependency "simplecov", "~> 0.10"
