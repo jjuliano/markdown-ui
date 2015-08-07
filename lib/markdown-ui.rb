@@ -90,7 +90,7 @@ module MarkdownUI
     end
 
     def list(content, list_type)
-      klass = 'ui'
+      klass = "ui #{list_type}"
       html { MarkdownUI::Content::List.new(content, klass, list_type).render }
     end
 
@@ -105,12 +105,6 @@ module MarkdownUI
 
     def header(text, level)
       html { MarkdownUI::Header.new(text, level).render }
-    end
-
-    def table_cell(content, alignment)
-      body, klass = content.split(':')
-
-      "<div class=\"ui #{klass}column\">#{body}</div>"
     end
 
     protected

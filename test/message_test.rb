@@ -56,7 +56,29 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 ', output
   end
 
-  def test_list_message_alternative
+  def test_list_message_alternative_ordered
+    markdown =
+'
+> List Message:
+> __Header|New Site Features__
+>
+> 1. You can now have cover images on blog pages
+> 1. Drafts will now auto-save while writing
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+'<div class="ui message">
+  <div class="ui header">New Site Features</div>
+  <ol class="ui ordered list">
+    <li>You can now have cover images on blog pages</li>
+    <li>Drafts will now auto-save while writing</li>
+  </ol>
+</div>
+', output
+  end
+
+  def test_list_message_alternative_unordered
     markdown =
 '
 > List Message:
@@ -70,7 +92,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
     assert_equal \
 '<div class="ui message">
   <div class="ui header">New Site Features</div>
-  <ul class="ui list">
+  <ul class="ui unordered list">
     <li>You can now have cover images on blog pages</li>
     <li>Drafts will now auto-save while writing</li>
   </ul>

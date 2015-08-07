@@ -1,4 +1,4 @@
-0.1.7
+0.1.7 - 08-07-15
   * Parse generated HTML document using Nokogiri;
   * Support Nokogiri 1.5 to 1.6
   * Add Block-style syntax examples
