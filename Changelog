@@ -1,3 +1,7 @@
+0.1.8
+  * <button> tag added
+  * Use button tag for focusable button
+
 0.1.7 - 08-07-15
   * Parse generated HTML document using Nokogiri;
   * Support Nokogiri 1.5 to 1.6

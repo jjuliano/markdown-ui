@@ -4,25 +4,16 @@ module MarkdownUI::Button
   class Focusable
     def initialize(content, klass = nil, _id = nil)
       @klass = klass
-      @content = content
       @id = _id
+      @content = content
     end
 
     def render
+      klass = "ui #{@klass} focusable button"
       content = MarkdownUI::Content::Parser.new(@content).parse
-      klass = MarkdownUI::KlassUtil.new("ui #{@klass} button").klass
-      _id = if @id
-        " id=\"#{@id.split.join('-')}\""
-      end
+      _id = @id
 
-      output = []
-      output << "<button"
-      output << "#{_id}"
-      output << "#{klass}>"
-      output << content
-      output << "</button>"
-
-      output.join
+      MarkdownUI::ButtonTag.new(content, klass, _id).render
     end
   end
 end
