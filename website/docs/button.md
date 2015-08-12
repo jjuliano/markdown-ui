@@ -770,7 +770,7 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Comact Button|Hold__
+> > > __Compact Button|Hold__
 > > > __Compact Icon Button|Icon:Pause__
 > > > __Compact Labeled Icon Button|Icon:Pause, Pause__
 > >
@@ -779,7 +779,7 @@
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ``` __Comact Button|Hold__ ``` <br />
+> > > > ``` __Compact Button|Hold__ ``` <br />
 > > > > ``` __Compact Icon Button|Icon：Pause__ ``` <br />
 > > > > ``` __Compact Labeled Icon Button|Icon：Pause, Pause__ ```
 >
