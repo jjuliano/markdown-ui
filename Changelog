@@ -2,6 +2,7 @@
   * Generate HTML5 doctype document (previously XHTML)
   * Added the following button tests and documentation
     - Social
+    - Size
 
 0.1.8 - 08-12-15
   * <button> tag added

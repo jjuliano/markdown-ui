@@ -22,7 +22,7 @@
 
 * Variations
   √ Social
-  Size
+  √ Size
   Colored
   Compact
   Toggle

@@ -567,4 +567,19 @@ output = @parser.render(markdown)
 assert_equal "<button class=\"ui facebook button\"><i class=\"facebook icon\"></i>Facebook</button>\n\n<button class=\"ui twitter button\"><i class=\"twitter icon\"></i>Twitter</button>\n\n<button class=\"ui google plus button\"><i class=\"google plus icon\"></i>Google Plus</button>\n\n<button class=\"ui vk button\"><i class=\"vk icon\"></i>VK</button>\n\n<button class=\"ui linkedin button\"><i class=\"linkedin icon\"></i>LinkedIn</button>\n\n<button class=\"ui instagram button\"><i class=\"instagram icon\"></i>Instagram</button>\n\n<button class=\"ui youtube button\"><i class=\"youtube icon\"></i>YouTube</button>\n", output
   end
 
+  def test_size_variation
+    markdown = '
+__Mini Button|Mini__
+__Tiny Button|Tiny__
+__Small Button|Small__
+__Medium Button|Medium__
+__Large Button|Large__
+__Big Button|Big__
+__Huge Button|Huge__
+__Massive Button|Massive__
+'
+  output = @parser.render(markdown)
+  assert_equal "<button class=\"ui mini button\">Mini</button>\n\n<button class=\"ui tiny button\">Tiny</button>\n\n<button class=\"ui small button\">Small</button>\n\n<button class=\"ui medium button\">Medium</button>\n\n<button class=\"ui large button\">Large</button>\n\n<button class=\"ui big button\">Big</button>\n\n<button class=\"ui huge button\">Huge</button>\n\n<button class=\"ui massive button\">Massive</button>\n", output
+    end
+
 end
