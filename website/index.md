@@ -13,7 +13,7 @@
 > > Inverted Attached Teal Very Padded Segment:
 > > # Markdown UI
 > > ### Responsive UI in Markdown
-> > This document is written entirely in Markdown-UI. see： [markdown-ui/website/index.md](https：//raw.githubusercontent.com/jjuliano/markdown-ui/master/website/index.md)
+> > ### Read the [__Button|Documentation__](docs/toc.html)
 >
 > <!-- -->
 >
@@ -27,6 +27,8 @@
 > > > > ## Credits::credits
 > > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
 > > > > Credit goes to the people behind these wonderful framework and libraries.
+> > > > ## Source
+> > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jjuliano/markdown-ui/tree/master/website)
 > > > > ## Issues/Bugs::issues-bugs
 > > > > * Ongoing support for Semantic-UI elements/modules/components
 > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
