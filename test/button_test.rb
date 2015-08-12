@@ -604,12 +604,12 @@ __Black Button|Black__
 
   def test_compact_variation
     markdown = '
-__Comact Button|Hold__
+__Compact Button|Hold__
 __Compact Icon Button|Icon:Pause__
 __Compact Labeled Icon Button|Icon:Pause, Pause__
 '
   output = @parser.render(markdown)
-  assert_equal "<button class=\"ui red button\">Red</button>\n\n<button class=\"ui orange button\">Orange</button>\n\n<button class=\"ui yellow button\">Yellow</button>\n\n<button class=\"ui olive button\">Olive</button>\n\n<button class=\"ui green button\">Green</button>\n\n<button class=\"ui teal button\">Teal</button>\n\n<button class=\"ui blue button\">Blue</button>\n\n<button class=\"ui violet button\">Violet</button>\n\n<button class=\"ui purple button\">Purple</button>\n\n<button class=\"ui pink button\">Pink</button>\n\n<button class=\"ui brown button\">Brown</button>\n\n<button class=\"ui grey button\">Grey</button>\n\n<button class=\"ui black button\">Black</button>\n", output
+  assert_equal "<button class=\"ui compact button\">Hold</button>\n\n<button class=\"ui compact icon button\">\n  <i class=\"pause icon\"></i>\n</button>\n\n<button class=\"ui compact labeled icon button\"><i class=\"pause icon\"></i>Pause</button>\n", output
     end
 
 
