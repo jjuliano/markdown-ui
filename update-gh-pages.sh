@@ -4,13 +4,10 @@ rm -rf website
 
 git checkout master -- website
 
-rm -rf about.html button.html index.html docs
+rm -rf *.html docs
 
-ln website/about.html
-ln website/index.html
-mkdir docs
-ln website/docs/button.html docs/button.html
-ln website/docs/toc.html docs/toc.html
+cp -R website/*.html .
+cp -R website/docs .
 
 git add .
 git commit -m "$(date) pull from master; updated links."
