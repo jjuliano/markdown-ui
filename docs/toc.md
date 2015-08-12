@@ -49,4 +49,5 @@
 > > >
 > > > > Column:
 > > > > ### [Variations](button.html#variations)
-> > > > [Social](button.html#social)
+> > > > [Social](button.html#social),
+> > > > [Size](button.html#size)

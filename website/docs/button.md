@@ -665,3 +665,45 @@
 >
 > <!-- -->
 >
+
+
+> > Basic Segment:
+> > #### Size::size
+> > "A button can have different sizes"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Social
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Mini Button|Mini__
+> > > __Tiny Button|Tiny__
+> > > __Small Button|Small__
+> > > __Medium Button|Medium__
+> > > __Large Button|Large__
+> > > __Big Button|Big__
+> > > __Huge Button|Huge__
+> > > __Massive Button|Massive__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Mini Button|Mini__ ``` <br />
+> > > > ``` __Tiny Button|Tiny__ ``` <br />
+> > > > ``` __Small Button|Small__ ``` <br />
+> > > > ``` __Medium Button|Medium__ ``` <br />
+> > > > ``` __Large Button|Large__ ``` <br />
+> > > > ``` __Big Button|Big__ ``` <br />
+> > > > ``` __Huge Button|Huge__ ``` <br />
+> > > > ``` __Massive Button|Massive__ ```
+>
+> <!-- -->
+>
