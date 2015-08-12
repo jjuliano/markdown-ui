@@ -1,3 +1,6 @@
+website/*.html
+website/docs/*.html
+
 # Created by https://www.gitignore.io
 
 ### Ruby ###
