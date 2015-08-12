@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+rm -rf website
+
 git checkout master -- website
 
 rm -rf about.html button.html index.html docs
