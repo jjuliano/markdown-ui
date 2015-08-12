@@ -665,8 +665,6 @@
 >
 > <!-- -->
 >
-
-
 > > Basic Segment:
 > > #### Size::size
 > > "A button can have different sizes"
@@ -676,7 +674,7 @@
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
-> > > > Social
+> > > > Size
 > >
 > > <!-- -->
 > >
@@ -707,3 +705,54 @@
 >
 > <!-- -->
 >
+> > Basic Segment:
+> > #### Colored::colored
+> > "A button can have different colors"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Colored
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Red Button|Red__
+> > > __Orange Button|Orange__
+> > > __Yellow Button|Yellow__
+> > > __Olive Button|Olive__
+> > > __Green Button|Green__
+> > > __Teal Button|Teal__
+> > > __Blue Button|Blue__
+> > > __Violet Button|Violet__
+> > > __Purple Button|Purple__
+> > > __Pink Button|Pink__
+> > > __Brown Button|Brown__
+> > > __Grey Button|Grey__
+> > > __Black Button|Black__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Red Button|Red__ ``` <br />
+> > > > ``` __Orange Button|Orange__ ``` <br />
+> > > > ``` __Yellow Button|Yellow__ ``` <br />
+> > > > ``` __Olive Button|Olive__ ``` <br />
+> > > > ``` __Green Button|Green__ ``` <br />
+> > > > ``` __Teal Button|Teal__ ``` <br />
+> > > > ``` __Blue Button|Blue__ ``` <br />
+> > > > ``` __Violet Button|Violet__ ``` <br />
+> > > > ``` __Purple Button|Purple__ ``` <br />
+> > > > ``` __Pink Button|Pink__ ``` <br />
+> > > > ``` __Brown Button|Brown__ ``` <br />
+> > > > ``` __Grey Button|Grey__ ``` <br />
+> > > > ``` __Black Button|Black__ ```
+>
+> <!-- -->
+>
+
