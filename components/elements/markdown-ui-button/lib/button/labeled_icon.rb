@@ -19,7 +19,7 @@ module MarkdownUI::Button
       content << icon
       content << label
 
-      MarkdownUI::StandardTag.new(content.join, klass, _id).render
+      MarkdownUI::ButtonTag.new(content.join, klass, _id).render
     end
   end
 end

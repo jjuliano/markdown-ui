@@ -18,45 +18,40 @@
     </style>
   </head>
   <body>
-  <div class="ui sticky inverted vertical menu">
-  <a class="ui active item" href="button.html">Button</a>
-  <a class="ui item" href="button.html">Button</a>
-  <a class="ui item" href="button.html">Button</a>
-  <a class="ui item" href="button.html">Button</a>
-</div>
-
-<!-- -->
-<div class="ui inverted segment container">
-  <div class="ui inverted menu">
-    <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-    <div class="ui inverted right menu">
-      <a class="ui disabled item" href="#docs">Docs</a>
-      <a class="ui disabled item" href="#about">About</a>
-      <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
-      <a class="ui disabled item" href="#install">Install</a>
+  <div class="ui container">
+  <div class="ui inverted segment">
+    <div class="ui inverted menu">
+      <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
+      <div class="ui inverted right menu">
+        <a class="ui item" href="toc.html">Table of Contents</a>
+        <a class="ui item" href="../about.html">About</a>
+        <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
+        <a class="ui item" href="../index.html#install">Install</a>
+      </div>
     </div>
   </div>
-</div>
-
 <!-- -->
-<div class="ui left aligned container">
-  <div class="ui segment">
-    <h1 class="ui center aligned header">Buttons</h1>
+  <div class="ui basic segment">
+    <h1 id="button" class="ui center aligned header">Button</h1>
   </div>
 <!-- -->
-  <div class="ui segment">
-    <h3 class="ui header">Button</h3>
+  <div class="ui basic segment">
+    <h2 id="types" class="ui dividing left aligned header">Types</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="simple-button" class="ui header">Button</h4>
     <p>Standard Button</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Standard Button</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui button">Follow</div>
+      <button class="ui button">Follow</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
@@ -71,13 +66,13 @@ __Button|Follow__
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Standard Button with Custom Class And ID</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div id="optional-id" class="ui optional-class button">Follow</div>
+      <button id="optional-id" class="ui optional-class button">Follow</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
@@ -90,43 +85,41 @@ __Button|Follow__
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Focusable Button</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <button id="optional-id" class="ui focusable button">Follow</button>
+      <div id="optional-id" class="ui focusable button" tabindex="0">Follow</div>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
-        <code>
-__Focusable Button|Follow|&lt;Optional-ID&gt;__
-</code>
+        <code>__Focusable Button|Follow|&lt;Optional-ID&gt;__</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Emphasis</h3>
+  <div class="ui basic segment">
+    <h4 id="emphasis" class="ui header">Emphasis</h4>
     <p>A button can be formatted to show different levels of emphasis</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Emphasis</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui primary button">Save</div>
-      <div class="ui button">Discard</div>
+      <button class="ui primary button">Save</button>
+      <button class="ui button">Discard</button>
       <p></p>
-      <div class="ui secondary button">Save</div>
-      <div class="ui button">Discard</div>
+      <button class="ui secondary button">Save</button>
+      <button class="ui button">Discard</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
@@ -139,13 +132,13 @@ __Focusable Button|Follow|&lt;Optional-ID&gt;__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Animated</h3>
+  <div class="ui basic segment">
+    <h4 id="animated" class="ui header">Animated</h4>
     <p>A button can animate to show hidden content</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Animated</div>
     </div>
 <!-- -->
@@ -162,16 +155,14 @@ __Focusable Button|Follow|&lt;Optional-ID&gt;__
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
-        <code>
-__Animated Button|Next;Icon:Right Arrow__
-</code>
+        <code>__Animated Button|Next;Icon:Right Arrow__</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Vertical Animated</div>
     </div>
 <!-- -->
@@ -188,16 +179,14 @@ __Animated Button|Next;Icon:Right Arrow__
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
-        <code>
-__Vertical Animated Button|Icon:Shop;Shop__
-</code>
+        <code>__Vertical Animated Button|Icon:Shop;Shop__</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Fade Animated</div>
     </div>
 <!-- -->
@@ -218,103 +207,98 @@ __Vertical Animated Button|Icon:Shop;Shop__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Icon</h3>
+  <div class="ui basic segment">
+    <h4 id="icon" class="ui header">Icon</h4>
     <p>A button can have only an icon</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Icon Button</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui icon button">
+      <button class="ui icon button">
         <i class="cloud icon"></i>
-      </div>
+      </button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
         <code>
-__Icon Button|Icon:Cloud__
-</code>
+__Icon Button|Icon</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Labeled Icon</h3>
+  <div class="ui basic segment">
+    <h4 id="labeled-icon" class="ui header">Labeled Icon</h4>
     <p>A button can have an icon and a label</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Labeled Icon</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui labeled icon button"><i class="pause icon"></i>Pause</div>
+      <button class="ui labeled icon button"><i class="pause icon"></i>Pause</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
-        <code>
-__Labeled Icon Button|Icon:Pause,Pause__
-</code>
+        <code>__Labeled Icon Button|Icon:Pause,Pause__</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Basic Button</h3>
+  <div class="ui basic segment">
+    <h4 id="basic-button" class="ui header">Basic Button</h4>
     <p>A basic button is less pronounced</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Basic Button</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui basic button"><i class="user icon"></i>Add Friend</div>
+      <button class="ui basic button"><i class="user icon"></i>Add Friend</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
       <h5 class="ui header">Markdown Syntax</h5>
       <div class="ui inverted very padded segment">
-        <code>
-__Basic Button|Icon:User,Add Friend__
-</code>
+        <code>__Basic Button|Icon:User,Add Friend__</code>
       </div>
     </div>
 <!-- -->
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Basic Button</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
-      <div class="ui basic standard button">Standard</div>
-      <div class="ui basic black button">Black</div>
-      <div class="ui basic yellow button">Yellow</div>
-      <div class="ui basic green button">Green</div>
-      <div class="ui basic blue button">Blue</div>
-      <div class="ui basic orange button">Orange</div>
-      <div class="ui basic purple button">Purple</div>
-      <div class="ui basic pink button">Pink</div>
-      <div class="ui basic red button">Red</div>
-      <div class="ui basic teal button">Teal</div>
+      <button class="ui basic standard button">Standard</button>
+      <button class="ui basic black button">Black</button>
+      <button class="ui basic yellow button">Yellow</button>
+      <button class="ui basic green button">Green</button>
+      <button class="ui basic blue button">Blue</button>
+      <button class="ui basic orange button">Orange</button>
+      <button class="ui basic purple button">Purple</button>
+      <button class="ui basic pink button">Pink</button>
+      <button class="ui basic red button">Red</button>
+      <button class="ui basic teal button">Teal</button>
     </div>
 <!-- -->
     <div class="ui left aligned ten wide column">
@@ -335,29 +319,29 @@ __Basic Button|Icon:User,Add Friend__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Inverted</h3>
+  <div class="ui basic segment">
+    <h4 id="inverted" class="ui header">Inverted</h4>
     <p>A button can be formatted to appear on dark backgrounds</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Inverted</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui inverted very padded segment">
-        <div class="ui inverted standard button">Standard</div>
-        <div class="ui inverted black button">Black</div>
-        <div class="ui inverted yellow button">Yellow</div>
-        <div class="ui inverted green button">Green</div>
-        <div class="ui inverted blue button">Blue</div>
-        <div class="ui inverted orange button">Orange</div>
-        <div class="ui inverted purple button">Purple</div>
-        <div class="ui inverted pink button">Pink</div>
-        <div class="ui inverted red button">Red</div>
-        <div class="ui inverted teal button">Teal</div>
+        <button class="ui inverted standard button">Standard</button>
+        <button class="ui inverted black button">Black</button>
+        <button class="ui inverted yellow button">Yellow</button>
+        <button class="ui inverted green button">Green</button>
+        <button class="ui inverted blue button">Blue</button>
+        <button class="ui inverted orange button">Orange</button>
+        <button class="ui inverted purple button">Purple</button>
+        <button class="ui inverted pink button">Pink</button>
+        <button class="ui inverted red button">Red</button>
+        <button class="ui inverted teal button">Teal</button>
       </div>
     </div>
 <!-- -->
@@ -380,22 +364,26 @@ __Basic Button|Icon:User,Add Friend__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Groups</h3>
+  <div class="ui basic segment">
+    <h2 id="groups" class="ui dividing left aligned header">Groups</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="buttons" class="ui header">Buttons</h4>
     <p>Buttons can exist together as a group</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Buttons</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui buttons">
-        <div id="standard" class="ui button">One</div>
-        <div id="standard" class="ui button">Two</div>
-        <div id="standard" class="ui button">Three</div>
+        <button id="standard" class="ui button">One</button>
+        <button id="standard" class="ui button">Two</button>
+        <button id="standard" class="ui button">Three</button>
       </div>
     </div>
 <!-- -->
@@ -411,43 +399,43 @@ __Basic Button|Icon:User,Add Friend__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Icon Buttons</h3>
+  <div class="ui basic segment">
+    <h4 id="icon-buttons" class="ui header">Icon Buttons</h4>
     <p>Buttons can exist together as a group</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Buttons</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui icon buttons">
-        <div class="ui button">
+        <button class="ui button">
           <i class="align left icon"></i>
-        </div>
-        <div class="ui button">
+        </button>
+        <button class="ui button">
           <i class="align center icon"></i>
-        </div>
-        <div class="ui button">
+        </button>
+        <button class="ui button">
           <i class="align right icon"></i>
-        </div>
-        <div class="ui button">
+        </button>
+        <button class="ui button">
           <i class="align justify icon"></i>
-        </div>
+        </button>
       </div>
 <!-- -->
       <div class="ui icon buttons">
-        <div class="ui button">
+        <button class="ui button">
           <i class="bold icon"></i>
-        </div>
-        <div class="ui button">
+        </button>
+        <button class="ui button">
           <i class="underline icon"></i>
-        </div>
-        <div class="ui button">
+        </button>
+        <button class="ui button">
           <i class="text width icon"></i>
-        </div>
+        </button>
       </div>
     </div>
 <!-- -->
@@ -469,22 +457,26 @@ __Basic Button|Icon:User,Add Friend__
 <!-- -->
   </div>
 <!-- -->
-  <div class="ui attached segment">
-    <h3 class="ui header">Conditionals</h3>
+  <div class="ui basic segment">
+    <h2 id="content" class="ui dividing left aligned header">Content</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="conditionals" class="ui header">Conditionals</h4>
     <p>Button groups can contain conditionals</p>
   </div>
 <!-- -->
   <div class="ui divided segment grid">
-    <div class="ui html top attached segment">
+    <div class="ui attached segment">
       <div class="ui top attached label">Conditionals</div>
     </div>
 <!-- -->
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui buttons">
-        <div class="ui button">Cancel</div>
+        <button class="ui button">Cancel</button>
         <div class="or"></div>
-        <div class="ui positive button">Save</div>
+        <button class="ui positive button">Save</button>
       </div>
     </div>
 <!-- -->
@@ -501,9 +493,9 @@ __Basic Button|Icon:User,Add Friend__
     <div class="ui center aligned six wide column">
       <h5 class="ui header">Preview</h5>
       <div class="ui buttons">
-        <div class="ui button">un</div>
+        <button class="ui button">un</button>
         <div class="or" data-text="ou"></div>
-        <div id="optional-id" class="ui positive button">deux</div>
+        <button id="optional-id" class="ui positive button">deux</button>
       </div>
     </div>
 <!-- -->
@@ -517,6 +509,85 @@ __Basic Button|Icon:User,Add Friend__
       </div>
     </div>
 <!-- -->
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h2 id="states" class="ui dividing left aligned header">States</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="active" class="ui header">Active</h4>
+    <p>A button can show it is currently the active user selection</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Active State</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <button class="ui active button"><i class="user icon"></i>Follow</button>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>__Active Button|Icon:User, Follow__</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="disabled" class="ui header">Disabled</h4>
+    <p>A button can show it is currently unable to be interacted with</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Disabled State</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <button class="ui disabled button"><i class="user icon"></i>Followed</button>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>__Disabled Button|Icon:User,Followed__</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="loading" class="ui header">Loading</h4>
+    <p>A button can show a loading indicator</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Loading State</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui header">Preview</h5>
+      <button class="ui loading button">Loading</button>
+      <button class="ui basic loading button">Loading</button>
+      <button class="ui primary loading button">Loading</button>
+      <button class="ui secondary loading button">Loading</button>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>__Loading Button|Loading__</code>
+        <br /><code>__Basic Loading Button|Loading__</code>
+        <br /><code>__Primary Loading Button|Loading__</code>
+        <br /><code>__Secondary Loading Button|Loading__</code>
+      </div>
+    </div>
   </div>
 </div>
 

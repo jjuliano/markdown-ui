@@ -10,7 +10,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Klass Button|Text:Follow|ID__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="id" class="ui klass button">Follow</div>
+'<button id="id" class="ui klass button">Follow</button>
 ', output
   end
 
@@ -18,7 +18,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Button.Klass|Text:Follow|My ID__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="my-id" class="ui klass button">Follow</div>
+'<button id="my-id" class="ui klass button">Follow</button>
 ', output
   end
 
@@ -31,7 +31,7 @@ class ButtonTest < Redcarpet::TestCase
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui klass button">Follow</div>
+'<button class="ui klass button">Follow</button>
 ', output
   end
 
@@ -45,7 +45,7 @@ class ButtonTest < Redcarpet::TestCase
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui klass button"><i class="right arrow icon"></i> Follow</div>
+'<button class="ui klass button"><i class="right arrow icon"></i> Follow</button>
 ', output
   end
 
@@ -53,7 +53,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Button|Text:Follow__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui button">Follow</div>
+'<button class="ui button">Follow</button>
 ', output
   end
 
@@ -61,7 +61,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Focusable Button|Text:Focusable Button|Focusable__'
     output = @parser.render(markdown)
     assert_equal \
-'<button id="focusable" class="ui focusable button">Focusable Button</button>
+'<div id="focusable" class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
   end
 
@@ -69,7 +69,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Button.Focusable|Text:Focusable Button__'
     output = @parser.render(markdown)
     assert_equal \
-'<button class="ui focusable button">Focusable Button</button>
+'<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
   end
 
@@ -81,7 +81,7 @@ class ButtonTest < Redcarpet::TestCase
 '
     output = @parser.render(markdown)
     assert_equal \
-'<button class="ui focusable button">Focusable Button</button>
+'<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
   end
 
@@ -89,7 +89,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Focusable Button|Text:Focusable Button__'
     output = @parser.render(markdown)
     assert_equal \
-'<button class="ui focusable button">Focusable Button</button>
+'<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
   end
 
@@ -97,7 +97,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Button.Focusable|Text:Focusable Button|Focusable__'
     output = @parser.render(markdown)
     assert_equal \
-'<button id="focusable" class="ui focusable button">Focusable Button</button>
+'<div id="focusable" class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
   end
 
@@ -107,10 +107,10 @@ class ButtonTest < Redcarpet::TestCase
     output1 = @parser.render(markdown1)
     output2 = @parser.render(markdown2)
     assert_equal \
-'<div id="primary" class="ui primary button">Save</div>
+'<button id="primary" class="ui primary button">Save</button>
 ', output1
     assert_equal \
-'<div class="ui button">Discard</div>
+'<button class="ui button">Discard</button>
 ', output2
 
     markdown3 = '__Secondary Button|Text:Save|Secondary__'
@@ -118,10 +118,10 @@ class ButtonTest < Redcarpet::TestCase
     output3 = @parser.render(markdown3)
     output4 = @parser.render(markdown4)
     assert_equal \
-'<div id="secondary" class="ui secondary button">Save</div>
+'<button id="secondary" class="ui secondary button">Save</button>
 ', output3
     assert_equal \
-'<div class="ui button">Discard</div>
+'<button class="ui button">Discard</button>
 ', output4
   end
 
@@ -141,10 +141,10 @@ class ButtonTest < Redcarpet::TestCase
     output1 = @parser.render(markdown1)
     output2 = @parser.render(markdown2)
     assert_equal \
-'<div class="ui primary button">Save</div>
+'<button class="ui primary button">Save</button>
 ', output1
     assert_equal \
-'<div class="ui button">Discard</div>
+'<button class="ui button">Discard</button>
 ', output2
 
     markdown3 =
@@ -162,10 +162,10 @@ class ButtonTest < Redcarpet::TestCase
     output3 = @parser.render(markdown3)
     output4 = @parser.render(markdown4)
     assert_equal \
-'<div class="ui secondary button">Save</div>
+'<button class="ui secondary button">Save</button>
 ', output3
     assert_equal \
-'<div class="ui button">Discard</div>
+'<button class="ui button">Discard</button>
 ', output4
   end
 
@@ -272,9 +272,9 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Icon Button|Icon:Cloud__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui icon button">
+'<button class="ui icon button">
   <i class="cloud icon"></i>
-</div>
+</button>
 ', output
   end
 
@@ -286,9 +286,9 @@ class ButtonTest < Redcarpet::TestCase
 '
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui icon button">
+'<button class="ui icon button">
   <i class="cloud icon"></i>
-</div>
+</button>
 ', output
   end
 
@@ -296,7 +296,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Button|Icon:Cloud:Fluffy,Text:Literal Text,Icon:Cloud,Text:Cloud:Fluffy__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui button"><i class="cloud fluffy icon"></i>Literal Text<i class="cloud icon"></i><div class="fluffy">Cloud</div></div>
+'<button class="ui button"><i class="cloud fluffy icon"></i>Literal Text<i class="cloud icon"></i><div class="fluffy">Cloud</div></button>
 ', output
   end
 
@@ -304,9 +304,9 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Icon Button|Icon:Cloud|Icon__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="icon" class="ui icon button">
+'<button id="icon" class="ui icon button">
   <i class="cloud icon"></i>
-</div>
+</button>
 ', output
   end
 
@@ -314,7 +314,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Labeled Icon Button|Icon:Pause,Text:Pause__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui labeled icon button"><i class="pause icon"></i>Pause</div>
+'<button class="ui labeled icon button"><i class="pause icon"></i>Pause</button>
 ', output
   end
 
@@ -322,7 +322,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Right Labeled Icon Button|Icon:Right Arrow,Text:Next|Right__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="right" class="ui right labeled icon button"><i class="right arrow icon"></i>Next</div>
+'<button id="right" class="ui right labeled icon button"><i class="right arrow icon"></i>Next</button>
 ', output
   end
 
@@ -330,7 +330,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Labeled Icon Button|Icon:Pause,Text:Pause|Labeled Icon__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="labeled-icon" class="ui labeled icon button"><i class="pause icon"></i>Pause</div>
+'<button id="labeled-icon" class="ui labeled icon button"><i class="pause icon"></i>Pause</button>
 ', output
   end
 
@@ -338,7 +338,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Basic Button|Icon:User,Text:Add Friend__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui basic button"><i class="user icon"></i>Add Friend</div>
+'<button class="ui basic button"><i class="user icon"></i>Add Friend</button>
 ', output
   end
 
@@ -346,7 +346,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Basic Button|Icon:User,Text:Add Friend|Basic__'
     output = @parser.render(markdown)
     assert_equal \
-'<div id="basic" class="ui basic button"><i class="user icon"></i>Add Friend</div>
+'<button id="basic" class="ui basic button"><i class="user icon"></i>Add Friend</button>
 ', output
   end
 
@@ -354,7 +354,7 @@ class ButtonTest < Redcarpet::TestCase
     markdown = '__Very Cool Button|Icon:User,Text:Add Friend__'
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui very cool button"><i class="user icon"></i>Add Friend</div>
+'<button class="ui very cool button"><i class="user icon"></i>Add Friend</button>
 ', output
   end
 
@@ -376,16 +376,16 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
-  <div id="inverted" class="ui inverted button">Standard</div>
-  <div id="inverted-black" class="ui inverted black button">Black</div>
-  <div id="inverted-yellow" class="ui inverted yellow button">Yellow</div>
-  <div id="inverted-green" class="ui inverted green button">Green</div>
-  <div id="inverted-blue" class="ui inverted blue button">Blue</div>
-  <div id="inverted-orange" class="ui inverted orange button">Orange</div>
-  <div id="inverted-purple" class="ui inverted purple button">Purple</div>
-  <div id="inverted-pink" class="ui inverted pink button">Pink</div>
-  <div id="inverted-red" class="ui inverted red button">Red</div>
-  <div id="inverted-teal" class="ui inverted teal button">Teal</div>
+  <button id="inverted" class="ui inverted button">Standard</button>
+  <button id="inverted-black" class="ui inverted black button">Black</button>
+  <button id="inverted-yellow" class="ui inverted yellow button">Yellow</button>
+  <button id="inverted-green" class="ui inverted green button">Green</button>
+  <button id="inverted-blue" class="ui inverted blue button">Blue</button>
+  <button id="inverted-orange" class="ui inverted orange button">Orange</button>
+  <button id="inverted-purple" class="ui inverted purple button">Purple</button>
+  <button id="inverted-pink" class="ui inverted pink button">Pink</button>
+  <button id="inverted-red" class="ui inverted red button">Red</button>
+  <button id="inverted-teal" class="ui inverted teal button">Teal</button>
 </div>
 ', output
   end
@@ -408,16 +408,16 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
-  <div id="basic" class="ui basic button">Basic</div>
-  <div id="basic-black" class="ui basic black button">Black Basic</div>
-  <div id="basic-yellow" class="ui basic yellow button">Yellow Basic</div>
-  <div id="basic-green" class="ui basic green button">Green Basic</div>
-  <div id="basic-blue" class="ui basic blue button">Blue Basic</div>
-  <div id="basic-orange" class="ui basic orange button">Orange Basic</div>
-  <div id="basic-purple" class="ui basic purple button">Purple Basic</div>
-  <div id="basic-pink" class="ui basic pink button">Pink Basic</div>
-  <div id="basic-red" class="ui basic red button">Red Basic</div>
-  <div id="basic-teal" class="ui basic teal button">Teal Basic</div>
+  <button id="basic" class="ui basic button">Basic</button>
+  <button id="basic-black" class="ui basic black button">Black Basic</button>
+  <button id="basic-yellow" class="ui basic yellow button">Yellow Basic</button>
+  <button id="basic-green" class="ui basic green button">Green Basic</button>
+  <button id="basic-blue" class="ui basic blue button">Blue Basic</button>
+  <button id="basic-orange" class="ui basic orange button">Orange Basic</button>
+  <button id="basic-purple" class="ui basic purple button">Purple Basic</button>
+  <button id="basic-pink" class="ui basic pink button">Pink Basic</button>
+  <button id="basic-red" class="ui basic red button">Red Basic</button>
+  <button id="basic-teal" class="ui basic teal button">Teal Basic</button>
 </div>
 ', output
   end
@@ -433,9 +433,9 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui buttons">
-  <div id="standard" class="ui standard button">One</div>
-  <div id="standard" class="ui standard button">Two</div>
-  <div id="standard" class="ui standard button">Three</div>
+  <button id="standard" class="ui standard button">One</button>
+  <button id="standard" class="ui standard button">Two</button>
+  <button id="standard" class="ui standard button">Three</button>
 </div>
 ', output
   end
@@ -460,30 +460,30 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui icon buttons">
-  <div class="ui button">
+  <button class="ui button">
     <i class="align left icon"></i>
-  </div>
-  <div class="ui button">
+  </button>
+  <button class="ui button">
     <i class="align center icon"></i>
-  </div>
-  <div class="ui button">
+  </button>
+  <button class="ui button">
     <i class="align right icon"></i>
-  </div>
-  <div class="ui button">
+  </button>
+  <button class="ui button">
     <i class="align justify icon"></i>
-  </div>
+  </button>
 </div>
 <p></p>
 <div class="ui icon buttons">
-  <div class="ui button">
+  <button class="ui button">
     <i class="bold icon"></i>
-  </div>
-  <div class="ui button">
+  </button>
+  <button class="ui button">
     <i class="underline icon"></i>
-  </div>
-  <div class="ui button">
+  </button>
+  <button class="ui button">
     <i class="text width icon"></i>
-  </div>
+  </button>
 </div>
 ', output
   end
@@ -500,9 +500,9 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui icon buttons">
-  <div class="ui button">Cancel</div>
+  <button class="ui button">Cancel</button>
   <div class="or"></div>
-  <div id="positive" class="ui positive button">Save</div>
+  <button id="positive" class="ui positive button">Save</button>
 </div>
 ', output
   end
@@ -519,10 +519,37 @@ class ButtonTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui icon buttons">
-  <div class="ui button">un</div>
+  <button class="ui button">un</button>
   <div class="or" data-text="ou"></div>
-  <div id="positive" class="ui positive button">deux</div>
+  <button id="positive" class="ui positive button">deux</button>
 </div>
 ', output
   end
+
+  def test_active_state
+    markdown = ' __Active Button|Icon:User,Text:Follow__ '
+
+    output = @parser.render(markdown)
+    assert_equal " <button class=\"ui active button\"><i class=\"user icon\"></i>Follow</button>\n ", output
+  end
+
+  def test_disabled_state
+    markdown = ' __Disabled Button|Icon:User,Text:Followed__ '
+
+    output = @parser.render(markdown)
+    assert_equal " <button class=\"ui disabled button\"><i class=\"user icon\"></i>Followed</button>\n ", output
+  end
+
+  def test_loading_state
+    markdown = '
+__Loading Button|Loading__
+__Basic Loading Button|Loading__
+__Primary Loading Button|Loading__
+__Secondary Loading Button|Loading__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui loading button\">Loading</button>\n\n<button class=\"ui basic loading button\">Loading</button>\n\n<button class=\"ui primary loading button\">Loading</button>\n\n<button class=\"ui secondary loading button\">Loading</button>\n", output
+  end
+
 end

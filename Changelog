@@ -1,6 +1,16 @@
-0.1.8
+0.1.8 - 08-12-15
   * <button> tag added
-  * Use button tag for focusable button
+  * Explicitly use button tag in all button elements except
+    - Animated Buttons
+    - Focusable Button
+    - Buttons
+  * Create a new FocusableButtonTag class to introduce a tabindex="0" in a div tag
+  * Updated unit tests with the new tag changes
+  * Created the following button tests and documentions
+    - Active Button
+    - Disabled Button
+    - Progress Button
+  * Seperate Documents into it's own document files
 
 0.1.7 - 08-07-15
   * Parse generated HTML document using Nokogiri;

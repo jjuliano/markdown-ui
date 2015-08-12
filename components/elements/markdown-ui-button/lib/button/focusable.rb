@@ -13,7 +13,7 @@ module MarkdownUI::Button
       content = MarkdownUI::Content::Parser.new(@content).parse
       _id = @id
 
-      MarkdownUI::ButtonTag.new(content, klass, _id).render
+      MarkdownUI::FocusableButtonTag.new(content, klass, _id).render
     end
   end
 end

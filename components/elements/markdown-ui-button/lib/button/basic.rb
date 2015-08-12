@@ -13,7 +13,7 @@ module MarkdownUI::Button
       klass = "ui #{@klass} basic button"
       _id = @id
 
-      MarkdownUI::StandardTag.new(content, klass, _id).render
+      MarkdownUI::ButtonTag.new(content, klass, _id).render
     end
   end
 end
