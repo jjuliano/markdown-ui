@@ -1,3 +1,6 @@
+0.1.9 - 08-12-15
+  * Generate HTML5 doctype document (previously XHTML)
+
 0.1.8 - 08-12-15
   * <button> tag added
   * Explicitly use button tag in all button elements except

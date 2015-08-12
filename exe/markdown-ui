@@ -5,10 +5,11 @@ require "markdown-ui"
 require "nokogiri"
 
 parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true)
-
 f = File.open(ARGV.first, 'r')
+@content = parser.render f.read
+f.close
 
-content = <<-EOS
+puts <<-EOS
 <!doctype html>
 
 <html lang="en">
@@ -30,10 +31,7 @@ content = <<-EOS
 </head>
 
 <body>
-  #{parser.render f.read}
+  #{Nokogiri::XML(@content, &:noblanks).to_xhtml(indent: 2)}
 </body>
 </html>
 EOS
-f.close
-
-puts Nokogiri::HTML(content, &:noblanks).to_xhtml(indent: 2)
