@@ -21,7 +21,7 @@
   √ Loading
 
 * Variations
-  Social
+  √ Social
   Size
   Colored
   Compact

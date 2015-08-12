@@ -552,4 +552,19 @@ __Secondary Loading Button|Loading__
     assert_equal "<button class=\"ui loading button\">Loading</button>\n\n<button class=\"ui basic loading button\">Loading</button>\n\n<button class=\"ui primary loading button\">Loading</button>\n\n<button class=\"ui secondary loading button\">Loading</button>\n", output
   end
 
+  def test_social_variation
+    markdown = '
+__Facebook Button|Icon:Facebook, Facebook__
+__Twitter Button|Icon:Twitter, Twitter__
+__Google Plus Button|Icon:Google Plus, Google Plus__
+__VK Button|Icon:VK, VK__
+__LinkedIn Button|Icon:LinkedIn, LinkedIn__
+__Instagram Button|Icon:Instagram, Instagram__
+__YouTube Button|Icon:YouTube, YouTube__
+'
+
+output = @parser.render(markdown)
+assert_equal "<button class=\"ui facebook button\"><i class=\"facebook icon\"></i>Facebook</button>\n\n<button class=\"ui twitter button\"><i class=\"twitter icon\"></i>Twitter</button>\n\n<button class=\"ui google plus button\"><i class=\"google plus icon\"></i>Google Plus</button>\n\n<button class=\"ui vk button\"><i class=\"vk icon\"></i>VK</button>\n\n<button class=\"ui linkedin button\"><i class=\"linkedin icon\"></i>LinkedIn</button>\n\n<button class=\"ui instagram button\"><i class=\"instagram icon\"></i>Instagram</button>\n\n<button class=\"ui youtube button\"><i class=\"youtube icon\"></i>YouTube</button>\n", output
+  end
+
 end
