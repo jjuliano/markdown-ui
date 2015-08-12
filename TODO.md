@@ -24,7 +24,7 @@
   √ Social
   √ Size
   √ Colored
-  Compact
+  √ Compact
   Toggle
   Positive
   Negative

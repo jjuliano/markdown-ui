@@ -51,4 +51,5 @@
 > > > > ### [Variations](button.html#variations)
 > > > > [Social](button.html#social),
 > > > > [Size](button.html#size),
-> > > > [Colored](button.html#colored)
+> > > > [Colored](button.html#colored),
+> > > > [Compact](button.html#compact)
