@@ -780,8 +780,8 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Comact Button|Hold__ ``` <br />
-> > > > ``` __Compact Icon Button|Icon:Pause__ ``` <br />
-> > > > ``` __Compact Labeled Icon Button|Icon:Pause, Pause__ ```
+> > > > ``` __Compact Icon Button|Icon：Pause__ ``` <br />
+> > > > ``` __Compact Labeled Icon Button|Icon：Pause, Pause__ ```
 >
 > <!-- -->
 >
