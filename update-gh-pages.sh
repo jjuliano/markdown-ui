@@ -10,4 +10,6 @@ mkdir docs
 ln website/docs/button.html docs/button.html
 ln website/docs/toc.html docs/toc.html
 
+git add .
 git commit -m "$(date) pull from master; updated links."
+git push github gh-pages
