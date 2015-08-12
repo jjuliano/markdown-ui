@@ -619,3 +619,49 @@
 > > > > ``` __Basic Loading Button|Loading__ ``` <br />
 > > > > ``` __Primary Loading Button|Loading__ ``` <br />
 > > > > ``` __Secondary Loading Button|Loading__ ```
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > ## Variations:Dividing Left Aligned:variations
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Social::social
+> > "A button can be formatted to link to a social website"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Social
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Facebook Button|Icon:Facebook, Facebook__
+> > > __Twitter Button|Icon:Twitter, Twitter__
+> > > __Google Plus Button|Icon:Google Plus, Google Plus__
+> > > __VK Button|Icon:VK, VK__
+> > > __LinkedIn Button|Icon:LinkedIn, LinkedIn__
+> > > __Instagram Button|Icon:Instagram, Instagram__
+> > > __YouTube Button|Icon:YouTube, YouTube__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Facebook Button|Icon：Facebook, Facebook__ ``` <br />
+> > > > ``` __Twitter Button|Icon：Twitter, Twitter__ ``` <br />
+> > > > ``` __Google Plus Button|Icon：Google Plus, Google Plus__ ``` <br />
+> > > > ``` __VK Button|Icon：VK, VK__ ``` <br />
+> > > > ``` __LinkedIn Button|Icon：LinkedIn, LinkedIn__ ``` <br />
+> > > > ``` __Instagram Button|Icon：Instagram, Instagram__ ``` <br />
+> > > > ``` __YouTube Button|Icon：YouTube, YouTube__ ``` <br />
+>
+> <!-- -->
+>
