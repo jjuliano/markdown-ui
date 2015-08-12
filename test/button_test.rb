@@ -582,4 +582,25 @@ __Massive Button|Massive__
   assert_equal "<button class=\"ui mini button\">Mini</button>\n\n<button class=\"ui tiny button\">Tiny</button>\n\n<button class=\"ui small button\">Small</button>\n\n<button class=\"ui medium button\">Medium</button>\n\n<button class=\"ui large button\">Large</button>\n\n<button class=\"ui big button\">Big</button>\n\n<button class=\"ui huge button\">Huge</button>\n\n<button class=\"ui massive button\">Massive</button>\n", output
     end
 
+  def test_colored_variation
+    markdown = '
+__Red Button|Red__
+__Orange Button|Orange__
+__Yellow Button|Yellow__
+__Olive Button|Olive__
+__Green Button|Green__
+__Teal Button|Teal__
+__Blue Button|Blue__
+__Violet Button|Violet__
+__Purple Button|Purple__
+__Pink Button|Pink__
+__Brown Button|Brown__
+__Grey Button|Grey__
+__Black Button|Black__
+'
+  output = @parser.render(markdown)
+  assert_equal "<button class=\"ui red button\">Red</button>\n\n<button class=\"ui orange button\">Orange</button>\n\n<button class=\"ui yellow button\">Yellow</button>\n\n<button class=\"ui olive button\">Olive</button>\n\n<button class=\"ui green button\">Green</button>\n\n<button class=\"ui teal button\">Teal</button>\n\n<button class=\"ui blue button\">Blue</button>\n\n<button class=\"ui violet button\">Violet</button>\n\n<button class=\"ui purple button\">Purple</button>\n\n<button class=\"ui pink button\">Pink</button>\n\n<button class=\"ui brown button\">Brown</button>\n\n<button class=\"ui grey button\">Grey</button>\n\n<button class=\"ui black button\">Black</button>\n", output
+    end
+
+
 end

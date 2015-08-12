@@ -23,7 +23,7 @@
 * Variations
   √ Social
   √ Size
-  Colored
+  √ Colored
   Compact
   Toggle
   Positive
