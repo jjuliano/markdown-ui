@@ -44,3 +44,9 @@
 > > > > [Active](button.html#active),
 > > > > [Disabled](button.html#disabled),
 > > > > [Loading](button.html#loading)
+> > >
+> > > <!-- -->
+> > >
+> > > > Column:
+> > > > ### [Variations](button.html#variations)
+> > > > [Social](button.html#social)
