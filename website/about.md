@@ -6,7 +6,7 @@
 > > > > [Docs](docs/toc.html)
 > > > > [About](about.html "active")
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
-> > > > [Install](../index.html#install)
+> > > > [Install](index.html#install)
 >
 > <!-- -->
 >
