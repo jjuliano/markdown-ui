@@ -680,4 +680,137 @@ __Bottom Attached Focusable Button|Bottom__
     assert_equal "<div class=\"ui two top attached buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n</div>\n\n<!-- -->\n<div class=\"ui attached segment\">\n  <p></p>\n</div>\n\n<!-- -->\n<div class=\"ui two bottom attached buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n</div>\n", output
   end
 
+  def test_vertical_buttons_group_variations
+    markdown = '
+> Vertical Buttons:
+> __Button|Feed__
+> __Button|Messages__
+> __Button|Events__
+> __Button|Photos__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui vertical buttons\">\n  <button class=\"ui button\">Feed</button>\n  <button class=\"ui button\">Messages</button>\n  <button class=\"ui button\">Events</button>\n  <button class=\"ui button\">Photos</button>\n</div>\n", output
+  end
+
+  def test_icon_buttons_group_variations
+    markdown = '
+> Icon Buttons:
+> __Button|Icon:Play__
+> __Button|Icon:Pause__
+> __Button|Icon:Shuffle__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui icon buttons\">\n  <button class=\"ui button\">\n    <i class=\"play icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"pause icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"shuffle icon\"></i>\n  </button>\n</div>\n", output
+  end
+
+  def test_labeled_icon_buttons_group_variations
+    markdown = '
+> Vertical Labeled Icon Buttons:
+> __Button|Icon:Pause, Pause__
+> __Button|Icon:Play, Play__
+> __Button|Icon:Shuffle, Shuffle__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui vertical labeled icon buttons\">\n  <button class=\"ui button\"><i class=\"pause icon\"></i>Pause</button>\n  <button class=\"ui button\"><i class=\"play icon\"></i>Play</button>\n  <button class=\"ui button\"><i class=\"shuffle icon\"></i>Shuffle</button>\n</div>\n", output
+  end
+
+  def test_mixed_group_variations
+    markdown = '
+> Buttons:
+> __Labeled Icon Button|Icon:Left Chevron, Back__
+> __Button|Icon:Stop, Stop__
+> __Labeled Right Icon Button|Icon:Right Chevron, Forward__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui buttons\">\n  <button class=\"ui labeled icon button\"><i class=\"left chevron icon\"></i>Back</button>\n  <button class=\"ui button\"><i class=\"stop icon\"></i>Stop</button>\n  <button class=\"ui labeled right icon button\"><i class=\"right chevron icon\"></i>Forward</button>\n</div>\n", output
+  end
+
+  def test_equal_width_group_variations
+    markdown = '
+> Buttons:
+> __Button|Overview__
+> __Button|Specs__
+> __Button|Warranty__
+> __Button|Reviews__
+> __Button|Support__
+
+<!-- -->
+
+> Three Buttons:
+> __Button|Overview__
+> __Button|Specs__
+> __Button|Support__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui buttons\">\n  <button class=\"ui button\">Overview</button>\n  <button class=\"ui button\">Specs</button>\n  <button class=\"ui button\">Warranty</button>\n  <button class=\"ui button\">Reviews</button>\n  <button class=\"ui button\">Support</button>\n</div>\n\n<!-- -->\n<div class=\"ui three buttons\">\n  <button class=\"ui button\">Overview</button>\n  <button class=\"ui button\">Specs</button>\n  <button class=\"ui button\">Support</button>\n</div>\n", output
+  end
+
+  def test_colored_group_variations
+    markdown = '
+> Blue Buttons:
+> __Button|One__
+> __Button|Two__
+> __Button|Three__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui blue buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n  <button class=\"ui button\">Three</button>\n</div>\n", output
+  end
+
+  def test_basic_buttons_group_variations
+    markdown = '
+> Basic Buttons:
+> __Button|One__
+> __Button|Two__
+> __Button|Three__
+___
+> Vertical Basic Buttons:
+> __Button|One__
+> __Button|Two__
+> __Button|Three__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui basic buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n  <button class=\"ui button\">Three</button>\n  <hr>\nVertical Basic Buttons</hr>\n</div>\n", output
+  end
+
+  def test_sizes_group_variations
+    markdown = '
+> Large Buttons:
+> __Button|One__
+> __Button|Two__
+> __Button|Three__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui large buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n  <button class=\"ui button\">Three</button>\n</div>\n", output
+  end
+
+  def test_sizes_group_variations_2
+    markdown = '
+> Small Basic Icon Buttons:
+> __Button|Icon:File__
+> __Button|Icon:Save__
+> __Button|Icon:Upload__
+> __Button|Icon:Download__
+'
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui small basic icon buttons\">\n  <button class=\"ui button\">\n    <i class=\"file icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"save icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"upload icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"download icon\"></i>\n  </button>\n</div>\n", output
+  end
+
+  def test_sizes_group_variations_3
+    markdown = '
+> Large Buttons:
+> __Button|One__
+> __Div Tag||Or__
+> __Button|Two__
+'
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui large buttons\">\n  <button class=\"ui button\">One</button>\n  <div class=\"or\"></div>\n  <button class=\"ui button\">Two</button>\n</div>\n", output
+  end
 end

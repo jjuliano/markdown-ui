@@ -34,10 +34,10 @@
   √ Horizontally Attached
 
 * Group Variations
-  Vertical Buttons
-  Icon Buttons
-  Labeled Icon Buttons
-  Mixed Group
+  √ Vertical Buttons
+  √ Icon Buttons
+  √ Labeled Icon Buttons
+  √ Mixed Group
   Equal Width
   Colored Buttons
   Basic Buttons

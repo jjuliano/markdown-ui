@@ -979,16 +979,151 @@
 > >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview
-> > > __Left Attached Button|Left__
-> > > __Right Attached Button|Right__
+> > > > Buttons:
+> > > > __Left Attached Button|Left__
+> > > > __Right Attached Button|Right__
 > >
 > > <!-- -->
 > >
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ``` __Left Attached Button|Left__ ``` <br />
-> > > > ``` __Right Attached Button|Right__ ```
+> > > > ``` > Buttons： ``` <br />
+> > > > ``` > __Left Attached Button|Left__ ``` <br />
+> > > > ``` > __Right Attached Button|Right__ ```
 >
 > <!-- -->
 >
+> > Basic Segment:
+> > ## Group Variations:Dividing Left Aligned:group-variations
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Vertical Buttons::vertical-buttons
+> > "Groups can be formatted to appear vertically"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Vertical Buttons
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > > Vertical Buttons:
+> > > > __Button|Feed__
+> > > > __Button|Messages__
+> > > > __Button|Events__
+> > > > __Button|Photos__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Vertical Buttons： ``` <br />
+> > > > ``` > __Button|Feed__ ``` <br />
+> > > > ``` > __Button|Messages__ ``` <br />
+> > > > ``` > __Button|Events__ ``` <br />
+> > > > ``` > __Button|Photos__ ```
+
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Icon Buttons::icon-buttons
+> > "Groups can be formatted as icons"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Icon Buttons
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > > Icon Buttons:
+> > > > __Button|Icon:Play__
+> > > > __Button|Icon:Pause__
+> > > > __Button|Icon:Shuffle__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Icon Buttons： ``` <br />
+> > > > ``` > __Button|Icon：Play__ ``` <br />
+> > > > ``` > __Button|Icon：Pause__ ``` <br />
+> > > > ``` > __Button|Icon：Shuffle__ ```
+
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Labeled Icon Buttons::labeled-icon-buttons
+> > "Groups can be formatted as labeled icons"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Labeled Icon Buttons
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > > Vertical Labeled Icon Buttons:
+> > > > __Button|Icon:Play, Play__
+> > > > __Button|Icon:Pause, Pause__
+> > > > __Button|Icon:Shuffle, Shuffle__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Vertical Labeled Icon Buttons： ``` <br />
+> > > > ``` > __Button|Icon：Play, Play__ ``` <br />
+> > > > ``` > __Button|Icon：Pause, Pause__ ``` <br />
+> > > > ``` > __Button|Icon：Shuffle, Shuffle__ ```
+
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Mixed Group::mixed-group
+> > "Groups can be formatted to use multiple button types together"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Mixed Group
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > > Buttons:
+> > > > __Labeled Icon Button|Icon:Left Chevron, Back__
+> > > > __Button|Icon:Stop, Stop__
+> > > > __Right Labeled Icon Button|Icon:Right Chevron, Forward__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Buttons： ``` <br />
+> > > > ``` > __Labeled Icon Button|Icon：Left Chevron, Back__ ``` <br />
+> > > > ``` > __Button|Icon：Stop, Stop__ ``` <br />
+> > > > ``` > __Right Labeled Icon Button|Icon：Right Chevron, Forward__ ```

@@ -59,3 +59,12 @@
 > > > > [Circular](button.html#circular),
 > > > > [Vertically Attached](button.html#vertically-attached),
 > > > > [Horizontally Attached](button.html#horizontally-attached)
+> > >
+> > > <!-- -->
+> > >
+> > > > Column:
+> > > > ### [Group Variations](button.html#group-variations)
+> > > > [Vertical Buttons](button.html#vertical-buttons),
+> > > > [Icon Buttons](button.html#icon-buttons),
+> > > > [Labeled Icon Buttons](button.html#labeled-icon-buttons),
+> > > > [Mixed Group](button.html#mixed-group)
