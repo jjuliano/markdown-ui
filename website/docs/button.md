@@ -813,3 +813,55 @@
 >
 > <!-- -->
 >
+> > Basic Segment:
+> > #### Negative::negative
+> > "A button can hint towards a negative consequence"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Negative
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Negative Button|Negative Button__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Negative Button|Negative Button__ ``` <br />
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Fluid::fluid
+> > "A button can take the width of its container"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Fluid
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Fluid Button|Fluid Button__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Fluid Button|Fluid Button__ ``` <br />
+>
+> <!-- -->
+>
