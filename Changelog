@@ -6,6 +6,8 @@
     - Colored
     - Compact
     - Positive
+    - Negative
+    - Fluid
 
 0.1.8 - 08-12-15
   * <button> tag added

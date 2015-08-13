@@ -27,8 +27,8 @@
   √ Compact
   ∆ Toggle (Unsupported - feature requires custom Javascript)
   √ Positive
-  Negative
-  Fluid
+  √ Negative
+  √ Fluid
   Circular
   Vertically Attached
   Horizontally Attached

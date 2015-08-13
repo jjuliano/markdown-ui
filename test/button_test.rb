@@ -620,4 +620,21 @@ __Negative Button|Negative Button__
     output = @parser.render(markdown)
     assert_equal "<button class=\"ui positive button\">Positive Button</button>\n\n<button class=\"ui negative button\">Negative Button</button>\n", output
   end
+
+  def test_negative_variation
+    markdown = '
+__Negative Button|Negative Button__
+'
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui negative button\">Negative Button</button>\n", output
+  end
+
+  def test_fluid_variation
+    markdown = '
+__Fluid Button|Fluid Button__
+'
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui fluid button\">Fluid Button</button>\n", output
+  end
+
 end

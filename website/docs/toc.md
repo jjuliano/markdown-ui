@@ -53,4 +53,6 @@
 > > > > [Size](button.html#size),
 > > > > [Colored](button.html#colored),
 > > > > [Compact](button.html#compact),
-> > > > [Positive](button.html#positive)
+> > > > [Positive](button.html#positive),
+> > > > [Negative](button.html#negative),
+> > > > [Fluid](button.html#fluid)
