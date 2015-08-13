@@ -785,5 +785,31 @@
 >
 > <!-- -->
 >
-
-
+> > Basic Segment:
+> > #### Positive::positive
+> > "A button can hint towards a positive consequence"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Positive
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Positive Button|Positive Button__
+> > > __Negative Button|Negative Button__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Positive Button|Positive Button__ ``` <br />
+> > > > ``` __Negative Button|Negative Button__ ``` <br />
+>
+> <!-- -->
+>

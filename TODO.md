@@ -25,8 +25,8 @@
   √ Size
   √ Colored
   √ Compact
-  Toggle
-  Positive
+  ∆ Toggle (Unsupported - feature requires custom Javascript)
+  √ Positive
   Negative
   Fluid
   Circular

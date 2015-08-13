@@ -563,8 +563,8 @@ __Instagram Button|Icon:Instagram, Instagram__
 __YouTube Button|Icon:YouTube, YouTube__
 '
 
-output = @parser.render(markdown)
-assert_equal "<button class=\"ui facebook button\"><i class=\"facebook icon\"></i>Facebook</button>\n\n<button class=\"ui twitter button\"><i class=\"twitter icon\"></i>Twitter</button>\n\n<button class=\"ui google plus button\"><i class=\"google plus icon\"></i>Google Plus</button>\n\n<button class=\"ui vk button\"><i class=\"vk icon\"></i>VK</button>\n\n<button class=\"ui linkedin button\"><i class=\"linkedin icon\"></i>LinkedIn</button>\n\n<button class=\"ui instagram button\"><i class=\"instagram icon\"></i>Instagram</button>\n\n<button class=\"ui youtube button\"><i class=\"youtube icon\"></i>YouTube</button>\n", output
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui facebook button\"><i class=\"facebook icon\"></i>Facebook</button>\n\n<button class=\"ui twitter button\"><i class=\"twitter icon\"></i>Twitter</button>\n\n<button class=\"ui google plus button\"><i class=\"google plus icon\"></i>Google Plus</button>\n\n<button class=\"ui vk button\"><i class=\"vk icon\"></i>VK</button>\n\n<button class=\"ui linkedin button\"><i class=\"linkedin icon\"></i>LinkedIn</button>\n\n<button class=\"ui instagram button\"><i class=\"instagram icon\"></i>Instagram</button>\n\n<button class=\"ui youtube button\"><i class=\"youtube icon\"></i>YouTube</button>\n", output
   end
 
   def test_size_variation
@@ -578,9 +578,9 @@ __Big Button|Big__
 __Huge Button|Huge__
 __Massive Button|Massive__
 '
-  output = @parser.render(markdown)
-  assert_equal "<button class=\"ui mini button\">Mini</button>\n\n<button class=\"ui tiny button\">Tiny</button>\n\n<button class=\"ui small button\">Small</button>\n\n<button class=\"ui medium button\">Medium</button>\n\n<button class=\"ui large button\">Large</button>\n\n<button class=\"ui big button\">Big</button>\n\n<button class=\"ui huge button\">Huge</button>\n\n<button class=\"ui massive button\">Massive</button>\n", output
-    end
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui mini button\">Mini</button>\n\n<button class=\"ui tiny button\">Tiny</button>\n\n<button class=\"ui small button\">Small</button>\n\n<button class=\"ui medium button\">Medium</button>\n\n<button class=\"ui large button\">Large</button>\n\n<button class=\"ui big button\">Big</button>\n\n<button class=\"ui huge button\">Huge</button>\n\n<button class=\"ui massive button\">Massive</button>\n", output
+  end
 
   def test_colored_variation
     markdown = '
@@ -598,9 +598,9 @@ __Brown Button|Brown__
 __Grey Button|Grey__
 __Black Button|Black__
 '
-  output = @parser.render(markdown)
-  assert_equal "<button class=\"ui red button\">Red</button>\n\n<button class=\"ui orange button\">Orange</button>\n\n<button class=\"ui yellow button\">Yellow</button>\n\n<button class=\"ui olive button\">Olive</button>\n\n<button class=\"ui green button\">Green</button>\n\n<button class=\"ui teal button\">Teal</button>\n\n<button class=\"ui blue button\">Blue</button>\n\n<button class=\"ui violet button\">Violet</button>\n\n<button class=\"ui purple button\">Purple</button>\n\n<button class=\"ui pink button\">Pink</button>\n\n<button class=\"ui brown button\">Brown</button>\n\n<button class=\"ui grey button\">Grey</button>\n\n<button class=\"ui black button\">Black</button>\n", output
-    end
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui red button\">Red</button>\n\n<button class=\"ui orange button\">Orange</button>\n\n<button class=\"ui yellow button\">Yellow</button>\n\n<button class=\"ui olive button\">Olive</button>\n\n<button class=\"ui green button\">Green</button>\n\n<button class=\"ui teal button\">Teal</button>\n\n<button class=\"ui blue button\">Blue</button>\n\n<button class=\"ui violet button\">Violet</button>\n\n<button class=\"ui purple button\">Purple</button>\n\n<button class=\"ui pink button\">Pink</button>\n\n<button class=\"ui brown button\">Brown</button>\n\n<button class=\"ui grey button\">Grey</button>\n\n<button class=\"ui black button\">Black</button>\n", output
+  end
 
   def test_compact_variation
     markdown = '
@@ -608,9 +608,16 @@ __Compact Button|Hold__
 __Compact Icon Button|Icon:Pause__
 __Compact Labeled Icon Button|Icon:Pause, Pause__
 '
-  output = @parser.render(markdown)
-  assert_equal "<button class=\"ui compact button\">Hold</button>\n\n<button class=\"ui compact icon button\">\n  <i class=\"pause icon\"></i>\n</button>\n\n<button class=\"ui compact labeled icon button\"><i class=\"pause icon\"></i>Pause</button>\n", output
-    end
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui compact button\">Hold</button>\n\n<button class=\"ui compact icon button\">\n  <i class=\"pause icon\"></i>\n</button>\n\n<button class=\"ui compact labeled icon button\"><i class=\"pause icon\"></i>Pause</button>\n", output
+  end
 
-
+  def test_positive_variation
+    markdown = '
+__Positive Button|Positive Button__
+__Negative Button|Negative Button__
+'
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui positive button\">Positive Button</button>\n\n<button class=\"ui negative button\">Negative Button</button>\n", output
+  end
 end
