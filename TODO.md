@@ -29,7 +29,7 @@
   √ Positive
   √ Negative
   √ Fluid
-  Circular
+  √ Circular
   Vertically Attached
   Horizontally Attached
 

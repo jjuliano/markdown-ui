@@ -637,4 +637,13 @@ __Fluid Button|Fluid Button__
     assert_equal "<button class=\"ui fluid button\">Fluid Button</button>\n", output
   end
 
+  def test_circular_variation
+    markdown = '
+__Circular Icon Button|Icon:Settings__
+'
+    output = @parser.render(markdown)
+    assert_equal "<button class=\"ui circular icon button\">\n  <i class=\"settings icon\"></i>\n</button>\n", output
+  end
+
+
 end
