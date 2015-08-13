@@ -30,8 +30,8 @@
   √ Negative
   √ Fluid
   √ Circular
-  Vertically Attached
-  Horizontally Attached
+  √ Vertically Attached
+  √ Horizontally Attached
 
 * Group Variations
   Vertical Buttons

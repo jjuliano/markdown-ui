@@ -56,4 +56,6 @@
 > > > > [Positive](button.html#positive),
 > > > > [Negative](button.html#negative),
 > > > > [Fluid](button.html#fluid),
-> > > > [Circular](button.html#circular)
+> > > > [Circular](button.html#circular),
+> > > > [Vertically Attached](button.html#vertically-attached),
+> > > > [Horizontally Attached](button.html#horizontally-attached)

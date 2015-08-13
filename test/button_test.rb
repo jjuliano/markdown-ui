@@ -645,5 +645,39 @@ __Circular Icon Button|Icon:Settings__
     assert_equal "<button class=\"ui circular icon button\">\n  <i class=\"settings icon\"></i>\n</button>\n", output
   end
 
+  def test_vertically_attached_variation
+    markdown = '
+__Top Attached Focusable Button|Top__
+
+> Attached Segment:
+> " "
+
+__Bottom Attached Focusable Button|Bottom__
+'
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui top attached focusable button\" tabindex=\"0\">Top</div>\n<div class=\"ui attached segment\">\n  <p></p>\n</div>\n<div class=\"ui bottom attached focusable button\" tabindex=\"0\">Bottom</div>\n", output
+  end
+
+  def test_vertically_attached_variation_2
+    markdown = '
+> Two Top Attached Buttons:
+> __Button|One__
+> __Button|Two__
+
+<!-- -->
+
+> Attached Segment:
+> " "
+
+<!-- -->
+
+> Two Bottom Attached Buttons:
+> __Button|One__
+> __Button|Two__
+'
+
+    output = @parser.render(markdown)
+    assert_equal "<div class=\"ui two top attached buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n</div>\n\n<!-- -->\n<div class=\"ui attached segment\">\n  <p></p>\n</div>\n\n<!-- -->\n<div class=\"ui two bottom attached buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n</div>\n", output
+  end
 
 end

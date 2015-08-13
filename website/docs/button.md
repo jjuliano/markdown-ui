@@ -891,4 +891,104 @@
 >
 > <!-- -->
 >
-
+> > Basic Segment:
+> > #### Vertically Attached::vertically-attached
+> > "A button can be attached to the top or bottom of other content"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Vertically Attached
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Top Attached Focusable Button|Top__
+> > >
+> > > > Attached Segment:
+> > > > " "
+> > >
+> > > __Bottom Attached Focusable Button|Bottom__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Top Attached Focusable Button|Top__ ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` > Attached Segment： ``` <br />
+> > > > ``` > " " ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` __Bottom Attached Focusable Button|Bottom__ ``` <br />
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > > Two Top Attached Buttons:
+> > > > __Button|One__
+> > > > __Button|Two__
+> > >
+> > > <!-- -->
+> > >
+> > > > Attached Segment:
+> > > > " "
+> > >
+> > > <!-- -->
+> > >
+> > > > Two Bottom Attached Buttons:
+> > > > __Button|One__
+> > > > __Button|Two__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ```> Two Top Attached Buttons：``` <br />
+> > > > ```> __Button|One__ ``` <br />
+> > > > ```> __Button|Two__ ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` <!-- --> ``` <br />
+> > > > ``` ``` <br />
+> > > > ```> Two Bottom Attached Buttons：``` <br />
+> > > > ```> __Button|One__ ``` <br />
+> > > > ```> __Button|Two__ ``` <br />
+> >
+> > <!-- -->
+> >
+>
+> <!-- -->
+>
+> > Basic Segment:
+> > #### Horizontally Attached::horizontally-attached
+> > "A button can be attached to the left or right of other content"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Horizontally Attached
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Left Attached Button|Left__
+> > > __Right Attached Button|Right__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Left Attached Button|Left__ ``` <br />
+> > > > ``` __Right Attached Button|Right__ ```
+>
+> <!-- -->
+>
