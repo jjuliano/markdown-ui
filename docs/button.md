@@ -865,3 +865,30 @@
 >
 > <!-- -->
 >
+> > Basic Segment:
+> > #### Circular::circular
+> > "A button can be circular"
+>
+> <!-- -->
+>
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Circular
+> >
+> > <!-- -->
+> >
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview
+> > > __Circular Icon Button|Icon:Settings__
+> >
+> > <!-- -->
+> >
+> > > Left Aligned Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Circular Icon Button|Icon：Settings__ ``` <br />
+>
+> <!-- -->
+>
+

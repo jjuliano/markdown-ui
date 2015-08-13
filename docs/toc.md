@@ -55,4 +55,5 @@
 > > > > [Compact](button.html#compact),
 > > > > [Positive](button.html#positive),
 > > > > [Negative](button.html#negative),
-> > > > [Fluid](button.html#fluid)
+> > > > [Fluid](button.html#fluid),
+> > > > [Circular](button.html#circular)
