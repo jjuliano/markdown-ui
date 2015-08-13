@@ -52,4 +52,5 @@
 > > > > [Social](button.html#social),
 > > > > [Size](button.html#size),
 > > > > [Colored](button.html#colored),
-> > > > [Compact](button.html#compact)
+> > > > [Compact](button.html#compact),
+> > > > [Positive](button.html#positive)

@@ -29,10 +29,11 @@
 > > > > Credit goes to the people behind these wonderful framework and libraries.
 > > > > ## Source
 > > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jjuliano/markdown-ui/tree/master/website)
-> > > > ## Issues/Bugs::issues-bugs
+> > > > ## Notes/Issues/Bugs::issues-bugs
 > > > > * Ongoing support for Semantic-UI elements/modules/components
 > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
 > > > > * A separator in between two spaces is required on block elements to separate elements (see Column example)
+> > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. Those elements will not be supported by Markdown-UI.
 > > >
 > > > <!-- -->
 > > >
