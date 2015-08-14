@@ -226,9 +226,7 @@
 > > > Left Aligned Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ```
-> > > > __Icon Button|Icon:Cloud__
-> > > > ```
+> > > > ``` __Icon Button|Icon：Cloud__ ```
 > >
 > > <!-- -->
 > >
