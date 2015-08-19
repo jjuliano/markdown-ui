@@ -13,14 +13,18 @@
 > > Text Container:
 > > > Segment:
 > > > ## About
-> > > <i>It [Markdown-UI] helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to happiness! - Joel Bryan Juliano (author of Markdown-UI)</i>
+> > > "Markdown-UI started as a inspiration to teach my son about programming. Being a father I was looking for ways to teach my child on how to create websites, as a primer to make it easier for my child to understand the basic concepts (i.e. container contains elements, grids have columns and rows, types of buttons, etc.), without spending too much time necessary for other quality activities and important matters."
+> > > "For the developer standpoint, Markdown-UI helps the developer to focus on the big picture on paper or text-editors, and with few details it lessen the cognitive load which means having meaningful productivity which equates to developer happiness."
 > > > <br />
 > > > #### Markdown-UI is for...
-> > > _Check Icon_ creating responsive UI's for mobile and web <br />
-> > > _Check Icon_ easily communicating your UI <br />
-> > > _Check Icon_ rapid prototyping <br />
-> > > _Check Icon_ being more productive by having less cognitive load <br />
-> > > _Check Icon_ UI/UX brain-storming sessions via email, whiteboard, text editor, paper, etc. <br />
+> > >
+> > > * "teaching kids about programming"
+> > > * "creating responsive UI's for mobile and web"
+> > > * "easily communicating your UI"
+> > > * "rapid prototyping"
+> > > * "focus on important stuff"
+> > > * "UI/UX brain-storming sessions via email, whiteboard, text editor, paper, etc."
+> > > * "shell-scripting your UI's"
 >
 > <!-- -->
 >

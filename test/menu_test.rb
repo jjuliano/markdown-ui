@@ -259,7 +259,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
     assert_equal \
 '<div class="ui pagination menu">
   <a class="ui active item" href="#">1</a>
-  <a class="ui disabled item" href="#">&hellip;</a>
+  <a class="ui disabled item" href="#">...</a>
   <a class="ui item" href="#">10</a>
   <a class="ui item" href="#">11</a>
   <a class="ui item" href="#">12</a>

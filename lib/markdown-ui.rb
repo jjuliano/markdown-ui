@@ -14,9 +14,13 @@ end
 
 module MarkdownUI
   class Renderer < Redcarpet::Render::HTML
-    include Redcarpet::Render::SmartyPants
     include MarkdownUI::Element
     include MarkdownUI::Collection
+
+    def hrule
+      klass = "ui divider"
+      MarkdownUI::StandardTag.new(nil, klass).render
+    end
 
     def paragraph(text)
       text

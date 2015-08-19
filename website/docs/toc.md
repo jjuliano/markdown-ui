@@ -4,7 +4,7 @@
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
 > > > > Inverted Right Menu:
 > > > > [Docs](toc.html "active")
-> > > > [About](../about.html )
+> > > > [About](../about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
 > > > > [Install](../index.html#install)
 >
@@ -67,4 +67,8 @@
 > > > > [Vertical Buttons](button.html#vertical-buttons),
 > > > > [Icon Buttons](button.html#icon-buttons),
 > > > > [Labeled Icon Buttons](button.html#labeled-icon-buttons),
-> > > > [Mixed Group](button.html#mixed-group)
+> > > > [Mixed Group](button.html#mixed-group),
+> > > > [Equal Width](button.html#equal-width),
+> > > > [Colored Buttons](button.html#colored-buttons),
+> > > > [Basic Buttons](button.html#basic-buttons),
+> > > > [Group Sizes](button.html#group-sizes)

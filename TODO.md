@@ -38,7 +38,7 @@
   √ Icon Buttons
   √ Labeled Icon Buttons
   √ Mixed Group
-  Equal Width
-  Colored Buttons
-  Basic Buttons
-  Group Sizes
+  √ Equal Width
+  √ Colored Buttons
+  √ Basic Buttons
+  √ Group Sizes

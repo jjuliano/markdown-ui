@@ -10,10 +10,10 @@
 >
 > <!-- -->
 >
-> > Inverted Attached Teal Very Padded Segment:
+> > Inverted Attached Orange Very Padded Segment:
 > > # Markdown UI
 > > ### Responsive UI in Markdown
-> > ### Read the [__Button|Documentation__](docs/toc.html)
+> > [__Button|Get Started__](docs/toc.html)
 >
 > <!-- -->
 >
@@ -22,18 +22,25 @@
 > > > > Column:
 > > > > ## Installation::install
 > > > > ```gem install markdown-ui```
+> > > >
 > > > > ## Usage::usage
 > > > > ```markdown-ui index.mdui > index.html```
+> > > >
 > > > > ## Credits::credits
 > > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
+> > > >
 > > > > Credit goes to the people behind these wonderful framework and libraries.
+> > > >
 > > > > ## Source
 > > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jjuliano/markdown-ui/tree/master/website)
+> > > >
 > > > > ## Notes/Issues/Bugs::issues-bugs
+> > > >
 > > > > * Ongoing support for Semantic-UI elements/modules/components
 > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
 > > > > * A separator in between two spaces is required on block elements to separate elements (see Column example)
 > > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. Those elements will not be supported by Markdown-UI.
+> > > >
 > > >
 > > > <!-- -->
 > > >

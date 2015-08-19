@@ -372,7 +372,7 @@ class SegmentTest < Redcarpet::TestCase
     output = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
-  <p>I&rsquo;m here to tell you something, and you will probably read me first.</p>
+  <p>I\'m here to tell you something, and you will probably read me first.</p>
 </div>
 ', output
   end
@@ -446,10 +446,10 @@ __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of t
 <p></p>
 <h5 class="ui attached header">Lions</h5>
 <div class="ui attached segment">
-  <p>Humans don&rsquo;t think of lions as being like cats, but they are.</p>
+  <p>Humans don\'t think of lions as being like cats, but they are.</p>
 </div>
 <p></p>
-<div class="ui warning message bottom attached"><i class="warning icon"></i>You&rsquo;ve reached the end of this content segment!</div>
+<div class="ui warning message bottom attached"><i class="warning icon"></i>You\'ve reached the end of this content segment!</div>
 ', output
   end
 
@@ -492,10 +492,10 @@ __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of t
 <p></p>
 <h5 class="ui attached header">Lions</h5>
 <div class="ui attached segment">
-  <p>Humans don&rsquo;t think of lions as being like cats, but they are.</p>
+  <p>Humans don\'t think of lions as being like cats, but they are.</p>
 </div>
 <p></p>
-<div class="ui bottom attached warning message"><i class="warning icon"></i> You&rsquo;ve reached the end of this content segment!</div>
+<div class="ui bottom attached warning message"><i class="warning icon"></i> You\'ve reached the end of this content segment!</div>
 ', output
   end
 

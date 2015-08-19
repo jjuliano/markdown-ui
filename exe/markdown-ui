@@ -4,7 +4,7 @@ require "bundler/setup"
 require "markdown-ui"
 require "nokogiri"
 
-parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true)
+parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
 f = File.open(ARGV.first, 'r')
 @content = parser.render f.read
 f.close
@@ -25,9 +25,6 @@ puts <<-EOS
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <style>
-    code { white-space:pre }
-  </style>
 </head>
 
 <body>

@@ -1,3 +1,12 @@
+0.1.10 - 08-19-15
+  * Removed SmartyPants
+  * Added the following button tests and documentation
+    - Equal Width
+    - Colored Buttons
+    - Basic Buttons
+    - Group Sizes
+  * Button documentation completed
+
 0.1.9 - 08-12-15
   * Generate HTML5 doctype document (previously XHTML)
   * Added the following button tests and documentation

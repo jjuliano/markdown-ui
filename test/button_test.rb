@@ -776,7 +776,7 @@ ___
 '
 
     output = @parser.render(markdown)
-    assert_equal "<div class=\"ui basic buttons\">\n  <button class=\"ui button\">One</button>\n  <button class=\"ui button\">Two</button>\n  <button class=\"ui button\">Three</button>\n  <hr>\nVertical Basic Buttons</hr>\n</div>\n", output
+    assert_equal "<div class=\"ui basic buttons\"><button class=\"ui button\">One</button><button class=\"ui button\">Two</button><button class=\"ui button\">Three</button><div class=\"ui divider\"></div>Vertical Basic Buttons</div>\n", output
   end
 
   def test_sizes_group_variations
