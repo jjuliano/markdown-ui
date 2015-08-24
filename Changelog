@@ -1,3 +1,15 @@
+0.1.11 - 08-24-15
+  * Upgraded RedCarpet to 3.3
+  * Upgraded Semantic-UI to 2.0.8
+  * Added container documentation
+    - Standard container
+    - Text Container
+    - Text Alignment
+    - Fluid
+  * Added the container tests and documentation
+    - Fluid
+  * Fix Button example
+
 0.1.10 - 08-19-15
   * Removed SmartyPants
   * Added the following button tests and documentation

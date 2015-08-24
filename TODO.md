@@ -1,5 +1,5 @@
 # Button
-* Button
+* Types
   √ Button
   √ Emphasis
   √ Animated
@@ -42,3 +42,17 @@
   √ Colored Buttons
   √ Basic Buttons
   √ Group Sizes
+
+#Container
+* Types
+  √ Standard Container
+  √ Text Container
+
+* Variations
+  √ Text Alignment
+  √ Fluid
+
+* Examples
+  Container Using Grids
+  Centered Menu
+  Container Segment
