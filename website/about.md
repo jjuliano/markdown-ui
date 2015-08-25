@@ -9,7 +9,6 @@
 > > > > [Install](index.html#install)
 >
 > <!-- -->
->
 > > Text Container:
 > > > Segment:
 > > > ## About
@@ -25,7 +24,3 @@
 > > > * "focus on important stuff"
 > > > * "UI/UX brain-storming sessions via email, whiteboard, text editor, paper, etc."
 > > > * "shell-scripting your UI's"
->
-> <!-- -->
->
-

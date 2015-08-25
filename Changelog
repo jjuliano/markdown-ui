@@ -1,3 +1,10 @@
+0.1.12 - 08-25-15
+  * Removed Nokogiri post-processing using CLI markdown-ui
+  * Fixed Container Examples to occupy and display full container in view
+  * Added ItemBlock class to handle Item Block tags
+  * Cleanup documentations by removing excessive separators
+  * Added Container Examples
+
 0.1.11 - 08-24-15
   * Upgraded RedCarpet to 3.3
   * Upgraded Semantic-UI to 2.0.8

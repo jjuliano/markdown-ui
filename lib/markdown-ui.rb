@@ -89,6 +89,8 @@ module MarkdownUI
             MarkdownUI::Message.new(element, content).render
           when /label/i
             MarkdownUI::Label::Element.new(element, content).render
+          when /item/i
+            MarkdownUI::Content::ItemBlock.new(element, content).render
         end
       end
     end

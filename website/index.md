@@ -9,14 +9,12 @@
 > > > > [Install](#install)
 >
 > <!-- -->
->
 > > Inverted Attached Orange Very Padded Segment:
 > > # Markdown UI
 > > ### Responsive UI in Markdown
 > > [__Button|Get Started__](docs/toc.html)
 >
 > <!-- -->
->
 > > Basic Attached Segment:
 > > > Equal Width Grid:
 > > > > Column:
@@ -43,7 +41,6 @@
 > > > >
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > > Inverted Very Padded Segment:
 > > > > > ```> Pointing Menu：``` <br />
@@ -56,7 +53,6 @@
 > > > > > ```__Button|Add Friend__```
 >
 > <!-- -->
->
 > ##Cheat Sheet:Center Aligned:cheatsheets
 > > Equal Width Grid:
 > > > Column:
@@ -67,58 +63,47 @@
 > > > > > ``` __Button|Button Text__ ```
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > > Info Message:
 > > > > > ``` # Block Syntax ``` <br />
 > > > > > ``` > Button： ``` <br />
 > > > > > ``` > Button Text ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Container
 > > > > > Info Message:
 > > > > > ``` > Container： ``` <br />
 > > > > > ``` > ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Icon
 > > > > > Info Message:
 > > > > > ``` _Icon <Name>_ ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Segment
 > > > > > Info Message:
 > > > > > ``` > Segment： ``` <br />
 > > > > > ``` > ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Menu
 > > > > > Info Message:
 > > > > > ``` > Menu： ``` <br />
 > > > > > ``` > [Menu Item] ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### List
 > > > > > Info Message:
 > > > > > ``` * List 1 ``` <br />
 > > > > > ``` * List 2 ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Label
 > > > > > Info Message:
 > > > > > ``` > Label： ``` <br />
 > > > > > ``` > _Mail Icon_ 23 ``` <br />
-> > > >
-> > > > <!-- -->
-> > > >
 > >
 > > <!-- -->
-> >
 > > > Column:
 > > > > Basic Segment:
 > > > > ##### Item
@@ -126,14 +111,12 @@
 > > > > > ``` [Item](#URL_ID "class") ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Message
 > > > > > Info Message:
 > > > > > ``` # Short-Hand ``` <br />
 > > > > > ``` __Message|Header：Message Header,Text：Message Text__ ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > > Info Message:
 > > > > > ``` # Block Syntax ``` <br />
 > > > > > ``` > Message： ``` <br />
@@ -141,19 +124,16 @@
 > > > > > ``` > Message Text ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Header
 > > > > > Info Message:
 > > > > > ``` # H1, ## H2, ### H3, #### H4 ... ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > > Info Message:
 > > > > > ``` # DIV tag header ``` <br />
 > > > > > ``` __Header|A Div Header__ ``` <br />
 > > > >
 > > > > <!-- -->
-> > > >
 > > > > ##### Column / Grid / Row / Segment / Container
 > > > > > Info Message:
 > > > > > ``` > Grid：``` <br />
@@ -167,6 +147,3 @@
 > > > > > ``` > ``` <br />
 > > > > > ``` > > Column：``` <br />
 > > > > > ``` > > Column 2 ``` <br />
-> > > >
-> > > > <!-- -->
-> > > >

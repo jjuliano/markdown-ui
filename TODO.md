@@ -53,6 +53,20 @@
   √ Fluid
 
 * Examples
-  Container Using Grids
-  Centered Menu
-  Container Segment
+  √ Container Using Grids
+  √ Centered Menu
+  √ Container Segment
+
+#Divider
+
+* Types
+  Divider
+  Vertical Divider
+  Horizontal Divider
+
+* Variations
+  Inverted
+  Fitted
+  Hidden
+  Section
+  Clearing

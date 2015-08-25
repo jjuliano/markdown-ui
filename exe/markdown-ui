@@ -2,7 +2,6 @@
 
 require "bundler/setup"
 require "markdown-ui"
-require "nokogiri"
 
 parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
 f = File.open(ARGV.first, 'r')
@@ -28,7 +27,7 @@ puts <<-EOS
 </head>
 
 <body>
-  #{Nokogiri::XML(@content, &:noblanks).to_xhtml(indent: 2)}
+#{@content}
 </body>
 </html>
 EOS
