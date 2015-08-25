@@ -9,7 +9,6 @@
 > > > > [Install](../index.html#install)
 >
 > <!-- -->
->
 > > Text Container:
 > > # Table of Contents:Center Aligned
 > > ## [Button](button.html#button)
@@ -25,20 +24,17 @@
 > > > > [Inverted](button.html#inverted)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Groups](button.html#groups)
 > > > > [Buttons](button.html#buttons),
 > > > > [Icon Buttons](button.html#icon-buttons)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Content](button.html#content)
 > > > > [Conditionals](button.html#conditionals)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [States](button.html#states)
 > > > > [Active](button.html#active),
@@ -46,7 +42,6 @@
 > > > > [Loading](button.html#loading)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Variations](button.html#variations)
 > > > > [Social](button.html#social),
@@ -61,7 +56,6 @@
 > > > > [Horizontally Attached](button.html#horizontally-attached)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Group Variations](button.html#group-variations)
 > > > > [Vertical Buttons](button.html#vertical-buttons),
@@ -74,7 +68,6 @@
 > > > > [Group Sizes](button.html#group-sizes)
 > >
 > > <!-- -->
-> >
 > > ## [Container](container.html#container)
 > > > Two Column Doubling Grid Container:
 > > > > Column:
@@ -83,17 +76,16 @@
 > > > > [Text Container](container.html#text-container)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Variations](container.html#variations)
 > > > > [Text Alignment](container.html#text-alignment),
+> > > > [Justified Aligned](container.html#justified-aligned),
 > > > > [Fluid](container.html#fluid)
 > > >
 > > > <!-- -->
-> > >
 > > > > Column:
 > > > > ### [Examples](container.html#examples)
 > > > > [Container Using Grids](container.html#container-using-grids),
-> > > > [Centered Menu](container.html#centered-container),
+> > > > [Centered Menu](container.html#centered-menu),
 > > > > [Container Segment](container.html#container-segment)
 

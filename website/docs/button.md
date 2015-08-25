@@ -9,105 +9,81 @@
 > > > > [Install](../index.html#install)
 >
 > <!-- -->
->
 > > Basic Segment:
 > > # Button:Center Aligned:button
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## Types:Dividing Left Aligned:types
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Button::simple-button
 > > "Standard Button"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Standard Button
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Button|Follow__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Button|Follow__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Standard Button with Custom Class And ID
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Optional-Class Button|Follow|Optional-ID__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__<Optional-Class> Button|Follow|<Optional-ID>__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Focusable Button
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Focusable Button|Follow|Optional-ID__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Focusable Button|Follow|<Optional-ID>__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Emphasis::emphasis
 > > "A button can be formatted to show different levels of emphasis"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Emphasis
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Primary Button|Save__  __Button|Discard__
@@ -115,187 +91,141 @@
 > > > __Secondary Button|Save__  __Button|Discard__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Primary Button|Save__  __Button|Discard__ ``` <br />
 > > > > ``` __Secondary Button|Save__  __Button|Discard__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Animated::animated
 > > "A button can animate to show hidden content"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Animated
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Animated Button|Next;Icon:Right Arrow__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__Animated Button|Next;Icon：Right Arrow__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertical Animated
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Vertical Animated Button|Icon:Shop;Shop__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__Vertical Animated Button|Icon：Shop;Shop__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Fade Animated
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Fade Animated Button|Sign-up for a Pro account;$12.99 a month__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__Fade Animated Button|Sign-up for a Pro account;$12.99 a month__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Icon::icon
 > > "A button can have only an icon"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Icon Button
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Icon Button|Icon:Cloud__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Icon Button|Icon：Cloud__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Labeled Icon::labeled-icon
 > > "A button can have an icon and a label"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Labeled Icon
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Labeled Icon Button|Icon:Pause,Pause__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Labeled Icon Button|Icon：Pause,Pause__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Basic Button::basic-button
 > > "A basic button is less pronounced"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Button
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Basic Button|Icon:User,Add Friend__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Basic Button|Icon：User,Add Friend__ ```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Button
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Basic Standard Button|Standard__
@@ -310,7 +240,6 @@
 > > > __Basic Teal Button|Teal__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -324,25 +253,19 @@
 > > > > ``` __Basic Pink Button|Pink__``` <br />
 > > > > ``` __Basic Red Button|Red__``` <br />
 > > > > ``` __Basic Teal Button|Teal__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Inverted::inverted
 > > "A button can be formatted to appear on dark backgrounds"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Inverted
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Inverted Very Padded Segment:
@@ -358,7 +281,6 @@
 > > > __Inverted Teal Button|Teal__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -373,30 +295,23 @@
 > > > > ```> __Inverted Pink Button|Pink__``` <br />
 > > > > ```> __Inverted Red Button|Red__``` <br />
 > > > > ```> __Inverted Teal Button|Teal__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## Groups:Dividing Left Aligned:groups
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Buttons::buttons
 > > "Buttons can exist together as a group"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Buttons:
@@ -405,7 +320,6 @@
 > > > > __Button|Three|Standard__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -413,25 +327,19 @@
 > > > > ```> __Standard Button|One__``` <br />
 > > > > ```> __Standard Button|Two__``` <br />
 > > > > ```> __Standard Button|Three__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Icon Buttons::icon-buttons
 > > "Buttons can exist together as a group"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Icon Buttons:
@@ -441,14 +349,12 @@
 > > > > __Button|Icon: Align Justify__
 > > >
 > > > <!-- -->
-> > >
 > > > > Icon Buttons:
 > > > > __Button|Icon: Bold__
 > > > > __Button|Icon: Underline__
 > > > > __Button|Icon: Text Width__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -464,30 +370,23 @@
 > > > > ```> __Button|Icon：Bold__``` <br />
 > > > > ```> __Button|Icon：Underline__``` <br />
 > > > > ```> __Button|Icon：Text Width__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## Content:Dividing Left Aligned:content
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Conditionals::conditionals
 > > "Button groups can contain conditionals"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Conditionals
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Buttons:
@@ -496,7 +395,6 @@
 > > > > __Positive Button|Save__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -506,7 +404,6 @@
 > > > > ```> __Positive Button|Save__```
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Buttons:
@@ -515,7 +412,6 @@
 > > > > __Positive Button|deux|Optional-ID__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -523,82 +419,67 @@
 > > > > ```> __Button|un__``` <br />
 > > > > ```> __Div Tag||Or|Data：Text：ou__``` <br />
 > > > > ```> __Positive Button|deux|<Optional-ID>__```
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## States:Dividing Left Aligned:states
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Active::active
 > > "A button can show it is currently the active user selection"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Active State
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Active Button|Icon:User, Follow__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__Active Button|Icon：User, Follow__```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Disabled::disabled
 > > "A button can show it is currently unable to be interacted with"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Disabled State
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Disabled Button|Icon:User,Followed__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```__Disabled Button|Icon：User,Followed__```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Loading::loading
 > > "A button can show a loading indicator"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Loading State
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Loading Button|Loading__
@@ -607,7 +488,6 @@
 > > > __Secondary Loading Button|Loading__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -617,25 +497,21 @@
 > > > > ``` __Secondary Loading Button|Loading__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## Variations:Dividing Left Aligned:variations
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Social::social
 > > "A button can be formatted to link to a social website"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Social
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Facebook Button|Icon:Facebook, Facebook__
@@ -647,7 +523,6 @@
 > > > __YouTube Button|Icon:YouTube, YouTube__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -660,20 +535,17 @@
 > > > > ``` __YouTube Button|Icon：YouTube, YouTube__ ``` <br />
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Size::size
 > > "A button can have different sizes"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Size
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Mini Button|Mini__
@@ -686,7 +558,6 @@
 > > > __Massive Button|Massive__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -700,20 +571,17 @@
 > > > > ``` __Massive Button|Massive__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Colored::colored
 > > "A button can have different colors"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Colored
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Red Button|Red__
@@ -731,7 +599,6 @@
 > > > __Black Button|Black__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -750,20 +617,17 @@
 > > > > ``` __Black Button|Black__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Compact::compact
 > > "A button can reduce its padding to fit into tighter spaces"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Compact
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Compact Button|Hold__
@@ -771,7 +635,6 @@
 > > > __Compact Labeled Icon Button|Icon:Pause, Pause__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -780,27 +643,23 @@
 > > > > ``` __Compact Labeled Icon Button|Icon：Pause, Pause__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Positive::positive
 > > "A button can hint towards a positive consequence"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Positive
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Positive Button|Positive Button__
 > > > __Negative Button|Negative Button__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -808,98 +667,83 @@
 > > > > ``` __Negative Button|Negative Button__ ``` <br />
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Negative::negative
 > > "A button can hint towards a negative consequence"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Negative
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Negative Button|Negative Button__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Negative Button|Negative Button__ ``` <br />
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Fluid::fluid
 > > "A button can take the width of its container"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Fluid
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Fluid Button|Fluid Button__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Fluid Button|Fluid Button__ ``` <br />
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Circular::circular
 > > "A button can be circular"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Circular
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Circular Icon Button|Icon:Settings__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Circular Icon Button|Icon：Settings__ ``` <br />
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Vertically Attached::vertically-attached
 > > "A button can be attached to the top or bottom of other content"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertically Attached
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Top Attached Focusable Button|Top__
@@ -910,7 +754,6 @@
 > > > __Bottom Attached Focusable Button|Bottom__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -922,7 +765,6 @@
 > > > > ``` __Bottom Attached Focusable Button|Bottom__ ``` <br />
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Two Top Attached Buttons:
@@ -930,18 +772,15 @@
 > > > > __Button|Two__
 > > >
 > > > <!-- -->
-> > >
 > > > > Attached Segment:
 > > > > " "
 > > >
 > > > <!-- -->
-> > >
 > > > > Two Bottom Attached Buttons:
 > > > > __Button|One__
 > > > > __Button|Two__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -959,32 +798,25 @@
 > > > > ```> Two Bottom Attached Buttons：``` <br />
 > > > > ```> __Button|One__ ``` <br />
 > > > > ```> __Button|Two__ ``` <br />
-> >
-> > <!-- -->
-> >
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Horizontally Attached::horizontally-attached
 > > "A button can be attached to the left or right of other content"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Horizontally Attached
 > >
 > > <!-- -->
-> >
 > > > Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Left Attached Button|Left__
 > > > __Right Attached Button|Right__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -992,25 +824,21 @@
 > > > > ``` > __Right Attached Button|Right__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > ## Group Variations:Dividing Left Aligned:group-variations
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Vertical Buttons::vertical-buttons
 > > "Groups can be formatted to appear vertically"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertical Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Vertical Buttons:
@@ -1020,7 +848,6 @@
 > > > > __Button|Photos__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1031,20 +858,17 @@
 > > > > ``` > __Button|Photos__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Icon Buttons::icon-buttons
 > > "Groups can be formatted as icons"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Icon Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Icon Buttons:
@@ -1053,7 +877,6 @@
 > > > > __Button|Icon:Shuffle__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1063,20 +886,17 @@
 > > > > ``` > __Button|Icon：Shuffle__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Labeled Icon Buttons::labeled-icon-buttons
 > > "Groups can be formatted as labeled icons"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Labeled Icon Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Vertical Labeled Icon Buttons:
@@ -1085,7 +905,6 @@
 > > > > __Button|Icon:Shuffle, Shuffle__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1095,20 +914,17 @@
 > > > > ``` > __Button|Icon：Shuffle, Shuffle__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Mixed Group::mixed-group
 > > "Groups can be formatted to use multiple button types together"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Mixed Group
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Buttons:
@@ -1117,7 +933,6 @@
 > > > > __Right Labeled Icon Button|Icon:Right Chevron, Forward__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1127,20 +942,17 @@
 > > > > ``` > __Right Labeled Icon Button|Icon：Right Chevron, Forward__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Equal Width::equal-width
 > > "Groups can have their widths divided evenly"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Equal Width
 > >
 > > <!-- -->
-> >
 > > > Eight Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Five Buttons:
@@ -1151,14 +963,12 @@
 > > > > __Button|Support__
 > > >
 > > > <!-- -->
-> > >
 > > > > Three Buttons:
 > > > > __Button|Overview__
 > > > > __Button|Specs__
 > > > > __Button|Support__
 > >
 > > <!-- -->
-> >
 > > > Eight Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1177,20 +987,17 @@
 > > > > ``` > __Button|Support__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Colored Buttons::colored-buttons
 > > "Groups can have a shared color"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Colored Buttons
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Blue Buttons:
@@ -1199,7 +1006,6 @@
 > > > > __Button|Three__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1209,20 +1015,17 @@
 > > > > ``` > __Button|Three__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Basic Buttons::basic-buttons
 > > "A button group can be less pronounced"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Buttons
 > >
 > > <!-- -->
-> >
 > > > Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Basic Buttons:
@@ -1238,7 +1041,6 @@
 > > > > __Button|Three__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1255,7 +1057,6 @@
 > > > > ``` > __Button|Three__ ```
 > >
 > > <!-- -->
-> >
 > > > Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Buttons:
@@ -1264,7 +1065,6 @@
 > > > > __Green Basic Button|Three__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1274,20 +1074,17 @@
 > > > > ``` > __Green Basic Button|Three__ ```
 >
 > <!-- -->
->
 > > Basic Segment:
 > > #### Group Sizes::group-sizes
 > > "Groups can have a shared color"
 >
 > <!-- -->
->
 > > Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Group Sizes
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Large Buttons:
@@ -1296,7 +1093,6 @@
 > > > > __Button|Three__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1306,7 +1102,6 @@
 > > > > ``` > __Button|Three__ ```
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Small Basic Icon Buttons:
@@ -1316,7 +1111,6 @@
 > > > > __Button|Icon:Download__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
@@ -1327,7 +1121,6 @@
 > > > > ``` > __Button|Icon：Download__ ``` <br />
 > >
 > > <!-- -->
-> >
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Large Buttons:
@@ -1336,7 +1129,6 @@
 > > > > __Button|Two__
 > >
 > > <!-- -->
-> >
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
