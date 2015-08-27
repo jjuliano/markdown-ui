@@ -54,6 +54,8 @@ module MarkdownUI
         case element.join(' ')
           when /button/i
             MarkdownUI::Button::Element.new(element, content, klass, _id).render
+          when /input/i
+            MarkdownUI::Input::Element.new(element, content, klass, _id).render
           when /menu/i
             MarkdownUI::Menu::Element.new(element, content, klass).render
           when /message/i
@@ -91,6 +93,14 @@ module MarkdownUI
             MarkdownUI::Label::Element.new(element, content).render
           when /item/i
             MarkdownUI::Content::ItemBlock.new(element, content).render
+          when /form/i
+            MarkdownUI::Content::FormBlock.new(element, content).render
+          when /field/i
+            MarkdownUI::Content::FieldBlock.new(element, content).render
+          when /input/i
+            MarkdownUI::Content::InputBlock.new(element, content).render
+          when /divider/i
+            MarkdownUI::Content::DividerBlock.new(element, content).render
         end
       end
     end

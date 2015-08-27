@@ -3,6 +3,7 @@ module MarkdownUI
     def initialize(tag, content, klass = nil, data = nil)
       @mode = OpenStruct.new(
         :div?      => !(tag =~ /div/i).nil?,
+        :label?    => !(tag =~ /label/i).nil?,
         :span?     => !(tag =~ /span/i).nil?,
         :article?  => !(tag =~ /article/i).nil?,
         :section?  => !(tag =~ /section/i).nil?,
@@ -16,21 +17,11 @@ module MarkdownUI
     end
 
     def render
-      # if @mode.div?
+      if @mode.div?
         MarkdownUI::StandardTag.new(@content, @klass, nil, @data).render
-      # elsif @mode.span
-      #   MarkdownUI::SpanTag.new(@content, @klass).render
-      # elsif @mode.article
-      #   MarkdownUI::ArticleTag.new(@content, @klass).render
-      # elsif @mode.section
-      #   MarkdownUI::SectionTag.new(@content, @klass).render
-      # elsif @mode.header
-      #   MarkdownUI::HeaderTag.new(@content, @klass).render
-      # elsif @mode.footer
-      #   MarkdownUI::FooterTag.new(@content, @klass).render
-      # else
-      #   MarkdownUI::CustomTag.new(@tag, @content, @klass).render
-      # end
+      elsif @mode.label?
+        MarkdownUI::LabelTag.new(@content, @klass, nil, @data).render
+      end
     end
 
   end

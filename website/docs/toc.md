@@ -89,3 +89,12 @@
 > > > > [Centered Menu](container.html#centered-menu),
 > > > > [Container Segment](container.html#container-segment)
 
+> >
+> > <!-- -->
+> > ## [Divider](divider.html#divider)
+> > > Two Column Doubling Grid Container:
+> > > > Column:
+> > > > ### [Types](divider.html#types)
+> > > > [Standard Divider](divider.html#standard-divider),
+> > > > [Vertical Divider](divider.html#vertical-divider)
+> > > > [Horizontal Divider](divider.html#horizontal-divider)

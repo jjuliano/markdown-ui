@@ -8,6 +8,7 @@ group :elements do
   gem 'markdown-ui-header',    :path => 'components/elements/markdown-ui-header/'
   gem 'markdown-ui-label',     :path => 'components/elements/markdown-ui-label/'
   gem 'markdown-ui-segment',   :path => 'components/elements/markdown-ui-segment/'
+  gem 'markdown-ui-input',     :path => 'components/elements/markdown-ui-input/'
 end
 
 group :collections do

@@ -58,11 +58,10 @@
   √ Container Segment
 
 #Divider
-
 * Types
-  Divider
-  Vertical Divider
-  Horizontal Divider
+  √ Divider
+  √ Vertical Divider
+  + Horizontal Divider
 
 * Variations
   Inverted

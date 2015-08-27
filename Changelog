@@ -1,3 +1,13 @@
+0.1.13 - 08-27-15
+  * Added Divider block content
+  * Added Field block content
+  * Added Form block content
+  * Added Input block content
+  * Added Markdown-UI-Input
+  * Added Input Tag
+  * Added Label Tag
+  * Added Divider Tests and Documentations
+
 0.1.12 - 08-25-15
   * Removed Nokogiri post-processing using CLI markdown-ui
   * Fixed Container Examples to occupy and display full container in view
