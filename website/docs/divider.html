@@ -1,0 +1,223 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="ui container">
+  <div class="ui inverted segment">
+    <div class="ui inverted menu">
+      <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
+      <div class="ui inverted right menu">
+        <a class="ui item" href="toc.html">Table of Contents</a>
+        <a class="ui item" href="../about.html">About</a>
+        <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
+        <a class="ui item" href="../index.html#install">Install</a>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h1 id="button" class="ui center aligned header">Divider</h1>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h2 id="types" class="ui dividing left aligned header">Types</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="standard-divider" class="ui header">Standard Divider</h4>
+    <p>Standard Divider</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Standard Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui divider"></div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>____</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="vertical-divider" class="ui header">Vertical Divider</h4>
+    <p>A divider can segment content vertically</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Vertical Divider</div>
+    </div>
+<!-- -->
+    <div class="ui left aligned ten wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui two column middle aligned very relaxed stackable grid">
+        <div class="ui column">
+          <div class="ui form">
+            <div class="ui field">
+              <label>Username</label>
+              <div class="ui left icon input">
+                <input type="text" placeholder="Username" class="ui input" />
+                <i class="user icon"></i>
+              </div>
+            </div>
+<!-- -->
+            <div class="ui field">
+              <label>Password</label>
+              <div class="ui left icon input">
+                <input type="password" placeholder="Password" class="ui input" />
+                <i class="lock icon"></i>
+              </div>
+            </div>
+<!-- -->
+            <button class="ui blue submit button">Login</button>
+          </div>
+        </div>
+<!-- -->
+        <div class="ui vertical divider">Or</div>
+<!-- -->
+        <div class="ui center aligned column">
+          <button class="ui big green labeled icon button"><i class="signup icon"></i>Sign Up</button>
+        </div>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui sixteen wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; Two Column Middle Aligned Very Relaxed Stackable Grid:</code>
+        <br />
+        <code>&gt; &gt; Column:</code>
+        <br />
+        <code>&gt; &gt; &gt; Form:</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; Field:</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; __Label Tag|Username__</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; Left Icon Input:</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; __Input|Text|Username__</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; _User Icon_</code>
+        <br />
+        <code>&gt; &gt; &gt;</code>
+        <br />
+        <code>&gt; &gt; &gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; Field:</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; __Label Tag|Password__</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; Left Icon Input:</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; __Input|Password|Password__</code>
+        <br />
+        <code>&gt; &gt; &gt; &gt; &gt; _Lock Icon_</code>
+        <br />
+        <code>&gt; &gt; &gt;</code>
+        <br />
+        <code>&gt; &gt; &gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; &gt; __Blue Submit Button|Login__</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; Vertical Divider:</code>
+        <br />
+        <code>&gt; &gt; Or</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; Center Aligned Column:</code>
+        <br />
+        <code>&gt; &gt; __Big Green Labeled Icon Button|Icon:Signup, Sign Up__</code>
+        <br />
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="horizontal-divider" class="ui header">Horizontal Divider</h4>
+    <p>A divider can segment content horizontally</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Horizontal Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui center aligned basic segment">
+        <div class="ui left icon action input">
+          <i class="search icon"></i>
+          <input type="text" placeholder="Order #" class="ui input" />
+          <button class="ui blue submit button">Search</button>
+        </div>
+<!-- -->
+        <div class="ui horizontal divider">Or</div>
+<!-- -->
+        <button class="ui teal labeled icon button">Create New Order<i class="add icon"></i></button>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; Center Aligned Basic Segment:</code>
+        <br />
+        <code>&gt; &gt; Left Icon Action Input:</code>
+        <br />
+        <code>&gt; &gt; _Search Icon_</code>
+        <br />
+        <code>&gt; &gt; __Input|Text|Order #__</code>
+        <br />
+        <code>&gt; &gt; __Blue Submit Button|Search__</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; Horizontal Divider:</code>
+        <br />
+        <code>&gt; &gt; Or</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; __Teal Labeled Icon Button|Create New Order, Icon: Add Icon__</code>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
