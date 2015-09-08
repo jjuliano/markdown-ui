@@ -52,18 +52,18 @@ module MarkdownUI
 
       html do
         case element.join(' ')
-          when /button/i
-            MarkdownUI::Button::Element.new(element, content, klass, _id).render
-          when /input/i
-            MarkdownUI::Input::Element.new(element, content, klass, _id).render
-          when /menu/i
-            MarkdownUI::Menu::Element.new(element, content, klass).render
-          when /message/i
-            MarkdownUI::Message.new(element, content, klass).render
-          when /tag/i
-            MarkdownUI::Tag.new(element[0].downcase, content, _id, data_attributes).render
-          when /header/i
-            MarkdownUI::Header.new(content, 0).render
+        when /button/i
+          MarkdownUI::Button::Element.new(element, content, klass, _id).render
+        when /input/i
+          MarkdownUI::Input::Element.new(element, content, klass, _id).render
+        when /menu/i
+          MarkdownUI::Menu::Element.new(element, content, klass).render
+        when /message/i
+          MarkdownUI::Message.new(element, content, klass).render
+        when /tag/i
+          MarkdownUI::Tag.new(element[0].downcase, content, _id, data_attributes).render
+        when /header/i
+          MarkdownUI::Header.new(content, 0).render
         end
       end
     end
@@ -73,34 +73,34 @@ module MarkdownUI
 
       html do
         case element
-          when /segment/i
-            MarkdownUI::Segment.new(element, content).render
-          when /grid/i
-            MarkdownUI::Grid.new(element, content).render
-          when /column/i
-            MarkdownUI::Column.new(element, content).render
-          when /container/i
-            MarkdownUI::Container::Element.new(element, content).render
-          when /buttons/i
-            MarkdownUI::Button::Group::Buttons::Element.new(element, content).render
-          when /button/i
-            MarkdownUI::Button::Element.new(element, content).render
-          when /menu/i
-            MarkdownUI::Menu::Element.new(element, content).render
-          when /message/i
-            MarkdownUI::Message.new(element, content).render
-          when /label/i
-            MarkdownUI::Label::Element.new(element, content).render
-          when /item/i
-            MarkdownUI::Content::ItemBlock.new(element, content).render
-          when /form/i
-            MarkdownUI::Content::FormBlock.new(element, content).render
-          when /field/i
-            MarkdownUI::Content::FieldBlock.new(element, content).render
-          when /input/i
-            MarkdownUI::Content::InputBlock.new(element, content).render
-          when /divider/i
-            MarkdownUI::Content::DividerBlock.new(element, content).render
+        when /segment/i
+          MarkdownUI::Segment.new(element, content).render
+        when /grid/i
+          MarkdownUI::Grid.new(element, content).render
+        when /column/i
+          MarkdownUI::Column.new(element, content).render
+        when /container/i
+          MarkdownUI::Container::Element.new(element, content).render
+        when /buttons/i
+          MarkdownUI::Button::Group::Buttons::Element.new(element, content).render
+        when /button/i
+          MarkdownUI::Button::Element.new(element, content).render
+        when /menu/i
+          MarkdownUI::Menu::Element.new(element, content).render
+        when /message/i
+          MarkdownUI::Message.new(element, content).render
+        when /label/i
+          MarkdownUI::Label::Element.new(element, content).render
+        when /item/i
+          MarkdownUI::Content::ItemBlock.new(element, content).render
+        when /form/i
+          MarkdownUI::Content::FormBlock.new(element, content).render
+        when /field/i
+          MarkdownUI::Content::FieldBlock.new(element, content).render
+        when /input/i
+          MarkdownUI::Content::InputBlock.new(element, content).render
+        when /divider/i
+          MarkdownUI::Content::DividerBlock.new(element, content).render
         end
       end
     end
