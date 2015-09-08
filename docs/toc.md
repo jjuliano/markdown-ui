@@ -96,5 +96,5 @@
 > > > > Column:
 > > > > ### [Types](divider.html#types)
 > > > > [Standard Divider](divider.html#standard-divider),
-> > > > [Vertical Divider](divider.html#vertical-divider)
+> > > > [Vertical Divider](divider.html#vertical-divider),
 > > > > [Horizontal Divider](divider.html#horizontal-divider)

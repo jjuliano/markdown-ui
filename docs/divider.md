@@ -50,7 +50,7 @@
 > > > > Vertical Divider
 > >
 > > <!-- -->
-> > > Left Aligned Ten Wide Column:
+> > > Sixteen Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Two Column Middle Aligned Very Relaxed Stackable Grid:
 > > > > > Column:
@@ -120,11 +120,11 @@
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Horizontal Divider
+
 > >
 > > <!-- -->
-> > > Center Aligned Six Wide Column:
+> > > Sixteen Wide Column:
 > > > ##### Preview:Center Aligned
-
 > > > > Center Aligned Basic Segment:
 > > > > > Left Icon Action Input:
 > > > > > _Search Icon_
@@ -140,7 +140,7 @@
 
 > >
 > > <!-- -->
-> > > Ten Wide Column:
+> > > Sixteen Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` > Center Aligned Basic Segment： ``` <br />
@@ -155,3 +155,81 @@
 > > > > ``` > ``` <br />
 > > > > ``` > <!-- --> ``` <br />
 > > > > ``` > __Teal Labeled Icon Button|Create New Order, Icon： Add Icon__ ``` <br />
+
+> >
+> > <!-- -->
+> > > Sixteen Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Center Aligned Basic Segment:
+> > > > > Horizontal Divider Header:
+> > > > > _Tag Icon_
+> > > > > Description
+> > > >
+> > > > <!-- -->
+> > > > "Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide."
+> > > >
+> > > > <!-- -->
+> > > > > Horizontal Divider Header:
+> > > > > _Bar Chart Icon_
+> > > > > Specifications
+> > > >
+> > > > <!-- -->
+> > > > <table class="ui definition table">
+> > > >   <tbody>
+> > > >     <tr>
+> > > >       <td class="two wide column">Size</td>
+> > > >       <td>1" x 2"</td>
+> > > >     </tr>
+> > > >     <tr>
+> > > >       <td>Weight</td>
+> > > >       <td>6 ounces</td>
+> > > >     </tr>
+> > > >     <tr>
+> > > >       <td>Color</td>
+> > > >       <td>Yellowish</td>
+> > > >     </tr>
+> > > >     <tr>
+> > > >       <td>Odor</td>
+> > > >       <td>Not Much Usually</td>
+> > > >     </tr>
+> > > >   </tbody>
+> > > > </table>
+
+> >
+> > <!-- -->
+> > > Sixteen Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Horizontal Divider Header： ``` <br />
+> > > > ``` > _Tag Icon_ ``` <br />
+> > > > ``` > Description ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` <!-- --> ``` <br />
+> > > > ``` "Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide." ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` <!-- --> ``` <br />
+> > > > ``` > Horizontal Divider Header： ``` <br />
+> > > > ``` > _Bar Chart Icon_ ``` <br />
+> > > > ``` > Specifications ``` <br />
+> > > > ``` ``` <br />
+> > > > ``` <!-- You can mix HTML and Markdown-UI together --> ``` <br />
+> > > > ``` <table class="ui definition table"> ``` <br />
+> > > > ```   <tbody> ``` <br />
+> > > > ```     <tr> ``` <br />
+> > > > ```       <td class="two wide column">Size</td> ``` <br />
+> > > > ```       <td>1" x 2"</td> ``` <br />
+> > > > ```     </tr> ``` <br />
+> > > > ```     <tr> ``` <br />
+> > > > ```       <td>Weight</td> ``` <br />
+> > > > ```       <td>6 ounces</td> ``` <br />
+> > > > ```     </tr> ``` <br />
+> > > > ```     <tr> ``` <br />
+> > > > ```       <td>Color</td> ``` <br />
+> > > > ```       <td>Yellowish</td> ``` <br />
+> > > > ```     </tr> ``` <br />
+> > > > ```     <tr> ``` <br />
+> > > > ```       <td>Odor</td> ``` <br />
+> > > > ```       <td>Not Much Usually</td> ``` <br />
+> > > > ```     </tr> ``` <br />
+> > > > ```   </tbody> ``` <br />
+> > > > ``` </table> ``` <br />
