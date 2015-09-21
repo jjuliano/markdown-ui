@@ -1,3 +1,7 @@
+0.1.14 - 09-21-15
+  * Updated Semantic-UI to 2.1.4
+  * Fixed Button group sizes example
+
 0.1.13 - 08-27-15
   * Added Divider block content
   * Added Field block content
