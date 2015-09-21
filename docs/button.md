@@ -1076,7 +1076,7 @@
 > <!-- -->
 > > Basic Segment:
 > > #### Group Sizes::group-sizes
-> > "Groups can have a shared color"
+> > "Groups can have a shared size"
 >
 > <!-- -->
 > > Divided Segment Grid:
@@ -1096,7 +1096,7 @@
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ``` > Blue Buttons： ``` <br />
+> > > > ``` > Large Buttons： ``` <br />
 > > > > ``` > __Button|One__ ``` <br />
 > > > > ``` > __Button|Two__ ``` <br />
 > > > > ``` > __Button|Three__ ```
