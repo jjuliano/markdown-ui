@@ -117,4 +117,25 @@ ___
     assert_equal \
 "<div class=\"ui horizontal divider header\"><i class=\"tag icon\"></i>\nDescription</div>\n\n<!-- -->\n<p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>\n\n<!-- -->\n<div class=\"ui horizontal divider header\"><i class=\"bar chart icon\"></i>\nSpecifications</div>\n\n<!-- -->\n\n<table class=\"ui definition table\">\n  <tbody>\n    <tr>\n      <td class=\"two wide column\">Size</td>\n      <td>1\" x 2\"</td>\n    </tr>\n    <tr>\n      <td>Weight</td>\n      <td>6 ounces</td>\n    </tr>\n    <tr>\n      <td>Color</td>\n      <td>Yellowish</td>\n    </tr>\n    <tr>\n      <td>Odor</td>\n      <td>Not Much Usually</td>\n    </tr>\n  </tbody>\n</table>\n", output
   end
+
+  def test_inverted_variation
+    markdown =
+'
+> Inverted Segment:
+> " "
+>
+> <!-- -->
+> ___
+> " "
+>
+> <!-- -->
+> > Horizontal Inverted Divider Header:
+> > "Horizontal"
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+"<div class=\"ui inverted segment\">\n  <p></p>\n<!-- -->\n  <div class=\"ui divider\"></div>\n  <p></p>\n<!-- -->\n  <div class=\"ui horizontal inverted divider header\">\n    <p>Horizontal</p>\n  </div>\n</div>\n", output
+  end
+
 end

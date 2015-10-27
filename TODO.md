@@ -61,7 +61,7 @@
 * Types
   √ Divider
   √ Vertical Divider
-  + Horizontal Divider
+  √ Horizontal Divider
 
 * Variations
   Inverted
