@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'markdown-ui'
+
+puts "Hit RETURN twice when when done."
+
+def multi_gets all_text=""
+  while all_text << STDIN.gets
+    if all_text["\n\n"]
+      return all_text
+    else
+      print "# "
+    end
+  end
+end
+
+def prompt(*args)
+    print(*args)
+    multi_gets
+end
+
+while m = prompt("# ")
+  parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
+  puts <<-EOF
+
+    #{parser.render(m)}
+  EOF
+end
