@@ -3,12 +3,14 @@
 require 'bundler/setup'
 require 'markdown-ui'
 
-puts "Hit RETURN twice when done."
+puts "Hit RETURN three times to parse."
 
 def multi_gets all_text=""
   while all_text << STDIN.gets
-    if all_text["\n\n"]
+    if all_text["\n\n\n"]
       return all_text
+    elsif all_text[/^exit|^quit|^bye/]
+      exit 0
     else
       print "# "
     end
