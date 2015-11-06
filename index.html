@@ -1,17 +1,17 @@
 <!doctype html>
 
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1'>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.5/semantic.min.css'>
+  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.5/semantic.min.js'></script>
 
   <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
   <![endif]-->
 </head>
 
@@ -29,7 +29,7 @@
     </div>
   </div>
 <!-- -->
-  <div class="ui inverted attached orange very padded segment">
+  <div class="ui inverted attached basic blue very padded segment">
     <h1 class="ui header">Markdown UI</h1>
     <h3 class="ui header">Responsive UI in Markdown</h3>
     <a class="ui item" href="docs/toc.html">
@@ -39,12 +39,19 @@
 <!-- -->
   <div class="ui basic attached segment">
     <div class="ui equal width grid">
-      <div class="ui column"><h2 id="install" class="ui header">Installation</h2><code>gem install markdown-ui</code><h2 id="usage" class="ui header">Usage</h2><code>markdown-ui index.mdui &gt; index.html</code><h2 id="credits" class="ui header">Credits</h2>
-Markdown-UI uses <a class="ui item" href="http://www.semantic-ui.com">Semantic-UI http://www.semantic-ui.com</a>
- syntax and framework, and ruby <code>redcarpet</code> library.Credit goes to the people behind these wonderful framework and libraries.<h2 class="ui header">Source</h2>
+      <div class="ui column"><h2 id="install" class="ui header">Installation</h2>
+Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
+<code>gem install markdown-ui</code><h2 id="usage" class="ui header">Usage</h2>
+Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux) <br /> <br />
+<code>markdown-ui index.mdui &gt; index.html</code><h2 class="ui header">Markdown-UI (Read-Evaluate-Print-Loop) REPL shell</h2>
+You can interactively create Markdown-UI websites using the <code>markdown-ui-shell</code>.<div class="ui message"><code>$ markdown-ui-shell</code><br /><code></code><br /><code>Hit RETURN three times to parse.</code><br /><code># __Button|A Button__</code><br /><code>#</code><br /><code>#</code><br /><code></code><br /><code>&lt;button class="ui button"&gt;A Button&lt;/button&gt;</code><br /><code></code><br /><code>#</code></div>
+<h2 id="credits" class="ui header">Credits</h2>
+Markdown-UI would not be possible without the the <a class="ui item" href="http://www.semantic-ui.com">Semantic-UI</a>
+ framework, and the Ruby <a class="ui item" href="https://github.com/vmg/redcarpet">RedCarpet</a>
+ library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.<h2 class="ui header">Source</h2>
 This document is written entirely in Markdown-UI. see: <a class="ui item" href="https://github.com/jjuliano/markdown-ui/tree/master/website">the source files</a>
 <h2 id="issues-bugs" class="ui header">Notes/Issues/Bugs</h2>
-<ul class="ui unordered list"><li>Ongoing support for Semantic-UI elements/modules/components</li><li>The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)</li><li>A separator in between two spaces is required on block elements to separate elements (see Column example)</li><li>Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. These are not done automatically, however you can add the script tags at the bottom of your markdown documents</li></ul></div>
+<ul class="ui unordered list"><li>Ongoing support for Semantic-UI elements/modules/components</li><li>The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)</li><li>A separator in between two spaces is required on block elements to separate elements (see Column example)</li><li>Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. Those elements will not be supported by Markdown-UI.</li></ul></div>
 <!-- -->
       <div class="ui column">
         <div class="ui inverted very padded segment">
@@ -72,13 +79,13 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
     <div class="ui column">
       <div class="ui basic segment">
         <h5 class="ui header">Button</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># Short-Hand</code>
           <br />
           <code>__Button|Button Text__</code>
         </div>
 <!-- -->
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># Block Syntax</code>
           <br />
           <code>&gt; Button:</code>
@@ -88,7 +95,7 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
         </div>
 <!-- -->
         <h5 class="ui header">Container</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>&gt; Container:</code>
           <br />
           <code>&gt;</code>
@@ -96,13 +103,13 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
         </div>
 <!-- -->
         <h5 class="ui header">Icon</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>_Icon &lt;Name&gt;_</code>
           <br />
         </div>
 <!-- -->
         <h5 class="ui header">Segment</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>&gt; Segment:</code>
           <br />
           <code>&gt;</code>
@@ -110,23 +117,31 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
         </div>
 <!-- -->
         <h5 class="ui header">Menu</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>&gt; Menu:</code>
           <br />
-          <code>&gt; [Menu Item]</code>
+          <code>&gt; [Menu Item]()</code>
           <br />
         </div>
 <!-- -->
         <h5 class="ui header">List</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
+          <code># Unordered List</code>
+          <br />
           <code>* List 1</code>
           <br />
           <code>* List 2</code>
           <br />
+          <code># Ordered List</code>
+          <br />
+          <code>1. List 1</code>
+          <br />
+          <code>1. List 2</code>
+          <br />
         </div>
 <!-- -->
         <h5 class="ui header">Label</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>&gt; Label:</code>
           <br />
           <code>&gt; _Mail Icon_ 23</code>
@@ -138,20 +153,20 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
     <div class="ui column">
       <div class="ui basic segment">
         <h5 class="ui header">Item</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>[Item](#URL_ID "class")</code>
           <br />
         </div>
 <!-- -->
         <h5 class="ui header">Message</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># Short-Hand</code>
           <br />
           <code>__Message|Header:Message Header,Text:Message Text__</code>
           <br />
         </div>
 <!-- -->
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># Block Syntax</code>
           <br />
           <code>&gt; Message:</code>
@@ -163,12 +178,12 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
         </div>
 <!-- -->
         <h5 class="ui header">Header</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># H1, ## H2, ### H3, #### H4 ...</code>
           <br />
         </div>
 <!-- -->
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code># DIV tag header</code>
           <br />
           <code>__Header|A Div Header__</code>
@@ -176,7 +191,7 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
         </div>
 <!-- -->
         <h5 class="ui header">Column / Grid / Row / Segment / Container</h5>
-        <div class="ui info message">
+        <div class="ui inverted blue segment">
           <code>&gt; Grid:</code>
           <br />
           <code>&gt;</code>
@@ -204,17 +219,6 @@ This document is written entirely in Markdown-UI. see: <a class="ui item" href="
     </div>
   </div>
 </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-57800038-4', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>
