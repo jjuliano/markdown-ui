@@ -34,21 +34,25 @@ module MarkdownUI::Button
         :basic?     => element.grep(/basic/i).any?
       )
 
-      if standard_button?(mode) && element.size > 1
-        MarkdownUI::Button::Custom.new(element, content, klass, _id).render
-      elsif mode.icon? && mode.labeled?
-        icon, label = content
-        MarkdownUI::Button::LabeledIcon.new(icon, label, klass, _id).render
-      elsif mode.icon? && !mode.labeled?
-        MarkdownUI::Button::Icon.new(content, klass, _id).render
-      elsif mode.focusable?
-        MarkdownUI::Button::Focusable.new(content, klass, _id).render
-      elsif mode.basic?
-        MarkdownUI::Button::Basic.new(content, klass, _id).render
-      elsif mode.animated?
-        MarkdownUI::Button::Animated.new(content, klass, _id).render
-      elsif standard_button?(mode)
-        MarkdownUI::Button::Standard.new(content, klass, _id).render
+      if content
+        if standard_button?(mode) && element.size > 1
+          MarkdownUI::Button::Custom.new(element, content, klass, _id).render
+        elsif mode.icon? && mode.labeled?
+          icon, label = content
+          MarkdownUI::Button::LabeledIcon.new(icon, label, klass, _id).render
+        elsif mode.icon? && !mode.labeled?
+          MarkdownUI::Button::Icon.new(content, klass, _id).render
+        elsif mode.focusable?
+          MarkdownUI::Button::Focusable.new(content, klass, _id).render
+        elsif mode.basic?
+          MarkdownUI::Button::Basic.new(content, klass, _id).render
+        elsif mode.animated?
+          MarkdownUI::Button::Animated.new(content, klass, _id).render
+        elsif standard_button?(mode)
+          MarkdownUI::Button::Standard.new(content, klass, _id).render
+        end
+      else
+        MarkdownUI::Button::Custom.new(element, "", klass, _id).render
       end
     end
 
