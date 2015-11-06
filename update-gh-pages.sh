@@ -11,4 +11,4 @@ cp -R website/docs .
 
 git add .
 git commit -m "$(date) pull from master; updated links."
-git push github gh-pages
+git push origin gh-pages
