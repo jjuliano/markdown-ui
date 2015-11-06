@@ -9,7 +9,7 @@
 > > > > [Install](#install)
 >
 > <!-- -->
-> > Inverted Attached Orange Very Padded Segment:
+> > Inverted Attached Basic Blue Very Padded Segment:
 > > # Markdown UI
 > > ### Responsive UI in Markdown
 > > [__Button|Get Started__](docs/toc.html)
@@ -58,48 +58,52 @@
 > > > Column:
 > > > > Basic Segment:
 > > > > ##### Button
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # Short-Hand ``` <br />
 > > > > > ``` __Button|Button Text__ ```
 > > > >
 > > > > <!-- -->
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # Block Syntax ``` <br />
 > > > > > ``` > Button： ``` <br />
 > > > > > ``` > Button Text ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Container
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` > Container： ``` <br />
 > > > > > ``` > ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Icon
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` _Icon <Name>_ ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Segment
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` > Segment： ``` <br />
 > > > > > ``` > ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Menu
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` > Menu： ``` <br />
 > > > > > ``` > [Menu Item]() ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### List
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
+> > > > > ``` # Unordered List ``` <br />
 > > > > > ``` * List 1 ``` <br />
 > > > > > ``` * List 2 ``` <br />
+> > > > > ``` # Ordered List ``` <br />
+> > > > > ``` 1. List 1 ``` <br />
+> > > > > ``` 1. List 2 ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Label
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` > Label： ``` <br />
 > > > > > ``` > _Mail Icon_ 23 ``` <br />
 > >
@@ -107,17 +111,17 @@
 > > > Column:
 > > > > Basic Segment:
 > > > > ##### Item
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` [Item](#URL_ID "class") ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Message
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # Short-Hand ``` <br />
 > > > > > ``` __Message|Header：Message Header,Text：Message Text__ ``` <br />
 > > > >
 > > > > <!-- -->
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # Block Syntax ``` <br />
 > > > > > ``` > Message： ``` <br />
 > > > > > ``` > __Header|Message Header__ ``` <br />
@@ -125,17 +129,17 @@
 > > > >
 > > > > <!-- -->
 > > > > ##### Header
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # H1, ## H2, ### H3, #### H4 ... ``` <br />
 > > > >
 > > > > <!-- -->
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` # DIV tag header ``` <br />
 > > > > > ``` __Header|A Div Header__ ``` <br />
 > > > >
 > > > > <!-- -->
 > > > > ##### Column / Grid / Row / Segment / Container
-> > > > > Info Message:
+> > > > > Inverted Blue Segment:
 > > > > > ``` > Grid：``` <br />
 > > > > > ``` > ``` <br />
 > > > > > ``` > <!-- -->``` <br />
