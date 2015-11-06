@@ -1,17 +1,17 @@
 <!doctype html>
 
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1'>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css'>
+  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js'></script>
 
   <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
   <![endif]-->
 </head>
 
@@ -39,9 +39,16 @@
 <!-- -->
   <div class="ui basic attached segment">
     <div class="ui equal width grid">
-      <div class="ui column"><h2 id="install" class="ui header">Installation</h2><code>gem install markdown-ui</code><h2 id="usage" class="ui header">Usage</h2><code>markdown-ui index.mdui &gt; index.html</code><h2 id="credits" class="ui header">Credits</h2>
-Markdown-UI uses <a class="ui item" href="http://www.semantic-ui.com">Semantic-UI http://www.semantic-ui.com</a>
- syntax and framework, and ruby <code>redcarpet</code> library.Credit goes to the people behind these wonderful framework and libraries.<h2 class="ui header">Source</h2>
+      <div class="ui column"><h2 id="install" class="ui header">Installation</h2>
+Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
+<code>gem install markdown-ui</code><h2 id="usage" class="ui header">Usage</h2>
+Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux) <br /> <br />
+<code>markdown-ui index.mdui &gt; index.html</code><h2 class="ui header">Markdown-UI (Read-Evaluate-Print-Loop) REPL shell</h2>
+You can interactively create Markdown-UI websites using the <code>markdown-ui-shell</code>.<div class="ui message"><code>$ markdown-ui-shell</code><br /><code></code><br /><code>Hit RETURN three times to parse.</code><br /><code># __Button|A Button__</code><br /><code>#</code><br /><code>#</code><br /><code></code><br /><code>&lt;button class="ui button"&gt;A Button&lt;/button&gt;</code><br /><code></code><br /><code>#</code></div>
+<h2 id="credits" class="ui header">Credits</h2>
+Markdown-UI would not be possible without the the <a class="ui item" href="http://www.semantic-ui.com">Semantic-UI</a>
+ framework, and the Ruby <a class="ui item" href="https://github.com/vmg/redcarpet">RedCarpet</a>
+ library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.<h2 class="ui header">Source</h2>
 This document is written entirely in Markdown-UI. see: <a class="ui item" href="https://github.com/jjuliano/markdown-ui/tree/master/website">the source files</a>
 <h2 id="issues-bugs" class="ui header">Notes/Issues/Bugs</h2>
 <ul class="ui unordered list"><li>Ongoing support for Semantic-UI elements/modules/components</li><li>The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)</li><li>A separator in between two spaces is required on block elements to separate elements (see Column example)</li><li>Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. Those elements will not be supported by Markdown-UI.</li></ul></div>

@@ -19,15 +19,29 @@
 > > > Equal Width Grid:
 > > > > Column:
 > > > > ## Installation::install
+> > > > Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
 > > > > ```gem install markdown-ui```
 > > > >
 > > > > ## Usage::usage
+> > > > Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux) <br /> <br />
 > > > > ```markdown-ui index.mdui > index.html```
 > > > >
-> > > > ## Credits::credits
-> > > > Markdown-UI uses [Semantic-UI http：//www.semantic-ui.com](http：//www.semantic-ui.com) syntax and framework, and ruby ```redcarpet``` library.
+> > > > ## Markdown-UI (Read-Evaluate-Print-Loop) REPL shell
+> > > > You can interactively create Markdown-UI websites using the `markdown-ui-shell`.
+> > > > > Message:
+> > > > > ```$ markdown-ui-shell``` <br />
+> > > > > ``` ``` <br />
+> > > > > ```Hit RETURN three times to parse.``` <br />
+> > > > > ```# __Button|A Button__``` <br />
+> > > > > ```# ``` <br />
+> > > > > ```# ``` <br />
+> > > > > ``` ``` <br />
+> > > > > ```    <button class="ui button">A Button</button>``` <br />
+> > > > > ``` ``` <br />
+> > > > > ```# ```
 > > > >
-> > > > Credit goes to the people behind these wonderful framework and libraries.
+> > > > ## Credits::credits
+> > > > Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
 > > > >
 > > > > ## Source
 > > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jjuliano/markdown-ui/tree/master/website)
