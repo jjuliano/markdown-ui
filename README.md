@@ -6,13 +6,46 @@
 
 Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
-## Installation
+# Installation
 
-    $ gem install markdown-ui
+Markdown-UI is readily available as a Ruby gem.
+The minimum required Ruby version is 2.0.
 
-## Usage
+`$ gem install markdown-ui`
 
-    $ markdown-ui file.mdui
+# Usage
+
+Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux)
+
+`$ markdown-ui index.mdui > index.html`
+
+# Markdown-UI (Read-Evaluate-Print-Loop) REPL shell
+
+You can interactively create Markdown-UI websites using the markdown-ui-shell.
+
+```
+$ markdown-ui-shell
+
+Hit RETURN three times to parse.
+# __Button|A Button__
+#
+#
+
+<button class="ui button">A Button</button>
+
+#
+```
+
+# Credits
+
+Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
+
+# Notes/Issues/Bugs
+
+  * Ongoing support for Semantic-UI elements/modules/components
+  * The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)
+  * A separator in between two spaces is required on block elements to separate elements (see Column example)
+  * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.
 
 ## Contributing
 
@@ -24,4 +57,3 @@ Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jjuliano/markdown-ui/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
