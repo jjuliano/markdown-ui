@@ -10,7 +10,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "#{@klass} item"
+        klass = "ui #{@klass} item"
         content = @content.strip
         link = @link
 

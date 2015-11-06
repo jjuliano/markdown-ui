@@ -19,4 +19,3 @@ module MarkdownUI::Input
     end
   end
 end
-

@@ -13,12 +13,12 @@ module MarkdownUI
 
       data = if @data
         _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\"#{value}\""
+        " data-#{attribute}=\'#{value}\'"
       else
         nil
       end
 
-      list = ""
+      list = ''
       if !content.grep(/^\<li\>.*/).empty?
         list = content.join
       else

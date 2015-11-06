@@ -17,4 +17,3 @@ module MarkdownUI::Label
     end
   end
 end
-

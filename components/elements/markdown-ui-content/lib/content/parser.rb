@@ -23,7 +23,7 @@ module MarkdownUI
             @content.split(':')
           else
             if @content
-              @content.split("\n")
+              @content.split('\n')
             else
               ['']
             end

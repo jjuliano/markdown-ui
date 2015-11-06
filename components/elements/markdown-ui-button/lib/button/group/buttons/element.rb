@@ -14,7 +14,7 @@ module MarkdownUI::Button
             :icon?        => !(element =~ /icon/i).nil?
           )
 
-          if element.length == "buttons".length
+          if element.length == 'buttons'.length
             MarkdownUI::Button::Group::Buttons::Standard.new(element, content).render
           elsif mode.icon?
             MarkdownUI::Button::Group::Buttons::Icon.new(element, content).render

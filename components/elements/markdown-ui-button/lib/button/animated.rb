@@ -20,8 +20,8 @@ module MarkdownUI::Button
         content << visible_content
         content << hidden_content
       else
-        content << MarkdownUI::StandardTag.new(visible_content, "visible content").render
-        content << MarkdownUI::StandardTag.new(hidden_content, "hidden content").render
+        content << MarkdownUI::StandardTag.new(visible_content, 'visible content').render
+        content << MarkdownUI::StandardTag.new(hidden_content, 'hidden content').render
       end
 
       MarkdownUI::StandardTag.new(content.join, klass, _id).render

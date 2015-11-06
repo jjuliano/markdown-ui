@@ -13,9 +13,9 @@ module MarkdownUI
         klass = MarkdownUI::KlassUtil.new("#{@content} #{@klass} icon").klass
 
         output = []
-        output << "<i"
+        output << '<i'
         output << klass
-        output << "></i>"
+        output << '></i>'
 
         output.join
       end

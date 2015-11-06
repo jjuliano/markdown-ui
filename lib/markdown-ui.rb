@@ -18,7 +18,7 @@ module MarkdownUI
     include MarkdownUI::Collection
 
     def hrule
-      klass = "ui divider"
+      klass = 'ui divider'
       MarkdownUI::StandardTag.new(nil, klass).render
     end
 

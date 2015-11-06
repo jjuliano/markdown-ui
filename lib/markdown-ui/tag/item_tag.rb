@@ -9,11 +9,11 @@ module MarkdownUI
     def render
       content, @data = @content.split(';')
       klass = MarkdownUI::KlassUtil.new(@klass).klass if @klass
-      link = " href=\"#{@link.strip}\"" if @link
+      link = " href=\'#{@link.strip}\'" if @link
 
       data = if @data
         _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\"#{value}\""
+        " data-#{attribute}=\'#{value}\'"
       else
         nil
       end

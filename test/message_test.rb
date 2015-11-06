@@ -48,7 +48,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
     assert_equal \
 '<div class="ui message">
   <div class="ui header">New Site Features</div>
-  <ul class="list">
+  <ul class="ui list">
     <li>You can now have cover images on blog pages</li>
     <li>Drafts will now auto-save while writing</li>
   </ul>

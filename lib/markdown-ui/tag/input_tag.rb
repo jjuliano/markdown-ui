@@ -9,7 +9,7 @@ module MarkdownUI
 
     def render
       content = if @content
-        " type=\"#{@content.strip.downcase}\""
+        " type=\'#{@content.strip.downcase}\'"
       else
         nil
       end
@@ -17,12 +17,12 @@ module MarkdownUI
       klass = MarkdownUI::KlassUtil.new(@klass).klass unless @klass.nil?
 
       _id = if @id
-        " placeholder=\"#{@id.capitalize}\""
+        " placeholder=\'#{@id.capitalize}\'"
       end
 
       data = if @data
         _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\"#{value}\""
+        " data-#{attribute}=\'#{value}\'"
       else
         nil
       end

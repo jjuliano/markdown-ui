@@ -5,7 +5,7 @@ module MarkdownUI
     end
 
     def klass
-      " class=\"#{@text.join(' ').strip}\""
+      " class=\'#{@text.join(' ').strip}\'"
     end
   end
 end

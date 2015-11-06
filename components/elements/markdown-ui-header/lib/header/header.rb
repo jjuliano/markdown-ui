@@ -8,7 +8,7 @@ module MarkdownUI
     def render
       text = @text.strip
       klass = MarkdownUI::KlassUtil.new("ui #{@klass} header").klass
-      _id = " id=\"#{@_id}\"" if @_id
+      _id = " id=\'#{@_id}\'" if @_id
       level = @level
 
       output = []
@@ -16,15 +16,15 @@ module MarkdownUI
       if @level > 0
         output << "<h#{level}"
         output << _id
-        output << klass + ">"
+        output << klass + '>'
         output << "#{text}"
         output << "</h#{level}>"
       else
-        output << "<div"
+        output << '<div'
         output << _id
-        output << klass + ">"
+        output << klass + '>'
         output << "#{text}"
-        output << "</div>"
+        output << '</div>'
       end
 
       output.join

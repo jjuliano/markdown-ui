@@ -14,7 +14,7 @@ ___
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui divider"></div>', output
+'<div class=\'ui divider\'></div>', output
   end
 
   def test_vertical_divider

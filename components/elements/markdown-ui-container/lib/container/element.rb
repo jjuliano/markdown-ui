@@ -19,7 +19,7 @@ module MarkdownUI::Container
         :aligned?   => !(element =~ /aligned/i).nil?
       )
 
-      if element.length == "container".length
+      if element.length == 'container'.length
         MarkdownUI::Container::Standard.new(element, content).render
       elsif mode.left? && mode.aligned?
         MarkdownUI::Container::Alignment::Left.new(element, content).render

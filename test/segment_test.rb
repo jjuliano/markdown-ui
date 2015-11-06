@@ -495,7 +495,8 @@ __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of t
   <p>Humans don\'t think of lions as being like cats, but they are.</p>
 </div>
 <p></p>
-<div class="ui bottom attached warning message"><i class="warning icon"></i> You\'ve reached the end of this content segment!</div>
+<div class="ui bottom attached warning message"><i class="warning icon"></i>
+You\'ve reached the end of this content segment!</div>
 ', output
   end
 

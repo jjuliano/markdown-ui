@@ -14,7 +14,7 @@ module MarkdownUI
 
     def render
       if @content
-        if @element.length == "segment".length
+        if @element.length == 'segment'.length
           MarkdownUI::StandardSegment.new(@element, @content).render
         elsif @mode.horizontal?
           MarkdownUI::HorizontalSegment.new(@element, @content).render
@@ -30,7 +30,7 @@ module MarkdownUI
           MarkdownUI::CustomSegment.new(@element, @content).render
         end
       else
-        MarkdownUI::CustomSegment.new(@element, "").render
+        MarkdownUI::CustomSegment.new(@element, '').render
       end
     end
 

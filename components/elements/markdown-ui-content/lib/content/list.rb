@@ -11,7 +11,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "#{@klass} list"
+        klass = "ui #{@klass} list"
         content = @content.strip
         type = @type
         data = @data

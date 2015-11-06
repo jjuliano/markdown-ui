@@ -45,7 +45,8 @@ class ButtonTest < Redcarpet::TestCase
 
     output = @parser.render(markdown)
     assert_equal \
-'<button class="ui klass button"><i class="right arrow icon"></i> Follow</button>
+'<button class="ui klass button"><i class="right arrow icon"></i>
+Follow</button>
 ', output
   end
 

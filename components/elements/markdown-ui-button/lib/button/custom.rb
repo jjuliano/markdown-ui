@@ -19,4 +19,3 @@ module MarkdownUI::Button
     end
   end
 end
-

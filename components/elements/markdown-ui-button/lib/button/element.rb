@@ -52,7 +52,7 @@ module MarkdownUI::Button
           MarkdownUI::Button::Standard.new(content, klass, _id).render
         end
       else
-        MarkdownUI::Button::Custom.new(element, "", klass, _id).render
+        MarkdownUI::Button::Custom.new(element, '', klass, _id).render
       end
     end
 

@@ -11,17 +11,17 @@ module MarkdownUI
       content = @content.strip unless @content.nil?
       klass = MarkdownUI::KlassUtil.new(@klass).klass unless @klass.nil?
       _id = if @id
-        " id=\"#{@id.split.join('-')}\""
+        " id=\'#{@id.split.join('-')}\'"
       end
 
       data = if @data
         _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\"#{value}\""
+        " data-#{attribute}=\'#{value}\'"
       else
         nil
       end
 
-      "<div#{_id}#{klass}#{data} tabindex=\"0\">#{content}</div>"
+      "<div#{_id}#{klass}#{data} tabindex=\'0\'>#{content}</div>"
     end
   end
 end
