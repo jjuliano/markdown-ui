@@ -9,7 +9,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "#{@klass} header"
+        klass = "ui #{@klass} header"
         content = @content.strip
 
         MarkdownUI::StandardTag.new(content, klass).render
