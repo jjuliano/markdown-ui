@@ -51,7 +51,7 @@
 > > > > * Ongoing support for Semantic-UI elements/modules/components
 > > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
 > > > > * A separator in between two spaces is required on block elements to separate elements (see Column example)
-> > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. Those elements will not be supported by Markdown-UI.
+> > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.
 > > > >
 > > >
 > > > <!-- -->
