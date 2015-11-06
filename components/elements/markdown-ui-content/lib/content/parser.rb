@@ -22,7 +22,11 @@ module MarkdownUI
           content = if !(@content =~ /\:/).nil?
             @content.split(':')
           else
-            @content.split("\n")
+            if @content
+              @content.split("\n")
+            else
+              ['']
+            end
           end
 
           process(content)
@@ -33,7 +37,7 @@ module MarkdownUI
         content_type, actual_content = content[0], content[1]
         klass = content[2] if content.size > 2
 
-        unless actual_content.nil?
+        if actual_content
           mode = OpenStruct.new(
             :text?      => !(content_type =~ /text/i).nil?,
             :icon?      => !(content_type =~ /icon/i).nil?,
