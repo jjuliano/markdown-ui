@@ -64,8 +64,8 @@
   √ Horizontal Divider
 
 * Variations
-  Inverted
-  Fitted
-  Hidden
-  Section
-  Clearing
+  √ Inverted
+  √ Fitted
+  √ Hidden
+  √ Section
+  √ Clearing

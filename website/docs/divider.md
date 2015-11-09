@@ -233,3 +233,188 @@
 > > > > ```     </tr> ``` <br />
 > > > > ```   </tbody> ``` <br />
 > > > > ``` </table> ``` <br />
+
+>
+> <!-- -->
+> > Basic Segment:
+> > ## Variations:Dividing Left Aligned:variations
+>
+> <!-- -->
+> > Basic Segment:
+> > #### Inverted Divider::inverted-divider
+> > "A divider can have its colors inverted"
+>
+> <!-- -->
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Inverted Divider
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Inverted Segment:
+> > > > "Lorem Ipsum Dolor"
+> > > > > Inverted Divider:
+> > > > > &nbsp;
+> > > >
+> > > > "Lorem Ipsum Dolor"
+> > > > > Horizontal Inverted Divider:
+> > > > > Horizontal
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Inverted Segment：``` <br />
+> > > > ``` > "Lorem Ipsum Dolor" ``` <br />
+> > > > ``` > > Inverted Divider：``` <br />
+> > > > ``` > > &nbsp; ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor" ``` <br />
+> > > > ``` > > Horizontal Inverted Divider Header：``` <br />
+> > > > ``` > > Horizontal ```
+
+>
+> <!-- -->
+> > Basic Segment:
+> > #### Fitted Divider::fitted-divider
+> > "A divider can be fitted, without any space above or below it."
+>
+> <!-- -->
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Fitted Divider
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Segment:
+> > > > "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+> > > > > Fitted Divider:
+> > > > > &nbsp;
+> > > >
+> > > > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Segment：``` <br />
+> > > > ``` > "Lorem Ipsum Dolor ..." ``` <br />
+> > > > ``` > > Fitted Divider：``` <br />
+> > > > ``` > > &nbsp; ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor ..." ```
+
+>
+> <!-- -->
+> > Basic Segment:
+> > #### Hidden Divider::hidden-divider
+> > "A hidden divider divides content without creating a dividing line"
+>
+> <!-- -->
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Hidden Divider
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Segment:
+> > > > ### Section One
+> > > > "Lorem Ipsum Dolor"
+> > > > > Hidden Divider:
+> > > > > &nbsp;
+> > > >
+> > > > ### Section Two
+> > > > "Lorem Ipsum Dolor"
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > ### Section One ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor" ``` <br />
+> > > > ``` > > Hidden Divider：``` <br />
+> > > > ``` > > &nbsp; ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > ### Section Two ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor ..." ```
+
+>
+> <!-- -->
+> > Basic Segment:
+> > #### Section Divider::section-divider
+> > "A divider can provide greater margins to divide sections of content"
+>
+> <!-- -->
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Section Divider
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Segment:
+> > > > ### Section One
+> > > > "Lorem Ipsum Dolor"
+> > > > > Section Divider:
+> > > > > &nbsp;
+> > > >
+> > > > ### Section Two
+> > > > "Lorem Ipsum Dolor"
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > ### Section One ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor" ``` <br />
+> > > > ``` > > Section Divider：``` <br />
+> > > > ``` > > &nbsp; ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > ### Section Two ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor ..." ```
+
+>
+> <!-- -->
+> > Basic Segment:
+> > #### Clearing Divider::clearing-divider
+> > "A divider can clear the contents above it"
+>
+> <!-- -->
+> > Divided Segment Grid:
+> > > Attached Segment:
+> > > > Top Attached Label:
+> > > > Clearing Divider
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Segment:
+> > > > > Right Floated Header:
+> > > > > Floated Content
+> > > >
+> > > > <!-- -->
+> > > > > Clearing Divider:
+> > > > > &nbsp;
+> > > >
+> > > > "Lorem Ipsum Dolor"
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` > Segment：``` <br />
+> > > > ``` > > Right Floated Header：``` <br />
+> > > > ``` > > Floated Content ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > <!-- --> ``` <br />
+> > > > ``` > > Clearing Divider： ``` <br />
+> > > > ``` > > &nbsp; ``` <br />
+> > > > ``` > ``` <br />
+> > > > ``` > "Lorem Ipsum Dolor" ```
