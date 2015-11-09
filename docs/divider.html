@@ -6,16 +6,17 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
   <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1'>
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.5/semantic.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
   <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.5/semantic.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
 
   <!--[if lt IE 9]>
   <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
   <![endif]-->
 </head>
-
 <body>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
+
 <div class="ui container">
   <div class="ui inverted segment">
     <div class="ui inverted menu">
@@ -320,6 +321,212 @@ Specifications</div>
         <br />
         <code>&lt;/table&gt;</code>
         <br />
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h2 id="variations" class="ui dividing left aligned header">Variations</h2>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="inverted-divider" class="ui header">Inverted Divider</h4>
+    <p>A divider can have its colors inverted</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Inverted Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui inverted segment">
+        <p>Lorem Ipsum Dolor</p>
+        <div class="ui inverted divider"></div>
+        <p>Lorem Ipsum Dolor</p>
+        <div class="ui horizontal inverted divider">Horizontal</div>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; Inverted Segment:</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor"</code>
+        <br />
+        <code>&gt; &gt; Inverted Divider:</code>
+        <br />
+        <code>&gt; &gt; &amp;nbsp;</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor"</code>
+        <br />
+        <code>&gt; &gt; Horizontal Inverted Divider Header:</code>
+        <br />
+        <code>&gt; &gt; Horizontal</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="fitted-divider" class="ui header">Fitted Divider</h4>
+    <p>A divider can be fitted, without any space above or below it.</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Fitted Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui segment"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p><div class="ui fitted divider"></div>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; Segment:</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor ..."</code>
+        <br />
+        <code>&gt; &gt; Fitted Divider:</code>
+        <br />
+        <code>&gt; &gt; &amp;nbsp;</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor ..."</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="hidden-divider" class="ui header">Hidden Divider</h4>
+    <p>A hidden divider divides content without creating a dividing line</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Hidden Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui segment">
+        <h3 class="ui header">Section One</h3>
+        <p>Lorem Ipsum Dolor</p>
+        <div class="ui hidden divider"></div>
+        <h3 class="ui header">Section Two</h3>
+        <p>Lorem Ipsum Dolor</p>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; ### Section One</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor"</code>
+        <br />
+        <code>&gt; &gt; Hidden Divider:</code>
+        <br />
+        <code>&gt; &gt; &amp;nbsp;</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; ### Section Two</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor ..."</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="section-divider" class="ui header">Section Divider</h4>
+    <p>A divider can provide greater margins to divide sections of content</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Section Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui segment">
+        <h3 class="ui header">Section One</h3>
+        <p>Lorem Ipsum Dolor</p>
+        <div class="ui section divider"></div>
+        <h3 class="ui header">Section Two</h3>
+        <p>Lorem Ipsum Dolor</p>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; ### Section One</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor"</code>
+        <br />
+        <code>&gt; &gt; Section Divider:</code>
+        <br />
+        <code>&gt; &gt; &amp;nbsp;</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; ### Section Two</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor ..."</code>
+      </div>
+    </div>
+  </div>
+<!-- -->
+  <div class="ui basic segment">
+    <h4 id="clearing-divider" class="ui header">Clearing Divider</h4>
+    <p>A divider can clear the contents above it</p>
+  </div>
+<!-- -->
+  <div class="ui divided segment grid">
+    <div class="ui attached segment">
+      <div class="ui top attached label">Clearing Divider</div>
+    </div>
+<!-- -->
+    <div class="ui center aligned six wide column">
+      <h5 class="ui center aligned header">Preview</h5>
+      <div class="ui segment">
+        <div class="ui right floated header">Floated Content</div>
+<!-- -->
+        <div class="ui clearing divider"></div>
+        <p>Lorem Ipsum Dolor</p>
+      </div>
+    </div>
+<!-- -->
+    <div class="ui ten wide column">
+      <h5 class="ui header">Markdown Syntax</h5>
+      <div class="ui inverted very padded segment">
+        <code>&gt; Segment:</code>
+        <br />
+        <code>&gt; &gt; Right Floated Header:</code>
+        <br />
+        <code>&gt; &gt; Floated Content</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; &lt;!-- --&gt;</code>
+        <br />
+        <code>&gt; &gt; Clearing Divider:</code>
+        <br />
+        <code>&gt; &gt; &amp;nbsp;</code>
+        <br />
+        <code>&gt;</code>
+        <br />
+        <code>&gt; "Lorem Ipsum Dolor"</code>
       </div>
     </div>
   </div>

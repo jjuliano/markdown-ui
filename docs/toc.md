@@ -98,3 +98,12 @@
 > > > > [Standard Divider](divider.html#standard-divider),
 > > > > [Vertical Divider](divider.html#vertical-divider),
 > > > > [Horizontal Divider](divider.html#horizontal-divider)
+> > >
+> > > <!-- -->
+> > > > Column:
+> > > > ### [Variations](divider.html#variations)
+> > > > [Inverted](divider.html#inverted-divider),
+> > > > [Fitted](divider.html#fitted-divider),
+> > > > [Hidden](divider.html#hidden-divider),
+> > > > [Section](divider.html#section-divider),
+> > > > [Clearing](divider.html#clearing-divider)
