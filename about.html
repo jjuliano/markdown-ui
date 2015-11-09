@@ -15,9 +15,9 @@
   <![endif]-->
 </head>
 <body>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
 
-<div class="ui container">
+  <div class="ui container">
   <div class="ui inverted segment">
     <div class="ui inverted menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
@@ -64,5 +64,59 @@
   </div>
 </div>
 
+
+  <div class="ui last container"></div>
+
+  <style>
+  .last.container {
+    margin-bottom: 300px !important;
+  }
+  </style>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    var
+      $headers     = $('.header'),
+      $header      = $headers.first(),
+      ignoreScroll = false,
+      timer
+    ;
+
+    // Preserve example in viewport when resizing browser
+    $(window)
+      .on('resize', function() {
+        // ignore callbacks from scroll change
+        clearTimeout(timer);
+        $headers.visibility('disable callbacks');
+
+        // preserve position
+        $(document).scrollTop( $header.offset().top );
+
+        // allow callbacks in 500ms
+        timer = setTimeout(function() {
+          $headers.visibility('enable callbacks');
+        }, 500);
+      })
+    ;
+    $headers
+      .visibility({
+        // fire once each time passed
+        once: false,
+
+        // don't refresh position on resize
+        checkOnRefresh: true,
+
+        // lock to this element on resize
+        onTopPassed: function() {
+          $header = $(this);
+        },
+        onTopPassedReverse: function() {
+          $header = $(this);
+        }
+      })
+    ;
+  });
+  </script>
 </body>
 </html>
