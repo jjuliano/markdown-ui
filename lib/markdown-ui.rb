@@ -104,6 +104,8 @@ module MarkdownUI
             MarkdownUI::Content::InputBlock.new(element, content).render
           when /divider/i
             MarkdownUI::Content::DividerBlock.new(element, content).render
+          when /header/i
+            MarkdownUI::Content::HeaderBlock.new(element, content).render
           end
         end
       end
