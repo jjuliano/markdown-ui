@@ -1,8 +1,8 @@
 > Container:
 > > Inverted Segment:
-> > > Inverted Menu:
+> > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
-> > > > Inverted Right Menu:
+> > > > Stackable Inverted Right Menu:
 > > > > [Table of Contents](toc.html)
 > > > > [About](../about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
@@ -22,7 +22,7 @@
 > > "Standard Divider"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Standard Divider
@@ -44,7 +44,7 @@
 > > "A divider can segment content vertically"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertical Divider
@@ -116,7 +116,7 @@
 > > "A divider can segment content horizontally"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Horizontal Divider
@@ -245,7 +245,7 @@
 > > "A divider can have its colors inverted"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Inverted Divider
@@ -282,7 +282,7 @@
 > > "A divider can be fitted, without any space above or below it."
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Fitted Divider
@@ -315,7 +315,7 @@
 > > "A hidden divider divides content without creating a dividing line"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Hidden Divider
@@ -351,7 +351,7 @@
 > > "A divider can provide greater margins to divide sections of content"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Section Divider
@@ -387,7 +387,7 @@
 > > "A divider can clear the contents above it"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Clearing Divider

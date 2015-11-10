@@ -1,8 +1,8 @@
 > Container:
 > > Inverted Segment:
-> > > Inverted Menu:
+> > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
-> > > > Inverted Right Menu:
+> > > > Stackable Inverted Right Menu:
 > > > > [Table of Contents](toc.html)
 > > > > [About](../about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
@@ -22,7 +22,7 @@
 > > "Standard Button"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Standard Button
@@ -39,7 +39,7 @@
 > > > > ``` __Button|Follow__ ```
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Standard Button with Custom Class And ID
@@ -56,7 +56,7 @@
 > > > > ```__<Optional-Class> Button|Follow|<Optional-ID>__```
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Focusable Button
@@ -78,7 +78,7 @@
 > > "A button can be formatted to show different levels of emphasis"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Emphasis
@@ -103,7 +103,7 @@
 > > "A button can animate to show hidden content"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Animated
@@ -120,7 +120,7 @@
 > > > > ```__Animated Button|Next;Icon：Right Arrow__```
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertical Animated
@@ -137,7 +137,7 @@
 > > > > ```__Vertical Animated Button|Icon：Shop;Shop__```
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Fade Animated
@@ -159,7 +159,7 @@
 > > "A button can have only an icon"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Icon Button
@@ -181,7 +181,7 @@
 > > "A button can have an icon and a label"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Labeled Icon
@@ -203,7 +203,7 @@
 > > "A basic button is less pronounced"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Button
@@ -220,7 +220,7 @@
 > > > > ``` __Basic Button|Icon：User,Add Friend__ ```
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Button
@@ -260,7 +260,7 @@
 > > "A button can be formatted to appear on dark backgrounds"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Inverted
@@ -306,7 +306,7 @@
 > > "Buttons can exist together as a group"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Buttons
@@ -334,7 +334,7 @@
 > > "Buttons can exist together as a group"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Buttons
@@ -381,7 +381,7 @@
 > > "Button groups can contain conditionals"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Conditionals
@@ -430,7 +430,7 @@
 > > "A button can show it is currently the active user selection"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Active State
@@ -452,7 +452,7 @@
 > > "A button can show it is currently unable to be interacted with"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Disabled State
@@ -474,7 +474,7 @@
 > > "A button can show a loading indicator"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Loading State
@@ -506,7 +506,7 @@
 > > "A button can be formatted to link to a social website"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Social
@@ -540,7 +540,7 @@
 > > "A button can have different sizes"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Size
@@ -576,7 +576,7 @@
 > > "A button can have different colors"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Colored
@@ -622,7 +622,7 @@
 > > "A button can reduce its padding to fit into tighter spaces"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Compact
@@ -648,7 +648,7 @@
 > > "A button can hint towards a positive consequence"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Positive
@@ -672,7 +672,7 @@
 > > "A button can hint towards a negative consequence"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Negative
@@ -694,7 +694,7 @@
 > > "A button can take the width of its container"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Fluid
@@ -716,7 +716,7 @@
 > > "A button can be circular"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Circular
@@ -738,7 +738,7 @@
 > > "A button can be attached to the top or bottom of other content"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertically Attached
@@ -805,7 +805,7 @@
 > > "A button can be attached to the left or right of other content"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Horizontally Attached
@@ -833,7 +833,7 @@
 > > "Groups can be formatted to appear vertically"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Vertical Buttons
@@ -863,7 +863,7 @@
 > > "Groups can be formatted as icons"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Icon Buttons
@@ -891,7 +891,7 @@
 > > "Groups can be formatted as labeled icons"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Labeled Icon Buttons
@@ -919,7 +919,7 @@
 > > "Groups can be formatted to use multiple button types together"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Mixed Group
@@ -947,7 +947,7 @@
 > > "Groups can have their widths divided evenly"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Equal Width
@@ -992,7 +992,7 @@
 > > "Groups can have a shared color"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Colored Buttons
@@ -1020,7 +1020,7 @@
 > > "A button group can be less pronounced"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Basic Buttons
@@ -1079,7 +1079,7 @@
 > > "Groups can have a shared size"
 >
 > <!-- -->
-> > Divided Segment Grid:
+> > Stackable Divided Segment Grid:
 > > > Attached Segment:
 > > > > Top Attached Label:
 > > > > Group Sizes
