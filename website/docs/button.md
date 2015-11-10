@@ -1136,3 +1136,13 @@
 > > > > ``` > __Button|One__ ``` <br />
 > > > > ``` > __Div Tag||Or__ ``` <br />
 > > > > ``` > __Button|Two__ ```
+>
+> <!-- -->
+> > Inverted Center Aligned Footer Segment Container Grid:
+> > > Ten Wide Column:
+> > > ##### Help Preserve This Project:Inverted
+> > > Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
+> > > " "
+> > > [__Primary Button|Donate Today__](PAYPAL_BUTTON)
+> ____
+> > [Free and Open Source (MIT)](http：//markdown-ui.mit-license.org)
