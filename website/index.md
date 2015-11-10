@@ -1,8 +1,8 @@
 > Container:
 > > Inverted Segment:
-> > > Inverted Menu:
+> > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "active basic")
-> > > > Inverted Right Menu:
+> > > > Stackable Inverted Right Menu:
 > > > > [Docs](docs/toc.html)
 > > > > [About](about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
@@ -16,7 +16,7 @@
 >
 > <!-- -->
 > > Basic Attached Segment:
-> > > Equal Width Grid:
+> > > Stackable Equal Width Grid:
 > > > > Column:
 > > > > ## Installation::install
 > > > > Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
@@ -68,7 +68,7 @@
 >
 > <!-- -->
 > ##Cheat Sheet:Center Aligned:cheatsheets
-> > Equal Width Grid:
+> > Stackable Equal Width Grid:
 > > > Column:
 > > > > Basic Segment:
 > > > > ##### Button

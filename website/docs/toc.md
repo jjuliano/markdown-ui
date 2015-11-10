@@ -1,8 +1,8 @@
 > Container:
 > > Inverted Segment:
-> > > Inverted Menu:
+> > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
-> > > > Inverted Right Menu:
+> > > > Stackable Inverted Right Menu:
 > > > > [Docs](toc.html "active")
 > > > > [About](../about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
@@ -12,21 +12,21 @@
 > > Text Container:
 > > # Table of Contents:Center Aligned
 > > ## [Button](button.html#button)
-> > > Two Column Doubling Grid Container:
+> > > Two Column Stackable Justified Aligned Grid Container:
 > > > > Column:
 > > > > ### [Types](button.html#types)
-> > > > [Button](button.html#simple-button),
-> > > > [Emphasis](button.html#emphasis),
-> > > > [Animated](button.html#animated),
-> > > > [Icon](button.html#icon),
-> > > > [Labeled Icon](button.html#labeled-icon),
-> > > > [Basic](button.html#basic-button),
+> > > > [Button](button.html#simple-button)&#183;
+> > > > [Emphasis](button.html#emphasis)&#183;
+> > > > [Animated](button.html#animated)&#183;
+> > > > [Icon](button.html#icon)&#183;
+> > > > [Labeled Icon](button.html#labeled-icon)&#183;
+> > > > [Basic](button.html#basic-button)&#183;
 > > > > [Inverted](button.html#inverted)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Groups](button.html#groups)
-> > > > [Buttons](button.html#buttons),
+> > > > [Buttons](button.html#buttons)&#183;
 > > > > [Icon Buttons](button.html#icon-buttons)
 > > >
 > > > <!-- -->
@@ -37,73 +37,73 @@
 > > > <!-- -->
 > > > > Column:
 > > > > ### [States](button.html#states)
-> > > > [Active](button.html#active),
-> > > > [Disabled](button.html#disabled),
+> > > > [Active](button.html#active)&#183;
+> > > > [Disabled](button.html#disabled)&#183;
 > > > > [Loading](button.html#loading)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Variations](button.html#variations)
-> > > > [Social](button.html#social),
-> > > > [Size](button.html#size),
-> > > > [Colored](button.html#colored),
-> > > > [Compact](button.html#compact),
-> > > > [Positive](button.html#positive),
-> > > > [Negative](button.html#negative),
-> > > > [Fluid](button.html#fluid),
-> > > > [Circular](button.html#circular),
-> > > > [Vertically Attached](button.html#vertically-attached),
+> > > > [Social](button.html#social)&#183;
+> > > > [Size](button.html#size)&#183;
+> > > > [Colored](button.html#colored)&#183;
+> > > > [Compact](button.html#compact)&#183;
+> > > > [Positive](button.html#positive)&#183;
+> > > > [Negative](button.html#negative)&#183;
+> > > > [Fluid](button.html#fluid)&#183;
+> > > > [Circular](button.html#circular)&#183;
+> > > > [Vertically Attached](button.html#vertically-attached)&#183;
 > > > > [Horizontally Attached](button.html#horizontally-attached)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Group Variations](button.html#group-variations)
-> > > > [Vertical Buttons](button.html#vertical-buttons),
-> > > > [Icon Buttons](button.html#icon-buttons),
-> > > > [Labeled Icon Buttons](button.html#labeled-icon-buttons),
-> > > > [Mixed Group](button.html#mixed-group),
-> > > > [Equal Width](button.html#equal-width),
-> > > > [Colored Buttons](button.html#colored-buttons),
-> > > > [Basic Buttons](button.html#basic-buttons),
+> > > > [Vertical Buttons](button.html#vertical-buttons)&#183;
+> > > > [Icon Buttons](button.html#icon-buttons)&#183;
+> > > > [Labeled Icon Buttons](button.html#labeled-icon-buttons)&#183;
+> > > > [Mixed Group](button.html#mixed-group)&#183;
+> > > > [Equal Width](button.html#equal-width)&#183;
+> > > > [Colored Buttons](button.html#colored-buttons)&#183;
+> > > > [Basic Buttons](button.html#basic-buttons)&#183;
 > > > > [Group Sizes](button.html#group-sizes)
 > >
 > > <!-- -->
 > > ## [Container](container.html#container)
-> > > Two Column Doubling Grid Container:
+> > > Two Column Stackable Justified Aligned Grid Container:
 > > > > Column:
 > > > > ### [Types](container.html#types)
-> > > > [Standard Container](container.html#standard-container),
+> > > > [Standard Container](container.html#standard-container)&#183;
 > > > > [Text Container](container.html#text-container)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Variations](container.html#variations)
-> > > > [Text Alignment](container.html#text-alignment),
-> > > > [Justified Aligned](container.html#justified-aligned),
+> > > > [Text Alignment](container.html#text-alignment)&#183;
+> > > > [Justified Aligned](container.html#justified-aligned)&#183;
 > > > > [Fluid](container.html#fluid)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Examples](container.html#examples)
-> > > > [Container Using Grids](container.html#container-using-grids),
-> > > > [Centered Menu](container.html#centered-menu),
+> > > > [Container Using Grids](container.html#container-using-grids)&#183;
+> > > > [Centered Menu](container.html#centered-menu)&#183;
 > > > > [Container Segment](container.html#container-segment)
 
 > >
 > > <!-- -->
 > > ## [Divider](divider.html#divider)
-> > > Two Column Doubling Grid Container:
+> > > Two Column Stackable Justified Aligned Grid Container:
 > > > > Column:
 > > > > ### [Types](divider.html#types)
-> > > > [Standard Divider](divider.html#standard-divider),
-> > > > [Vertical Divider](divider.html#vertical-divider),
+> > > > [Standard Divider](divider.html#standard-divider)&#183;
+> > > > [Vertical Divider](divider.html#vertical-divider)&#183;
 > > > > [Horizontal Divider](divider.html#horizontal-divider)
 > > >
 > > > <!-- -->
 > > > > Column:
 > > > > ### [Variations](divider.html#variations)
-> > > > [Inverted](divider.html#inverted-divider),
-> > > > [Fitted](divider.html#fitted-divider),
-> > > > [Hidden](divider.html#hidden-divider),
-> > > > [Section](divider.html#section-divider),
+> > > > [Inverted](divider.html#inverted-divider)&#183;
+> > > > [Fitted](divider.html#fitted-divider)&#183;
+> > > > [Hidden](divider.html#hidden-divider)&#183;
+> > > > [Section](divider.html#section-divider)&#183;
 > > > > [Clearing](divider.html#clearing-divider)

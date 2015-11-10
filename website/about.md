@@ -1,8 +1,8 @@
 > Container:
 > > Inverted Segment:
-> > > Inverted Menu:
+> > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
-> > > > Inverted Right Menu:
+> > > > Stackable Inverted Right Menu:
 > > > > [Docs](docs/toc.html)
 > > > > [About](about.html "active")
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
