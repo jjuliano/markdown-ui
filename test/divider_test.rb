@@ -138,4 +138,76 @@ ___
 "<div class=\"ui inverted segment\">\n  <p></p>\n<!-- -->\n  <div class=\"ui divider\"></div>\n  <p></p>\n<!-- -->\n  <div class=\"ui horizontal inverted divider header\">\n    <p>Horizontal</p>\n  </div>\n</div>\n", output
   end
 
+  def test_fitted_variation
+    markdown =
+'
+> Segment:
+> "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+> > Fitted Divider:
+> > &nbsp;
+>
+> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+"<div class=\"ui segment\"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p><div class=\"ui fitted divider\"></div>\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>\n", output
+  end
+
+  def test_hidden_variation
+    markdown =
+'
+> Segment:
+> ### Section One
+> "Lorem Ipsum Dolor"
+> > Hidden Divider:
+> > &nbsp;
+>
+> ### Section Two
+> "Lorem Ipsum Dolor"
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+"<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+  end
+    
+  def test_section_variation
+    markdown =
+'
+> Segment:
+> ### Section One
+> "Lorem Ipsum Dolor"
+> > Section Divider:
+> > &nbsp;
+>
+> ### Section Two
+> "Lorem Ipsum Dolor"
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+"<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui section divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+  end
+    
+  def test_floated_variation
+    markdown =
+'
+> Segment:
+> > Right Floated Header:
+> > Floated Content
+>
+> <!-- -->
+> > Clearing Divider:
+> > &nbsp;
+>
+> "Lorem Ipsum Dolor"
+'
+
+    output = @parser.render(markdown)
+    assert_equal \
+"<div class=\"ui segment\">\n  <div class=\"ui right floated header\">Floated Content</div>\n<!-- -->\n  <div class=\"ui clearing divider\"></div>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+  end
+
+
 end
