@@ -27,7 +27,7 @@ module MarkdownUI
     end
 
     def emphasis(text)
-      MarkdownUI::Content::Icon.new(text).render
+      text =~ /icon/i ? MarkdownUI::Content::Icon.new(text).render : MarkdownUI::Content::Flag.new(text).render
     end
 
     def double_emphasis(text)

@@ -53,6 +53,8 @@ module MarkdownUI
             MarkdownUI::Content::Text.new(actual_content, klass).render
           elsif mode.icon?
             MarkdownUI::Content::Icon.new(actual_content, klass).render
+          elsif mode.flag?
+            MarkdownUI::Content::Flag.new(actual_content, klass).render
           elsif mode.header?
             MarkdownUI::Content::Header.new(actual_content, klass).render
           elsif mode.list? && mode.ordered?
