@@ -106,6 +106,10 @@ module MarkdownUI
             MarkdownUI::Content::DividerBlock.new(element, content).render
           when /header/i
             MarkdownUI::Content::HeaderBlock.new(element, content).render
+          when /content/i
+            MarkdownUI::Content::ContentBlock.new(element, content).render
+          when /span/i
+            MarkdownUI::Content::SpanBlock.new(element, content).render
           end
         end
       end
