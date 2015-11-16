@@ -70,101 +70,103 @@
 > ##Cheat Sheet:Center Aligned:cheatsheets
 > > Stackable Equal Width Grid:
 > > > Column:
-> > > > Basic Segment:
-> > > > ##### Button
-> > > > > Inverted Blue Segment:
-> > > > > ``` # Short-Hand ``` <br />
-> > > > > ``` __Button|Button Text__ ```
-> > > >
-> > > > <!-- -->
-> > > > > Inverted Blue Segment:
-> > > > > ``` # Block Syntax ``` <br />
-> > > > > ``` > Button： ``` <br />
-> > > > > ``` > Button Text ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Container
-> > > > > Inverted Blue Segment:
-> > > > > ``` > Container： ``` <br />
-> > > > > ``` > ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Icon
-> > > > > Inverted Blue Segment:
-> > > > > ``` _Icon <Name>_ ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Segment
-> > > > > Inverted Blue Segment:
-> > > > > ``` > Segment： ``` <br />
-> > > > > ``` > ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Menu
-> > > > > Inverted Blue Segment:
-> > > > > ``` > Menu： ``` <br />
-> > > > > ``` > [Menu Item]() ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### List
-> > > > > Inverted Blue Segment:
-> > > > > ``` # Unordered List ``` <br />
-> > > > > ``` * List 1 ``` <br />
-> > > > > ``` * List 2 ``` <br />
-> > > > > ``` # Ordered List ``` <br />
-> > > > > ``` 1. List 1 ``` <br />
-> > > > > ``` 1. List 2 ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Label
-> > > > > Inverted Blue Segment:
-> > > > > ``` > Label： ``` <br />
-> > > > > ``` > _Mail Icon_ 23 ``` <br />
+> > > > Segments:
+> > > > > Basic Segment:
+> > > > > ##### Button
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # Short-Hand ``` <br />
+> > > > > > ``` __Button|Button Text__ ```
+> > > > >
+> > > > > <!-- -->
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # Block Syntax ``` <br />
+> > > > > > ``` > Button： ``` <br />
+> > > > > > ``` > Button Text ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Container
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` > Container： ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Icon
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` _Icon <Name>_ ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Segment
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` > Segment： ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Menu
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` > Menu： ``` <br />
+> > > > > > ``` > [Menu Item]() ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### List
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # Unordered List ``` <br />
+> > > > > > ``` * List 1 ``` <br />
+> > > > > > ``` * List 2 ``` <br />
+> > > > > > ``` # Ordered List ``` <br />
+> > > > > > ``` 1. List 1 ``` <br />
+> > > > > > ``` 1. List 2 ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Label
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` > Label： ``` <br />
+> > > > > > ``` > _Mail Icon_ 23 ``` <br />
 > >
-> > <!-- -->
+> > <!-- --> 
 > > > Column:
-> > > > Basic Segment:
-> > > > ##### Item
-> > > > > Inverted Blue Segment:
-> > > > > ``` [Item](#URL_ID "class") ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Message
-> > > > > Inverted Blue Segment:
-> > > > > ``` # Short-Hand ``` <br />
-> > > > > ``` __Message|Header：Message Header,Text：Message Text__ ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > > Inverted Blue Segment:
-> > > > > ``` # Block Syntax ``` <br />
-> > > > > ``` > Message： ``` <br />
-> > > > > ``` > __Header|Message Header__ ``` <br />
-> > > > > ``` > Message Text ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Header
-> > > > > Inverted Blue Segment:
-> > > > > ``` # H1, ## H2, ### H3, #### H4 ... ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > > Inverted Blue Segment:
-> > > > > ``` # DIV tag header ``` <br />
-> > > > > ``` __Header|A Div Header__ ``` <br />
-> > > >
-> > > > <!-- -->
-> > > > ##### Column / Grid / Row / Segment / Container
-> > > > > Inverted Blue Segment:
-> > > > > ``` > Grid：``` <br />
-> > > > > ``` > ``` <br />
-> > > > > ``` > <!-- -->``` <br />
-> > > > > ``` > ``` <br />
-> > > > > ``` > > Column：``` <br />
-> > > > > ``` > > Column 1 ``` <br />
-> > > > > ``` > ``` <br />
-> > > > > ``` > <!-- -->``` <br />
-> > > > > ``` > ``` <br />
-> > > > > ``` > > Column：``` <br />
-> > > > > ``` > > Column 2 ``` <br />
+> > > > Segments:
+> > > > > Basic Segment:
+> > > > > ##### Item
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` [Item](#URL_ID "class") ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Message
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # Short-Hand ``` <br />
+> > > > > > ``` __Message|Header：Message Header,Text：Message Text__ ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # Block Syntax ``` <br />
+> > > > > > ``` > Message： ``` <br />
+> > > > > > ``` > __Header|Message Header__ ``` <br />
+> > > > > > ``` > Message Text ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Header
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # H1, ## H2, ### H3, #### H4 ... ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` # DIV tag header ``` <br />
+> > > > > > ``` __Header|A Div Header__ ``` <br />
+> > > > >
+> > > > > <!-- -->
+> > > > > ##### Column / Grid / Row / Segment / Container
+> > > > > > Inverted Blue Segment:
+> > > > > > ``` > Grid：``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > <!-- -->``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > > Column：``` <br />
+> > > > > > ``` > > Column 1 ``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > <!-- -->``` <br />
+> > > > > > ``` > ``` <br />
+> > > > > > ``` > > Column：``` <br />
+> > > > > > ``` > > Column 2 ``` <br />
 
 >
 > <!-- -->
