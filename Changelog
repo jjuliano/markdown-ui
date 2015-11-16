@@ -1,3 +1,22 @@
+0.1.16 - 11-16-15
+  * abbfe2f Added span and content block; added header examples
+  * 459aa65 Removed unneeded JS code
+  * ce643ba Add Flag Element and Docs
+  * 3db8f6a Add divider variations tests
+  * 14adbb4 Add Footer, Licensing and Donation info
+  * a0bcaab Responsive Documentations via Stackable container/grids
+  * 6fd9ce1 set viewport meta to point scale
+  * b5fd1a3 set viewport meta to point scale
+  * 858e0d6 Update docs with new responsive elements defaults
+  * e692b8a Add sensible defaults for mobile first and responsive elements
+  * 20ae1a2 Add remaining Divider docs
+  * dbae563 Explicitly load Semantic-UI reset stylesheet on the body; Bump to 2.1.6
+  * 0ea0792 Added '> Header:' block
+  * 0ac0ae5 Added Divider element variations in TOC
+  * 8a3d29c Set the default project encoding
+  * 1c4401b Update README.md
+  * 0e077aa Explain writing in HTML/JS using custom Javascripts
+
 0.1.15 - 11-6-15
   * Updated Semantic-UI to 2.1.5
   * Added inverted segment variation test
