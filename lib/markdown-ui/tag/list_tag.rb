@@ -1,23 +1,30 @@
+require_relative "tag_klass"
+
 module MarkdownUI
-  class ListTag
-    def initialize(content, klass = nil, type = nil, data = nil)
-      @klass = klass
-      @content = content
-      @type = type
-      @data = data
+  class ListTag < TagKlass
+    def initialize(_content, _klass = nil, _type = nil, _data = nil)
+      @klass = _klass
+      @content = _content
+      @type = _type
+      @data = _data
     end
 
     def render
       content = @content.split(';')
-      klass = MarkdownUI::KlassUtil.new(@klass).klass
 
-      data = if @data
-        _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\'#{value}\'"
-      else
-        nil
+      @type = :unordered if @type.nil?
+
+      case @type
+      when :ordered
+        "<ol#{klass}#{data}>#{list(content)}</ol>"
+      when :unordered
+        "<ul#{klass}#{data}>#{list(content)}</ul>"
       end
+    end
 
+    protected
+
+    def list(content)
       list = ''
       if !content.grep(/^\<li\>.*/).empty?
         list = content.join
@@ -26,15 +33,7 @@ module MarkdownUI
           list += "<li>#{c}</li>"
         end
       end
-
-      @type = :unordered if @type.nil?
-
-      case @type
-      when :ordered
-        "<ol#{klass}#{data}>#{list}</ol>"
-      when :unordered
-        "<ul#{klass}#{data}>#{list}</ul>"
-      end
+      list
     end
   end
 end

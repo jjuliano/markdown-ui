@@ -1,22 +1,16 @@
+require_relative 'tag_klass'
+
 module MarkdownUI
-  class ItemTag
-    def initialize(content, klass = nil, link = nil)
-      @klass = klass
-      @content = content
-      @link = link
+  class ItemTag < TagKlass
+    def initialize(_content, _klass = nil, _link = nil)
+      @klass = _klass
+      @content = _content
+      @link = _link
     end
 
     def render
       content, @data = @content.split(';')
-      klass = MarkdownUI::KlassUtil.new(@klass).klass if @klass
       link = " href=\'#{@link.strip}\'" if @link
-
-      data = if @data
-        _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\'#{value}\'"
-      else
-        nil
-      end
 
       "<a#{klass}#{data}#{link}>#{content}</a>"
     end

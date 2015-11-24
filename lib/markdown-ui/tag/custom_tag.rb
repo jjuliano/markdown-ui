@@ -2,17 +2,13 @@
 
 module MarkdownUI
   class CustomTag
-    def initialize(tag, content, klass = nil)
-      @tag = tag
-      @klass = klass
-      @content = content
+    def initialize(_tag, _content, _klass = nil)
+      @tag = _tag
+      @klass = _klass
+      @content = _content
     end
 
     def render
-      klass = MarkdownUI::KlassUtil.new("#{@klass}").klass
-      tag = @tag.downcase.strip
-      content = MarkdownUI::Content::Parser.new(@content).parse
-
       output = []
       output << "<#{tag}"
       output << "#{klass}>"
@@ -20,6 +16,20 @@ module MarkdownUI
       output << "</#{tag}>"
 
       output.join(' ')
+    end
+
+    protected
+
+    def content
+      MarkdownUI::Content::Parser.new(@content).parse
+    end
+
+    def tag
+      @tag.downcase.strip
+    end
+
+    def klass
+      MarkdownUI::KlassUtil.new("#{@klass}").klass
     end
   end
 end

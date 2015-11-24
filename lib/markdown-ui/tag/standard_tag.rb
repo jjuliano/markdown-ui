@@ -1,26 +1,15 @@
+require_relative "tag_klass"
+
 module MarkdownUI
-  class StandardTag
-    def initialize(content, klass = nil, _id = nil, data = nil)
-      @klass = klass
-      @content = content
-      @data = data
-      @id = _id
+  class StandardTag < TagKlass
+    def initialize(_content, _klass = nil, __id = nil, _data = nil)
+      @klass = _klass
+      @content = _content
+      @data = _data
+      @id = __id
     end
 
     def render
-      content = @content.strip unless @content.nil?
-      klass = MarkdownUI::KlassUtil.new(@klass).klass unless @klass.nil?
-      _id = if @id
-        " id=\'#{@id.split.join('-')}\'"
-      end
-
-      data = if @data
-        _data, attribute, value = @data.split(':')
-        " data-#{attribute}=\'#{value}\'"
-      else
-        nil
-      end
-
       "<div#{_id}#{klass}#{data}>#{content}</div>"
     end
   end
