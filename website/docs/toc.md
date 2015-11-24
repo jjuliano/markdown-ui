@@ -120,7 +120,10 @@
 > > > > [Content Headers](header.html#content-headers)&#183;
 > > > > [Icon Headers](header.html#icon-headers)&#183;
 > > > > [Sub Headers](header.html#sub-headers)&#183;
-
+> >
+> > <!-- -->
+> > ## [Icon](icon.html#icon)
+> >
 >
 > <!-- -->
 > > Inverted Center Aligned Footer Segment Container Grid:
