@@ -3,7 +3,7 @@ require_relative 'test_helper'
 
 class MessageTest < Redcarpet::TestCase
   def setup
-    @parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true)
+    @parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
   end
 
   def test_message
