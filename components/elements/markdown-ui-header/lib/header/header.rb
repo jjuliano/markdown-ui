@@ -2,13 +2,13 @@ module MarkdownUI
   class Header
     def initialize(text, level)
       @text, @klass, @_id = text.split(':')
-      @level = level
+      @level              = level
     end
 
     def render
-      text = @text.strip
+      text  = @text.strip
       klass = MarkdownUI::KlassUtil.new("ui #{@klass} header").klass
-      _id = " id=\'#{@_id}\'" if @_id
+      _id   = " id=\'#{@_id}\'" if @_id
       level = @level
 
       output = []

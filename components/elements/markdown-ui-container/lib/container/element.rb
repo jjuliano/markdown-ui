@@ -12,11 +12,11 @@ module MarkdownUI::Container
       content = @content.strip
 
       mode = OpenStruct.new(
-        :text?      => !(element =~ /text/i).nil?,
-        :left?      => !(element =~ /left/i).nil?,
-        :right?     => !(element =~ /right/i).nil?,
-        :center?    => !(element =~ /center/i).nil?,
-        :aligned?   => !(element =~ /aligned/i).nil?
+          :text?    => !(element =~ /text/i).nil?,
+          :left?    => !(element =~ /left/i).nil?,
+          :right?   => !(element =~ /right/i).nil?,
+          :center?  => !(element =~ /center/i).nil?,
+          :aligned? => !(element =~ /aligned/i).nil?
       )
 
       if element.length == 'container'.length

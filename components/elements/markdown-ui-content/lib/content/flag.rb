@@ -5,12 +5,12 @@ module MarkdownUI
     class Flag
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass
+        @klass   = klass
       end
 
       def render
         content = @content.downcase
-        klass = MarkdownUI::KlassUtil.new("#{@content} #{@klass} flag").klass
+        klass   = MarkdownUI::KlassUtil.new("#{@content} #{@klass} flag").klass
 
         output = []
         output << '<i'

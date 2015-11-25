@@ -5,17 +5,17 @@ module MarkdownUI
     class Text
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass
+        @klass   = klass
       end
 
       def render
         content = if @klass
-          klass = "#{@klass}"
+                    klass = "#{@klass}"
 
-          MarkdownUI::StandardTag.new(@content, klass).render
-        else
-          "#{@content.strip}"
-        end
+                    MarkdownUI::StandardTag.new(@content, klass).render
+                  else
+                    "#{@content.strip}"
+                  end
 
         content
       end

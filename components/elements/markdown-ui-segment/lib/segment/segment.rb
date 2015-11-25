@@ -1,12 +1,12 @@
 module MarkdownUI
   class Segment
     def initialize(element, content)
-      @mode = OpenStruct.new(
-        :horizontal?  => !(element =~ /horizontal/i).nil?,
-        :vertical?    => !(element =~ /vertical/i).nil?,
-        :stacked?     => !(element =~ /stacked/i).nil?,
-        :piled?       => !(element =~ /piled/i).nil?,
-        :padded?      => !(element =~ /padded/i).nil?
+      @mode    = OpenStruct.new(
+          :horizontal? => !(element =~ /horizontal/i).nil?,
+          :vertical?   => !(element =~ /vertical/i).nil?,
+          :stacked?    => !(element =~ /stacked/i).nil?,
+          :piled?      => !(element =~ /piled/i).nil?,
+          :padded?     => !(element =~ /padded/i).nil?
       )
       @element = element
       @content = content

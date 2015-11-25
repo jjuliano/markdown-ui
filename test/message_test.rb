@@ -8,7 +8,7 @@ class MessageTest < Redcarpet::TestCase
 
   def test_message
     markdown =
-'
+        '
 __Message|Header:Changes in Service,Text:"We just updated our privacy policy here to better service our customers. We recommend reviewing the changes."__
 '
 
@@ -23,7 +23,7 @@ __Message|Header:Changes in Service,Text:"We just updated our privacy policy her
 
   def test_message_alternative
     markdown =
-'
+        '
 > Message:
 > __Header|Changes in Service__
 > "We just updated our privacy policy here to better service our customers. We recommend reviewing the changes."
@@ -40,7 +40,7 @@ __Message|Header:Changes in Service,Text:"We just updated our privacy policy her
 
   def test_list_message
     markdown =
-'
+        '
 __List Message|Header: New Site Features, List: You can now have cover images on blog pages;Drafts will now auto-save while writing__
 '
 
@@ -58,7 +58,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 
   def test_list_message_alternative_ordered
     markdown =
-'
+        '
 > List Message:
 > __Header|New Site Features__
 >
@@ -80,7 +80,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 
   def test_list_message_alternative_unordered
     markdown =
-'
+        '
 > List Message:
 > __Header|New Site Features__
 >

@@ -8,7 +8,7 @@ class DividerTest < Redcarpet::TestCase
 
   def test_divider
     markdown =
-'
+        '
 ___
 '
 
@@ -19,7 +19,7 @@ ___
 
   def test_vertical_divider
     markdown =
-'
+        '
 > Two Column Middle Aligned Very Relaxed Stackable Grid:
 > > Column:
 > > > Form:
@@ -55,7 +55,7 @@ ___
 
   def test_horizontal_divider
     markdown =
-'
+        '
 > Center Aligned Basic Segment:
 > > Left Icon Action Input:
 > > _Search Icon_
@@ -77,7 +77,7 @@ ___
 
   def test_horizontal_divider_table
     markdown =
-'
+        '
 > Horizontal Divider Header:
 > _Tag Icon_
 > Description
@@ -120,7 +120,7 @@ ___
 
   def test_inverted_variation
     markdown =
-'
+        '
 > Inverted Segment:
 > " "
 >
@@ -140,7 +140,7 @@ ___
 
   def test_fitted_variation
     markdown =
-'
+        '
 > Segment:
 > "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
 > > Fitted Divider:
@@ -156,7 +156,7 @@ ___
 
   def test_hidden_variation
     markdown =
-'
+        '
 > Segment:
 > ### Section One
 > "Lorem Ipsum Dolor"
@@ -171,10 +171,10 @@ ___
     assert_equal \
 "<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
   end
-    
+
   def test_section_variation
     markdown =
-'
+        '
 > Segment:
 > ### Section One
 > "Lorem Ipsum Dolor"
@@ -189,10 +189,10 @@ ___
     assert_equal \
 "<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui section divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
   end
-    
+
   def test_floated_variation
     markdown =
-'
+        '
 > Segment:
 > > Right Floated Header:
 > > Floated Content

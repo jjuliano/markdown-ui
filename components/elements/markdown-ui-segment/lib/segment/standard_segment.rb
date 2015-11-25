@@ -8,7 +8,7 @@ module MarkdownUI
     def render
       element = @element.strip
       content = @content.strip
-      klass = "ui #{element} segment"
+      klass   = "ui #{element} segment"
 
       MarkdownUI::StandardTag.new(content, klass).render
     end

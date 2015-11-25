@@ -1,5 +1,5 @@
 module MarkdownUI
-  module MessageElement
+  module Message
     VERSION = '0.1'
   end
 end

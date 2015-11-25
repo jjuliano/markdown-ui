@@ -5,14 +5,14 @@ module MarkdownUI
     class Item
       def initialize(content, klass = nil, link = nil)
         @content = content
-        @klass = klass
-        @link = link
+        @klass   = klass
+        @link    = link
       end
 
       def render
-        klass = "ui #{@klass} item"
+        klass   = "ui #{@klass} item"
         content = @content.strip
-        link = @link
+        link    = @link
 
         MarkdownUI::ItemTag.new(content, klass, link).render
       end

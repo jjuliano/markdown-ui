@@ -4,6 +4,9 @@ gemspec
 Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
+gem 'markdown-ui-shared',    \
+  path: 'components/shared/markdown-ui-shared'
+
 group :elements do
   gem 'markdown-ui-button',    \
   path: 'components/elements/markdown-ui-button/'

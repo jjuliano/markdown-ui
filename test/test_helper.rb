@@ -5,7 +5,7 @@ begin
   if ENV['COVERAGE']
     require "codeclimate-test-reporter"
     require 'simplecov'
-    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter,CodeClimate::TestReporter::Formatter]
+    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter, CodeClimate::TestReporter::Formatter]
     SimpleCov.start CodeClimate::TestReporter.configuration.profile
   end
 rescue LoadError
@@ -29,7 +29,7 @@ class Redcarpet::TestCase < Test::Unit::TestCase
     options = options.fetch(:with, {})
 
     if options.kind_of?(Array)
-      options = Hash[options.map {|o| [o, true]}]
+      options = Hash[options.map { |o| [o, true] }]
     end
 
     render = renderer.new(options)

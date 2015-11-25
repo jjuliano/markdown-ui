@@ -5,12 +5,12 @@ module MarkdownUI
     class Icon
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass
+        @klass   = klass
       end
 
       def render
         content = @content.downcase
-        klass = MarkdownUI::KlassUtil.new("#{@content} #{@klass} icon").klass
+        klass   = MarkdownUI::KlassUtil.new("#{@content} #{@klass} icon").klass
 
         output = []
         output << '<i'

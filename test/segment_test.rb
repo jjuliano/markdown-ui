@@ -8,7 +8,7 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_segment
     markdown =
-'
+        '
 > Segment:
 > "Lorem Ipsum Dolor"
 '
@@ -23,7 +23,7 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_vertical_segment
     markdown =
-'
+        '
 > Vertical Segment:
 > "Lorem Ipsum Dolor"
 
@@ -56,7 +56,7 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_horizontal_segment
     markdown =
-'
+        '
 > Horizontal Segment:
 > " "
 
@@ -89,11 +89,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_stacked_segment
     markdown =
-'
+        '
 > Stacked Segment:
 > "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui stacked segment">
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
@@ -103,14 +103,14 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_piled_segment
     markdown =
-'
+        '
 > Piled Segment:
 > #### A Header
 > "Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque."
 > "Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in."
 > "Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui piled segment">
   <h4 class="ui header">A Header</h4>
@@ -123,11 +123,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_disabled_state
     markdown =
-'
+        '
 > Disabled Segment:
 > " "
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui disabled segment">
   <p></p>
@@ -137,11 +137,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_disabled_state_on_all_types
     markdown =
-'
+        '
 > Disabled Segment:
 > "Lorem Ipsum Dolor"
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui disabled segment">
   <p>Lorem Ipsum Dolor</p>
@@ -149,7 +149,7 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Vertical Disabled Segment:
 > "Lorem Ipsum Dolor"
 
@@ -180,7 +180,7 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Horizontal Disabled Segment:
 > " "
 
@@ -211,11 +211,11 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Stacked Disabled Segment:
 > "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui stacked disabled segment">
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
@@ -223,14 +223,14 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Piled Disabled Segment:
 > #### A Header
 > "Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque."
 > "Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in."
 > "Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui piled disabled segment">
   <h4 class="ui header">A Header</h4>
@@ -244,11 +244,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_loading_state
     markdown =
-'
+        '
 > Loading Segment:
 > " "
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui loading segment">
   <p></p>
@@ -258,11 +258,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_loading_state_on_all_types
     markdown =
-'
+        '
 > Loading Segment:
 > "Lorem Ipsum Dolor"
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui loading segment">
   <p>Lorem Ipsum Dolor</p>
@@ -270,7 +270,7 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Vertical Loading Segment:
 > "Lorem Ipsum Dolor"
 
@@ -301,7 +301,7 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Horizontal Loading Segment:
 > " "
 
@@ -332,11 +332,11 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Stacked Loading Segment:
 > "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui stacked loading segment">
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
@@ -344,14 +344,14 @@ class SegmentTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Piled Loading Segment:
 > #### A Header
 > "Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque."
 > "Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in."
 > "Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui piled loading segment">
   <h4 class="ui header">A Header</h4>
@@ -365,11 +365,11 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_inverted_variation
     markdown =
-'
+        '
 > Inverted Segment:
 > "I\'m here to tell you something, and you will probably read me first."
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
   <p>I\'m here to tell you something, and you will probably read me first.</p>
@@ -379,7 +379,7 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_attached_variation
     markdown =
-'
+        '
 > Top Attached Segment:
 > "This segment is on top"
 
@@ -393,7 +393,7 @@ class SegmentTest < Redcarpet::TestCase
 > Bottom Attached Segment:
 > "This segment is on bottom"
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui top attached segment">
   <p>This segment is on top</p>
@@ -411,7 +411,7 @@ class SegmentTest < Redcarpet::TestCase
 
   def test_attached_variation_2
     markdown =
-'
+        '
 ##### Dogs:Top Attached
 > Attached Segment:
 > "Dogs are one type of animal"
@@ -432,7 +432,7 @@ class SegmentTest < Redcarpet::TestCase
 
 __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of this content segment\!__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<h5 class="ui top attached header">Dogs</h5>
 <div class="ui attached segment">
@@ -455,7 +455,7 @@ __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of t
 
   def test_attached_variation_2_alternative
     markdown =
-'
+        '
 ##### Dogs:Top Attached
 > Attached Segment:
 > "Dogs are one type of animal"
@@ -478,7 +478,7 @@ __Warning Message Bottom Attached|Icon:Warning,Text:You\'ve reached the end of t
 > _Warning Icon_
 > You\'ve reached the end of this content segment\!
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<h5 class="ui top attached header">Dogs</h5>
 <div class="ui attached segment">
@@ -502,7 +502,7 @@ You\'ve reached the end of this content segment!</div>
 
   def test_padded
     markdown =
-'
+        '
 > Padded Segment:
 > " "
 '

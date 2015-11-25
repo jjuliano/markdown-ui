@@ -1,19 +1,19 @@
 # coding: UTF-8
 
-module MarkdownUI::Menu
-  class Custom
-    def initialize(element, content, klass = nil)
-      @element = element
-      @klass = klass
-      @content = content
-    end
+module MarkdownUI
+  module Menu
+    class Custom < MarkdownUI::Shared::TagKlass
+      def initialize(_element, _content, _klass = nil)
+        @element = _element
+        @_klass  = _klass
+        @content = _content
+      end
 
-    def render
-      element = @element.join(' ').strip
-      content = MarkdownUI::Content::Parser.new(@content).parse
-      klass = "ui #{element} #{@klass} menu"
+      def render
+        @klass = "ui #{element} #{@_klass} menu"
 
-      MarkdownUI::StandardTag.new(content, klass).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
+      end
     end
   end
 end

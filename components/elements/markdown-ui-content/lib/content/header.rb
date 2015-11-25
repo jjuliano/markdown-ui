@@ -5,11 +5,11 @@ module MarkdownUI
     class Header
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass
+        @klass   = klass
       end
 
       def render
-        klass = "ui #{@klass} header"
+        klass   = "ui #{@klass} header"
         content = @content.strip
 
         MarkdownUI::StandardTag.new(content, klass).render

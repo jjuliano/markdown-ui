@@ -8,7 +8,7 @@ class MenuTest < Redcarpet::TestCase
 
   def test_menu
     markdown =
-'
+        '
 > Three Item Menu:
 > [Editorials](# "active")
 > [Reviews](#)
@@ -27,7 +27,7 @@ class MenuTest < Redcarpet::TestCase
 
   def test_menu_alternative
     markdown =
-'
+        '
 __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
@@ -43,7 +43,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_secondary_menu
     markdown =
-'
+        '
 > Secondary Menu:
 > [Home](# "active")
 > [Messages](#)
@@ -67,7 +67,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_pointing_menu
     markdown =
-'
+        '
 > Pointing Menu:
 > [Home](# "active")
 > [Messages](#)
@@ -100,7 +100,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_secondary_pointing_menu
     markdown =
-'
+        '
 > Secondary Pointing Menu:
 > [Home](# "active")
 > [Messages](#)
@@ -133,7 +133,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_tabular_menu
     markdown =
-'
+        '
 > Tabular Menu:
 > [Bio](# "active")
 > [Photos](#)
@@ -150,7 +150,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_tabular_attached_menu
     markdown =
-'
+        '
 > Top Attached Tabular Menu:
 > [Bio](# "active")
 > [Photos](#)
@@ -181,7 +181,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_vertical_fluid_tabular_menu
     markdown =
-'
+        '
 > Grid:
 > > Four Wide Column:
 > > > Vertical Fluid Tabular Menu:
@@ -208,7 +208,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_text_menu
     markdown =
-'
+        '
 > Text Menu:
 > [Closest](# "active")
 > [Most Comments](#)
@@ -227,7 +227,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_vertical_menu
     markdown =
-'
+        '
 > Vertical Menu:
 > [Inbox __Div Tag|1|Teal Pointing Left Label__](# "active teal item")
 > [Spam __Div Tag|51|Label__](#)
@@ -246,7 +246,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
   def test_pagination_menu
     markdown =
-'
+        '
 > Pagination Menu:
 > [1](# "active")
 > [...](# "disabled")

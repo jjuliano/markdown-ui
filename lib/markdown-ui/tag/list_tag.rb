@@ -1,24 +1,22 @@
-require_relative "tag_klass"
-
 module MarkdownUI
-  class ListTag < TagKlass
+  class ListTag < MarkdownUI::Shared::TagKlass
     def initialize(_content, _klass = nil, _type = nil, _data = nil)
-      @klass = _klass
+      @klass   = _klass
       @content = _content
-      @type = _type
-      @data = _data
+      @type    = _type
+      @data    = _data
     end
 
     def render
       content = @content.split(';')
 
-      @type = :unordered if @type.nil?
+      @type   = :unordered if @type.nil?
 
       case @type
-      when :ordered
-        "<ol#{klass}#{data}>#{list(content)}</ol>"
-      when :unordered
-        "<ul#{klass}#{data}>#{list(content)}</ul>"
+        when :ordered
+          "<ol#{klass}#{data}>#{list(content)}</ol>"
+        when :unordered
+          "<ul#{klass}#{data}>#{list(content)}</ul>"
       end
     end
 

@@ -9,7 +9,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "#{@element}"
+        klass   = "#{@element}"
         content = @content.strip
 
         MarkdownUI::SpanTag.new(content, klass).render

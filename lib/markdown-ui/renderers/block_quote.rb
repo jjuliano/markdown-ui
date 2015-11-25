@@ -3,7 +3,7 @@ module MarkdownUI
     module BlockQuote
       def block_quote(text)
         element, content = text.split(':')
-        @params = element.split
+        @params          = element.split
 
         @elements = Hash.new(MarkdownUI::Content::BasicBlock).merge(
             button:    MarkdownUI::Button::Element,
@@ -20,7 +20,7 @@ module MarkdownUI
             form:      MarkdownUI::Content::FormBlock,
             item:      MarkdownUI::Content::ItemBlock,
             menu:      MarkdownUI::Menu::Element,
-            message:   MarkdownUI::Message,
+            message:   MarkdownUI::Message::Element,
             input:     MarkdownUI::Content::InputBlock,
             header:    MarkdownUI::Content::HeaderBlock
         )

@@ -9,7 +9,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "ui #{@element} divider"
+        klass   = "ui #{@element} divider"
         content = @content.strip
 
         MarkdownUI::StandardTag.new(content, klass).render

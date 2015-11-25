@@ -5,7 +5,7 @@ module MarkdownUI
     class Custom
       def initialize(content, klass = nil)
         @content = content
-        @klass = klass
+        @klass   = klass
       end
 
       def render

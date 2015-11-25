@@ -37,7 +37,7 @@ module MarkdownUI
       end
 
       def render_message
-        MarkdownUI::Message.new(element, content, klass).render
+        MarkdownUI::Message::Element.new(element, content, klass).render
       end
 
       def render_menu

@@ -5,7 +5,7 @@ require 'message/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'markdown-ui-message'
-  spec.version       = MarkdownUI::MessageElement::VERSION
+  spec.version       = MarkdownUI::Message::VERSION
   spec.authors       = ['Joel Bryan Juliano']
   spec.email         = ['joelbryan.juliano@gmail.com']
 

@@ -8,7 +8,7 @@ class ButtonTest < Redcarpet::TestCase
 
   def test_standard_button
     markdown = '__Klass Button|Text:Follow|ID__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="id" class="ui klass button">Follow</button>
 ', output
@@ -16,7 +16,7 @@ class ButtonTest < Redcarpet::TestCase
 
   def test_standard_button_2
     markdown = '__Button.Klass|Text:Follow|My ID__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="my-id" class="ui klass button">Follow</button>
 ', output
@@ -37,7 +37,7 @@ class ButtonTest < Redcarpet::TestCase
 
   def test_standard_button_alternative_with_icon
     markdown =
-'
+        '
 > Klass Button:
 > _Right Arrow Icon_
 > Follow
@@ -52,7 +52,7 @@ Follow</button>
 
   def test_standard_button_without_klass
     markdown = '__Button|Text:Follow__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui button">Follow</button>
 ', output
@@ -60,7 +60,7 @@ Follow</button>
 
   def test_focusable_button
     markdown = '__Focusable Button|Text:Focusable Button|Focusable__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="focusable" class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
@@ -68,7 +68,7 @@ Follow</button>
 
   def test_focusable_button_2
     markdown = '__Button.Focusable|Text:Focusable Button__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
@@ -76,11 +76,11 @@ Follow</button>
 
   def test_focusable_button_alternative
     markdown =
-'
+        '
 > Focusable Button:
 > Focusable Button
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
@@ -88,7 +88,7 @@ Follow</button>
 
   def test_focusable_button_without_klass
     markdown = '__Focusable Button|Text:Focusable Button__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
@@ -96,7 +96,7 @@ Follow</button>
 
   def test_focusable_class_button
     markdown = '__Button.Focusable|Text:Focusable Button|Focusable__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="focusable" class="ui focusable button" tabindex="0">Focusable Button</div>
 ', output
@@ -105,8 +105,8 @@ Follow</button>
   def test_ordinality
     markdown1 = '__Primary Button|Text:Save|Primary__'
     markdown2 = '__Button|Text:Discard__'
-    output1 = @parser.render(markdown1)
-    output2 = @parser.render(markdown2)
+    output1   = @parser.render(markdown1)
+    output2   = @parser.render(markdown2)
     assert_equal \
 '<button id="primary" class="ui primary button">Save</button>
 ', output1
@@ -116,8 +116,8 @@ Follow</button>
 
     markdown3 = '__Secondary Button|Text:Save|Secondary__'
     markdown4 = '__Button|Text:Discard__'
-    output3 = @parser.render(markdown3)
-    output4 = @parser.render(markdown4)
+    output3   = @parser.render(markdown3)
+    output4   = @parser.render(markdown4)
     assert_equal \
 '<button id="secondary" class="ui secondary button">Save</button>
 ', output3
@@ -128,13 +128,13 @@ Follow</button>
 
   def test_ordinality_alternative
     markdown1 =
-'
+        '
 > Primary Button:
 > Save
 '
 
     markdown2 =
-'
+        '
 > Button:
 > Discard
 '
@@ -149,13 +149,13 @@ Follow</button>
 ', output2
 
     markdown3 =
-'
+        '
 > Secondary Button:
 > Save
 '
 
     markdown4 =
-'
+        '
 > Button:
 > Discard
 '
@@ -172,7 +172,7 @@ Follow</button>
 
   def test_animated
     markdown = '__Animated Button|Text:Next;Icon:Right Arrow__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui animated button">
   <div class="visible content">Next</div>
@@ -185,7 +185,7 @@ Follow</button>
 
   def test_animated_alternative
     markdown =
-'
+        '
 > Animated Button:
 > Next;
 > _Right Arrow Icon_
@@ -204,7 +204,7 @@ Follow</button>
 
   def test_animated_alternative_versa
     markdown =
-'
+        '
 > Animated Button:
 > _Right Arrow Icon_;
 > Next
@@ -223,7 +223,7 @@ Follow</button>
 
   def test_animated_with_klass
     markdown = '__Animated Klass Button|Text:Next;Icon:Right Arrow|This is an ID__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="this-is-an-id" class="ui animated klass button">
   <div class="visible content">Next</div>
@@ -236,7 +236,7 @@ Follow</button>
 
   def test_vertical_animated
     markdown = '__Vertical Animated Button|Icon:Shop;Text:Shop|Vertical__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="vertical" class="ui vertical animated button">
   <div class="visible content">
@@ -249,7 +249,7 @@ Follow</button>
 
   def test_animated_fade
     markdown = '__Fade Animated Button|Text:Sign-up for a Pro account;Text:$12.99 a month|Fade__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="fade" class="ui fade animated button">
   <div class="visible content">Sign-up for a Pro account</div>
@@ -260,7 +260,7 @@ Follow</button>
 
   def test_animated_fade_without_animated_mode_defined
     markdown = '__Fade Animated Button|Text:Sign-up for a Pro account:Visible Content,Text:$12.99 a month:Hidden Content|Fade Animated__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div id="fade-animated" class="ui fade animated button">
   <div class="visible content">Sign-up for a Pro account</div>
@@ -271,7 +271,7 @@ Follow</button>
 
   def test_icon_button
     markdown = '__Icon Button|Icon:Cloud__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui icon button">
   <i class="cloud icon"></i>
@@ -281,11 +281,11 @@ Follow</button>
 
   def test_icon_button_alternative
     markdown =
-'
+        '
 > Icon Button:
 > _Cloud Icon_
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui icon button">
   <i class="cloud icon"></i>
@@ -295,7 +295,7 @@ Follow</button>
 
   def test_multiple_elements_in_a_button
     markdown = '__Button|Icon:Cloud:Fluffy,Text:Literal Text,Icon:Cloud,Text:Cloud:Fluffy__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui button"><i class="cloud fluffy icon"></i>Literal Text<i class="cloud icon"></i><div class="fluffy">Cloud</div></button>
 ', output
@@ -303,7 +303,7 @@ Follow</button>
 
   def test_icon_button_without_icon_mode_defined
     markdown = '__Icon Button|Icon:Cloud|Icon__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="icon" class="ui icon button">
   <i class="cloud icon"></i>
@@ -313,7 +313,7 @@ Follow</button>
 
   def test_labeled_icon_button
     markdown = '__Labeled Icon Button|Icon:Pause,Text:Pause__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui labeled icon button"><i class="pause icon"></i>Pause</button>
 ', output
@@ -321,7 +321,7 @@ Follow</button>
 
   def test_labeled_icon_button_with_klass
     markdown = '__Right Labeled Icon Button|Icon:Right Arrow,Text:Next|Right__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="right" class="ui right labeled icon button"><i class="right arrow icon"></i>Next</button>
 ', output
@@ -329,7 +329,7 @@ Follow</button>
 
   def test_labeled_icon_button_without_icon_mode_defined
     markdown = '__Labeled Icon Button|Icon:Pause,Text:Pause|Labeled Icon__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="labeled-icon" class="ui labeled icon button"><i class="pause icon"></i>Pause</button>
 ', output
@@ -337,7 +337,7 @@ Follow</button>
 
   def test_basic_icon
     markdown = '__Basic Button|Icon:User,Text:Add Friend__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui basic button"><i class="user icon"></i>Add Friend</button>
 ', output
@@ -345,7 +345,7 @@ Follow</button>
 
   def test_basic_icon_without_basic_mode_defined
     markdown = '__Basic Button|Icon:User,Text:Add Friend|Basic__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button id="basic" class="ui basic button"><i class="user icon"></i>Add Friend</button>
 ', output
@@ -353,7 +353,7 @@ Follow</button>
 
   def test_custom_button
     markdown = '__Very Cool Button|Icon:User,Text:Add Friend__'
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<button class="ui very cool button"><i class="user icon"></i>Add Friend</button>
 ', output
@@ -361,7 +361,7 @@ Follow</button>
 
   def test_inverted_button
     markdown =
-'
+        '
 > Inverted Segment:
 > __Inverted Button|Text: Standard|Inverted__
 > __Inverted Black Button|Text: Black|Inverted Black__
@@ -374,7 +374,7 @@ Follow</button>
 > __Inverted Red Button|Text: Red|Inverted Red__
 > __Inverted Teal Button|Text: Teal|Inverted Teal__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
   <button id="inverted" class="ui inverted button">Standard</button>
@@ -393,7 +393,7 @@ Follow</button>
 
   def test_basic_inverted_button
     markdown =
-'
+        '
 > Inverted Segment:
 > __Basic Button|Text: Basic|Basic__
 > __Basic Black Button|Text: Black Basic|Basic Black__
@@ -406,7 +406,7 @@ Follow</button>
 > __Basic Red Button|Text: Red Basic|Basic Red__
 > __Basic Teal Button|Text: Teal Basic|Basic Teal__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui inverted segment">
   <button id="basic" class="ui basic button">Basic</button>
@@ -425,13 +425,13 @@ Follow</button>
 
   def test_group_buttons
     markdown =
-'
+        '
 > Buttons:
 > __Standard Button|Text: One|Standard__
 > __Standard Button|Text: Two|Standard__
 > __Standard Button|Text: Three|Standard__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui buttons">
   <button id="standard" class="ui standard button">One</button>
@@ -443,7 +443,7 @@ Follow</button>
 
   def test_icon_group_buttons
     markdown =
-'
+        '
 > Icon Buttons:
 > __Button|Icon: Align Left__
 > __Button|Icon: Align Center__
@@ -491,7 +491,7 @@ Follow</button>
 
   def test_icon_group_conditionals
     markdown =
-'
+        '
 > Icon Buttons:
 > __Button|Text: Cancel__
 > __Div Tag||Or__
@@ -510,7 +510,7 @@ Follow</button>
 
   def test_icon_group_conditionals_with_data_attributes
     markdown =
-'
+        '
 > Icon Buttons:
 > __Button|Text: un__
 > __Div Tag||Or|Data:Text:ou__
@@ -579,7 +579,7 @@ __Big Button|Big__
 __Huge Button|Huge__
 __Massive Button|Massive__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui mini button\">Mini</button>\n\n<button class=\"ui tiny button\">Tiny</button>\n\n<button class=\"ui small button\">Small</button>\n\n<button class=\"ui medium button\">Medium</button>\n\n<button class=\"ui large button\">Large</button>\n\n<button class=\"ui big button\">Big</button>\n\n<button class=\"ui huge button\">Huge</button>\n\n<button class=\"ui massive button\">Massive</button>\n", output
   end
 
@@ -599,7 +599,7 @@ __Brown Button|Brown__
 __Grey Button|Grey__
 __Black Button|Black__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui red button\">Red</button>\n\n<button class=\"ui orange button\">Orange</button>\n\n<button class=\"ui yellow button\">Yellow</button>\n\n<button class=\"ui olive button\">Olive</button>\n\n<button class=\"ui green button\">Green</button>\n\n<button class=\"ui teal button\">Teal</button>\n\n<button class=\"ui blue button\">Blue</button>\n\n<button class=\"ui violet button\">Violet</button>\n\n<button class=\"ui purple button\">Purple</button>\n\n<button class=\"ui pink button\">Pink</button>\n\n<button class=\"ui brown button\">Brown</button>\n\n<button class=\"ui grey button\">Grey</button>\n\n<button class=\"ui black button\">Black</button>\n", output
   end
 
@@ -609,7 +609,7 @@ __Compact Button|Hold__
 __Compact Icon Button|Icon:Pause__
 __Compact Labeled Icon Button|Icon:Pause, Pause__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui compact button\">Hold</button>\n\n<button class=\"ui compact icon button\">\n  <i class=\"pause icon\"></i>\n</button>\n\n<button class=\"ui compact labeled icon button\"><i class=\"pause icon\"></i>Pause</button>\n", output
   end
 
@@ -618,7 +618,7 @@ __Compact Labeled Icon Button|Icon:Pause, Pause__
 __Positive Button|Positive Button__
 __Negative Button|Negative Button__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui positive button\">Positive Button</button>\n\n<button class=\"ui negative button\">Negative Button</button>\n", output
   end
 
@@ -626,7 +626,7 @@ __Negative Button|Negative Button__
     markdown = '
 __Negative Button|Negative Button__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui negative button\">Negative Button</button>\n", output
   end
 
@@ -634,7 +634,7 @@ __Negative Button|Negative Button__
     markdown = '
 __Fluid Button|Fluid Button__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui fluid button\">Fluid Button</button>\n", output
   end
 
@@ -642,7 +642,7 @@ __Fluid Button|Fluid Button__
     markdown = '
 __Circular Icon Button|Icon:Settings__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<button class=\"ui circular icon button\">\n  <i class=\"settings icon\"></i>\n</button>\n", output
   end
 
@@ -655,7 +655,7 @@ __Top Attached Focusable Button|Top__
 
 __Bottom Attached Focusable Button|Bottom__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<div class=\"ui top attached focusable button\" tabindex=\"0\">Top</div>\n<div class=\"ui attached segment\">\n  <p></p>\n</div>\n<div class=\"ui bottom attached focusable button\" tabindex=\"0\">Bottom</div>\n", output
   end
 
@@ -800,7 +800,7 @@ ___
 > __Button|Icon:Upload__
 > __Button|Icon:Download__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<div class=\"ui small basic icon buttons\">\n  <button class=\"ui button\">\n    <i class=\"file icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"save icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"upload icon\"></i>\n  </button>\n  <button class=\"ui button\">\n    <i class=\"download icon\"></i>\n  </button>\n</div>\n", output
   end
 
@@ -811,7 +811,7 @@ ___
 > __Div Tag||Or__
 > __Button|Two__
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal "<div class=\"ui large buttons\">\n  <button class=\"ui button\">One</button>\n  <div class=\"or\"></div>\n  <button class=\"ui button\">Two</button>\n</div>\n", output
   end
 end

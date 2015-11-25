@@ -9,7 +9,7 @@ module MarkdownUI
       end
 
       def render
-        klass = "ui #{@element} field"
+        klass   = "ui #{@element} field"
         content = @content.strip
 
         MarkdownUI::StandardTag.new(content, klass).render

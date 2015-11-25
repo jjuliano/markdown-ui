@@ -8,7 +8,7 @@ class ContainerTest < Redcarpet::TestCase
 
   def test_container
     markdown =
-'
+        '
 > Container:
 > "Lorem Ipsum Dolor"
 '
@@ -23,7 +23,7 @@ class ContainerTest < Redcarpet::TestCase
 
   def test_text_container
     markdown =
-'
+        '
 > Text Container:
 > # Header
 > "Lorem Ipsum Dolor"
@@ -40,7 +40,7 @@ class ContainerTest < Redcarpet::TestCase
 
   def test_text_alignment
     markdown =
-'
+        '
 > Left Aligned Container:
 > Left Aligned
 '
@@ -51,7 +51,7 @@ class ContainerTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Right Aligned Container:
 > Right Aligned
 '
@@ -62,7 +62,7 @@ class ContainerTest < Redcarpet::TestCase
 ', output
 
     markdown =
-'
+        '
 > Center Aligned Container:
 > Center Aligned
 '
@@ -75,12 +75,12 @@ class ContainerTest < Redcarpet::TestCase
 
   def test_custom_container
     markdown =
-'
+        '
 > Very Cool Container:
 > # Header
 > "Lorem Ipsum Dolor"
 '
-    output = @parser.render(markdown)
+    output   = @parser.render(markdown)
     assert_equal \
 '<div class="ui very cool container">
   <h1 class="ui header">Header</h1>

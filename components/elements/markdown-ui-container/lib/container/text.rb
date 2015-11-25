@@ -8,7 +8,7 @@ module MarkdownUI::Container
     end
 
     def render
-      klass = "ui #{@element} text container"
+      klass   = "ui #{@element} text container"
       content = @content.strip
 
       MarkdownUI::StandardTag.new(content, klass).render

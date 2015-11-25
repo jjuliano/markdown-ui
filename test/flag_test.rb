@@ -8,7 +8,7 @@ class FlagTest < Redcarpet::TestCase
 
   def test_flag
     markdown =
-'
+        '
 _AE Flag_
 _France Flag_
 _Myanmar Flag_

@@ -1,19 +1,19 @@
 # coding: UTF-8
 
 module MarkdownUI
-  class CustomMessage
-    def initialize(element, content, klass = nil)
-      @element = element
-      @klass = klass
-      @content = content
-    end
+  module Message
+    class CustomMessage < MarkdownUI::Shared::TagKlass
+      def initialize(_element, _content, _klass = nil)
+        @element = _element
+        @_klass  = _klass
+        @content = _content
+      end
 
-    def render
-      element = @element.join(' ').strip
-      content = MarkdownUI::Content::Parser.new(@content).parse
-      klass = "ui #{element} #{@klass} message"
+      def render
+        @klass = "ui #{element} #{@_klass} message"
 
-      MarkdownUI::StandardTag.new(content, klass).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
+      end
     end
   end
 end

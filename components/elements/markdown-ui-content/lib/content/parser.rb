@@ -20,14 +20,14 @@ module MarkdownUI
           final_content.join
         else
           content = if !(@content =~ /\:/).nil?
-            @content.split(':')
-          else
-            if @content
-              @content.split('\n')
-            else
-              ['']
-            end
-          end
+                      @content.split(':')
+                    else
+                      if @content
+                        @content.split('\n')
+                      else
+                        ['']
+                      end
+                    end
 
           process(content)
         end
@@ -35,18 +35,18 @@ module MarkdownUI
 
       def process(content)
         content_type, actual_content = content[0], content[1]
-        klass = content[2] if content.size > 2
+        klass                        = content[2] if content.size > 2
 
         if actual_content
           mode = OpenStruct.new(
-            :text?      => !(content_type =~ /text/i).nil?,
-            :icon?      => !(content_type =~ /icon/i).nil?,
-            :flag?      => !(content_type =~ /flag/i).nil?,
-            :image?     => !(content_type =~ /image/i).nil?,
-            :header?    => !(content_type =~ /header/i).nil?,
-            :list?      => !(content_type =~ /list/i).nil?,
-            :unordered? => !(content_type =~ /unordered/i).nil?,
-            :ordered?   => !(content_type =~ /ordered/i).nil?
+              :text?      => !(content_type =~ /text/i).nil?,
+              :icon?      => !(content_type =~ /icon/i).nil?,
+              :flag?      => !(content_type =~ /flag/i).nil?,
+              :image?     => !(content_type =~ /image/i).nil?,
+              :header?    => !(content_type =~ /header/i).nil?,
+              :list?      => !(content_type =~ /list/i).nil?,
+              :unordered? => !(content_type =~ /unordered/i).nil?,
+              :ordered?   => !(content_type =~ /ordered/i).nil?
           )
 
           if mode.text?

@@ -1,17 +1,18 @@
 # coding: UTF-8
 
-module MarkdownUI::Menu
-  class Tabular
-    def initialize(content, klass = nil)
-      @klass = klass
-      @content = content
-    end
+module MarkdownUI
+  module Menu
+    class Tabular < MarkdownUI::Shared::TagKlass
+      def initialize(_content, _klass = nil)
+        @_klass  = _klass
+        @content = _content
+      end
 
-    def render
-      klass = "ui #{@klass} tabular menu"
-      content = MarkdownUI::Content::Parser.new(@content).parse
+      def render
+        @klass = "ui #{@_klass} tabular menu"
 
-      MarkdownUI::StandardTag.new(content, klass).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
+      end
     end
   end
 end
