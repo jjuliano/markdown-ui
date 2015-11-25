@@ -1,3 +1,17 @@
+0.1.17 - 11-25-15
+
+  * 5658cf7 Added Article, Footer, Header and Section Tag; Refactor Tag
+  * e9506ca [Refactor] Use a base class with common methods for components and tags
+  * 72e6ae0 Create a shared component that will be used throughout tags
+  * cf09120 added entries to .gitignore
+  * 805bd27 Added Icon Documentation
+  * bd7f841 [Refactor] Extract HTML helper class to it's own file
+  * 5e011d1 Added basic block
+  * b2b6353 Make renderer flags for tests the same as runtime
+  * 66029b2 [Refactor] Refactor tags by subclassing common methods
+  * db90da9 [Refactor] Move common/shared methods to a superclass
+  * 3a05be4 [Refactor] Extract renderers to their own modules/classes
+
 0.1.16 - 11-16-15
   * abbfe2f Added span and content block; added header examples
   * 459aa65 Removed unneeded JS code
