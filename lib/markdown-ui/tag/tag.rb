@@ -1,28 +1,26 @@
 module MarkdownUI
-  class Tag
-    def initialize(tag, content, klass = nil, data = nil)
-      @mode    = OpenStruct.new(
-          :div?     => !(tag =~ /div/i).nil?,
-          :label?   => !(tag =~ /label/i).nil?,
-          :span?    => !(tag =~ /span/i).nil?,
-          :article? => !(tag =~ /article/i).nil?,
-          :section? => !(tag =~ /section/i).nil?,
-          :header?  => !(tag =~ /header/i).nil?,
-          :footer?  => !(tag =~ /footer/i).nil?
+  class Tag < MarkdownUI::Shared::TagKlass
+    def initialize(_tag, _content, _klass = nil, _data = nil)
+      @elements = Hash.new(MarkdownUI::StandardTag).merge(
+          div:     MarkdownUI::StandardTag,
+          label:   MarkdownUI::LabelTag,
+          span:    MarkdownUI::SpanTag,
+          article: MarkdownUI::ArticleTag,
+          section: MarkdownUI::SectionTag,
+          header:  MarkdownUI::HeaderTag,
+          footer:  MarkdownUI::FooterTag
       )
-      @tag     = tag
-      @content = content
-      @klass   = klass
-      @data    = data
+
+      @tag      = _tag
+      @content  = _content
+      @klass    = _klass
+      @data     = _data
     end
 
     def render
-      if @mode.div?
-        MarkdownUI::StandardTag.new(@content, @klass, nil, @data).render
-      elsif @mode.label?
-        MarkdownUI::LabelTag.new(@content, @klass, nil, @data).render
-      end
-    end
+      @params = @tag.split
 
+      html { @elements[key].new(content, klass_text, _id, data).render } if content
+    end
   end
 end

@@ -14,6 +14,12 @@ module MarkdownUI
         end
       end
 
+      def html
+        if block_given?
+          HTMLFormatter.new(yield).to_html
+        end
+      end
+
       def klass
         MarkdownUI::KlassUtil.new(@klass).klass unless @klass.nil?
       end
@@ -30,8 +36,12 @@ module MarkdownUI
 
       def data
         if @data
-          _data, attribute, value = @data.split(':')
-          " data-#{attribute}=\'#{value}\'"
+          if @data =~ /\:/
+            _data, attribute, value = @data.split(':')
+            " data-#{attribute}=\'#{value}\'"
+          else
+            @data
+          end
         else
           nil
         end
@@ -49,6 +59,18 @@ module MarkdownUI
         else
           nil
         end
+      end
+
+      def regexp
+        Regexp.new (@params.collect { |u| u.downcase }).join('|'), "i"
+      end
+
+      def key
+        keys.grep(regexp).first
+      end
+
+      def keys
+        @elements.keys
       end
     end
   end

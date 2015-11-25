@@ -19,6 +19,7 @@ module MarkdownUI
             field:     MarkdownUI::Content::FieldBlock,
             form:      MarkdownUI::Content::FormBlock,
             item:      MarkdownUI::Content::ItemBlock,
+            tag:       MarkdownUI::Tag,
             menu:      MarkdownUI::Menu::Element,
             message:   MarkdownUI::Message::Element,
             input:     MarkdownUI::Content::InputBlock,
