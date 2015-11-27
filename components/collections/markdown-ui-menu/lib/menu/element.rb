@@ -1,64 +1,27 @@
 module MarkdownUI
   module Menu
-    class Element
-      def initialize(element, content, klass = nil)
-        @element = element
-        @content = content
-        @klass   = klass
+    class Element < MarkdownUI::Shared::TagKlass
+      def initialize(_element, _content, _klass = nil)
+        @elements = Hash.new(MarkdownUI::Menu::Standard).merge(
+            item:        MarkdownUI::Menu::Item,
+            secondary:   MarkdownUI::Menu::Secondary,
+            pagination:  MarkdownUI::Menu::Pagination,
+            pointing:    MarkdownUI::Menu::Pointing,
+            tabular:     MarkdownUI::Menu::Tabular,
+            text:        MarkdownUI::Menu::Text,
+            vertical:    MarkdownUI::Menu::Vertical
+        )
+
+        @element  = _element
+        @content  = _content
+        @klass    = "#{_klass}" "#{element}"
       end
 
       def render
-        element = if @element.is_a? Array
-                    @element
-                  else
-                    @element.split(' ')
-                  end
+        @params = element.split
 
-        content = @content
-
-        klass = if @klass.nil?
-                  element.join(' ').strip
-                else
-                  @klass
-                end
-
-        mode = OpenStruct.new(
-            :item?       => element.grep(/item/i).any?,
-            :secondary?  => element.grep(/secondary/i).any?,
-            :pagination? => element.grep(/pagination/i).any?,
-            :pointing?   => element.grep(/pointing/i).any?,
-            :tabular?    => element.grep(/tabular/i).any?,
-            :text?       => element.grep(/text/i).any?,
-            :vertical?   => element.grep(/vertical/i).any?
-        )
-
-        if standard_menu?(mode) && element.size > 1
-          MarkdownUI::Menu::Custom.new(element, content, klass).render
-        elsif mode.item?
-          MarkdownUI::Menu::Custom.new(element, content, klass).render
-        elsif mode.secondary?
-          MarkdownUI::Menu::Secondary.new(content, klass).render
-        elsif mode.pagination?
-          MarkdownUI::Menu::Pagination.new(content, klass).render
-        elsif mode.pointing?
-          MarkdownUI::Menu::Pointing.new(content, klass).render
-        elsif mode.tabular?
-          MarkdownUI::Menu::Tabular.new(content, klass).render
-        elsif mode.text?
-          MarkdownUI::Menu::Text.new(content, klass).render
-        elsif mode.vertical?
-          MarkdownUI::Menu::Vertical.new(content, klass).render
-        elsif standard_menu?(mode)
-          MarkdownUI::Menu::Standard.new(content, klass).render
-        end
+        html { @elements[key].new(content, klass_text).render } if content
       end
-
-      protected
-
-      def standard_menu?(mode)
-        !mode.item? && !mode.secondary? && !mode.pagination? && !mode.pointing? && !mode.tabular? && !mode.text? && !mode.vertical?
-      end
-
     end
   end
 end
