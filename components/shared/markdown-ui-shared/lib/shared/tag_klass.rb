@@ -66,7 +66,8 @@ module MarkdownUI
       end
 
       def key
-        keys.grep(regexp).first
+        _keys = keys.grep(regexp)
+        _keys.size > 2 ? _keys.join(' ') : _keys.first
       end
 
       def keys
