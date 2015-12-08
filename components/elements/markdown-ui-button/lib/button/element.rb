@@ -32,7 +32,8 @@ module MarkdownUI
             :focusable? => element.grep(/focusable/i).any?,
             :animated?  => element.grep(/animated/i).any?,
             :labeled?   => element.grep(/labeled/i).any?,
-            :basic?     => element.grep(/basic/i).any?
+            :basic?     => element.grep(/basic/i).any?,
+            :toggle?    => element.grep(/toggle/i).any?
         )
 
         if content
@@ -49,6 +50,8 @@ module MarkdownUI
             MarkdownUI::Button::Basic.new(content, klass, _id).render
           elsif mode.animated?
             MarkdownUI::Button::Animated.new(content, klass, _id).render
+          elsif mode.toggle?
+            MarkdownUI::Button::Toggle.new(content, klass, _id).render
           elsif standard_button?(mode)
             MarkdownUI::Button::Standard.new(content, klass, _id).render
           end
@@ -60,7 +63,7 @@ module MarkdownUI
       protected
 
       def standard_button?(mode)
-        !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic?
+        !mode.focusable? && !mode.animated? && !mode.icon? && !mode.labeled? && !mode.basic? && !mode.toggle?
       end
 
     end
