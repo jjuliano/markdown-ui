@@ -1,4 +1,5 @@
 # coding: UTF-8
+require 'securerandom'
 
 module MarkdownUI
   module Button
@@ -11,7 +12,8 @@ module MarkdownUI
       end
 
       def render
-        klass            = "ui #{@klass} toggle button"
+        uuid             ||= SecureRandom.uuid.gsub("-", "_")
+        klass            = "ui #{@klass} #{uuid} toggle button"
         _id              = @id
         inactive_content = @inactive_content
         active_content   = @active_content
@@ -19,24 +21,20 @@ module MarkdownUI
         content = [
           MarkdownUI::ButtonTag.new(inactive_content, klass, _id).render,
           MarkdownUI::ScriptTag.new("
-            function show(b){
-              alert( $(b).hasClass('active'));
-            }
-            $(document)
-              .ready(function() {
-              var $toggle  = $('.ui.toggle.button');
-              $toggle
-                .state({
-                  text: {
-                    inactive : '#{inactive_content}',
-                    active   : '#{active_content}'
-                  }
-                })
-              ;
-            })
-            ;
-          ").render
-        ].join
+    $(document)
+      .ready(function() {
+        $('.ui.#{uuid}.toggle.button')
+        .state({
+          text: {
+            inactive : '#{inactive_content}',
+            active   : '#{active_content}'
+          }
+        })
+      ;
+    })
+    ;
+"
+).render].join
         
         MarkdownUI::FieldTag.new(content).render
       end
