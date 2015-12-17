@@ -8,8 +8,9 @@ module MarkdownUI
         @elements = Hash.new(MarkdownUI::Content::BasicBlock).merge(
             button:    MarkdownUI::Button::Element,
             segment:   MarkdownUI::Segment,
-            grid:      MarkdownUI::Grid,
-            column:    MarkdownUI::Column,
+            grid:      MarkdownUI::Grid::Grid,
+            row:       MarkdownUI::Grid::Row,
+            column:    MarkdownUI::Grid::Column,
             container: MarkdownUI::Container::Element,
             buttons:   MarkdownUI::Button::Group::Buttons::Element,
             label:     MarkdownUI::Label::Element,

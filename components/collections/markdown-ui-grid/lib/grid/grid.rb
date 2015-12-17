@@ -1,15 +1,17 @@
 # coding: UTF-8
 module MarkdownUI
-  class Grid < MarkdownUI::Shared::TagKlass
-    def initialize(_element, _content)
-      @element = _element
-      @content = _content
-    end
+  module Grid
+    class Grid < MarkdownUI::Shared::TagKlass
+      def initialize(_element, _content)
+        @element = _element
+        @content = _content
+      end
 
-    def render
-      @klass = "ui #{element} grid"
+      def render
+        @klass = "ui #{element} grid"
 
-      MarkdownUI::StandardTag.new(content, klass_text).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
+      end
     end
   end
 end
