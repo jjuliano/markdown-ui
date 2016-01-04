@@ -4,20 +4,24 @@
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "active basic")
 > > > > Stackable Inverted Right Menu:
 > > > > [Docs](docs/toc.html)
-> > > > [About](about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
 > > > > [Install](#install)
 >
 > <!-- -->
 > > Inverted Attached Basic Blue Very Padded Segment:
 > > # Markdown UI
-> > ### Responsive UI in Markdown
+> > ### Create Beautiful and Responsive Websites  in Markdown Syntax
 > > [__Button|Get Started__](docs/toc.html)
 >
 > <!-- -->
 > > Basic Attached Segment:
 > > > Stackable Equal Width Grid:
 > > > > Column:
+> > > > ## About::about
+> > > > Markdown-UI is a development framework that utilizes the [Semantic-UI](http：//www.semantic-ui.com) web framework, to create beautiful, human-friendly HTML and responsive layouts using Markdown Syntax.
+> > > >
+> > > > Markdown-UI is not affiliated with Semantic-UI in any matter.
+> > > >
 > > > > ## Installation::install
 > > > > Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
 > > > > ```gem install markdown-ui```

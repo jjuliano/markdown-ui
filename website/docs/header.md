@@ -4,7 +4,6 @@
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
 > > > > Stackable Inverted Right Menu:
 > > > > [Table of Contents](toc.html)
-> > > > [About](../about.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
 > > > > [Install](../index.html#install)
 >
