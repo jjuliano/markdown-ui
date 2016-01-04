@@ -3,7 +3,7 @@
 require 'bundler/setup'
 require 'markdown-ui'
 
-parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
+parser = MarkdownUI::Parser.new
 f = File.open(ARGV.first, 'r')
 @content = parser.render f.read
 f.close

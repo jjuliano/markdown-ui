@@ -3,7 +3,7 @@ require_relative 'test_helper'
 
 class DividerTest < Redcarpet::TestCase
   def setup
-    @parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
+    @parser = MarkdownUI::Parser.new
   end
 
   def test_divider

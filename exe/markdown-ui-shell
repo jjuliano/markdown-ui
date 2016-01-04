@@ -23,7 +23,7 @@ def prompt(*args)
 end
 
 while m = prompt("# ")
-  parser = Redcarpet::Markdown.new(MarkdownUI::Renderer, quote: true, tables: true, xhtml: true)
+  parser = MarkdownUI::Parser.new
   puts <<-EOF
 
     #{parser.render(m)}
