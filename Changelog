@@ -1,3 +1,15 @@
+0.1.18 - 01-04-16
+
+  * fc6277a Parser is now initialized via MarkdownUI::Parser
+  * 62a9bae added about in main page
+  * c053db9 Add the Row Grid to the Block Quote declaration
+  * 5cd66e3 Added uuid in toggle button elements in order to avoid object collision
+  * 7d77f55 Added script tag
+  * 9a14028 Added script and field tag
+  * c8d3e6f Added Icon Message
+  * 6d7c5bb Added Nav Tag
+  * 25fe687 [Refactor] Menu element
+
 0.1.17 - 11-25-15
 
   * 5658cf7 Added Article, Footer, Header and Section Tag; Refactor Tag
