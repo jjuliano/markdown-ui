@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'markdown-ui'
+require 'markdown_ui'
 
 puts "Hit RETURN three times to parse."
 

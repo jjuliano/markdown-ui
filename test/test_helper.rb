@@ -18,29 +18,16 @@ require 'redcarpet/render_strip'
 require 'redcarpet/render_man'
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'markdown-ui'
+require 'markdown_ui'
 
 class Redcarpet::TestCase < Test::Unit::TestCase
   def assert_renders(html, markdown)
     assert_equal html, render(markdown)
   end
 
-  def render(markdown, options = {})
-    options = options.fetch(:with, {})
-
-    if options.kind_of?(Array)
-      options = Hash[options.map { |o| [o, true] }]
-    end
-
-    render = renderer.new(options)
-    parser = Redcarpet::Markdown.new(render, options)
+  def render(markdown)
+    parser = MarkdownUI::Parser.new
 
     parser.render(markdown)
-  end
-
-  private
-
-  def renderer
-    @renderer ||= Redcarpet::Render::HTML
   end
 end

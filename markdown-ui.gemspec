@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "markdown-ui/version"
+require "markdown_ui/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "markdown-ui"

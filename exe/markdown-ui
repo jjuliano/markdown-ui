@@ -1,33 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'markdown-ui'
+require 'markdown_ui'
 
 parser = MarkdownUI::Parser.new
 f = File.open(ARGV.first, 'r')
 @content = parser.render f.read
 f.close
 
-puts <<-EOS
-<!doctype html>
-
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  #{@content}
-</body>
-</html>
-EOS
+puts @content
