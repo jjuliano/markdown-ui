@@ -12,14 +12,38 @@ class ButtonTest < Redcarpet::TestCase
     assert_equal '<html class="no-js" lang=""></html>', output
   end
 
+  def test_document_root_element_with_multiple_classes
+    markdown = '> %html .no-js .html @lang=""'
+    output   = @parser.render(markdown)
+    assert_equal '<html class="no-js html" lang=""></html>', output
+  end
+
+  def test_document_root_element_with_id
+    markdown = '> %html #html @lang=""'
+    output   = @parser.render(markdown)
+    assert_equal '<html id="html" lang=""></html>', output
+  end
+  
+  def test_document_root_element_with_class_id_and_attribute
+    markdown = '> %html .no-js #html @lang="en-US"'
+    output   = @parser.render(markdown)
+    assert_equal '<html class="no-js" id="html" lang="en-US"></html>', output
+  end
+
+  def test_document_root_element_with_boolean_attribute
+    markdown = '> %html .no-js @enabled'
+    output   = @parser.render(markdown)
+    assert_equal '<html class="no-js" enabled="true"></html>', output
+  end
+
   def test_document_root_element_with_content
-    markdown = \
-'
+    markdown = '
 > %html .no-js @lang=""
-> "This is a paragraph"
+> Content
 '
     output   = @parser.render(markdown)
-    assert_equal '<html class="no-js" lang=""><p>This is a paragraph</p></html>', output
+    assert_equal '<html class="no-js" lang="">Content</html>', output
   end
+
 
 end

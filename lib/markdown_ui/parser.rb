@@ -5,7 +5,9 @@ module MarkdownUI
     end
 
     def render(markdown)
-      @parser.render(markdown)
+      MarkdownUI::Tools::HTMLFormatter.new(
+        @parser.render(markdown)
+      ).to_html.strip
     end
   end
 end
