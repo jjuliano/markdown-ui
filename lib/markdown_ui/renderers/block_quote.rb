@@ -1,19 +1,28 @@
 require 'byebug'
 require_relative '../../markdown_ui/elements/tag'
+require_relative '../../markdown_ui/elements/raw_text'
 
 module MarkdownUI
   module Renderers
     module BlockQuote
       def block_quote(text)
-        raw_text = MarkdownUI::Tools::HTMLFormatter.filter_text(text)
-        markdown_text = raw_text.match(/^\%(.*)/)
-        markdown_contents = raw_text.split("\n")[1..-1]
-        markdown_elements = markdown_text[1].split unless markdown_text.nil?
+        raw_text = MarkdownUI::Elements::RawText.new(text: text).to_s
+        raw_markdown_text = raw_text.match(/^\%(.*)/)
+        markdown_text = raw_markdown_text.nil? ? text : raw_markdown_text[1]
+        markdown_inline_contents = raw_text.match(/\ \'(.*)\'/)
+        markdown_block_contents = raw_text.match(/\n(.*)/)
+        markdown_elements = markdown_text.split unless markdown_text.nil?
 
-        @tag = markdown_elements[0] unless markdown_text.nil?
+        @tag = markdown_elements[0]
         @tag_classes = []
         @tag_id = ""
-        @tag_contents = markdown_contents.join("\n") unless markdown_contents.empty?
+        @tag_contents = if !markdown_block_contents.nil?
+                           markdown_block_contents[1]
+                        elsif !markdown_inline_contents.nil?
+                           markdown_inline_contents[1]
+                        else
+                          ""
+                        end
         @tag_attributes = {}
 
         unless markdown_elements.nil?
@@ -38,8 +47,9 @@ module MarkdownUI
 
         params = {}
         params[:tag] = @tag
-        params[:tag_id] = @tag_id.strip unless @tag_id.nil?
-        params[:tag_classes] = @tag_classes.join(' ') unless @tag_classes.empty?
+        params[:tag_id] = MarkdownUI::Elements::TagID.new(tag_id: @tag_id).to_s unless @tag_id.empty?
+        params[:tag_classes] = MarkdownUI::Elements::TagClasses.new(tag_classes: @tag_classes).to_s unless @tag_classes.empty?
+        # @tag_classes.join(' ') unless @tag_classes.empty?
         params[:tag_attributes] = @tag_attributes unless @tag_attributes.nil?
         params[:tag_contents] = @tag_contents unless @tag_contents.nil?
 

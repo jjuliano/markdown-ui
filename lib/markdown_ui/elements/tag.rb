@@ -1,4 +1,8 @@
 # coding: UTF-8
+require 'byebug'
+require_relative 'raw_text'
+require_relative 'tag_id'
+require_relative 'tag_classes'
 
 module MarkdownUI
   module Elements
@@ -18,9 +22,12 @@ module MarkdownUI
       
       def render
         params = {}
-        params[:id] = self.tag_id unless self.tag_id.empty?
-        params[:class] = self.tag_classes unless self.tag_classes.nil?
+        params[:id] = self.tag_id
+        params[:class] = self.tag_classes
         params.merge!(self.tag_attributes) unless self.tag_attributes.empty?
+
+        parser = MarkdownUI::Parser.new
+        content = parser.render(self.tag_contents)
 
         erector {
           if self.tag.nil?
