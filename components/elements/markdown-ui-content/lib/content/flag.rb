@@ -10,7 +10,7 @@ module MarkdownUI
 
       def render
         content = @content.downcase
-        klass   = MarkdownUI::KlassUtil.new("#{@content} #{@klass} flag").klass
+        klass   = MarkdownUI::KlassUtil.new("#{content} #{@klass} flag").klass
 
         output = []
         output << '<i'

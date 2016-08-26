@@ -12,7 +12,7 @@ module MarkdownUI::Container
         klass   = "ui #{@element} center aligned container"
         content = @content.strip
 
-        MarkdownUI::StandardTag.new(content, klass).render
+        MarkdownUI::ArticleTag.new(content, klass).render
       end
     end
   end

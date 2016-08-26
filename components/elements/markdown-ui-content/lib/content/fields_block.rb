@@ -2,17 +2,17 @@
 
 module MarkdownUI
   module Content
-    class ItemBlock
+    class FieldsBlock
       def initialize(element, content)
         @element = element
         @content = content
       end
 
       def render
-        klass   = "ui #{@element} item"
+        klass   = "ui #{@element} fields"
         content = @content.strip
 
-        MarkdownUI::NavTag.new(content, klass).render
+        MarkdownUI::MenuTag.new(content, klass).render
       end
     end
   end

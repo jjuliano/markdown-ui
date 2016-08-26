@@ -4,7 +4,7 @@ module MarkdownUI
   module Message
     class StandardMessage < MarkdownUI::Shared::TagKlass
       def initialize(_content, _klass = nil)
-        @klass   = _klass
+        @_klass   = _klass
         @content = _content
       end
 

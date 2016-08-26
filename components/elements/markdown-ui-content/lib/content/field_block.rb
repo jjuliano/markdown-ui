@@ -12,7 +12,7 @@ module MarkdownUI
         klass   = "ui #{@element} field"
         content = @content.strip
 
-        MarkdownUI::StandardTag.new(content, klass).render
+        MarkdownUI::FieldTag.new(content, klass).render
       end
     end
   end

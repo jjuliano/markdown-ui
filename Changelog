@@ -1,3 +1,18 @@
+0.2.0  - 08-26-16
+	This release is full of bug fixes and new opinionated features particularly,
+	
+	a.) We can now use full URL on links
+	b.) Menu are now using 'nav' tag
+	c.) Containers and Grids are using 'article' tag 
+	d.) Fields are using 'menu' tag, e.) and field is using 'field' tag
+	f.) Row, Columns and Segment is using 'section' tag
+	g.) Headers now have 'headers' tag wrap around them.
+	h.) Semantic-UI now points to /bower_components/semantic/, use 'python -m SimpleHTTPServer' to debug.
+	i.) we are now utilizing individual components, you would have to include the css and js in the in your projects to require individual components.
+	
+	I use this personally, I hope if you're using it, you'll like it too like I do.
+
+
 0.1.18 - 01-04-16
 
   * fc6277a Parser is now initialized via MarkdownUI::Parser

@@ -10,7 +10,7 @@ module MarkdownUI
       def render
         @klass = "ui #{element} grid"
 
-        MarkdownUI::StandardTag.new(content, klass_text).render
+        MarkdownUI::ArticleTag.new(content, klass_text).render
       end
     end
   end

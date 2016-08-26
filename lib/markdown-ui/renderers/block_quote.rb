@@ -18,6 +18,7 @@ module MarkdownUI
             content:   MarkdownUI::Content::ContentBlock,
             divider:   MarkdownUI::Content::DividerBlock,
             field:     MarkdownUI::Content::FieldBlock,
+            fields:    MarkdownUI::Content::FieldsBlock,
             form:      MarkdownUI::Content::FormBlock,
             item:      MarkdownUI::Content::ItemBlock,
             tag:       MarkdownUI::Tag,

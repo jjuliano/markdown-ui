@@ -10,7 +10,7 @@ module MarkdownUI
       content = @content.strip
       klass   = "ui #{element} stacked segment"
 
-      MarkdownUI::StandardTag.new(content, klass).render
+      MarkdownUI::SectionTag.new(content, klass).render
     end
   end
 end

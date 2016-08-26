@@ -5,29 +5,109 @@ require 'markdown-ui'
 
 parser = MarkdownUI::Parser.new
 f = File.open(ARGV.first, 'r')
-@content = parser.render f.read
+basename = File.basename(ARGV.first, ".md")
+content = f.read
+content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
+content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
+content.gsub!(/file\:\/\//, "MARKDOWN-UI-PREFILTER-file//")
+content.gsub!(/ftp\:\/\//, "MARKDOWN-UI-PREFILTER-ftp//")
+content.gsub!(/mailto\:/, "MARKDOWN-UI-PREFILTER-mailto//")
+content.gsub!(/tel\:/, "MARKDOWN-UI-PREFILTER-tel//")
+content.gsub!(/javascript\:/, "MARKDOWN-UI-PREFILTER-javascript//")
+@content = parser.render content
 f.close
 
-puts <<-EOS
+output = <<-EOS
 <!doctype html>
 
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>#{basename.capitalize}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
+    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  #{@content}
-</body>
+  </head>
+  <body>
+    #{@content}
+  </body>
 </html>
 EOS
+
+output.gsub!(/MARKDOWN-UI-PREFILTER-http\/\//, "http://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-https\/\//, "https://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-file\/\//, "file://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-ftp\/\//, "ftp://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-mailto\/\//, "mailto:")
+output.gsub!(/MARKDOWN-UI-PREFILTER-tel\/\//, "tel:")
+output.gsub!(/MARKDOWN-UI-PREFILTER-javascript\/\//, "javascript:")
+
+puts output

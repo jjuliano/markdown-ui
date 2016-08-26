@@ -28,12 +28,6 @@ module MarkdownUI
         MarkdownUI::KlassUtil.new(@klass).text unless @klass.nil?
       end
 
-      def _id
-        if @id
-          " id=\'#{@id.split.join('-')}\'"
-        end
-      end
-
       def data
         if @data
           if @data =~ /\:/
@@ -47,8 +41,14 @@ module MarkdownUI
         end
       end
 
+      def _id
+        if defined?(@id) && @id
+          " id=\'#{@id.split.join('-')}\'"
+        end
+      end
+
       def _input_id
-        if @id
+        if defined?(@id) && @id
           " placeholder=\'#{@id.capitalize}\'"
         end
       end

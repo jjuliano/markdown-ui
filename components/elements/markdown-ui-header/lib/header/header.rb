@@ -26,8 +26,8 @@ module MarkdownUI
         output << "#{text}"
         output << '</div>'
       end
-
-      output.join
+      
+      MarkdownUI::HeaderTag.new(output.join).render
     end
   end
 end
