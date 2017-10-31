@@ -15,13 +15,13 @@ module MarkdownUI
 
         @tag = markdown_elements[0]
         @tag_classes = []
-        @tag_id = ""
+        @tag_id = ''
         @tag_contents = if !markdown_block_contents.nil?
-                           markdown_block_contents[1]
+                          markdown_block_contents[1]
                         elsif !markdown_inline_contents.nil?
-                           markdown_inline_contents[1]
+                          markdown_inline_contents[1]
                         else
-                          ""
+                          ''
                         end
         @tag_attributes = {}
 
@@ -33,9 +33,11 @@ module MarkdownUI
             tag_attributes = element.match(/\@(.*)=(.*)/) || element.match(/\@(.*)/)
             if tag_attributes.is_a?(MatchData)
               if tag_attributes.size == 2
-                k, v = tag_attributes[1].strip.gsub('\@', '').to_sym, true
+                k = tag_attributes[1].strip.gsub('\@', '').to_sym
+                v = true
               elsif tag_attributes.size == 3
-                k, v = tag_attributes[1].strip.gsub('\@', '').to_sym, !tag_attributes[2].empty? ? tag_attributes[2].gsub('"', '').strip : ''
+                k = tag_attributes[1].strip.gsub('\@', '').to_sym
+                v = !tag_attributes[2].empty? ? tag_attributes[2].delete('"').strip : ''
               end
               @tag_attributes[k] = v
             end

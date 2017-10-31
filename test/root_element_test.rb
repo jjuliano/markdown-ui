@@ -1,4 +1,4 @@
-# coding: UTF-8
+
 require_relative 'test_helper'
 
 class TagElementTest < Redcarpet::TestCase
@@ -23,7 +23,7 @@ class TagElementTest < Redcarpet::TestCase
     output   = @parser.render(markdown)
     assert_equal '<html id="html" lang=""></html>', output
   end
-  
+
   def test_document_tag_element_with_class_id_and_attribute
     markdown = '> %html .no-js #html @lang="en-US"'
     output   = @parser.render(markdown)
@@ -66,5 +66,4 @@ class TagElementTest < Redcarpet::TestCase
     output   = @parser.render(markdown)
     assert_equal '<span class="klass" data-awesome="yes" id="aydee"></span>', output
   end
-
 end

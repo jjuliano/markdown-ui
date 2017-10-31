@@ -11,4 +11,3 @@ module MarkdownUI
     end
   end
 end
-

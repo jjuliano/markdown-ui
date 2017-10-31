@@ -3,26 +3,26 @@
 require 'bundler/setup'
 require 'markdown_ui'
 
-puts "Hit RETURN three times to parse."
+puts 'Hit RETURN three times to parse.'
 
-def multi_gets all_text=""
+def multi_gets(all_text = '')
   while all_text << STDIN.gets
     if all_text["\n\n\n"]
       return all_text
     elsif all_text[/^exit|^quit|^bye/]
       exit 0
     else
-      print "# "
+      print '# '
     end
   end
 end
 
 def prompt(*args)
-    print(*args)
-    multi_gets
+  print(*args)
+  multi_gets
 end
 
-while m = prompt("# ")
+while m = prompt('# ')
   parser = MarkdownUI::Parser.new
   puts <<-EOF
 

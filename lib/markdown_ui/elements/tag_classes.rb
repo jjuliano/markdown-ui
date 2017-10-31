@@ -1,23 +1,23 @@
-# coding: UTF-8
+
 require_relative 'raw_text'
 
 module MarkdownUI
   module Elements
     class TagClasses
-      PROPERTIES = [:tag_classes]
-      PROPERTIES.each { |prop|
+      PROPERTIES = [:tag_classes].freeze
+      PROPERTIES.each do |prop|
         attr_accessor prop
-      }
+      end
 
       def initialize(attributes = {})
-        attributes.each { |key, value|
-          self.send("#{key}=", MarkdownUI::Elements::RawText.new(text: value.join(' ')).to_s) if PROPERTIES.member? key
-        }
+        attributes.each do |key, value|
+          send("#{key}=", MarkdownUI::Elements::RawText.new(text: value.join(' ')).to_s) if PROPERTIES.member? key
+        end
       end
-      
+
       def to_s
-        return if self.tag_classes.nil?
-        self.tag_classes.strip
+        return if tag_classes.nil?
+        tag_classes.strip
       end
     end
   end
