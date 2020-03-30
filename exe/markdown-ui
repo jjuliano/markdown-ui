@@ -5,7 +5,7 @@ require 'markdown-ui'
 
 parser = MarkdownUI::Parser.new
 f = File.open(ARGV.first, 'r')
-basename = File.basename(ARGV.first, ".md")
+basename = File.basename(ARGV.first)
 content = f.read
 content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
 content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
