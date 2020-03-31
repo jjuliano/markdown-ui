@@ -232,7 +232,19 @@
 > > > __Basic Secondary Button|Secondary__
 > > > __Basic Positive Button|Positive__
 > > > __Basic Negative Button|Negative__
-> > > " "
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ``` __Basic Primary Button|Primary__ ``` <br />
+> > > > ``` __Basic Secondary Button|Secondary__ ``` <br />
+> > > > ``` __Basic Positive Button|Positive__ ``` <br />
+> > > > ``` __Basic Negative Button|Negative__ ``` <br />
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
 > > > __Basic Red Button|Red__
 > > > __Basic Orange Button|Orange__
 > > > __Basic Yellow Button|Yellow__
@@ -251,11 +263,6 @@
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ``` __Basic Primary Button|Primary__ ``` <br />
-> > > > ``` __Basic Secondary Button|Secondary__ ``` <br />
-> > > > ``` __Basic Positive Button|Positive__ ``` <br />
-> > > > ``` __Basic Negative Button|Negative__ ``` <br />
-> > > > " "
 > > > > ``` __Basic Red Button|Red__ ``` <br />
 > > > > ``` __Basic Orange Button|Orange__ ``` <br />
 > > > > ``` __Basic Yellow Button|Yellow__ ``` <br />
@@ -307,16 +314,65 @@
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ```> Inverted Segment：``` <br />
-> > > > ```> __Inverted Standard Button|Standard__``` <br />
-> > > > ```> __Inverted Black Button|Black__``` <br />
-> > > > ```> __Inverted Yellow Button|Yellow__``` <br />
-> > > > ```> __Inverted Green Button|Green__``` <br />
-> > > > ```> __Inverted Blue Button|Blue__``` <br />
+> > > > ```> __Inverted Button|Standard__``` <br />
+> > > > ```> __Inverted Primary Button|Primary__``` <br />
+> > > > ```> __Inverted Secondary Button|Secondary__``` <br />
+> > > > ```> __Inverted Red Button|Red__``` <br />
 > > > > ```> __Inverted Orange Button|Orange__``` <br />
+> > > > ```> __Inverted Yellow Button|Yellow__``` <br />
+> > > > ```> __Inverted Olive Button|Olive__``` <br />
+> > > > ```> __Inverted Green Button|Green__``` <br />
+> > > > ```> __Inverted Teal Button|Teal__``` <br />
+> > > > ```> __Inverted Blue Button|Blue__``` <br />
+> > > > ```> __Inverted Violet Button|Violet__``` <br />
 > > > > ```> __Inverted Purple Button|Purple__``` <br />
 > > > > ```> __Inverted Pink Button|Pink__``` <br />
-> > > > ```> __Inverted Red Button|Red__``` <br />
-> > > > ```> __Inverted Teal Button|Teal__```
+> > > > ```> __Inverted Brown Button|Brown__``` <br />
+> > > > ```> __Inverted Grey Button|Grey__``` <br />
+> > > > ```> __Inverted Black Button|Black__``` <br />
+> >
+> > <!-- -->
+> > > Center Aligned Six Wide Column:
+> > > ##### Preview:Center Aligned
+> > > > Inverted Very Padded Segment:
+> > > __Inverted Basic Button|Basic__
+> > > __Inverted Primary Basic Button|Primary__
+> > > __Inverted Secondary Basic Button|Secondary__
+> > > __Inverted Red Basic Button|Basic Red__
+> > > __Inverted Orange Basic Button|Basic Orange__
+> > > __Inverted Yellow Basic Button|Basic Yellow__
+> > > __Inverted Olive Basic Button|Basic Olive__
+> > > __Inverted Green Basic Button|Basic Green__
+> > > __Inverted Teal Basic Button|Basic Teal__
+> > > __Inverted Blue Basic Button|Basic Blue__
+> > > __Inverted Violet Basic Button|Basic Violet__
+> > > __Inverted Purple Basic Button|Basic Purple__
+> > > __Inverted Pink Basic Button|Basic Pink__
+> > > __Inverted Brown Basic Button|Basic Brown__
+> > > __Inverted Grey Basic Button|Basic Grey__
+> > > __Inverted Black Basic Button|Basic Black__
+> >
+> > <!-- -->
+> > > Ten Wide Column:
+> > > ##### Markdown Syntax
+> > > > Inverted Very Padded Segment:
+> > > > ```> Inverted Segment：``` <br />
+> > > > ```> __Inverted Basic Button|Basic__``` <br />
+> > > > ```> __Inverted Primary Basic Button|Primary__``` <br />
+> > > > ```> __Inverted Secondary Basic Button|Secondary__``` <br />
+> > > > ```> __Inverted Red Basic Button|Basic Red__``` <br />
+> > > > ```> __Inverted Orange Basic Button|Basic Orange__``` <br />
+> > > > ```> __Inverted Yellow Basic Button|Basic Yellow__``` <br />
+> > > > ```> __Inverted Olive Basic Button|Basic Olive__``` <br />
+> > > > ```> __Inverted Green Basic Button|Basic Green__``` <br />
+> > > > ```> __Inverted Teal Basic Button|Basic Teal__``` <br />
+> > > > ```> __Inverted Blue Basic Button|Basic Blue__``` <br />
+> > > > ```> __Inverted Violet Basic Button|Basic Violet__``` <br />
+> > > > ```> __Inverted Purple Basic Button|Basic Purple__``` <br />
+> > > > ```> __Inverted Pink Basic Button|Basic Pink__``` <br />
+> > > > ```> __Inverted Brown Basic Button|Basic Brown__``` <br />
+> > > > ```> __Inverted Grey Basic Button|Basic Grey__``` <br />
+> > > > ```> __Inverted Black Basic Button|Basic Black__``` <br />
 >
 > <!-- -->
 > > Basic Segment:
