@@ -1,8 +1,9 @@
 # Markdown UI
 
-Write UI in Markdown Syntax. See https://jmoors79.github.io/markdown-ui/
+This is a fork of the original Markdown UI project originally started by Joel Bryan Juliano.
+A huge amount of gratitude goes out to him for starting this project. This fork will continue to be actively maintained separately.
 
-This is a fork of the original Markdown UI project originally started by Joel Bryan Juliano. A huge amount of gratitude goes out to him for starting this project. This fork will continue to be actively maintained separately.
+Write UI in Markdown Syntax. See https://jmoors79.github.io/markdown-ui/
 
 # Installation
 
@@ -44,8 +45,7 @@ Markdown-UI would not be possible without the the [Semantic-UI](http：//www.sem
   * The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)
   * A separator in between two spaces is required on block elements to separate elements (see Column example)
   * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.
-  * Docs for Markdown UI are being updated constantly and can be found at [https://github.com/jmoors79/markdown-ui/docs/]
-  (https://github.com/jmoors79/markdown-ui/docs/)
+  * Docs for Markdown UI are being updated constantly and can be found at [https://github.com/jmoors79/markdown-ui/docs/](https://github.com/jmoors79/markdown-ui/docs/)
 
 ## Contributing
 
