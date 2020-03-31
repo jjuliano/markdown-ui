@@ -211,22 +211,13 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Basic Button|Icon:User,Add Friend__
-> > > " "
-> > > __Basic Primary Button|Primary__
-> > > __Basic Secondary Button|Secondary__ <br />
-> > > __Basic Positive Button|Positive__
-> > > __Basic Negative Button|Negative__
 > >
 > > <!-- -->
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Basic Button|Icon：User,Add Friend__ ```
-> > > > " "
-> > > > ``` __Basic Primary Button|Primary__ ``` <br />
-> > > > ``` __Basic Secondary Button|Secondary__ ``` <br />
-> > > > ``` __Basic Positive Button|Positive__ ``` <br />
-> > > > ``` __Basic Negative Button|Negative__ ``` <br />
+
 >
 > <!-- -->
 > > Stackable Divided Segment Grid:
@@ -237,31 +228,47 @@
 > > <!-- -->
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
-> > > __Basic Standard Button|Standard__
-> > > __Basic Black Button|Black__
-> > > __Basic Yellow Button|Yellow__
-> > > __Basic Green Button|Green__
-> > > __Basic Blue Button|Blue__
+> > > __Basic Primary Button|Primary__
+> > > __Basic Secondary Button|Secondary__
+> > > __Basic Positive Button|Positive__
+> > > __Basic Negative Button|Negative__
+> > > " "
+> > > __Basic Red Button|Red__
 > > > __Basic Orange Button|Orange__
+> > > __Basic Yellow Button|Yellow__
+> > > __Basic Olive Button|Olive__
+> > > __Basic Green Button|Green__
+> > > __Basic Teal Button|Teal__
+> > > __Basic Blue Button|Blue__
+> > > __Basic Violet Button|Violet__
 > > > __Basic Purple Button|Purple__
 > > > __Basic Pink Button|Pink__
-> > > __Basic Red Button|Red__
-> > > __Basic Teal Button|Teal__
+> > > __Basic Brown Button|Brown__
+> > > __Basic Grey Button|Grey__
+> > > __Basic Black Button|Black__
 > >
 > > <!-- -->
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
-> > > > ``` __Basic Standard Button|Standard__``` <br />
-> > > > ``` __Basic Black Button|Black__``` <br />
-> > > > ``` __Basic Yellow Button|Yellow__``` <br />
-> > > > ``` __Basic Green Button|Green__``` <br />
-> > > > ``` __Basic Blue Button|Blue__``` <br />
-> > > > ``` __Basic Orange Button|Orange__``` <br />
-> > > > ``` __Basic Purple Button|Purple__``` <br />
-> > > > ``` __Basic Pink Button|Pink__``` <br />
-> > > > ``` __Basic Red Button|Red__``` <br />
-> > > > ``` __Basic Teal Button|Teal__```
+> > > > ``` __Basic Primary Button|Primary__ ``` <br />
+> > > > ``` __Basic Secondary Button|Secondary__ ``` <br />
+> > > > ``` __Basic Positive Button|Positive__ ``` <br />
+> > > > ``` __Basic Negative Button|Negative__ ``` <br />
+> > > > " "
+> > > > ``` __Basic Red Button|Red__ ``` <br />
+> > > > ``` __Basic Orange Button|Orange__ ``` <br />
+> > > > ``` __Basic Yellow Button|Yellow__ ``` <br />
+> > > > ``` __Basic Olive Button|Olive__ ``` <br />
+> > > > ``` __Basic Green Button|Green__ ``` <br />
+> > > > ``` __Basic Teal Button|Teal__ ``` <br />
+> > > > ``` __Basic Blue Button|Blue__ ``` <br />
+> > > > ``` __Basic Violet Button|Violet__ ``` <br />
+> > > > ``` __Basic Purple Button|Purple__ ``` <br />
+> > > > ``` __Basic Pink Button|Pink__ ``` <br />
+> > > > ``` __Basic Brown Button|Brown__ ``` <br />
+> > > > ``` __Basic Grey Button|Grey__ ``` <br />
+> > > > ``` __Basic Black Button|Black__ ``` <br />
 >
 > <!-- -->
 > > Basic Segment:
@@ -278,16 +285,22 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > > Inverted Very Padded Segment:
-> > > __Inverted Standard Button|Standard__
-> > > __Inverted Black Button|Black__
-> > > __Inverted Yellow Button|Yellow__
-> > > __Inverted Green Button|Green__
-> > > __Inverted Blue Button|Blue__
+> > > __Inverted Button|Standard__
+> > > __Inverted Primary Button|Primary__
+> > > __Inverted Secondary Button|Secondary__
+> > > __Inverted Red Button|Red__
 > > > __Inverted Orange Button|Orange__
+> > > __Inverted Yellow Button|Yellow__
+> > > __Inverted Olive Button|Olive__
+> > > __Inverted Green Button|Green__
+> > > __Inverted Teal Button|Teal__
+> > > __Inverted Blue Button|Blue__
+> > > __Inverted Violet Button|Violet__
 > > > __Inverted Purple Button|Purple__
 > > > __Inverted Pink Button|Pink__
-> > > __Inverted Red Button|Red__
-> > > __Inverted Teal Button|Teal__
+> > > __Inverted Brown Button|Brown__
+> > > __Inverted Grey Button|Grey__
+> > > __Inverted Black Button|Black__
 > >
 > > <!-- -->
 > > > Ten Wide Column:
