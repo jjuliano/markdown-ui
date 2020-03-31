@@ -37,7 +37,7 @@ Hit RETURN three times to parse.
 
 # Credits
 
-Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet/) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
+Markdown-UI would not be possible without the the [Semantic-UI](http://www.semantic-ui.com) framework, and the Ruby [RedCarpet](https://github.com/vmg/redcarpet/) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
 
 # Notes/Issues/Bugs
 
