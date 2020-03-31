@@ -1,9 +1,9 @@
 # Markdown UI
 
-This is a fork of the original Markdown UI project originally started by Joel Bryan Juliano.
+This is a fork of the original Markdown UI project originally started by Joel Bryan Juliano.<br>
 A huge amount of gratitude goes out to him for starting this project. This fork will continue to be actively maintained separately.
 
-Write UI in Markdown Syntax. See https://jmoors79.github.io/markdown-ui/
+Write UI in Markdown Syntax. See [https://jmoors79.github.io/markdown-ui/](https://jmoors79.github.io/markdown-ui/)
 
 # Installation
 
@@ -37,7 +37,7 @@ Hit RETURN three times to parse.
 
 # Credits
 
-Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
+Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet/) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
 
 # Notes/Issues/Bugs
 
@@ -49,7 +49,7 @@ Markdown-UI would not be possible without the the [Semantic-UI](http：//www.sem
 
 ## Contributing
 
-1. Fork it ( https://github.com/jmoors79/markdown-ui/fork )
+1. Fork it [https://github.com/jmoors79/markdown-ui/fork/](https://github.com/jmoors79/markdown-ui/fork/)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
