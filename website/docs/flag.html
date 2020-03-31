@@ -1,41 +1,106 @@
 <!doctype html>
 
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flag.md</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
+    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  <div class="ui container">
-  <div class="ui inverted segment">
+  </head>
+  <body>
+    <div class="ui container">
+  <section class="ui inverted segment">
     <div class="ui stackable inverted container menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <div class="ui stackable inverted right menu">
+      <nav class="ui stackable inverted right menu">
         <a class="ui item" href="toc.html">Table of Contents</a>
         <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
         <a class="ui item" href="../index.html#install">Install</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h1 id="flag" class="ui center aligned header">Flag</h1>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h1 id="flag" class="ui center aligned header">Flag</h1>
+    </header>
+  </section>
 <!-- -->
   <div class="ui text container">
     <div class="ui segments">
-      <div class="ui basic segment">
-        <h2 class="ui header">Andorra</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Andorra</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -50,10 +115,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">United Arab Emirates</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">United Arab Emirates</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -74,10 +141,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Afghanistan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Afghanistan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -92,10 +161,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Antigua</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Antigua</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -110,10 +181,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Anguilla</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Anguilla</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -128,10 +201,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Albania</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Albania</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -146,10 +221,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Armenia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Armenia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -164,10 +241,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Netherlands Antilles</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Netherlands Antilles</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -182,10 +261,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Angola</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Angola</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -200,10 +281,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Argentina</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Argentina</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -218,10 +301,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">American Samoa</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">American Samoa</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -236,10 +321,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Austria</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Austria</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -254,10 +341,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Australia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Australia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -272,10 +361,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Aruba</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Aruba</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -290,10 +381,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Aland Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Aland Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -308,10 +401,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Azerbaijan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Azerbaijan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -326,10 +421,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bosnia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bosnia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -344,10 +441,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Barbados</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Barbados</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -362,10 +461,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bangladesh</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bangladesh</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -380,10 +481,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Belgium</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Belgium</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -398,10 +501,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Burkina Faso</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Burkina Faso</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -416,10 +521,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bulgaria</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bulgaria</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -434,10 +541,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bahrain</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bahrain</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -452,10 +561,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Burundi</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Burundi</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -470,10 +581,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Benin</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Benin</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -488,10 +601,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bermuda</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bermuda</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -506,10 +621,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Brunei</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Brunei</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -524,10 +641,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bolivia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bolivia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -542,10 +661,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Brazil</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Brazil</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -560,10 +681,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bahamas</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bahamas</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -578,10 +701,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bhutan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bhutan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -596,10 +721,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Bouvet Island</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Bouvet Island</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -614,10 +741,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Botswana</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Botswana</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -632,10 +761,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Belarus</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Belarus</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -650,10 +781,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Belize</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Belize</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -668,10 +801,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Canada</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Canada</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -686,10 +821,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cocos Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cocos Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -704,10 +841,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Congo</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Congo</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -722,10 +861,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Central African Republic</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Central African Republic</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -740,10 +881,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Congo Brazzaville</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Congo Brazzaville</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -758,10 +901,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Switzerland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Switzerland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -776,10 +921,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cote Divoire</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cote Divoire</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -794,10 +941,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cook Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cook Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -812,10 +961,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Chile</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Chile</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -830,10 +981,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cameroon</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cameroon</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -848,10 +1001,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">China</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">China</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -866,10 +1021,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Colombia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Colombia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -884,10 +1041,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Costa Rica</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Costa Rica</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -902,10 +1061,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Serbia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Serbia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -920,10 +1081,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cuba</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cuba</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -938,10 +1101,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cape Verde</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cape Verde</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -956,10 +1121,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Christmas Island</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Christmas Island</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -974,10 +1141,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cyprus</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cyprus</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -992,10 +1161,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Czech Republic</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Czech Republic</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1010,10 +1181,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Germany</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Germany</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1028,10 +1201,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Djibouti</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Djibouti</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1046,10 +1221,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Denmark</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Denmark</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1064,10 +1241,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Dominica</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Dominica</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1082,10 +1261,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Dominican Republic</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Dominican Republic</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1100,10 +1281,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Algeria</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Algeria</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1118,10 +1301,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Ecuador</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Ecuador</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1136,10 +1321,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Estonia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Estonia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1154,10 +1341,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Egypt</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Egypt</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1172,10 +1361,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Western Sahara</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Western Sahara</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1190,10 +1381,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Eritrea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Eritrea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1208,10 +1401,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Spain</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Spain</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1226,10 +1421,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Ethiopia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Ethiopia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1244,10 +1441,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">European Union</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">European Union</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1262,10 +1461,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Finland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Finland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1280,10 +1481,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Fiji</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Fiji</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1298,10 +1501,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Falkland Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Falkland Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1316,10 +1521,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Micronesia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Micronesia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1334,10 +1541,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Faroe Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Faroe Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1352,10 +1561,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">France</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">France</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1370,10 +1581,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Gabon</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Gabon</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1388,10 +1601,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">United Kingdom</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">United Kingdom</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1406,10 +1621,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Grenada</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Grenada</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1424,10 +1641,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Georgia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Georgia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1442,10 +1661,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">French Guiana</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">French Guiana</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1460,10 +1681,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Ghana</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Ghana</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1478,10 +1701,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Gibraltar</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Gibraltar</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1496,10 +1721,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Greenland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Greenland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1514,10 +1741,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Gambia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Gambia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1532,10 +1761,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guinea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guinea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1550,10 +1781,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guadeloupe</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guadeloupe</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1568,10 +1801,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Equatorial Guinea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Equatorial Guinea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1586,10 +1821,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Greece</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Greece</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1604,10 +1841,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sandwich Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sandwich Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1622,10 +1861,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guatemala</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guatemala</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1640,10 +1881,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guam</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guam</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1658,10 +1901,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guinea-bissau</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guinea-bissau</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1676,10 +1921,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Guyana</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Guyana</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1694,10 +1941,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Hong Kong</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Hong Kong</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1712,10 +1961,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Heard Island</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Heard Island</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1730,10 +1981,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Honduras</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Honduras</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1748,10 +2001,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Croatia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Croatia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1766,10 +2021,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Haiti</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Haiti</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1784,10 +2041,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Hungary</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Hungary</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1802,10 +2061,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Indonesia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Indonesia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1820,10 +2081,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Ireland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Ireland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1838,10 +2101,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Israel</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Israel</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1856,10 +2121,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">India</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">India</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1874,10 +2141,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Indian Ocean Territory</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Indian Ocean Territory</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1892,10 +2161,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Iraq</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Iraq</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1910,10 +2181,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Iran</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Iran</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1928,10 +2201,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Iceland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Iceland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1946,10 +2221,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Italy</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Italy</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1964,10 +2241,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Jamaica</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Jamaica</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -1982,10 +2261,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Jordan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Jordan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2000,10 +2281,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Japan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Japan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2018,10 +2301,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Kenya</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Kenya</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2036,10 +2321,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Kyrgyzstan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Kyrgyzstan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2054,10 +2341,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cambodia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cambodia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2072,10 +2361,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Kiribati</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Kiribati</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2090,10 +2381,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Comoros</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Comoros</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2108,10 +2401,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saint Kitts And Nevis</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saint Kitts And Nevis</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2126,10 +2421,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">North Korea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">North Korea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2144,10 +2441,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">South Korea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">South Korea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2162,10 +2461,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Kuwait</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Kuwait</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2180,10 +2481,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Cayman Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Cayman Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2198,10 +2501,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Kazakhstan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Kazakhstan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2216,10 +2521,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Laos</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Laos</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2234,10 +2541,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Lebanon</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Lebanon</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2252,10 +2561,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saint Lucia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saint Lucia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2270,10 +2581,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Liechtenstein</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Liechtenstein</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2288,10 +2601,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sri Lanka</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sri Lanka</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2306,10 +2621,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Liberia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Liberia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2324,10 +2641,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Lesotho</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Lesotho</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2342,10 +2661,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Lithuania</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Lithuania</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2360,10 +2681,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Luxembourg</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Luxembourg</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2378,10 +2701,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Latvia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Latvia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2396,10 +2721,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Libya</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Libya</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2414,10 +2741,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Morocco</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Morocco</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2432,10 +2761,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Monaco</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Monaco</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2450,10 +2781,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Moldova</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Moldova</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2468,10 +2801,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Montenegro</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Montenegro</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2486,10 +2821,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Madagascar</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Madagascar</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2504,10 +2841,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Marshall Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Marshall Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2522,10 +2861,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Macedonia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Macedonia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2540,10 +2881,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mali</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mali</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2558,10 +2901,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Burma mm</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Burma mm</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2576,10 +2921,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mongolia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mongolia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2594,10 +2941,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Macau</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Macau</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2612,10 +2961,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Northern Mariana Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Northern Mariana Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2630,10 +2981,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Martinique</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Martinique</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2648,10 +3001,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mauritania</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mauritania</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2666,10 +3021,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Montserrat</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Montserrat</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2684,10 +3041,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Malta</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Malta</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2702,10 +3061,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mauritius</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mauritius</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2720,10 +3081,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Maldives</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Maldives</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2738,10 +3101,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Malawi</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Malawi</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2756,10 +3121,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mexico</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mexico</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2774,10 +3141,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Malaysia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Malaysia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2792,10 +3161,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mozambique</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mozambique</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2810,10 +3181,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Namibia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Namibia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2828,10 +3201,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">New Caledonia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">New Caledonia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2846,10 +3221,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Niger</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Niger</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2864,10 +3241,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Norfolk Island</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Norfolk Island</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2882,10 +3261,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Nigeria</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Nigeria</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2900,10 +3281,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Nicaragua</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Nicaragua</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2918,10 +3301,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Netherlands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Netherlands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2936,10 +3321,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Norway</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Norway</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2954,10 +3341,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Nepal</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Nepal</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2972,10 +3361,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Nauru</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Nauru</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -2990,10 +3381,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Niue</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Niue</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3008,10 +3401,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">New Zealand</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">New Zealand</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3026,10 +3421,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Oman</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Oman</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3044,10 +3441,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Panama</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Panama</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3062,10 +3461,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Peru</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Peru</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3080,10 +3481,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">French Polynesia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">French Polynesia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3098,10 +3501,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">New Guinea</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">New Guinea</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3116,10 +3521,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Philippines</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Philippines</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3134,10 +3541,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Pakistan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Pakistan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3152,10 +3561,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Poland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Poland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3170,10 +3581,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saint Pierre</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saint Pierre</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3188,10 +3601,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Pitcairn Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Pitcairn Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3206,10 +3621,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Puerto Rico</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Puerto Rico</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3224,10 +3641,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Palestine</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Palestine</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3242,10 +3661,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Portugal</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Portugal</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3260,10 +3681,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Palau</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Palau</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3278,10 +3701,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Paraguay</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Paraguay</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3296,10 +3721,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Qatar</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Qatar</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3314,10 +3741,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Reunion</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Reunion</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3332,10 +3761,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Romania</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Romania</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3350,10 +3781,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Serbia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Serbia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3368,10 +3801,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Russia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Russia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3386,10 +3821,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Rwanda</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Rwanda</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3404,10 +3841,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saudi Arabia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saudi Arabia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3422,10 +3861,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Solomon Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Solomon Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3440,10 +3881,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Seychelles</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Seychelles</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3458,10 +3901,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sudan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sudan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3476,10 +3921,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sweden</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sweden</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3494,10 +3941,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Singapore</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Singapore</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3512,10 +3961,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saint Helena</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saint Helena</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3530,10 +3981,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Slovenia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Slovenia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3548,10 +4001,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Jan Mayen Svalbard</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Jan Mayen Svalbard</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3566,10 +4021,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Slovakia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Slovakia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3584,10 +4041,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sierra Leone</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sierra Leone</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3602,10 +4061,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">San Marino</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">San Marino</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3620,10 +4081,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Senegal</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Senegal</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3638,10 +4101,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Somalia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Somalia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3656,10 +4121,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Suriname</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Suriname</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3674,10 +4141,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Sao Tome</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Sao Tome</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3692,10 +4161,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">El Salvador</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">El Salvador</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3710,10 +4181,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Syria</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Syria</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3728,10 +4201,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Swaziland</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Swaziland</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3746,10 +4221,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Caicos Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Caicos Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3764,10 +4241,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Chad</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Chad</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3782,10 +4261,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">French Territories</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">French Territories</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3800,10 +4281,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Togo</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Togo</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3818,10 +4301,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Thailand</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Thailand</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3836,10 +4321,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tajikistan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tajikistan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3854,10 +4341,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tokelau</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tokelau</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3872,10 +4361,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Timorleste</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Timorleste</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3890,10 +4381,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Turkmenistan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Turkmenistan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3908,10 +4401,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tunisia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tunisia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3926,10 +4421,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tonga</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tonga</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3944,10 +4441,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Turkey</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Turkey</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3962,10 +4461,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Trinidad</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Trinidad</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3980,10 +4481,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tuvalu</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tuvalu</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -3998,10 +4501,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Taiwan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Taiwan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4016,10 +4521,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Tanzania</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Tanzania</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4034,10 +4541,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Ukraine</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Ukraine</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4052,10 +4561,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Uganda</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Uganda</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4070,10 +4581,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Us Minor Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Us Minor Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4088,10 +4601,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">United States</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">United States</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4112,10 +4627,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Uruguay</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Uruguay</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4130,10 +4647,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Uzbekistan</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Uzbekistan</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4148,10 +4667,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Vatican City</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Vatican City</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4166,10 +4687,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Saint Vincent</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Saint Vincent</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4184,10 +4707,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Venezuela</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Venezuela</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4202,10 +4727,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">British Virgin Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">British Virgin Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4220,10 +4747,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Us Virgin Islands</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Us Virgin Islands</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4238,10 +4767,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Vietnam</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Vietnam</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4256,10 +4787,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Vanuatu</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Vanuatu</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4274,10 +4807,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Wallis And Futuna</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Wallis And Futuna</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4292,10 +4827,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Samoa</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Samoa</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4310,10 +4847,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Yemen</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Yemen</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4328,10 +4867,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Mayotte</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Mayotte</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4346,10 +4887,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">South Africa</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">South Africa</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4364,10 +4907,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Zambia</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Zambia</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4382,10 +4927,12 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="ui divider"></div>
-      <div class="ui basic segment">
-        <h2 class="ui header">Zimbabwe</h2>
+      <section class="ui basic segment">
+        <header>
+          <h2 class="ui header">Zimbabwe</h2>
+        </header>
         <ul class="ui unordered list">
           <li>
             <a class="ui item">
@@ -4400,19 +4947,19 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 <!-- -->
-  <div class="ui inverted center aligned footer segment container grid">
-    <div class="ui ten wide column"><h5 class="ui inverted header">Help Preserve This Project</h5>
+  <section class="ui inverted center aligned footer segment container grid">
+    <section class="ui ten wide column"><header><h5 class="ui inverted header">Help Preserve This Project</h5></header>
 Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
 <p></p>
 
 <a class="ui item" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVL2DAA4Y6NXL"><button class="ui primary button">Donate Today</button></a>
-<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></div>
-  </div>
+<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></section>
+  </section>
 </div>
 
-</body>
+  </body>
 </html>

@@ -1,40 +1,105 @@
 <!doctype html>
 
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Toc.md</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
+    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  <div class="ui container">
-  <div class="ui inverted segment">
+  </head>
+  <body>
+    <div class="ui container">
+  <section class="ui inverted segment">
     <div class="ui stackable inverted container menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <div class="ui stackable inverted right menu">
+      <nav class="ui stackable inverted right menu">
         <a class="ui active item" href="toc.html">Docs</a>
         <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
         <a class="ui item" href="../index.html#install">Install</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </section>
 <!-- -->
   <div class="ui text container">
-    <h1 class="ui center aligned header">Table of Contents</h1>
-    <h2 class="ui header">
-      <a class="ui item" href="button.html#button">Button</a>
-    </h2>
-    <div class="ui two column stackable justified aligned grid container">
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="button.html#types">Types</a></h3><a class="ui item" href="button.html#simple-button">Button</a>
+    <header>
+      <h1 class="ui center aligned header">Table of Contents</h1>
+    </header>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="button.html#button">Button</a>
+      </h2>
+    </header>
+    <article class="ui two column stackable justified aligned grid container">
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#types">Types</a></h3></header><a class="ui item" href="button.html#simple-button">Button</a>
 &#xB7;
 <a class="ui item" href="button.html#emphasis">Emphasis</a>
 &#xB7;
@@ -46,26 +111,28 @@
 &#xB7;
 <a class="ui item" href="button.html#basic-button">Basic</a>
 &#xB7;
-<a class="ui item" href="button.html#inverted">Inverted</a></div>
+<a class="ui item" href="button.html#inverted">Inverted</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="button.html#groups">Groups</a></h3><a class="ui item" href="button.html#buttons">Buttons</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#groups">Groups</a></h3></header><a class="ui item" href="button.html#buttons">Buttons</a>
 &#xB7;
-<a class="ui item" href="button.html#icon-buttons">Icon Buttons</a></div>
+<a class="ui item" href="button.html#icon-buttons">Icon Buttons</a></section>
 <!-- -->
-      <div class="ui column">
-        <h3 class="ui header">
-          <a class="ui item" href="button.html#content">Content</a>
-        </h3>
+      <section class="ui column">
+        <header>
+          <h3 class="ui header">
+            <a class="ui item" href="button.html#content">Content</a>
+          </h3>
+        </header>
         <a class="ui item" href="button.html#conditionals">Conditionals</a>
-      </div>
+      </section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="button.html#states">States</a></h3><a class="ui item" href="button.html#active">Active</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#states">States</a></h3></header><a class="ui item" href="button.html#active">Active</a>
 &#xB7;
 <a class="ui item" href="button.html#disabled">Disabled</a>
 &#xB7;
-<a class="ui item" href="button.html#loading">Loading</a></div>
+<a class="ui item" href="button.html#loading">Loading</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="button.html#variations">Variations</a></h3><a class="ui item" href="button.html#social">Social</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#variations">Variations</a></h3></header><a class="ui item" href="button.html#social">Social</a>
 &#xB7;
 <a class="ui item" href="button.html#size">Size</a>
 &#xB7;
@@ -83,9 +150,9 @@
 &#xB7;
 <a class="ui item" href="button.html#vertically-attached">Vertically Attached</a>
 &#xB7;
-<a class="ui item" href="button.html#horizontally-attached">Horizontally Attached</a></div>
+<a class="ui item" href="button.html#horizontally-attached">Horizontally Attached</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="button.html#group-variations">Group Variations</a></h3><a class="ui item" href="button.html#vertical-buttons">Vertical Buttons</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#group-variations">Group Variations</a></h3></header><a class="ui item" href="button.html#vertical-buttons">Vertical Buttons</a>
 &#xB7;
 <a class="ui item" href="button.html#icon-buttons">Icon Buttons</a>
 &#xB7;
@@ -99,41 +166,45 @@
 &#xB7;
 <a class="ui item" href="button.html#basic-buttons">Basic Buttons</a>
 &#xB7;
-<a class="ui item" href="button.html#group-sizes">Group Sizes</a></div>
-    </div>
+<a class="ui item" href="button.html#group-sizes">Group Sizes</a></section>
+    </article>
 <!-- -->
-    <h2 class="ui header">
-      <a class="ui item" href="container.html#container">Container</a>
-    </h2>
-    <div class="ui two column stackable justified aligned grid container">
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="container.html#types">Types</a></h3><a class="ui item" href="container.html#standard-container">Standard Container</a>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="container.html#container">Container</a>
+      </h2>
+    </header>
+    <article class="ui two column stackable justified aligned grid container">
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#types">Types</a></h3></header><a class="ui item" href="container.html#standard-container">Standard Container</a>
 &#xB7;
-<a class="ui item" href="container.html#text-container">Text Container</a></div>
+<a class="ui item" href="container.html#text-container">Text Container</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="container.html#variations">Variations</a></h3><a class="ui item" href="container.html#text-alignment">Text Alignment</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#variations">Variations</a></h3></header><a class="ui item" href="container.html#text-alignment">Text Alignment</a>
 &#xB7;
 <a class="ui item" href="container.html#justified-aligned">Justified Aligned</a>
 &#xB7;
-<a class="ui item" href="container.html#fluid">Fluid</a></div>
+<a class="ui item" href="container.html#fluid">Fluid</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="container.html#examples">Examples</a></h3><a class="ui item" href="container.html#container-using-grids">Container Using Grids</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#examples">Examples</a></h3></header><a class="ui item" href="container.html#container-using-grids">Container Using Grids</a>
 &#xB7;
 <a class="ui item" href="container.html#centered-menu">Centered Menu</a>
 &#xB7;
-<a class="ui item" href="container.html#container-segment">Container Segment</a></div>
-    </div>
+<a class="ui item" href="container.html#container-segment">Container Segment</a></section>
+    </article>
 <!-- -->
-    <h2 class="ui header">
-      <a class="ui item" href="divider.html#divider">Divider</a>
-    </h2>
-    <div class="ui two column stackable justified aligned grid container">
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="divider.html#types">Types</a></h3><a class="ui item" href="divider.html#standard-divider">Standard Divider</a>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="divider.html#divider">Divider</a>
+      </h2>
+    </header>
+    <article class="ui two column stackable justified aligned grid container">
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="divider.html#types">Types</a></h3></header><a class="ui item" href="divider.html#standard-divider">Standard Divider</a>
 &#xB7;
 <a class="ui item" href="divider.html#vertical-divider">Vertical Divider</a>
 &#xB7;
-<a class="ui item" href="divider.html#horizontal-divider">Horizontal Divider</a></div>
+<a class="ui item" href="divider.html#horizontal-divider">Horizontal Divider</a></section>
 <!-- -->
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="divider.html#variations">Variations</a></h3><a class="ui item" href="divider.html#inverted-divider">Inverted</a>
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="divider.html#variations">Variations</a></h3></header><a class="ui item" href="divider.html#inverted-divider">Inverted</a>
 &#xB7;
 <a class="ui item" href="divider.html#fitted-divider">Fitted</a>
 &#xB7;
@@ -141,41 +212,47 @@
 &#xB7;
 <a class="ui item" href="divider.html#section-divider">Section</a>
 &#xB7;
-<a class="ui item" href="divider.html#clearing-divider">Clearing</a></div>
-    </div>
+<a class="ui item" href="divider.html#clearing-divider">Clearing</a></section>
+    </article>
 <!-- -->
-    <h2 class="ui header">
-      <a class="ui item" href="flag.html#flag">Flag</a>
-    </h2>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="flag.html#flag">Flag</a>
+      </h2>
+    </header>
 <!-- -->
-    <h2 class="ui header">
-      <a class="ui item" href="header.html#header">Header</a>
-    </h2>
-    <div class="ui two column stackable justified aligned grid container">
-      <div class="ui column"><h3 class="ui header"><a class="ui item" href="header.html#types">Types</a></h3><a class="ui item" href="header.html#page-headers">Page Headers</a>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="header.html#header">Header</a>
+      </h2>
+    </header>
+    <article class="ui two column stackable justified aligned grid container">
+      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="header.html#types">Types</a></h3></header><a class="ui item" href="header.html#page-headers">Page Headers</a>
 &#xB7;
 <a class="ui item" href="header.html#content-headers">Content Headers</a>
 &#xB7;
 <a class="ui item" href="header.html#icon-headers">Icon Headers</a>
 &#xB7;
 <a class="ui item" href="header.html#sub-headers">Sub Headers</a>
-&#xB7;</div>
-    </div>
+&#xB7;</section>
+    </article>
 <!-- -->
-    <h2 class="ui header">
-      <a class="ui item" href="icon.html#icon">Icon</a>
-    </h2>
+    <header>
+      <h2 class="ui header">
+        <a class="ui item" href="icon.html#icon">Icon</a>
+      </h2>
+    </header>
   </div>
 <!-- -->
-  <div class="ui inverted center aligned footer segment container grid">
-    <div class="ui ten wide column"><h5 class="ui inverted header">Help Preserve This Project</h5>
+  <section class="ui inverted center aligned footer segment container grid">
+    <section class="ui ten wide column"><header><h5 class="ui inverted header">Help Preserve This Project</h5></header>
 Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
 <p></p>
 
 <a class="ui item" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVL2DAA4Y6NXL"><button class="ui primary button">Donate Today</button></a>
-<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></div>
-  </div>
+<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></section>
+  </section>
 </div>
 
-</body>
+  </body>
 </html>

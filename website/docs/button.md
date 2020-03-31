@@ -211,12 +211,20 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Basic Button|Icon:User,Add Friend__
+> > > __Basic Primary Button|Primary__
+> > > __Basic Secondary Button|Secondary__
+> > > __Basic Positive Button|Positive__
+> > > __Basic Negative Button|Negative__
 > >
 > > <!-- -->
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Basic Button|Icon：User,Add Friend__ ```
+> > > > ``` __Basic Primary Button|Primary__ ```
+> > > > ``` __Basic Secondary Button|Secondary__ ```
+> > > > ``` __Basic Positive Button|Positive__ ```
+> > > > ``` __Basic Negative Button|Negative__ ```
 >
 > <!-- -->
 > > Stackable Divided Segment Grid:

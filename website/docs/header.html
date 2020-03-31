@@ -1,64 +1,145 @@
 <!doctype html>
 
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Header.md</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
+    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  <div class="ui container">
-  <div class="ui inverted segment">
+  </head>
+  <body>
+    <div class="ui container">
+  <section class="ui inverted segment">
     <div class="ui stackable inverted container menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <div class="ui stackable inverted right menu">
+      <nav class="ui stackable inverted right menu">
         <a class="ui item" href="toc.html">Table of Contents</a>
         <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
         <a class="ui item" href="../index.html#install">Install</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h1 id="header" class="ui header">Header</h1>
+  <section class="ui basic segment">
+    <header>
+      <h1 id="header" class="ui header">Header</h1>
+    </header>
     <p>A header provides a short summary of content</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h2 id="types" class="ui dividing left aligned header">Types</h2>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h2 id="types" class="ui dividing left aligned header">Types</h2>
+    </header>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="page-headers" class="ui header">Page Headers</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="page-headers" class="ui header">Page Headers</h4>
+    </header>
     <p>Headers may be oriented to give the hierarchy of a section in the context of the page</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui stackable divided segment grid">
-    <div class="ui attached segment">
+  <section class="ui stackable divided segment grid">
+    <section class="ui attached segment">
       <div class="ui top attached label">Page Headers</div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui center aligned six wide column">
-      <h5 class="ui center aligned header">Preview</h5>
-      <h1 class="ui header">First Header</h1>
-      <h2 class="ui header">Second Header</h2>
-      <h3 class="ui header">Third Header</h3>
-      <h4 class="ui header">Fourth Header</h4>
-      <h5 class="ui header">Fifth Header</h5>
-    </div>
+    <section class="ui center aligned six wide column">
+      <header>
+        <h5 class="ui center aligned header">Preview</h5>
+      </header>
+      <header>
+        <h1 class="ui header">First Header</h1>
+      </header>
+      <header>
+        <h2 class="ui header">Second Header</h2>
+      </header>
+      <header>
+        <h3 class="ui header">Third Header</h3>
+      </header>
+      <header>
+        <h4 class="ui header">Fourth Header</h4>
+      </header>
+      <header>
+        <h5 class="ui header">Fifth Header</h5>
+      </header>
+    </section>
 <!-- -->
-    <div class="ui ten wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+    <section class="ui ten wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code># First Header</code>
         <br />
         <code>## Second Header</code>
@@ -68,23 +149,27 @@
         <code>#### Fourth Header</code>
         <br />
         <code>##### Fifth Header</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="page-headers" class="ui header">Content Headers</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="page-headers" class="ui header">Content Headers</h4>
+    </header>
     <p>Headers may be oriented to give the importance of a section in the context of the content that surrounds it</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui stackable divided segment grid">
-    <div class="ui attached segment">
+  <section class="ui stackable divided segment grid">
+    <section class="ui attached segment">
       <div class="ui top attached label">Content Headers</div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui center aligned six wide column">
-      <h5 class="ui center aligned header">Preview</h5>
-      <div class="ui sizer vertical segment">
+    <section class="ui center aligned six wide column">
+      <header>
+        <h5 class="ui center aligned header">Preview</h5>
+      </header>
+      <section class="ui sizer vertical segment">
         <div class="ui huge header">Huge Header</div>
 <!-- -->
         <div class="ui large header">Large Header</div>
@@ -94,12 +179,14 @@
         <div class="ui small header">Small Header</div>
 <!-- -->
         <div class="ui tiny header">Tiny Header</div>
-      </div>
-    </div>
+      </section>
+    </section>
 <!-- -->
-    <div class="ui ten wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+    <section class="ui ten wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Sizer Vertical Segment:</code>
         <br />
         <code>&gt; &gt; Huge Header:</code>
@@ -145,31 +232,37 @@
         <code>&gt; &gt; Tiny Header:</code>
         <br />
         <code>&gt; &gt; Tiny Header</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="icon-headers" class="ui header">Icon Headers</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="icon-headers" class="ui header">Icon Headers</h4>
+    </header>
     <p>A header can be formatted to emphasize an icon</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui stackable divided segment grid">
-    <div class="ui attached segment">
+  <section class="ui stackable divided segment grid">
+    <section class="ui attached segment">
       <div class="ui top attached label">Icon Headers</div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui center aligned six wide column">
-      <h5 class="ui center aligned header">Preview</h5>
+    <section class="ui center aligned six wide column">
+      <header>
+        <h5 class="ui center aligned header">Preview</h5>
+      </header>
       <div class="ui icon header">
         <i class="settings icon"></i>
         <div class="ui content">Account Settings<div class="ui sub header">Manage your account settings and set e-mail preferences.</div></div>
       </div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui ten wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+    <section class="ui ten wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Icon Header:</code>
         <br />
         <code>&gt; _Settings Icon_</code>
@@ -181,48 +274,58 @@
         <code>&gt; &gt; &gt; Sub Header:</code>
         <br />
         <code>&gt; &gt; &gt; Manage your account settings and set e-mail preferences.</code>
-      </div>
-    </div>
+      </section>
+    </section>
 <!-- -->
-    <div class="ui center aligned six wide column">
-      <h5 class="ui center aligned header">Preview</h5>
+    <section class="ui center aligned six wide column">
+      <header>
+        <h5 class="ui center aligned header">Preview</h5>
+      </header>
       <div class="ui center aligned icon header"><i class="circular users icon"></i>
 Friends</div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui ten wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+    <section class="ui ten wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Center Aligned Icon Header:</code>
         <br />
         <code>&gt; _Circular Users Icon_</code>
         <br />
         <code>&gt; Friends</code>
         <br />
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="sub-headers" class="ui header">Sub Headers</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="sub-headers" class="ui header">Sub Headers</h4>
+    </header>
     <p>Headers may be formatted to label smaller or de-emphasized content.</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui stackable divided segment grid">
-    <div class="ui attached segment">
+  <section class="ui stackable divided segment grid">
+    <section class="ui attached segment">
       <div class="ui top attached label">Sub Headers</div>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui center aligned six wide column">
-      <h5 class="ui center aligned header">Preview</h5>
+    <section class="ui center aligned six wide column">
+      <header>
+        <h5 class="ui center aligned header">Preview</h5>
+      </header>
       <div class="ui sub header">Price</div>
 <!-- -->
       <span class="span">$10.99</span>
-    </div>
+    </section>
 <!-- -->
-    <div class="ui ten wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+    <section class="ui ten wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Sub Header:</code>
         <br />
         <code>&gt; Price</code>
@@ -237,19 +340,19 @@ Friends</div>
         <br />
         <code>&gt; $10.99</code>
         <br />
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </section>
 <!-- -->
-  <div class="ui inverted center aligned footer segment container grid">
-    <div class="ui ten wide column"><h5 class="ui inverted header">Help Preserve This Project</h5>
+  <section class="ui inverted center aligned footer segment container grid">
+    <section class="ui ten wide column"><header><h5 class="ui inverted header">Help Preserve This Project</h5></header>
 Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
 <p></p>
 
 <a class="ui item" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVL2DAA4Y6NXL"><button class="ui primary button">Donate Today</button></a>
-<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></div>
-  </div>
+<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></section>
+  </section>
 </div>
 
-</body>
+  </body>
 </html>

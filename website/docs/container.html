@@ -1,45 +1,112 @@
 <!doctype html>
 
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Container.md</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
+    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css'>
-  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js'></script>
-
-  <!--[if lt IE 9]>
-  <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css'>
-  <div class="ui container">
-  <div class="ui inverted segment">
+  </head>
+  <body>
+    <div class="ui container">
+  <section class="ui inverted segment">
     <div class="ui stackable inverted container menu">
       <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <div class="ui stackable inverted right menu">
+      <nav class="ui stackable inverted right menu">
         <a class="ui item" href="toc.html">Table of Contents</a>
         <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
         <a class="ui item" href="../index.html#install">Install</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h1 id="container" class="ui center aligned header">Container</h1>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h1 id="container" class="ui center aligned header">Container</h1>
+    </header>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h2 id="types" class="ui dividing left aligned header">Types</h2>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h2 id="types" class="ui dividing left aligned header">Types</h2>
+    </header>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="standard-container" class="ui header">Standard Container</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="standard-container" class="ui header">Standard Container</h4>
+    </header>
     <p>A standard container</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div><div class="ui container">
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
@@ -47,50 +114,62 @@
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Container:</code>
         <br />
         <code>&gt; "Lorem Ipsum Dolor"</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="text-container" class="ui header">Text Container</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="text-container" class="ui header">Text Container</h4>
+    </header>
     <p>A container can reduce its maximum width to more naturally accomodate a single column of text</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div><div class="ui text container">
-  <h1 class="ui header">Header</h1>
+  <header>
+    <h1 class="ui header">Header</h1>
+  </header>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
 </div>
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Text Container:</code>
         <br />
         <code>&gt; # Header</code>
         <br />
         <code>&gt; "Lorem Ipsum Dolor"</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h2 id="variations" class="ui dividing left aligned header">Variations</h2>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h2 id="variations" class="ui dividing left aligned header">Variations</h2>
+    </header>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="text-alignment" class="ui header">Text Alignment</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="text-alignment" class="ui header">Text Alignment</h4>
+    </header>
     <p>A container can specify its text alignment</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div>
 <!-- -->
@@ -110,16 +189,20 @@
 
 <!-- -->
 <div class="ui justified aligned container">
-  <h4 id="justified-aligned" class="ui header">Justified Aligned</h4>
+  <header>
+    <h4 id="justified-aligned" class="ui header">Justified Aligned</h4>
+  </header>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
 </div>
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Left Aligned Container:</code>
         <br />
         <code>&gt; "Left Aligned"</code>
@@ -153,14 +236,16 @@
         <code>&gt; Justified Aligned Container:</code>
         <br />
         <code>&gt; "Justified Aligned"</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="fluid" class="ui header">Fluid</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="fluid" class="ui header">Fluid</h4>
+    </header>
     <p>A fluid container has no maximum width</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div>
 <!-- -->
@@ -170,56 +255,64 @@
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Fluid Container:</code>
         <br />
         <code>&gt; "Lorem Ipsum Dolor"</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h2 id="examples" class="ui dividing left aligned header">Examples</h2>
-  </div>
+  <section class="ui basic segment">
+    <header>
+      <h2 id="examples" class="ui dividing left aligned header">Examples</h2>
+    </header>
+  </section>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="container-using-grids" class="ui header">Container Using Grids</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="container-using-grids" class="ui header">Container Using Grids</h4>
+    </header>
     <p>A container can be combined with a grid allowing you to use all of the layout and alignment available for grids including responsive patterns.</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div>
 <!-- -->
-<div class="ui four column doubling grid container">
-  <div class="ui column">
+<article class="ui four column doubling grid container">
+  <section class="ui column">
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui column">
+  <section class="ui column">
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui column">
+  <section class="ui column">
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
-  </div>
+  </section>
 <!-- -->
-  <div class="ui column">
+  <section class="ui column">
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.</p>
-  </div>
-</div>
+  </section>
+</article>
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Four Column Doubling Grid Container:</code>
         <br />
         <code>&gt; &gt; Column:</code>
@@ -257,42 +350,46 @@
         <code>&gt; &gt; "Lorem ipsum dolor"</code>
         <br />
         <code>&gt; &gt; "Lorem ipsum dolor"</code>
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="centered-menu" class="ui header">Centered Menu</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="centered-menu" class="ui header">Centered Menu</h4>
+    </header>
     <p>A container can be used inside of a menu to make sure menu items appear inline with page contents. Using responsive variations like stackable menu can help make contents adjust to different device sizes.</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div>
 <!-- -->
-<div class="ui attached stackable menu">
+<nav class="ui attached stackable menu">
   <div class="ui container">
     <a class="ui item"><i class="home icon"></i> Home</a>
     <a class="ui item"><i class="grid layout icon"></i> Browse</a>
     <a class="ui item"><i class="mail icon"></i> Messages</a>
 <!-- -->
-    <div class="ui simple dropdown item">More
+    <nav class="ui simple dropdown item">More
 <i class="dropdown icon"></i>
 <!-- -->
-<div class="ui menu"><a class="ui item"><i class="edit icon"></i> Edit Profile</a><a class="ui item"><i class="globe icon"></i> Choose Language</a><a class="ui item"><i class="settings icon"></i> Account Settings</a></div></div>
+<nav class="ui menu"><a class="ui item"><i class="edit icon"></i> Edit Profile</a><a class="ui item"><i class="globe icon"></i> Choose Language</a><a class="ui item"><i class="settings icon"></i> Account Settings</a></nav></nav>
 <!-- -->
-    <div class="ui right item">
+    <nav class="ui right item">
       <div class="ui input">
         <input type="text" placeholder="Search..." />
       </div>
-    </div>
+    </nav>
   </div>
-</div>
+</nav>
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Attached Stackable Menu:</code>
         <br />
         <code>&gt; &gt; Container:</code>
@@ -333,47 +430,53 @@
         <br />
         <code>&gt; &gt; &gt; &lt;div class="ui input"&gt;&lt;input type="text" placeholder="Search..."&gt;&lt;/div&gt;</code>
         <br />
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui basic segment">
-    <h4 id="container-segment" class="ui header">Container Segment</h4>
+  <section class="ui basic segment">
+    <header>
+      <h4 id="container-segment" class="ui header">Container Segment</h4>
+    </header>
     <p>A container can be used with a segment</p>
-  </div>
+  </section>
 </div>
 <div class='ui divider'></div>
 <!-- -->
-<div class="ui raised very padded text container segment">
-  <h2 class="ui header">Header</h2>
+<section class="ui raised very padded text container segment">
+  <header>
+    <h2 class="ui header">Header</h2>
+  </header>
   <p>Lorem Ipsum Dolor</p>
-</div>
+</section>
 <div class='ui divider'></div>
 <!-- -->
 <div class="ui container">
-  <div class="ui grid">
-    <div class="ui sixteen wide column">
-      <h5 class="ui header">Markdown Syntax</h5>
-      <div class="ui inverted very padded segment">
+  <article class="ui grid">
+    <section class="ui sixteen wide column">
+      <header>
+        <h5 class="ui header">Markdown Syntax</h5>
+      </header>
+      <section class="ui inverted very padded segment">
         <code>&gt; Raised Very Padded Text Container Segment:</code>
         <br />
         <code>&gt; ## Header</code>
         <br />
         <code>&gt; "Lorem Ipsum Dolor"</code>
         <br />
-      </div>
-    </div>
-  </div>
+      </section>
+    </section>
+  </article>
 <!-- -->
-  <div class="ui inverted center aligned footer segment container grid">
-    <div class="ui ten wide column"><h5 class="ui inverted header">Help Preserve This Project</h5>
+  <section class="ui inverted center aligned footer segment container grid">
+    <section class="ui ten wide column"><header><h5 class="ui inverted header">Help Preserve This Project</h5></header>
 Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
 <p></p>
 
 <a class="ui item" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVL2DAA4Y6NXL"><button class="ui primary button">Donate Today</button></a>
-<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></div>
-  </div>
+<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></section>
+  </section>
 </div>
 
-</body>
+  </body>
 </html>
