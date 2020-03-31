@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for i in *.md docs/*.md ; do
+for i in *.md ; do
   echo "PROCESSING FILE: $i"
   dname="$(dirname $i)"
   name="$(basename $i .md)"

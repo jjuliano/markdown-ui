@@ -3,7 +3,7 @@
 > > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "active basic")
 > > > > Stackable Inverted Right Menu:
-> > > > [Docs](docs/toc.html)
+> > > > [Docs](toc.html)
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
 > > > > [Install](#install)
 >
@@ -11,7 +11,7 @@
 > > Inverted Attached Basic Blue Very Padded Segment:
 > > # Markdown UI
 > > ### Create Beautiful and Responsive Websites  in Markdown Syntax
-> > [__Button|Get Started__](docs/toc.html)
+> > [__Button|Get Started__](toc.html)
 >
 > <!-- -->
 > > Basic Attached Segment:

@@ -3,7 +3,7 @@
 > > > Stackable Inverted Container Menu:
 > > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
 > > > > Stackable Inverted Right Menu:
-> > > > [Docs](docs/toc.html)
+> > > > [Docs](toc.html)
 > > > > [About](about.html "active")
 > > > > [Github](https：//github.com/jjuliano/markdown-ui)
 > > > > [Install](index.html#install)
