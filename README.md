@@ -6,6 +6,8 @@
 
 Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
 
+This is a fork of the original Markdown UI project originally started by Joel Bryan Juliano. A huge amount of gratitude goes out to him for starting this project. This fork will continue to be actively maintained separately.
+
 # Installation
 
 Markdown-UI is readily available as a Ruby gem.
