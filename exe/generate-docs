@@ -1,9 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'markdown-ui'
+
+parser = MarkdownUI::Parser.new
+f = File.open(ARGV.first, 'r')
+basename = File.basename(ARGV.first.gsub(/.mdui/, ''))
+content = f.read
+content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
+content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
+content.gsub!(/file\:\/\//, "MARKDOWN-UI-PREFILTER-file//")
+content.gsub!(/ftp\:\/\//, "MARKDOWN-UI-PREFILTER-ftp//")
+content.gsub!(/mailto\:/, "MARKDOWN-UI-PREFILTER-mailto//")
+content.gsub!(/tel\:/, "MARKDOWN-UI-PREFILTER-tel//")
+content.gsub!(/javascript\:/, "MARKDOWN-UI-PREFILTER-javascript//")
+@content = parser.render content
+f.close
+
+output = <<-EOS
 <!doctype html>
 
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Toc.md</title>
+    <title>#{basename.capitalize}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/reset.min.css" />
@@ -77,182 +97,17 @@
 
   </head>
   <body>
-    <div class="ui container">
-  <section class="ui inverted segment">
-    <div class="ui stackable inverted container menu">
-      <a class="ui basic item" href="http://jjuliano.github.io/markdown-ui">Markdown UI</a>
-      <nav class="ui stackable inverted right menu">
-        <a class="ui active item" href="toc.html">Docs</a>
-        <a class="ui item" href="https://github.com/jjuliano/markdown-ui">Github</a>
-        <a class="ui item" href="../index.html#install">Install</a>
-      </nav>
-    </div>
-  </section>
-<!-- -->
-  <div class="ui text container">
-    <header>
-      <h1 class="ui center aligned header">Table of Contents</h1>
-    </header>
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="button.html#button">Button</a>
-      </h2>
-    </header>
-    <article class="ui two column stackable justified aligned grid container">
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#types">Types</a></h3></header><a class="ui item" href="button.html#simple-button">Button</a>
-&#xB7;
-<a class="ui item" href="button.html#emphasis">Emphasis</a>
-&#xB7;
-<a class="ui item" href="button.html#animated">Animated</a>
-&#xB7;
-<a class="ui item" href="button.html#icon">Icon</a>
-&#xB7;
-<a class="ui item" href="button.html#labeled-icon">Labeled Icon</a>
-&#xB7;
-<a class="ui item" href="button.html#basic-button">Basic</a>
-&#xB7;
-<a class="ui item" href="button.html#inverted">Inverted</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#groups">Groups</a></h3></header><a class="ui item" href="button.html#buttons">Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#icon-buttons">Icon Buttons</a></section>
-<!-- -->
-      <section class="ui column">
-        <header>
-          <h3 class="ui header">
-            <a class="ui item" href="button.html#content">Content</a>
-          </h3>
-        </header>
-        <a class="ui item" href="button.html#conditionals">Conditionals</a>
-      </section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#states">States</a></h3></header><a class="ui item" href="button.html#active">Active</a>
-&#xB7;
-<a class="ui item" href="button.html#disabled">Disabled</a>
-&#xB7;
-<a class="ui item" href="button.html#loading">Loading</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#variations">Variations</a></h3></header><a class="ui item" href="button.html#social">Social</a>
-&#xB7;
-<a class="ui item" href="button.html#size">Size</a>
-&#xB7;
-<a class="ui item" href="button.html#colored">Colored</a>
-&#xB7;
-<a class="ui item" href="button.html#compact">Compact</a>
-&#xB7;
-<a class="ui item" href="button.html#positive">Positive</a>
-&#xB7;
-<a class="ui item" href="button.html#negative">Negative</a>
-&#xB7;
-<a class="ui item" href="button.html#fluid">Fluid</a>
-&#xB7;
-<a class="ui item" href="button.html#circular">Circular</a>
-&#xB7;
-<a class="ui item" href="button.html#vertically-attached">Vertically Attached</a>
-&#xB7;
-<a class="ui item" href="button.html#horizontally-attached">Horizontally Attached</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="button.html#group-variations">Group Variations</a></h3></header><a class="ui item" href="button.html#vertical-buttons">Vertical Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#icon-buttons">Icon Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#labeled-icon-buttons">Labeled Icon Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#mixed-group">Mixed Group</a>
-&#xB7;
-<a class="ui item" href="button.html#equal-width">Equal Width</a>
-&#xB7;
-<a class="ui item" href="button.html#colored-buttons">Colored Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#basic-buttons">Basic Buttons</a>
-&#xB7;
-<a class="ui item" href="button.html#group-sizes">Group Sizes</a></section>
-    </article>
-<!-- -->
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="container.html#container">Container</a>
-      </h2>
-    </header>
-    <article class="ui two column stackable justified aligned grid container">
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#types">Types</a></h3></header><a class="ui item" href="container.html#standard-container">Standard Container</a>
-&#xB7;
-<a class="ui item" href="container.html#text-container">Text Container</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#variations">Variations</a></h3></header><a class="ui item" href="container.html#text-alignment">Text Alignment</a>
-&#xB7;
-<a class="ui item" href="container.html#justified-aligned">Justified Aligned</a>
-&#xB7;
-<a class="ui item" href="container.html#fluid">Fluid</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="container.html#examples">Examples</a></h3></header><a class="ui item" href="container.html#container-using-grids">Container Using Grids</a>
-&#xB7;
-<a class="ui item" href="container.html#centered-menu">Centered Menu</a>
-&#xB7;
-<a class="ui item" href="container.html#container-segment">Container Segment</a></section>
-    </article>
-<!-- -->
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="divider.html#divider">Divider</a>
-      </h2>
-    </header>
-    <article class="ui two column stackable justified aligned grid container">
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="divider.html#types">Types</a></h3></header><a class="ui item" href="divider.html#standard-divider">Standard Divider</a>
-&#xB7;
-<a class="ui item" href="divider.html#vertical-divider">Vertical Divider</a>
-&#xB7;
-<a class="ui item" href="divider.html#horizontal-divider">Horizontal Divider</a></section>
-<!-- -->
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="divider.html#variations">Variations</a></h3></header><a class="ui item" href="divider.html#inverted-divider">Inverted</a>
-&#xB7;
-<a class="ui item" href="divider.html#fitted-divider">Fitted</a>
-&#xB7;
-<a class="ui item" href="divider.html#hidden-divider">Hidden</a>
-&#xB7;
-<a class="ui item" href="divider.html#section-divider">Section</a>
-&#xB7;
-<a class="ui item" href="divider.html#clearing-divider">Clearing</a></section>
-    </article>
-<!-- -->
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="flag.html#flag">Flag</a>
-      </h2>
-    </header>
-<!-- -->
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="header.html#header">Header</a>
-      </h2>
-    </header>
-    <article class="ui two column stackable justified aligned grid container">
-      <section class="ui column"><header><h3 class="ui header"><a class="ui item" href="header.html#types">Types</a></h3></header><a class="ui item" href="header.html#page-headers">Page Headers</a>
-&#xB7;
-<a class="ui item" href="header.html#content-headers">Content Headers</a>
-&#xB7;
-<a class="ui item" href="header.html#icon-headers">Icon Headers</a>
-&#xB7;
-<a class="ui item" href="header.html#sub-headers">Sub Headers</a>
-&#xB7;</section>
-    </article>
-<!-- -->
-    <header>
-      <h2 class="ui header">
-        <a class="ui item" href="icon.html#icon">Icon</a>
-      </h2>
-    </header>
-  </div>
-<!-- -->
-  <section class="ui inverted center aligned footer segment container grid">
-    <section class="ui ten wide column"><header><h5 class="ui inverted header">Help Preserve This Project</h5></header>
-Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
-<p></p>
-
-<a class="ui item" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVL2DAA4Y6NXL"><button class="ui primary button">Donate Today</button></a>
-<div class="ui divider"></div><a class="ui item" href="http://markdown-ui.mit-license.org">Free and Open Source (MIT)</a></section>
-  </section>
-</div>
-
+    #{@content}
   </body>
 </html>
+EOS
+
+output.gsub!(/MARKDOWN-UI-PREFILTER-http\/\//, "http://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-https\/\//, "https://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-file\/\//, "file://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-ftp\/\//, "ftp://")
+output.gsub!(/MARKDOWN-UI-PREFILTER-mailto\/\//, "mailto:")
+output.gsub!(/MARKDOWN-UI-PREFILTER-tel\/\//, "tel:")
+output.gsub!(/MARKDOWN-UI-PREFILTER-javascript\/\//, "javascript:")
+
+puts output
