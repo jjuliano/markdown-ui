@@ -11,7 +11,7 @@ module MarkdownUI::Container
       klass   = "ui #{@element} text container"
       content = @content.strip
 
-      MarkdownUI::ArticleTag.new(content, klass).render
+      MarkdownUI::StandardTag.new(content, klass).render
     end
   end
 end
