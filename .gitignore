@@ -216,4 +216,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# User dependencies
+bower_components
+
 # End of https://www.gitignore.io/api/ruby,linux,macos,windows,rubymine
