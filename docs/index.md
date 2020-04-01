@@ -11,6 +11,7 @@
 > > Inverted Attached Basic Blue Very Padded Segment:
 > > # Markdown UI
 > > ### Create Beautiful and Responsive Websites  in Markdown Syntax
+> > " "
 > > [__Button|Get Started__](toc.html)
 >
 > <!-- -->
@@ -18,19 +19,23 @@
 > > > Stackable Equal Width Grid:
 > > > > Column:
 > > > > ## About::about
+> > > > " "
 > > > > Markdown-UI is a development framework that utilizes the [Semantic-UI](http：//www.semantic-ui.com) web framework, to create beautiful, human-friendly HTML and responsive layouts using Markdown Syntax.
 > > > >
 > > > > Markdown-UI is not affiliated with Semantic-UI in any matter.
-> > > >
+> > > > " "
 > > > > ## Installation::install
+> > > > " "
 > > > > Markdown-UI is readily available as a Ruby gem. The minimum required Ruby version is 2.0. <br /> <br />
 > > > > ```gem install markdown-ui```
-> > > >
+> > > > " "
 > > > > ## Usage::usage
+> > > > " "
 > > > > Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux) <br /> <br />
 > > > > ```markdown-ui index.mdui > index.html```
-> > > >
+> > > > " "
 > > > > ## Markdown-UI (Read-Evaluate-Print-Loop) REPL shell
+> > > > " "
 > > > > You can interactively create Markdown-UI websites using the `markdown-ui-shell`.
 > > > > > Message:
 > > > > > ```$ markdown-ui-shell``` <br />
@@ -39,23 +44,24 @@
 > > > > > ```# __Button|A Button__``` <br />
 > > > > > ```# ``` <br />
 > > > > > ```# ``` <br />
-> > > > > ``` ``` <br />
+> > > > > ```# ``` <br />
 > > > > > ```    <button class="ui button">A Button</button>``` <br />
 > > > > > ``` ``` <br />
-> > > > > ```# ```
-> > > >
+> > > > " "
 > > > > ## Credits::credits
+> > > > " "
 > > > > Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
-> > > >
+> > > > " "
 > > > > ## Source
-> > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jmoors79/markdown-ui/tree/master/website)
-> > > >
+> > > > " "
+> > > > This document is written entirely in Markdown-UI.
+> > > > " "
 > > > > ## Notes/Issues/Bugs::issues-bugs
-> > > >
-> > > > * Ongoing support for Semantic-UI elements/modules/components
-> > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)"
-> > > > * A separator in between two spaces is required on block elements to separate elements (see Column example)
-> > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.
+> > > > " "
+> > > > * Ongoing support for Semantic-UI elements/modules/components <br />
+> > > > * The Colon (：) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URL's)" <br />
+> > > > * A separator in between two spaces is required on block elements to separate elements (see Column example) <br />
+> > > > * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.<br />
 > > > >
 > > >
 > > > <!-- -->
@@ -71,7 +77,9 @@
 > > > > > ```__Button|Add Friend__```
 >
 > <!-- -->
+> " "
 > ##Cheat Sheet:Center Aligned:cheatsheets
+> " "
 > > Stackable Equal Width Grid:
 > > > Column:
 > > > > Segments:
@@ -171,14 +179,3 @@
 > > > > > > ``` > ``` <br />
 > > > > > > ``` > > Column：``` <br />
 > > > > > > ``` > > Column 2 ``` <br />
-
->
-> <!-- -->
-> > Inverted Center Aligned Footer Segment Container Grid:
-> > > Ten Wide Column:
-> > > ##### Help Preserve This Project:Inverted
-> > > Please help Markdown-UI by means of voluntary donations, money donated to the project will benefit the project by ensuring that Markdown-UI itself will remain well supported for the foreseeable future.
-> > > " "
-> > > [__Primary Button|Donate Today__](PAYPAL_BUTTON)
-> ____
-> > [Free and Open Source (MIT)](http：//markdown-ui.mit-license.org)
