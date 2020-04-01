@@ -1,10 +1,10 @@
 > Container:
 > > Inverted Segment:
 > > > Stackable Inverted Container Menu:
-> > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "active basic")
+> > > [Markdown UI](http：//jmoors79.github.io/markdown-ui "active basic")
 > > > > Stackable Inverted Right Menu:
 > > > > [Docs](toc.html)
-> > > > [Github](https：//github.com/jjuliano/markdown-ui)
+> > > > [Github](https：//github.com/jmoors79/markdown-ui)
 > > > > [Install](#install)
 >
 > <!-- -->
@@ -48,7 +48,7 @@
 > > > > Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
 > > > >
 > > > > ## Source
-> > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jjuliano/markdown-ui/tree/master/website)
+> > > > This document is written entirely in Markdown-UI. see： [the source files](https：//github.com/jmoors79/markdown-ui/tree/master/website)
 > > > >
 > > > > ## Notes/Issues/Bugs::issues-bugs
 > > > >

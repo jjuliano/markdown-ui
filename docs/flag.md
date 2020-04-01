@@ -1,10 +1,10 @@
 > Container:
 > > Inverted Segment:
 > > > Stackable Inverted Container Menu:
-> > > [Markdown UI](http：//jjuliano.github.io/markdown-ui "basic")
+> > > [Markdown UI](http：//jmoors79.github.io/markdown-ui "basic")
 > > > > Stackable Inverted Right Menu:
 > > > > [Table of Contents](toc.html)
-> > > > [Github](https：//github.com/jjuliano/markdown-ui)
+> > > > [Github](https：//github.com/jmoors79/markdown-ui)
 > > > > [Install](../index.html#install)
 >
 > <!-- -->
