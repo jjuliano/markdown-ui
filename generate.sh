@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-for i in *.md ; do
+for i in docs/*.md ; do
   echo "PROCESSING FILE: $i"
   dname="$(dirname $i)"
   name="$(basename $i .md)"
-  if [ "$1" = "preview" ]; then
-    ../exe/markdown-ui $dname/$name.md > $dname/$name.html
+  if [ "$1" = "dev" ]; then
+    exe/generate-docs $dname/$name.md > $dname/$name.html
   else
-    ../exe/generate-docs $dname/$name.md > $dname/$name.html
+    exe/markdown-ui $dname/$name.md > $dname/$name.html
   fi
 
   sed -ie 's/&#xFF1A;/:/g' $dname/$name.html 2> /dev/null
