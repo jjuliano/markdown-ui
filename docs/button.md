@@ -735,14 +735,12 @@
 > > > Center Aligned Six Wide Column:
 > > > ##### Preview:Center Aligned
 > > > __Positive Button|Positive Button__
-> > > __Negative Button|Negative Button__
 > >
 > > <!-- -->
 > > > Ten Wide Column:
 > > > ##### Markdown Syntax
 > > > > Inverted Very Padded Segment:
 > > > > ``` __Positive Button|Positive Button__ ``` <br />
-> > > > ``` __Negative Button|Negative Button__ ``` <br />
 >
 > <!-- -->
 > > Basic Segment:
