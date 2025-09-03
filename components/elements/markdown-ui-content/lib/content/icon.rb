@@ -9,7 +9,6 @@ module MarkdownUI
       end
 
       def render
-        content = @content.downcase
         klass   = MarkdownUI::KlassUtil.new("#{@content} #{@klass} icon").klass
 
         output = []

@@ -14,9 +14,8 @@ module MarkdownUI
 
     def render
       if @content
-        if @element.length == 'segment'.length
-          MarkdownUI::StandardSegment.new(@element, @content).render
-        elsif @mode.horizontal?
+        # Check specific segment types first, then fall back to standard
+        if @mode.horizontal?
           MarkdownUI::HorizontalSegment.new(@element, @content).render
         elsif @mode.vertical?
           MarkdownUI::VerticalSegment.new(@element, @content).render
@@ -27,7 +26,14 @@ module MarkdownUI
         elsif @mode.padded?
           MarkdownUI::PaddedSegment.new(@element, @content).render
         else
-          MarkdownUI::CustomSegment.new(@element, @content).render
+          # Default to standard segment for basic "Segment" or elements containing "segment"
+          condition1 = @element.downcase.include?('segment')
+          condition2 = @element.length == 'segment'.length
+          if condition1 || condition2
+            MarkdownUI::StandardSegment.new(@element, @content).render
+          else
+            MarkdownUI::CustomSegment.new(@element, @content).render
+          end
         end
       else
         MarkdownUI::CustomSegment.new(@element, '').render

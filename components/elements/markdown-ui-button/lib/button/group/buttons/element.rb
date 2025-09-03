@@ -10,7 +10,7 @@ module MarkdownUI
 
           def render
             element = @element.strip
-            content = @content.strip
+            content = @content ? @content.strip : ''
             mode    = OpenStruct.new(
                 :icon? => !(element =~ /icon/i).nil?
             )

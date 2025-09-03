@@ -17,13 +17,13 @@ module MarkdownUI
             final_content << process(content)
           end
 
-          final_content.join
+          final_content.join("")
         else
           content = if !(@content =~ /\:/).nil?
                       @content.split(':')
                     else
                       if @content
-                        @content.split('\n')
+                        [@content]  # Don't split on newlines, keep content as-is
                       else
                         ['']
                       end

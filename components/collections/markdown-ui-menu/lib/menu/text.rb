@@ -11,7 +11,7 @@ module MarkdownUI
       def render
         @klass = "ui #{@_klass} text menu"
 
-        MarkdownUI::NavTag.new(content, klass_text).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
       end
     end
   end

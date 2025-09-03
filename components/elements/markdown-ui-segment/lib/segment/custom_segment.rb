@@ -12,7 +12,7 @@ module MarkdownUI
       content = @content.strip
       klass   = "ui #{element} segment"
 
-      MarkdownUI::SectionTag.new(content, klass).render
+      MarkdownUI::SegmentTag.new(content, klass).render
     end
   end
 end

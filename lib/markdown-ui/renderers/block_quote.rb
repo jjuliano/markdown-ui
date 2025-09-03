@@ -2,7 +2,7 @@ module MarkdownUI
   module Renderers
     module BlockQuote
       def block_quote(text)
-        element, content = text.split(':')
+        element, content = text.split(':', 2)  # limit to 2 parts to handle URLs with colons
         @params          = element.split
 
         @elements = Hash.new(MarkdownUI::Content::BasicBlock).merge(
@@ -25,10 +25,19 @@ module MarkdownUI
             menu:      MarkdownUI::Menu::Element,
             message:   MarkdownUI::Message::Element,
             input:     MarkdownUI::Content::InputBlock,
-            header:    MarkdownUI::Content::HeaderBlock
+            header:    MarkdownUI::Content::HeaderBlock,
+            card:      MarkdownUI::Content::CardBlock,
+            comment:   MarkdownUI::Content::CommentBlock,
+            modal:     MarkdownUI::Content::ModalBlock,
+            accordion: MarkdownUI::Content::AccordionBlock
         )
 
-        html { @elements[key].new(element, content).render } if content
+        # For ItemBlock, Message, Modal, Segment, Accordion, Menu, Dropdown, Form, Card, Comment, and Container, don't use HTMLFormatter to avoid parsing issues
+        if [:item, :message, :modal, :segment, :accordion, :menu, :dropdown, :form, :card, :comment, :container].include?(key)
+          @elements[key].new(element, content).render
+        else
+          html { @elements[key].new(element, content).render } if content
+        end
       end
 
       protected
@@ -38,7 +47,10 @@ module MarkdownUI
       end
 
       def key
-        keys.grep(regexp).first
+        matching_keys = keys.grep(regexp)
+        # Prioritize menu if it's in the matching keys
+        menu_key = matching_keys.find { |k| k == :menu }
+        menu_key || matching_keys.first
       end
 
       def keys

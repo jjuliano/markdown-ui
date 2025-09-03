@@ -1,0 +1,22 @@
+{
+  "name": "semantic-ui-docs",
+  "title": "Semantic UI Docs",
+  "description": "Semantic empowers designers and developers by creating a shared vocabulary for UI.",
+  "homepage": "http://www.semantic-ui.com",
+  "author": "Jack Lukic <jacklukic@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Semantic-Org/Semantic-UI-Docs.git"
+  },
+  "dependencies": {
+    "docpad": "~6.79.4",
+    "docpad-plugin-babel": "~2.2.1",
+    "docpad-plugin-copy": "~2.1.3",
+    "docpad-plugin-eco": "~2.2.1",
+    "docpad-plugin-partials": "~2.12.0"
+  },
+  "devDependencies": {
+    "docpad-plugin-ghpages": "~2.6.1"
+  }
+}

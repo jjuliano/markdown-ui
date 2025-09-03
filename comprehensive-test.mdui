@@ -1,0 +1,401 @@
+# Markdown-UI v0.3 Comprehensive Test Suite
+
+This document tests all 30+ Semantic UI components supported in Markdown-UI v0.3 to ensure proper HTML generation.
+
+## 🧩 Elements Testing
+
+### Buttons
+__Button|Standard Button__
+__Button|Primary Button|primary__
+__Button|Secondary Button|secondary__
+__Button|Basic Button|basic__
+__Button|Inverted Button|inverted__
+
+### Containers
+> Container:
+> This is a standard container with some content to test the container functionality.
+
+> Text Container:
+> This is a text container that should be narrower than standard containers.
+
+### Headers
+# Main Header
+## Sub Header
+### Smaller Header
+#### Even Smaller Header
+
+__Header|Custom Header Element__
+__Header|Colored Header|blue__
+
+### Icons
+_home_ _user_ _settings_ _heart_ _star_
+
+### Images
+__Image|https://semantic-ui.com/images/wireframe/image.png__
+__Image|https://semantic-ui.com/images/wireframe/square-image.png|circular__
+__Image|https://semantic-ui.com/images/avatar/small/matt.jpg|avatar__
+__Image|https://semantic-ui.com/images/wireframe/image.png|fluid__
+
+### Inputs
+__Input|Enter your name__
+__Input|Search...|icon search__
+__Input|http://|labeled http://__
+__Input|Loading...|loading__
+__Input|Disabled input|disabled__
+
+### Labels
+__Label|New__
+__Label|Featured|tag__
+__Label|Special Offer|ribbon__
+__Label|Red Label|red__
+__Label|Circular|circular__
+
+### Segments
+> Segment:
+> This is a standard segment with some content.
+
+> Inverted Segment:
+> This is an inverted segment for dark themes.
+
+> Raised Segment:
+> This segment has a raised appearance.
+
+### Dividers
+Standard text above divider.
+
+__Divider__
+
+Text below divider.
+
+__Divider|OR__
+
+Text after labeled divider.
+
+### Flags
+_flag ad_ _flag us_ _flag gb_ _flag de_ _flag fr_
+
+### Lists
+* First list item
+* Second list item
+* Third list item
+
+1. First ordered item
+2. Second ordered item
+3. Third ordered item
+
+### Loaders
+> Loading Segment:
+> __Loader__
+> This segment is loading.
+
+__Loader|Loading content...__
+
+## 📋 Collections Testing
+
+### Forms
+> Form:
+> __Field|First Name__
+> __Input|First Name__
+> 
+> __Field|Last Name__
+> __Input|Last Name__
+> 
+> __Field|Email__
+> __Input|Email Address__
+> 
+> __Button|Submit Form|primary__
+
+> Loading Form:
+> __Field|Processing__
+> __Input|Please wait...__
+
+### Tables
+__Table|Name,Age,Job,Status|John Smith,30,Developer,Active|Jane Doe,25,Designer,Active|Bob Johnson,35,Manager,Inactive__
+
+__Table|Product,Price,Stock|Widget A,$10,50|Widget B,$15,25|Widget C,$20,10|striped__
+
+__Table|Server,Status,Uptime|Web-01,Online,99.9%|DB-01,Warning,95.2%|API-01,Error,0%|celled__
+
+### Grids
+> Grid:
+> > Column:
+> > ### First Column
+> > This is content in the first column of the grid.
+> 
+> <!-- -->
+> > Column:
+> > ### Second Column  
+> > This is content in the second column of the grid.
+
+> Three Column Grid:
+> > Column:
+> > Column 1 content
+> 
+> <!-- -->
+> > Column:
+> > Column 2 content
+> 
+> <!-- -->
+> > Column:
+> > Column 3 content
+
+### Menus
+> Menu:
+> [Home](# "active")
+> [Products](#)
+> [Services](#) 
+> [Contact](#)
+
+> Vertical Menu:
+> [Dashboard](#)
+> [Settings](#)
+> [Profile](#)
+> [Logout](#)
+
+### Messages
+__Message|Success|success|Your operation completed successfully!__
+__Message|Info|info|Here's some important information for you.__
+__Message|Warning|warning|Please review this warning message.__
+__Message|Error|error|An error occurred while processing your request.__
+
+## 👁️ Views Testing
+
+### Cards
+__Card|Amazing Product|This is a fantastic product with many great features that users will love.__
+
+__Card|Product with Image|Great product with visual appeal|image https://semantic-ui.com/images/wireframe/image.png__
+
+> Cards:
+> __Card|Card 1|First card description__
+> __Card|Card 2|Second card description__
+> __Card|Card 3|Third card description__
+
+### Card with Complex Content
+> Card:
+> __Header|Product Details__
+> __Meta|Category: Electronics__
+> __Description|This is a detailed description of the product with comprehensive information.__
+> > Extra Content:
+> > __Button|Add to Cart|primary__
+> > __Button|Learn More|secondary__
+
+### Statistics (if supported)
+__Statistic|Downloads|22,000__
+__Statistic|Users|1,240__
+__Statistic|Reviews|95%__
+
+## ⚙️ Modules Testing
+
+### Modals
+__Modal|Confirmation|Are you sure you want to delete this item? This action cannot be undone.__
+
+__Modal|Settings Modal|Configure your application settings here.|large__
+
+> Modal:
+> __Header|Complex Modal__
+> This modal has multiple sections with different content types.
+> 
+> __Image|https://semantic-ui.com/images/wireframe/image.png__
+> 
+> Additional modal content goes here.
+> 
+> > Actions:
+> > __Button|Cancel|secondary__
+> > __Button|Save Changes|primary__
+
+### Progress Bars
+__Progress|75__
+__Progress|60|Uploading Files|indicating__
+__Progress|100|Complete|success__
+__Progress|30|Low Storage|warning__
+__Progress|25|Upload Failed|error__
+
+### Progress with Different Sizes
+__Progress|85|Large Progress|large green__
+__Progress|45|Small Progress|small blue__
+__Progress|90|Tiny Progress|tiny red__
+
+### Dropdowns (if supported)
+__Dropdown|Select Option|Option 1,Option 2,Option 3__
+__Dropdown|Choose Country|USA,Canada,Mexico,UK,France|fluid__
+
+### Accordions (if supported)
+> Accordion:
+> > Title: What is Markdown-UI?
+> > Content: Markdown-UI is a framework for creating responsive user interfaces using Markdown syntax.
+> 
+> > Title: How do I get started?
+> > Content: Simply install the gem and start writing your UI components in Markdown syntax.
+> 
+> > Title: What components are supported?
+> > Content: We support all major Semantic UI components including elements, collections, views, and modules.
+
+## 🎨 Advanced Layout Testing
+
+### Complex Grid Layout
+> Grid:
+> > Eight Wide Column:
+> > > Segment:
+> > > ### Left Content Area
+> > > > Form:
+> > > > __Field|User Information__
+> > > > __Input|Full Name__
+> > > > __Input|Email Address__
+> > > > __Button|Save|primary__
+> 
+> <!-- -->
+> > Eight Wide Column:
+> > > Segment:
+> > > ### Right Content Area
+> > > > Message|info|
+> > > > Complete the form on the left to continue.
+> > > 
+> > > __Progress|45|Profile Completion__
+
+### Nested Components Test
+> Container:
+> > Inverted Segment:
+> > # Welcome Section
+> > > Grid:
+> > > > Column:
+> > > > > Card:
+> > > > > __Header|Featured Product__
+> > > > > __Image|https://semantic-ui.com/images/wireframe/image.png__
+> > > > > Special offer on our featured product.
+> > > > > > Actions:
+> > > > > > __Button|Buy Now|primary__
+> > > > > > __Button|Learn More|secondary__
+> > > 
+> > > <!-- -->
+> > > > Column:
+> > > > > Form:
+> > > > > __Field|Quick Contact__
+> > > > > __Input|Your Email__
+> > > > > __Button|Subscribe|green__
+> > > > 
+> > > > __Progress|75|Newsletter Signup|indicating__
+
+### Menu with Complex Structure
+> Stackable Menu:
+> [__Button|Home|basic__](#)
+> > Dropdown|Products|
+> > [Widgets](#)
+> > [Gadgets](#)
+> > [Tools](#)
+> 
+> [Services](#)
+> [About](#)
+> > Right Menu:
+> > __Button|Login|primary__
+> > __Button|Sign Up|secondary__
+
+## 🔧 Component States Testing
+
+### Button States
+__Button|Active Button|active__
+__Button|Loading Button|loading__
+__Button|Disabled Button|disabled__
+
+### Input States  
+__Input|Focused Input|focus__
+__Input|Error Input|error__
+__Input|Success Input|success__
+
+### Form States
+> Error Form:
+> __Message|Validation Error|error|Please correct the errors below.__
+> __Field|Email|error__
+> __Input|Invalid email|error__
+
+### Loading States
+> Loading Segment:
+> __Loader|Processing your request...__
+> 
+> Content is loading...
+
+## 🎯 Variations Testing
+
+### Colored Components
+__Button|Red Button|red__
+__Button|Blue Button|blue__
+__Button|Green Button|green__
+__Button|Orange Button|orange__
+
+__Label|Red Label|red__
+__Label|Blue Label|blue__
+__Label|Green Label|green__
+
+__Progress|70|Red Progress|red__
+__Progress|85|Blue Progress|blue__
+__Progress|90|Green Progress|green__
+
+### Sized Components
+__Button|Mini Button|mini__
+__Button|Tiny Button|tiny__
+__Button|Small Button|small__
+__Button|Large Button|large__
+__Button|Big Button|big__
+__Button|Huge Button|huge__
+__Button|Massive Button|massive__
+
+### Inverted Components
+> Inverted Segment:
+> __Button|Inverted Button|inverted__
+> __Input|Inverted Input|inverted__
+> __Progress|65|Inverted Progress|inverted__
+
+## 📱 Responsive Testing
+
+### Stackable Grid
+> Stackable Grid:
+> > Column:
+> > Mobile-responsive content in column 1
+> 
+> <!-- -->
+> > Column:
+> > Mobile-responsive content in column 2
+> 
+> <!-- -->
+> > Column:
+> > Mobile-responsive content in column 3
+
+### Fluid Components
+__Button|Fluid Button|fluid__
+__Input|Fluid Input|fluid__
+__Card|Fluid Card|This card takes full width|fluid__
+
+## 🧪 Edge Cases Testing
+
+### Empty Components
+__Button____
+__Input____
+__Label____
+
+### Special Characters
+__Button|Button with "quotes" & symbols!__
+__Input|Enter <HTML> & "special" chars__
+__Label|Label with émojis 🚀 ✨__
+
+### Long Content
+__Card|Very Long Title That Should Handle Wrapping Gracefully|This is an extremely long description that tests how the component handles lengthy content and whether it wraps properly without breaking the layout or causing display issues.__
+
+### Nested Quotes and HTML-like Content
+__Message|Test Message|info|Content with <brackets> and "quotes" & ampersands should be handled properly.__
+
+## 📋 Final Test Summary
+
+This comprehensive test covers:
+- ✅ All Element types (10+ components)
+- ✅ All Collection types (6+ components) 
+- ✅ All View types (5+ components)
+- ✅ All Module types (6+ components)
+- ✅ Component states and variations
+- ✅ Nested and complex layouts
+- ✅ Edge cases and special characters
+- ✅ Responsive design features
+
+Total components tested: 30+ with multiple variations each.
+
+---
+
+*Generated by Markdown-UI v0.3 Comprehensive Test Suite*

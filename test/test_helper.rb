@@ -2,11 +2,14 @@
 Encoding.default_internal = 'UTF-8' if defined? Encoding
 
 begin
-  if ENV['COVERAGE']
-    require "codeclimate-test-reporter"
-    require 'simplecov'
-    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter, CodeClimate::TestReporter::Formatter]
-    SimpleCov.start CodeClimate::TestReporter.configuration.profile
+  require 'simplecov'
+  require 'simplecov_json_formatter'
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCov::Formatter::JSONFormatter
+  ])
+  SimpleCov.start do
+    add_filter '/test/'
   end
 rescue LoadError
 end

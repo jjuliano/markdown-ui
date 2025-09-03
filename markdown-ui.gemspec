@@ -27,12 +27,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "bundler", "~> 1.10", "~> 1.9"
-  spec.add_dependency "redcarpet", "~> 3.3"
-  spec.add_dependency "nokogiri", "~> 1.5", "~> 1.6"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "byebug", "~> 6.0"
-  spec.add_development_dependency "test-unit", "~> 3.0"
-  spec.add_development_dependency "simplecov", "~> 0.10"
-  spec.add_development_dependency "codeclimate-test-reporter", "~> 0.4"
+  spec.add_dependency "bundler", ">= 2.0"
+  spec.add_dependency "redcarpet", "~> 3.6"
+  spec.add_dependency "nokogiri", ">= 1.15.0"
+  spec.add_dependency "ostruct", ">= 0.6.0"
+  spec.add_development_dependency "rake", ">= 13.0"
+  spec.add_development_dependency "debug", ">= 1.0"
+  spec.add_development_dependency "test-unit", ">= 3.0"
+  spec.add_development_dependency "simplecov", ">= 0.20"
+  spec.add_development_dependency "simplecov_json_formatter", ">= 0.1"
 end

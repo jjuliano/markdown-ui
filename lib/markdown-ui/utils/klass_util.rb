@@ -5,7 +5,7 @@ module MarkdownUI
     end
 
     def klass
-      " class=\'#{text}\'"
+      " class=\"#{text}\""
     end
 
     def text

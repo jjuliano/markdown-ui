@@ -10,7 +10,7 @@ module MarkdownUI
       def render
         @klass = "ui #{element} column"
 
-        MarkdownUI::SectionTag.new(content, klass_text).render
+        MarkdownUI::StandardTag.new(content, klass_text).render
       end
     end
   end
