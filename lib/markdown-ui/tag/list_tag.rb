@@ -25,11 +25,12 @@ module MarkdownUI
     def list(content)
       list = ''
       if !content.grep(/^\<li\>.*/).empty?
-        list = content.join
+        list = content.join("")
       else
         content.each do |c|
           list += "<li>#{c}</li>"
         end
+        list = list.chomp  # Remove trailing newline
       end
       list
     end

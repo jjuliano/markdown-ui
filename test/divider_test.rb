@@ -14,7 +14,7 @@ ___
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class=\'ui divider\'></div>', output
+'<div class="ui divider"></div>', output
   end
 
   def test_vertical_divider
@@ -151,7 +151,7 @@ ___
 
     output = @parser.render(markdown)
     assert_equal \
-"<div class=\"ui segment\"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p><div class=\"ui fitted divider\"></div>\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>\n", output
+"<section class=\"ui segment\"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>\n<div class=\"ui fitted divider\"></div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</section>", output
   end
 
   def test_hidden_variation
@@ -169,7 +169,7 @@ ___
 
     output = @parser.render(markdown)
     assert_equal \
-"<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+"<section class=\"ui  segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</section>\n", output
   end
 
   def test_section_variation
@@ -206,7 +206,7 @@ ___
 
     output = @parser.render(markdown)
     assert_equal \
-"<div class=\"ui segment\">\n  <div class=\"ui right floated header\">Floated Content</div>\n<!-- -->\n  <div class=\"ui clearing divider\"></div>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+"<section class=\"ui  segment\">\n  <div class=\"ui right floated header\">Floated Content</div>\n<!-- -->\n  <div class=\"ui clearing divider\"></div>\n  <p>Lorem Ipsum Dolor</p>\n</section>\n", output
   end
 
 

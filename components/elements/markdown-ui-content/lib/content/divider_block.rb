@@ -11,6 +11,9 @@ module MarkdownUI
       def render
         klass   = "ui #{@element} divider"
         content = @content.strip
+        
+        # For dividers, ignore &nbsp; content - it should be empty
+        content = "" if content == "&nbsp;"
 
         MarkdownUI::StandardTag.new(content, klass).render
       end

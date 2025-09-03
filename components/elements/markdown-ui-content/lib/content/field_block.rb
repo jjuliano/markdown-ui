@@ -9,10 +9,14 @@ module MarkdownUI
       end
 
       def render
-        klass   = "ui #{@element} field"
-        content = @content.strip
+        element_class = @element.is_a?(Array) ? @element.join(' ').downcase : @element.to_s.downcase
+        field_class = element_class == "field" ? "field" : "#{element_class} field"
+        label_text = @content.strip
 
-        MarkdownUI::FieldTag.new(content, klass).render
+        # For now, just create the field with label - the FormBlock will handle input placement
+        %(<div class="#{field_class}">
+    <label>#{label_text}</label>
+  </div>)
       end
     end
   end

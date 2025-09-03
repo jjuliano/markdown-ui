@@ -1,3 +1,41 @@
+0.3.0  - 01-15-25
+	This major release modernizes Markdown-UI with comprehensive Semantic UI support and Ruby 3.x compatibility:
+	
+	🎨 COMPLETE SEMANTIC UI COVERAGE:
+	   * Added support for ALL 30+ Semantic UI components
+	   * New Elements: icon, image, divider, flag, list, loader, step
+	   * New Collections: form, table, breadcrumb  
+	   * New Views: card, comment, feed, item, statistic
+	   * New Modules: modal, dropdown, accordion, tab, popup, progress
+	
+	🔧 MODERN DEPENDENCIES:
+	   * Updated bundler: '>= 2.0' (from ~> 1.x)
+	   * Updated redcarpet: '~> 3.6' (from ~> 3.2/3.3)
+	   * Updated nokogiri: '>= 1.15.0' (from ~> 1.5/1.6)
+	   * Updated rake: '>= 13.0' (from ~> 10.0)
+	   * Updated simplecov: '>= 0.20' (from ~> 0.10)
+	   * Added ostruct: '>= 0.6.0' for Ruby 3.5+ compatibility
+	   * Replaced byebug with debug '>= 1.0'
+	   * Replaced codeclimate-test-reporter with simplecov_json_formatter
+	
+	🏗️ ENHANCED ARCHITECTURE:
+	   * Added View and Module support to main library
+	   * Modular component system with proper gem organization
+	   * Each component is now a separate gem with modern dependencies
+	   * Improved semantic HTML5 elements usage
+	
+	📚 IMPROVED DOCUMENTATION:
+	   * Comprehensive README with all 30+ components documented
+	   * Clear categorization by Elements, Collections, Views, Modules
+	   * Modern examples and usage patterns
+	   * Updated installation and requirements for Ruby 3.x
+	
+	🧪 TESTING & QUALITY:
+	   * Modern test stack with updated SimpleCov
+	   * All components now have consistent modern dependencies
+	   * Ruby 3.x compatibility verified
+	   * Bundle install works seamlessly with modern gem versions
+
 0.2.0  - 08-26-16
 	This release is full of bug fixes and new opinionated features particularly,
 	

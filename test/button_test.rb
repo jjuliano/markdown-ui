@@ -531,14 +531,14 @@ Follow</button>
     markdown = ' __Active Button|Icon:User,Text:Follow__ '
 
     output = @parser.render(markdown)
-    assert_equal " <button class=\"ui active button\"><i class=\"user icon\"></i>Follow</button>\n ", output
+    assert_equal " <button class=\"ui active button labeled icon\"><i class=\"user icon\"></i>Follow</button>\n ", output
   end
 
   def test_disabled_state
     markdown = ' __Disabled Button|Icon:User,Text:Followed__ '
 
     output = @parser.render(markdown)
-    assert_equal " <button class=\"ui disabled button\"><i class=\"user icon\"></i>Followed</button>\n ", output
+    assert_equal " <button class=\"ui disabled button labeled icon\"><i class=\"user icon\"></i>Followed</button>\n ", output
   end
 
   def test_loading_state

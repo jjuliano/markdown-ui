@@ -8,7 +8,18 @@ module MarkdownUI
     end
 
     def render
-      "<div#{_id}#{klass}#{data}>#{content}</div>"
+      # Generate minified HTML output
+      raw_content = @content
+
+      if raw_content && raw_content.include?("")
+        # Multi-line content - remove newlines for minification
+        content = raw_content.gsub("", "").strip
+        "<div#{_id}#{klass}#{data}>#{content}</div>"
+      else
+        # Single-line content
+        content = raw_content || ""
+        "<div#{_id}#{klass}#{data}>#{content}</div>"
+      end
     end
   end
 end

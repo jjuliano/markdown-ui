@@ -14,13 +14,27 @@ module MarkdownUI
 
         @element  = _element
         @content  = _content
-        @klass    = "#{_klass}" "#{element}"
+        @klass    = "#{_klass} #{element}"
+      end
+
+      def key
+        # For menu elements, prioritize 'menu' key
+        element_str = @element.is_a?(Array) ? @element.join(' ') : @element.to_s
+        if element_str && element_str.downcase.include?('menu')
+          :menu
+        else
+          super
+        end
       end
 
       def render
         @params = element.split
 
-        html { @elements[key].new(content, klass_text).render } if content
+        if content
+          @elements[key].new(content, klass_text).render
+        else
+          ""
+        end
       end
     end
   end

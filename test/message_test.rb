@@ -14,10 +14,7 @@ __Message|Header:Changes in Service,Text:"We just updated our privacy policy her
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui message">
-  <div class="ui header">Changes in Service</div>
-  <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
-</div>
+'<div class="ui message"><div class="ui header">Changes in Service</div><p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p></div>
 ', output
   end
 
@@ -31,10 +28,7 @@ __Message|Header:Changes in Service,Text:"We just updated our privacy policy her
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui message">
-  <div class="ui header">Changes in Service</div>
-  <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
-</div>
+'<div class="ui message"><div class="ui header">Changes in Service</div><p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p></div>
 ', output
   end
 
@@ -46,14 +40,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui message">
-  <div class="ui header">New Site Features</div>
-  <ul class="ui list">
-    <li>You can now have cover images on blog pages</li>
-    <li>Drafts will now auto-save while writing</li>
-  </ul>
-</div>
-', output
+'<div class="ui message"><div class="ui header">New Site Features</div><ul class="ui list"><li>You can now have cover images on blog pages</li><li>Drafts will now auto-save while writing</li></ul></div>', output
   end
 
   def test_list_message_alternative_ordered
@@ -68,14 +55,7 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui message">
-  <div class="ui header">New Site Features</div>
-  <ol class="ui ordered list">
-    <li>You can now have cover images on blog pages</li>
-    <li>Drafts will now auto-save while writing</li>
-  </ol>
-</div>
-', output
+'<div class="ui message"><div class="ui header">New Site Features</div><ol class="ui ordered list"><li>You can now have cover images on blog pages</li><li>Drafts will now auto-save while writing</li></ol></div>', output
   end
 
   def test_list_message_alternative_unordered
@@ -90,13 +70,6 @@ __List Message|Header: New Site Features, List: You can now have cover images on
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui message">
-  <div class="ui header">New Site Features</div>
-  <ul class="ui unordered list">
-    <li>You can now have cover images on blog pages</li>
-    <li>Drafts will now auto-save while writing</li>
-  </ul>
-</div>
-', output
+'<div class="ui message"><div class="ui header">New Site Features</div><ul class="ui unordered list"><li>You can now have cover images on blog pages</li><li>Drafts will now auto-save while writing</li></ul></div>', output
   end
 end

@@ -8,7 +8,7 @@ module MarkdownUI
     end
 
     def render
-      "<button#{_id}#{klass}#{data}>#{content}</button>"
+      "<button#{_id}#{klass}#{data}>#{content}</button>\n"
     end
   end
 end

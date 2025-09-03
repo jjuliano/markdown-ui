@@ -17,12 +17,7 @@ class MenuTest < Redcarpet::TestCase
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui three item menu">
-  <a class="ui active item" href="#">Editorials</a>
-  <a class="ui item" href="#">Reviews</a>
-  <a class="ui item" href="#">Upcoming Events</a>
-</div>
-', output
+'<div class="ui three item menu"><a class="ui active item" href="#">Editorials</a><a class="ui item" href="#">Reviews</a><a class="ui item" href="#">Upcoming Events</a></div>', output
   end
 
   def test_menu_alternative
@@ -33,12 +28,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui three item menu">
-  <a class="ui active item" href="#">Editorials</a>
-  <a class="ui item" href="#">Reviews</a>
-  <a class="ui item" href="#">Upcoming Events</a>
-</div>
-', output
+'<div class="ui three item menu"><a class="ui active item" href="#">Editorials</a><a class="ui item" href="#">Reviews</a><a class="ui item" href="#">Upcoming Events</a></div>', output
   end
 
   def test_secondary_menu
@@ -54,15 +44,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui secondary menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-', output
+'<div class="ui secondary menu"><a class="ui active item" href="#">Home</a><a class="ui item" href="#">Messages</a><a class="ui item" href="#">Friends</a><div class="ui right menu"><a class="ui item" href="#">Logout</a></div></div>', output
   end
 
   def test_pointing_menu
@@ -83,18 +65,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui pointing menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-<p></p>
-<div class="ui segment">
-  <p></p>
-</div>
+'<div class="ui pointing menu"><a class="ui active item" href="#">Home</a><a class="ui item" href="#">Messages</a><a class="ui item" href="#">Friends</a><div class="ui right menu"><a class="ui item" href="#">Logout</a></div></div><p></p><section class="ui segment"><p></p></section>
 ', output
   end
 
@@ -116,19 +87,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 
     output = @parser.render(markdown)
     assert_equal \
-'<div class="ui secondary pointing menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-<p></p>
-<div class="ui segment">
-  <p></p>
-</div>
-', output
+'<div class="ui secondary pointing menu"><a class="ui active item" href="#">Home</a><a class="ui item" href="#">Messages</a><a class="ui item" href="#">Friends</a><div class="ui right menu"><a class="ui item" href="#">Logout</a></div></div><p></p><section class="ui segment"><p></p></section>', output
   end
 
   def test_tabular_menu
@@ -173,9 +132,9 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
   </div>
 </div>
 <p></p>
-<div class="ui bottom attached segment">
+<section class="ui bottom attached segment">
   <p></p>
-</div>
+</section>
 ', output
   end
 

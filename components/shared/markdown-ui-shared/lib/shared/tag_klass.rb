@@ -32,7 +32,7 @@ module MarkdownUI
         if @data
           if @data =~ /\:/
             _data, attribute, value = @data.split(':')
-            " data-#{attribute}=\'#{value}\'"
+            " data-#{attribute}=\"#{value}\""
           else
             @data
           end
@@ -43,19 +43,19 @@ module MarkdownUI
 
       def _id
         if defined?(@id) && @id
-          " id=\'#{@id.split.join('-')}\'"
+          " id=\"#{@id.split.join('-')}\""
         end
       end
 
       def _input_id
         if defined?(@id) && @id
-          " placeholder=\'#{@id.capitalize}\'"
+          " placeholder=\"#{@id.capitalize}\""
         end
       end
 
       def input_content
         if @content
-          " type=\'#{@content.strip.downcase}\'"
+          " type=\"#{@content.strip.downcase}\""
         else
           nil
         end

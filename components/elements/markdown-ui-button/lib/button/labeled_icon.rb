@@ -11,16 +11,15 @@ module MarkdownUI
       end
 
       def render
-        icon  = MarkdownUI::Content::Parser.new(@icon).parse
-        label = MarkdownUI::Content::Parser.new(@label).parse
+        # Create the icon and label HTML directly
+        icon_html  = "<i class=\"#{@icon.downcase} icon\"></i>"
+        label_html = @label
         klass = "ui #{@klass} labeled icon button"
         _id   = @id
 
-        content = []
-        content << icon
-        content << label
+        content = icon_html + label_html
 
-        MarkdownUI::ButtonTag.new(content.join, klass, _id).render
+        MarkdownUI::ButtonTag.new(content, klass, _id).render
       end
     end
   end

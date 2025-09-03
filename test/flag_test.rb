@@ -16,7 +16,7 @@ _Myanmar Flag_
 
     output = @parser.render(markdown)
     assert_equal \
-"<i class=\'ae flag\'></i>\n<i class=\'france flag\'></i>\n<i class=\'myanmar flag\'></i>", output
+"<i class=\"ae flag\"></i>\n<i class=\"france flag\"></i>\n<i class=\"myanmar flag\"></i>", output
   end
 
 end

@@ -3,9 +3,29 @@
 require 'bundler/setup'
 require 'markdown-ui'
 
+# Check if file argument is provided
+if ARGV.empty?
+  puts "Usage: markdown-ui <input-file.mdui>"
+  puts "Example: markdown-ui index.mdui > index.html"
+  exit 1
+end
+
+filename = ARGV.first
+
+# Check if file exists
+unless File.exist?(filename)
+  puts "Error: File '#{filename}' not found"
+  exit 1
+end
+
+# Check file extension
+unless filename.end_with?('.mdui', '.md')
+  puts "Warning: File should have .mdui or .md extension"
+end
+
 parser = MarkdownUI::Parser.new
-f = File.open(ARGV.first, 'r')
-basename = File.basename(ARGV.first, ".md")
+f = File.open(filename, 'r')
+basename = File.basename(filename, File.extname(filename))
 content = f.read
 content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
 content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
@@ -25,31 +45,10 @@ output = <<-EOS
     <meta charset="utf-8">
     <title>#{basename.capitalize}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
-    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
+    <!-- Modern CDN links for better performance and reliability -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
 <!--
     <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
     <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
