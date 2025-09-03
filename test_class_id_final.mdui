@@ -1,0 +1,20 @@
+# Testing New Class and ID Syntax
+
+## Basic Examples
+__.my-button Primary Button|Click Me__
+__.success-label#important Label|Important__
+__.custom-segment#info Segment|Information content__
+
+## Multiple Classes
+__.btn.btn-primary.btn-large#submit-btn Primary Button|Submit__
+__.label-info.label-large#status-badge Label|Status__
+
+## Complex Examples
+__.navigation-menu#main-nav Menu|[Home](#) [About](#) [Contact](#)__
+__.data-table#users-table Table|Name,Email,Role|John,john@example.com,Admin|Jane,jane@example.com,User__
+
+## Form with Classes and IDs
+__.contact-form#registration-form Form:
+> __Field|First Name__
+> __.form-input#name-field Input|Enter your name__
+> __.submit-btn#submit-btn Primary Button|Submit__

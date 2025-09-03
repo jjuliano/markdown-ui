@@ -13,7 +13,7 @@ class ContainerTest < Redcarpet::TestCase
 > "Lorem Ipsum Dolor"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 '<div class="ui container">
   <p>Lorem Ipsum Dolor</p>
@@ -29,7 +29,7 @@ class ContainerTest < Redcarpet::TestCase
 > "Lorem Ipsum Dolor"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 '<div class="ui text container">
   <h1 class="ui header">Header</h1>
@@ -45,7 +45,7 @@ class ContainerTest < Redcarpet::TestCase
 > Left Aligned
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 '<div class="ui left aligned container">Left Aligned</div>
 ', output
@@ -56,7 +56,7 @@ class ContainerTest < Redcarpet::TestCase
 > Right Aligned
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 '<div class="ui right aligned container">Right Aligned</div>
 ', output
@@ -67,7 +67,7 @@ class ContainerTest < Redcarpet::TestCase
 > Center Aligned
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 '<div class="ui center aligned container">Center Aligned</div>
 ', output
@@ -80,7 +80,7 @@ class ContainerTest < Redcarpet::TestCase
 > # Header
 > "Lorem Ipsum Dolor"
 '
-    output   = @parser.render(markdown)
+    output   = @parser.parse(markdown)
     assert_equal \
 '<div class="ui very cool container">
   <h1 class="ui header">Header</h1>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharedArrayBuffer Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-result { margin: 10px 0; padding: 10px; border-radius: 4px; }
+    .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+  </style>
+</head>
+<body>
+  <h1>SharedArrayBuffer Test</h1>
+  <p>Testing if SharedArrayBuffer is available with proper CORS headers.</p>
+
+  <div id="results">
+    <div class="test-result" id="sab-test">
+      <strong>SharedArrayBuffer:</strong>
+      <span id="sab-status">Testing...</span>
+    </div>
+
+    <div class="test-result" id="headers-test">
+      <strong>CORS Headers:</strong>
+      <span id="headers-status">Testing...</span>
+    </div>
+
+    <div class="test-result" id="wasm-test">
+      <strong>WebAssembly Support:</strong>
+      <span id="wasm-status">Testing...</span>
+    </div>
+  </div>
+
+  <script>
+    // Test SharedArrayBuffer availability
+    function testSharedArrayBuffer() {
+      const status = document.getElementById('sab-status');
+      const container = document.getElementById('sab-test');
+
+      if (typeof SharedArrayBuffer !== 'undefined') {
+        status.textContent = '✅ Available';
+        container.className = 'test-result success';
+      } else {
+        status.textContent = '❌ Not available';
+        container.className = 'test-result error';
+      }
+    }
+
+    // Test CORS headers (this will only work if headers are properly set)
+    function testCORSHeaders() {
+      const status = document.getElementById('headers-status');
+      const container = document.getElementById('headers-test');
+
+      // Try to detect if we're in a cross-origin isolated context
+      if (window.crossOriginIsolated) {
+        status.textContent = '✅ Cross-origin isolated (headers working)';
+        container.className = 'test-result success';
+      } else {
+        status.textContent = '⚠️ Not cross-origin isolated (check server headers)';
+        container.className = 'test-result warning';
+      }
+    }
+
+    // Test WebAssembly support
+    function testWebAssembly() {
+      const status = document.getElementById('wasm-status');
+      const container = document.getElementById('wasm-test');
+
+      if (typeof WebAssembly !== 'undefined') {
+        status.textContent = '✅ Supported';
+        container.className = 'test-result success';
+      } else {
+        status.textContent = '❌ Not supported';
+        container.className = 'test-result error';
+      }
+    }
+
+    // Run all tests
+    window.addEventListener('load', () => {
+      testSharedArrayBuffer();
+      testCORSHeaders();
+      testWebAssembly();
+    });
+  </script>
+</body>
+</html>
+

@@ -1,31 +1,590 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  # Running as installed gem, bundler setup not needed
+end
+
 require 'markdown-ui'
+require 'readline'
+require 'io/console'
+require 'fileutils'
 
-puts "Hit RETURN three times to parse."
-
-def multi_gets all_text=""
-  while all_text << STDIN.gets
-    if all_text["\n\n\n"]
-      return all_text
-    elsif all_text[/^exit|^quit|^bye/]
-      exit 0
-    else
-      print "# "
+# Interactive shell for MarkdownUI with autocompletion and live preview
+class MarkdownUIShell
+  VERSION = '2.0.0'
+  
+  def initialize
+    @shell_running = true
+    @current_content = ""
+    @preview_mode = false
+    @elements = []
+    @commands = %w[help exit quit clear preview convert elements version save load syntax examples]
+    
+    setup_autocompletion
+  end
+  
+  def start
+    show_welcome
+    shell_loop
+  end
+  
+  private
+  
+  def show_welcome
+    puts <<~WELCOME
+      
+      \e[1;36m╔══════════════════════════════════════════════════════════╗
+      ║               MarkdownUI Interactive Shell               ║
+      ║                        v#{VERSION}                         ║
+      ╚══════════════════════════════════════════════════════════╝\e[0m
+      
+      \e[32m✓ Autocompletion enabled\e[0m (Tab to complete)
+      \e[32m✓ Live preview available\e[0m (Type 'preview' to enable)
+      \e[32m✓ #{@elements.count} UI elements ready\e[0m
+      
+      Type 'help' for commands, 'exit' to quit
+      
+    WELCOME
+  end
+  
+  def setup_autocompletion
+    # Get available elements for autocompletion
+    begin
+      parser = MarkdownUI.new
+      @elements = parser.registered_elements.map(&:downcase)
+    rescue
+      @elements = %w[button header message table list menu form input]
     end
+    
+    # Setup readline completion
+    Readline.completion_append_character = " "
+    Readline.completion_proc = proc do |input|
+      if input.start_with?('__')
+        # Complete element names after __
+        element_part = input[2..-1].downcase
+        @elements.select { |elem| elem.start_with?(element_part) }
+                 .map { |elem| "__#{elem.split.map(&:capitalize).join(' ')}" }
+      elsif input.start_with?('> ') && input.include?(' ')
+        # Complete element names in blockquote syntax
+        element_part = input[2..-1].split.first&.downcase || ""
+        @elements.select { |elem| elem.start_with?(element_part) }
+                 .map { |elem| "> #{elem.split.map(&:capitalize).join(' ')}" }
+      elsif input.include?('|')
+        # If completing after |, suggest common modifiers
+        suggest_modifiers(input)
+      else
+        # Complete commands
+        @commands.select { |cmd| cmd.start_with?(input.downcase) }
+      end
+    end
+  end
+  
+  def suggest_modifiers(input)
+    # Extract element name to suggest relevant modifiers
+    if match = input.match(/__([^|]+)/)
+      element = match[1].downcase
+      modifiers = get_element_modifiers(element)
+      current_part = input.split('|').last || ""
+      
+      modifiers.select { |mod| mod.start_with?(current_part.downcase) }
+              .map { |mod| mod.capitalize }
+    else
+      []
+    end
+  end
+  
+  def get_element_modifiers(element)
+    modifiers_map = {
+      'button' => %w[primary secondary positive negative basic inverted circular loading disabled],
+      'message' => %w[info warning error success positive negative],
+      'header' => %w[huge large medium small tiny sub block dividing],
+      'table' => %w[celled striped definition structured stackable sortable],
+      'list' => %w[bulleted numbered link selection divided relaxed],
+      'menu' => %w[secondary pointing tabular text vertical],
+      'form' => %w[loading success error warning],
+      'input' => %w[loading disabled error fluid],
+      'segment' => %w[raised stacked piled vertical padded],
+      'label' => %w[basic pointing corner tag ribbon],
+      'icon' => %w[fitted link circular bordered],
+    }
+    
+    modifiers_map[element] || %w[primary secondary large small]
+  end
+  
+  def shell_loop
+    while @shell_running
+      begin
+        if @preview_mode
+          show_split_view
+        end
+        
+        prompt = @preview_mode ? "\e[36mmdui\e[0m \e[35m(preview)\e[0m> " : "\e[36mmdui\e[0m> "
+        line = Readline.readline(prompt, true)
+        
+        # Handle Ctrl+C gracefully
+        break if line.nil?
+        
+        # Skip empty lines
+        next if line.strip.empty?
+        
+        # Remove duplicate history entries
+        if Readline::HISTORY.length > 1 && Readline::HISTORY[-1] == Readline::HISTORY[-2]
+          Readline::HISTORY.pop
+        end
+        
+        # Process shell command
+        process_shell_command(line.strip)
+        
+      rescue Interrupt
+        puts "\n\n\e[33mExiting MarkdownUI shell...\e[0m"
+        break
+      rescue => e
+        puts "\e[31mError: #{e.message}\e[0m"
+      end
+    end
+  end
+  
+  def process_shell_command(command)
+    case command.downcase
+    when 'help', 'h'
+      show_shell_help
+    when 'exit', 'quit', 'q'
+      @shell_running = false
+    when 'clear', 'c'
+      @current_content = ""
+      clear_screen
+      puts "\e[32mContent cleared.\e[0m"
+    when 'preview', 'p'
+      @preview_mode = !@preview_mode
+      if @preview_mode
+        puts "\e[32mPreview mode enabled.\e[0m Type content and see live HTML generation."
+        puts "Press \e[33mCtrl+C\e[0m to exit preview mode."
+      else
+        clear_screen
+        puts "\e[32mPreview mode disabled.\e[0m"
+      end
+    when 'convert'
+      if @current_content.empty?
+        puts "\e[33mNo content to convert.\e[0m Type some MarkdownUI content first."
+      else
+        show_conversion
+      end
+    when 'elements', 'e'
+      show_elements_inline
+    when 'version', 'v'
+      puts "\e[36mMarkdownUI v#{VERSION}\e[0m"
+    when /^save\s+(.+)/
+      filename = $1
+      save_content(filename)
+    when /^load\s+(.+)/
+      filename = $1
+      load_content(filename)
+    when /^export\s+(.+)/
+      filename = $1
+      export_html(filename)
+    when 'syntax', 's'
+      show_syntax_comparison
+    when 'examples', 'ex'
+      show_element_examples
+    else
+      # Treat as MarkdownUI content
+      add_content(command)
+    end
+  end
+  
+  def add_content(content)
+    @current_content += "\n" unless @current_content.empty?
+    @current_content += content
+    
+    if @preview_mode
+      # In preview mode, live update is handled by show_split_view
+    else
+      puts "\e[32m✓ Content added.\e[0m Use '\e[33mpreview\e[0m' for live view or '\e[33mconvert\e[0m' to see HTML."
+    end
+  end
+  
+  def show_split_view
+    clear_screen
+    
+    # Get terminal size
+    begin
+      rows, cols = IO.console.winsize
+    rescue
+      rows, cols = 24, 80 # fallback
+    end
+    
+    mid_col = cols / 2
+    
+    # Show header with colors
+    puts "\e[1;34m#{'=' * cols}\e[0m"
+    left_header = "MARKDOWN INPUT"
+    right_header = "HTML OUTPUT"
+    left_padding = (mid_col - left_header.length) / 2
+    right_padding = (mid_col - right_header.length) / 2
+    
+    print "\e[1;32m#{' ' * left_padding}#{left_header}\e[0m"
+    print "\e[1;34m│\e[0m"
+    print "\e[1;33m#{' ' * right_padding}#{right_header}\e[0m\n"
+    puts "\e[1;34m#{'=' * cols}\e[0m"
+    
+    # Show content side by side
+    markdown_lines = @current_content.split("\n")
+    html_content = generate_preview_html(@current_content)
+    html_lines = html_content.split("\n")
+    
+    max_lines = [markdown_lines.length, html_lines.length, rows - 8].max
+    max_lines = [max_lines, 15].min # Limit height for better UX
+    
+    (0...max_lines).each do |i|
+      left = markdown_lines[i] || ""
+      right = html_lines[i] || ""
+      
+      # Truncate and pad lines
+      left = left[0...mid_col-2] if left.length > mid_col-2
+      right = right[0...mid_col-2] if right.length > mid_col-2
+      
+      # Color the output
+      left_colored = colorize_markdown(left)
+      right_colored = colorize_html(right)
+      
+      printf "%-#{mid_col-1}s\e[34m│\e[0m %s\n", left_colored, right_colored
+    end
+    
+    puts "\e[1;34m#{'=' * cols}\e[0m"
+    puts "\e[36mCommands:\e[0m help │ clear │ preview (toggle) │ save <file> │ load <file> │ export <file> │ exit"
+  end
+  
+  def colorize_markdown(text)
+    text.gsub(/__([^_]+)__/) { |match| "\e[1;35m#{match}\e[0m" }  # Purple for UI elements
+        .gsub(/^>\s*[^:]+:/) { |match| "\e[1;36m#{match}\e[0m" }   # Cyan for blockquote headers
+        .gsub(/^>.*/) { |match| "\e[36m#{match}\e[0m" }            # Light cyan for blockquote content
+        .gsub(/\*\*([^*]+)\*\*/) { |match| "\e[1m#{match}\e[0m" }  # Bold
+        .gsub(/^#+ .*/) { |match| "\e[1;32m#{match}\e[0m" }        # Headers
+  end
+  
+  def colorize_html(text)
+    text.gsub(/<[^>]+>/) { |match| "\e[34m#{match}\e[0m" }         # Blue for tags
+        .gsub(/class="[^"]*"/) { |match| "\e[33m#{match}\e[0m" }   # Yellow for classes
+  end
+  
+  def generate_preview_html(content)
+    return "\e[90m<!-- No content -->\e[0m" if content.empty?
+    
+    begin
+      parser = MarkdownUI.new(beautify: true)
+      html = parser.parse(content)
+      
+      # Clean up HTML for better display in terminal
+      html.gsub(/\s+/, ' ')
+          .gsub(/>\s+</, '><')
+          .split(/(?=<[^\/])/)
+          .join("\n")
+          .gsub(/class="([^"]*)"/) { |match| 
+            classes = $1.split.first(2).join(' ')
+            "class=\"#{classes}#{$1.split.length > 2 ? '...' : ''}\""
+          }
+    rescue => e
+      "\e[31m<!-- Error: #{e.message} -->\e[0m"
+    end
+  end
+  
+  def clear_screen
+    system('clear') || system('cls')
+  end
+  
+  def show_conversion
+    return if @current_content.empty?
+    
+    begin
+      parser = MarkdownUI.new(beautify: true)
+      html_content = parser.parse(@current_content)
+      
+      puts "\n\e[1;34m#{'─' * 60}\e[0m"
+      puts "\e[1;33mHTML OUTPUT:\e[0m"
+      puts "\e[1;34m#{'─' * 60}\e[0m"
+      puts colorize_html(html_content)
+      puts "\e[1;34m#{'─' * 60}\e[0m\n"
+    rescue => e
+      puts "\e[31mError generating HTML: #{e.message}\e[0m"
+    end
+  end
+  
+  def show_elements_inline
+    elements = @elements.map { |e| e.split.map(&:capitalize).join(' ') }
+    puts "\n\e[1;36mAvailable Elements (#{elements.count}):\e[0m\n"
+    
+    # Show in columns with colors
+    cols = 3
+    elements.each_slice((elements.length / cols.to_f).ceil) do |column|
+      column.each { |elem| print "\e[32m%-20s\e[0m" % elem }
+      puts
+    end
+    puts "\n\e[33mUsage:\e[0m __Element Name|content|modifiers__"
+    puts "\e[33mExample:\e[0m __Primary Button|Click Me__\n\n"
+  end
+  
+  def save_content(filename)
+    if @current_content.empty?
+      puts "\e[33mNo content to save.\e[0m"
+      return
+    end
+    
+    # Ensure .mdui extension
+    filename += '.mdui' unless filename.end_with?('.mdui', '.md')
+    
+    File.write(filename, @current_content)
+    puts "\e[32m✓ Content saved to #{filename}\e[0m"
+  end
+  
+  def load_content(filename)
+    unless File.exist?(filename)
+      puts "\e[31mFile #{filename} not found.\e[0m"
+      return
+    end
+    
+    @current_content = File.read(filename)
+    puts "\e[32m✓ Content loaded from #{filename}\e[0m"
+  end
+  
+  def export_html(filename)
+    if @current_content.empty?
+      puts "\e[33mNo content to export.\e[0m"
+      return
+    end
+    
+    begin
+      parser = MarkdownUI.new(beautify: true)
+      html_content = parser.parse(@current_content)
+      
+      # Generate full HTML document
+      full_html = generate_full_html(html_content, filename)
+      
+      # Ensure .html extension
+      filename += '.html' unless filename.end_with?('.html')
+      
+      File.write(filename, full_html)
+      puts "\e[32m✓ HTML exported to #{filename}\e[0m"
+    rescue => e
+      puts "\e[31mError exporting HTML: #{e.message}\e[0m"
+    end
+  end
+  
+  def generate_full_html(content, title)
+    <<~HTML
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>#{File.basename(title, File.extname(title)).capitalize}</title>
+          
+          <!-- Semantic UI CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+          
+          <!-- jQuery & Semantic UI JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+          
+          <style>
+            body { padding: 2rem; }
+            .ui.container { max-width: none !important; }
+          </style>
+        </head>
+        <body>
+          <div class="ui container">
+            #{content}
+          </div>
+          
+          <script>
+            // Initialize Semantic UI components
+            $(document).ready(function() {
+              $('.ui.dropdown').dropdown();
+              $('.ui.modal').modal();
+              $('.ui.accordion').accordion();
+              $('.ui.tab').tab();
+              $('.ui.popup').popup();
+            });
+          </script>
+        </body>
+      </html>
+    HTML
+  end
+  
+  def show_syntax_comparison
+    puts <<~SYNTAX
+      
+      \e[1;36m╔══════════════════════════════════════════════════════════╗
+      ║            MarkdownUI Syntax Formats (Both Supported)   ║
+      ╚══════════════════════════════════════════════════════════╝\e[0m
+      
+      \e[1;32mShorthand (Double Underscore)\e[0m        │  \e[1;33mLonghand (Blockquote)\e[0m
+      ──────────────────────────────────────────┼─────────────────────────────────────────
+      \e[35m__Primary Button|Click Me__\e[0m              │  \e[36m> Primary Button:\e[0m
+                                                │  \e[36m> Click Me\e[0m
+      
+      \e[35m__Success Message|Hello World!__\e[0m        │  \e[36m> Success Message:\e[0m  
+                                                │  \e[36m> Hello World!\e[0m
+      
+      \e[35m__Large Header|Welcome__\e[0m                │  \e[36m> Large Header:\e[0m
+                                                │  \e[36m> Welcome\e[0m
+      
+      \e[35m__Striped Table|Name,Age|John,25__\e[0m      │  \e[36m> Striped Table:\e[0m
+                                                │  \e[36m> Name,Age\e[0m
+                                                │  \e[36m> John,25\e[0m
+      
+      \e[35m__Primary Button|Save|large__\e[0m           │  \e[36m> Primary Button large:\e[0m
+                                                │  \e[36m> Save\e[0m
+      
+      \e[1;37mBoth formats produce identical HTML output!\e[0m
+      
+    SYNTAX
+  end
+  
+  def show_element_examples
+    sample_elements = [
+      'button', 'message', 'header', 'table', 'list', 'menu', 
+      'segment', 'card', 'form', 'input', 'label', 'icon'
+    ].sample(6)
+    
+    puts <<~EXAMPLES
+      
+      \e[1;36m╔══════════════════════════════════════════════════════════╗
+      ║               Element Examples (Try These!)              ║
+      ╚══════════════════════════════════════════════════════════╝\e[0m
+      
+    EXAMPLES
+    
+    sample_elements.each do |element|
+      examples = get_element_examples(element)
+      puts "\e[1;32m#{element.capitalize} Examples:\e[0m"
+      
+      examples.each do |shorthand, longhand|
+        puts "  \e[35m#{shorthand}\e[0m"
+        puts "  \e[36m#{longhand}\e[0m"
+        puts
+      end
+    end
+    
+    puts "\e[33mTip:\e[0m Copy and paste these examples to test them!"
+    puts
+  end
+  
+  def get_element_examples(element)
+    case element.downcase
+    when 'button'
+      [
+        ["__Primary Button|Get Started__", "> Primary Button:\n> Get Started"],
+        ["__Circular Loading Button|Processing|disabled__", "> Circular Loading Button disabled:\n> Processing"]
+      ]
+    when 'message'
+      [
+        ["__Success Message|Operation completed successfully!__", "> Success Message:\n> Operation completed successfully!"],
+        ["__Warning Message|Please check your input__", "> Warning Message:\n> Please check your input"]
+      ]
+    when 'header'
+      [
+        ["__Huge Header|Welcome to MarkdownUI__", "> Huge Header:\n> Welcome to MarkdownUI"],
+        ["__Dividing Header|Section Title__", "> Dividing Header:\n> Section Title"]
+      ]
+    when 'table'
+      [
+        ["__Striped Table|Name,Role|Alice,Developer|Bob,Designer__", "> Striped Table:\n> Name,Role\n> Alice,Developer\n> Bob,Designer"],
+        ["__Celled Table|Product,Price|Widget,$10__", "> Celled Table:\n> Product,Price\n> Widget,$10"]
+      ]
+    when 'list'
+      [
+        ["__Bulleted List|First item|Second item|Third item__", "> Bulleted List:\n> First item\n> Second item\n> Third item"],
+        ["__Numbered List|Step one|Step two|Step three__", "> Numbered List:\n> Step one\n> Step two\n> Step three"]
+      ]
+    when 'menu'
+      [
+        ["__Pointing Menu|Home|About|Contact__", "> Pointing Menu:\n> Home\n> About\n> Contact"],
+        ["__Vertical Menu|Dashboard|Settings|Profile__", "> Vertical Menu:\n> Dashboard\n> Settings\n> Profile"]
+      ]
+    when 'segment'
+      [
+        ["__Raised Segment|This is elevated content__", "> Raised Segment:\n> This is elevated content"],
+        ["__Piled Segment|Stacked appearance__", "> Piled Segment:\n> Stacked appearance"]
+      ]
+    when 'card'
+      [
+        ["__Card|Project Title|This is the card description__", "> Card:\n> Project Title\n> This is the card description"],
+        ["__Fluid Card|Full Width|Takes the full container width__", "> Fluid Card:\n> Full Width\n> Takes the full container width"]
+      ]
+    when 'form'
+      [
+        ["__Form|Username|Password__", "> Form:\n> Username\n> Password"],
+        ["__Loading Form|Please wait|Processing your request__", "> Loading Form:\n> Please wait\n> Processing your request"]
+      ]
+    when 'input'
+      [
+        ["__Input|Enter your name__", "> Input:\n> Enter your name"],
+        ["__Fluid Input|Full width input__", "> Fluid Input:\n> Full width input"]
+      ]
+    when 'label'
+      [
+        ["__Basic Label|New__", "> Basic Label:\n> New"],
+        ["__Pointing Label|Look here!__", "> Pointing Label:\n> Look here!"]
+      ]
+    when 'icon'
+      [
+        ["__Icon|home__", "> Icon:\n> home"],
+        ["__Circular Icon|user|large__", "> Circular Icon large:\n> user"]
+      ]
+    else
+      [
+        ["__#{element.capitalize}|Sample content__", "> #{element.capitalize}:\n> Sample content"]
+      ]
+    end
+  end
+  
+  def show_shell_help
+    puts <<~HELP
+      
+      \e[1;36m╔══════════════════════════════════════════════════════════╗
+      ║              MarkdownUI Shell Commands                   ║
+      ╚══════════════════════════════════════════════════════════╝\e[0m
+      
+      \e[1;32mContent Commands:\e[0m
+        \e[33m<mdui content>\e[0m      Add MarkdownUI content
+        \e[33mpreview\e[0m, \e[33mp\e[0m          Toggle side-by-side preview mode
+        \e[33mconvert\e[0m             Show HTML conversion of current content
+        \e[33mclear\e[0m, \e[33mc\e[0m            Clear current content
+        
+      \e[1;32mFile Commands:\e[0m
+        \e[33msave <filename>\e[0m     Save current content to .mdui file
+        \e[33mload <filename>\e[0m     Load content from file
+        \e[33mexport <filename>\e[0m   Export as full HTML document
+      
+      \e[1;32mInfo Commands:\e[0m
+        \e[33melements\e[0m, \e[33me\e[0m        List available UI elements
+        \e[33msyntax\e[0m, \e[33ms\e[0m          Show shorthand vs longhand syntax
+        \e[33mexamples\e[0m, \e[33mex\e[0m       Show element examples in both formats
+        \e[33mversion\e[0m, \e[33mv\e[0m         Show version
+        \e[33mhelp\e[0m, \e[33mh\e[0m           Show this help
+      
+      \e[1;32mControl:\e[0m
+        \e[33mexit\e[0m, \e[33mquit\e[0m, \e[33mq\e[0m     Exit shell
+      
+      \e[1;32mAutocompletion:\e[0m
+        • Tab to complete commands
+        • Type '\e[33m__\e[0m' then Tab to complete element names
+        • After '\e[33m|\e[0m' Tab completes element modifiers
+        • Type '\e[33m>\e[0m' for blockquote syntax
+      
+      \e[1;32mSyntax Examples:\e[0m
+        \e[35m__Primary Button|Click Me__\e[0m        (Shorthand)
+        \e[36m> Primary Button:\e[0m                 (Longhand)
+        \e[36m> Click Me\e[0m
+      
+    HELP
   end
 end
 
-def prompt(*args)
-    print(*args)
-    multi_gets
-end
-
-while m = prompt("# ")
-  parser = MarkdownUI::Parser.new
-  puts <<-EOF
-
-    #{parser.render(m)}
-  EOF
+# Run the shell
+if __FILE__ == $0
+  shell = MarkdownUIShell.new
+  shell.start
 end

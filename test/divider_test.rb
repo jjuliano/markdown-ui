@@ -12,9 +12,9 @@ class DividerTest < Redcarpet::TestCase
 ___
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-'<div class=\'ui divider\'></div>', output
+'<div class="ui divider"></div>', output
   end
 
   def test_vertical_divider
@@ -48,9 +48,9 @@ ___
 > > __Big Green Labeled Icon Button|Icon:Signup, Sign Up__
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui two column middle aligned very relaxed stackable grid\">\n  <div class=\"ui column\">\n    <div class=\"ui form\">\n      <div class=\"ui field\">\n        <label>Username</label>\n        <div class=\"ui left icon input\">\n          <input type=\"text\" placeholder=\"Username\" class=\"ui input\" />\n          <i class=\"user icon\"></i>\n        </div>\n      </div>\n<!-- -->\n      <div class=\"ui field\">\n        <label>Password</label>\n        <div class=\"ui left icon input\">\n          <input type=\"password\" placeholder=\"Password\" class=\"ui input\" />\n          <i class=\"lock icon\"></i>\n        </div>\n      </div>\n<!-- -->\n      <button class=\"ui blue submit button\">Login</button>\n    </div>\n  </div>\n<!-- -->\n  <div class=\"ui vertical divider\">Or</div>\n<!-- -->\n  <div class=\"ui center aligned column\">\n    <button class=\"ui big green labeled icon button\"><i class=\"signup icon\"></i>Sign Up</button>\n  </div>\n</div>\n", output
+"<div class=\"ui two very relaxed stackable aligned grid\">\n  <div class=\"row\">\n    <div class=\"eight wide column\"><div class=\"ui column\"><form class=\"ui form\">\n  Field:\n  __Label Tag|Username__\n  Left Icon Input:\n  __Input|Text|Username__\n  _User Icon_\n\n<!-- -->\n  Field:\n  __Label Tag|Password__\n  Left Icon Input:\n  __Input|Password|Password__\n  _Lock Icon_\n\n<!-- -->\n  __Blue Submit Button|Login__\n</form>\n</div>\n</div>\n    <div class=\"eight wide column\">&lt;!-- --&gt;</div>\n  </div>\n  <div class=\"row\">\n    <div class=\"eight wide column\"><div class=\"ui vertical divider\">Or</div></div>\n    <div class=\"eight wide column\">&lt;!-- --&gt;</div>\n  </div>\n  <div class=\"row\">\n    <div class=\"eight wide column\"><div class=\"ui center aligned column\"><button class=\"ui big green labeled icon button\"><i class=\"signup icon\"></i>Sign Up</button></div></div>\n  </div>\n</div>", output
   end
 
   def test_horizontal_divider
@@ -70,9 +70,9 @@ ___
 > __Teal Labeled Icon Button|Create New Order, Icon: Add Icon__
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui center aligned basic segment\">\n  <div class=\"ui left icon action input\">\n    <i class=\"search icon\"></i>\n    <input type=\"text\" placeholder=\"Order #\" class=\"ui input\" />\n    <button class=\"ui blue submit button\">Search</button>\n  </div>\n<!-- -->\n  <div class=\"ui horizontal divider\">Or</div>\n<!-- -->\n  <button class=\"ui teal labeled icon button\">Create New Order<i class=\"add icon\"></i></button>\n</div>\n", output
+"<section class=\"ui center aligned basic segment\">\n  <section class=\"ui center aligned basic segment\">Left Icon Action Input:\n  _Search Icon_\n  __Input|Text|Order #__\n  __Blue Submit Button|Search__\n\n<!-- -->\n  <div class=\"ui horizontal divider\"></div>\n  <div><p>Or</p>\n  </div>\n\n<!-- -->\n  <p><strong>Teal Labeled Icon Button|Create New Order, Icon: Add Icon</strong></p>\n  </section>\n</section>\n", output
   end
 
   def test_horizontal_divider_table
@@ -113,9 +113,9 @@ ___
 </table>
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui horizontal divider header\"><i class=\"tag icon\"></i>\nDescription</div>\n\n<!-- -->\n<p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>\n\n<!-- -->\n<div class=\"ui horizontal divider header\"><i class=\"bar chart icon\"></i>\nSpecifications</div>\n\n<!-- -->\n\n<table class=\"ui definition table\">\n  <tbody>\n    <tr>\n      <td class=\"two wide column\">Size</td>\n      <td>1\" x 2\"</td>\n    </tr>\n    <tr>\n      <td>Weight</td>\n      <td>6 ounces</td>\n    </tr>\n    <tr>\n      <td>Color</td>\n      <td>Yellowish</td>\n    </tr>\n    <tr>\n      <td>Odor</td>\n      <td>Not Much Usually</td>\n    </tr>\n  </tbody>\n</table>\n", output
+"<div class=\"ui horizontal header divider\"><p>_Tag Icon_\nDescription</p></div>\n\n<!-- -->\n<p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>\n\n<!-- -->\n<div class=\"ui horizontal header divider\"><p>_Bar Chart Icon_\nSpecifications</p></div>\n\n<!-- -->\n\n<table class=\"ui definition table\">\n  <tbody>\n    <tr>\n      <td class=\"two wide column\">Size</td>\n      <td>1\" x 2\"</td>\n    </tr>\n    <tr>\n      <td>Weight</td>\n      <td>6 ounces</td>\n    </tr>\n    <tr>\n      <td>Color</td>\n      <td>Yellowish</td>\n    </tr>\n    <tr>\n      <td>Odor</td>\n      <td>Not Much Usually</td>\n    </tr>\n  </tbody>\n</table>\n", output
   end
 
   def test_inverted_variation
@@ -133,7 +133,7 @@ ___
 > > "Horizontal"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 "<div class=\"ui inverted segment\">\n  <p></p>\n<!-- -->\n  <div class=\"ui divider\"></div>\n  <p></p>\n<!-- -->\n  <div class=\"ui horizontal inverted divider header\">\n    <p>Horizontal</p>\n  </div>\n</div>\n", output
   end
@@ -149,9 +149,9 @@ ___
 > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui segment\"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p><div class=\"ui fitted divider\"></div>\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>\n", output
+"<section class=\"ui segment\"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>\n<div class=\"ui fitted divider\"></div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</section>", output
   end
 
   def test_hidden_variation
@@ -167,9 +167,9 @@ ___
 > "Lorem Ipsum Dolor"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+"<section class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui hidden divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</section>\n", output
   end
 
   def test_section_variation
@@ -185,7 +185,7 @@ ___
 > "Lorem Ipsum Dolor"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
 "<div class=\"ui segment\">\n  <h3 class=\"ui header\">Section One</h3>\n  <p>Lorem Ipsum Dolor</p>\n  <div class=\"ui section divider\"></div>\n  <h3 class=\"ui header\">Section Two</h3>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
   end
@@ -204,9 +204,9 @@ ___
 > "Lorem Ipsum Dolor"
 '
 
-    output = @parser.render(markdown)
+    output = @parser.parse(markdown)
     assert_equal \
-"<div class=\"ui segment\">\n  <div class=\"ui right floated header\">Floated Content</div>\n<!-- -->\n  <div class=\"ui clearing divider\"></div>\n  <p>Lorem Ipsum Dolor</p>\n</div>\n", output
+"<section class=\"ui segment\">\n  <section class=\"ui segment\">Right Floated Header:\n  Floated Content\n\n<!-- -->\n  <div class=\"ui clearing divider\"></div>\n  <p>&gt; &amp;nbsp;\n\n  Lorem Ipsum Dolor</p></section>\n</section>\n", output
   end
 
 

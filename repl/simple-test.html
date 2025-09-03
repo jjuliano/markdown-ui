@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Simple Test</h1>
+    <div id="output"></div>
+    
+    <script src="js/ruby-wasm-integration.js"></script>
+    <script src="js/repl-interface.js"></script>
+    
+    <script>
+        window.addEventListener('load', async function() {
+            const output = document.getElementById('output');
+            
+            try {
+                output.innerHTML += '<p>Testing RubyWasmIntegration...</p>';
+                
+                // Check if RubyWasmIntegration is available
+                if (typeof window.RubyWasmIntegration === 'undefined') {
+                    throw new Error('RubyWasmIntegration is not defined');
+                }
+                output.innerHTML += '<p>✓ RubyWasmIntegration class found</p>';
+                
+                // Check if MarkdownUIREPL is available
+                if (typeof window.MarkdownUIREPL === 'undefined') {
+                    throw new Error('MarkdownUIREPL is not defined');
+                }
+                output.innerHTML += '<p>✓ MarkdownUIREPL instance found</p>';
+                
+                // Check if rubyWasm is properly instantiated
+                if (!window.MarkdownUIREPL.rubyWasm) {
+                    throw new Error('rubyWasm is not instantiated');
+                }
+                output.innerHTML += '<p>✓ RubyWasm instance created</p>';
+                
+                // Check if initialize method exists
+                if (typeof window.MarkdownUIREPL.rubyWasm.initialize !== 'function') {
+                    throw new Error('initialize method not found');
+                }
+                output.innerHTML += '<p>✓ initialize method found</p>';
+                
+                output.innerHTML += '<p>✅ All basic tests passed!</p>';
+                
+            } catch (error) {
+                output.innerHTML += '<p>❌ Error: ' + error.message + '</p>';
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>

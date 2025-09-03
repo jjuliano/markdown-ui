@@ -1,0 +1,31 @@
+# CSS Class and ID Examples
+
+This file demonstrates the new CSS class and ID syntax in MarkdownUI.
+
+## Basic Examples
+
+Basic class syntax: __.my-class Button|Click Me__
+
+Multiple classes: __.btn.btn-primary.large Button|Primary Button__
+
+ID syntax: __#submit-btn Button|Submit__
+
+Classes and IDs together: __.my-class#my-id Button|Button with class and ID__
+
+## Advanced Examples
+
+With Semantic UI modifiers: __.custom-class.large#special-btn Primary Button|Special Button__
+
+Single underscore syntax: _.red-text#warning Button|Warning Button_
+
+Complex example: __.btn.btn-success#save-form.large Primary Button|Save Form__
+
+## Different Element Types
+
+Custom segment: __.custom-segment#info-section Segment|This is a custom segment__
+
+Custom card: __.custom-card#feature-card Card|Custom styled card__
+
+Custom header: __.custom-header#page-title Large Header|Page Title__
+
+Custom message: __.info-message#status-message Info Message|Status updated successfully__

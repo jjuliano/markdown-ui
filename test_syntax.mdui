@@ -1,0 +1,36 @@
+# MarkdownUI Syntax Test
+
+## Shorthand Syntax (Double Underscore)
+
+__Primary Button|Click Me__
+
+__Success Message|Operation completed successfully!__
+
+__Large Header|Welcome to MarkdownUI__
+
+__Striped Table|Name,Role|Alice,Developer|Bob,Designer__
+
+## Longhand Syntax (Blockquote)
+
+> Primary Button:
+> Click Me
+
+> Success Message:
+> Operation completed successfully!
+
+> Large Header:
+> Welcome to MarkdownUI
+
+> Striped Table:
+> Name,Role
+> Alice,Developer
+> Bob,Designer
+
+## Mixed Content
+
+This is regular markdown **bold text** and *italic text*.
+
+__Warning Message|Both syntaxes produce identical HTML!__
+
+> Info Message:
+> You can mix both formats in the same document!

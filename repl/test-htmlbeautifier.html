@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLBeautifier Test</title>
+</head>
+<body>
+    <h1>Testing HTMLBeautifier in WebAssembly</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        // Test the HTMLBeautifier functionality
+        async function testHtmlBeautifier() {
+            const output = document.getElementById('output');
+
+            try {
+                output.innerHTML = '<p>🔧 Initializing Ruby WebAssembly...</p>';
+
+                // Load the WebAssembly module
+                const response = await fetch('build/markdown-ui.wasm');
+                if (!response.ok) {
+                    throw new Error(`WebAssembly file not found: ${response.status}`);
+                }
+
+                const module = await response.arrayBuffer();
+                output.innerHTML += `<p>✅ Loaded WebAssembly module: ${module.byteLength} bytes</p>`;
+
+                // Initialize Ruby VM
+                const { DefaultRubyVM } = await import("https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm");
+                const response_stdlib = await fetch("https://cdn.jsdelivr.net/npm/@ruby/3.4-wasm-wasi@2.7.1/dist/ruby+stdlib.wasm");
+                const module_stdlib = await WebAssembly.compileStreaming(response_stdlib);
+                const { vm } = await DefaultRubyVM(module_stdlib);
+
+                output.innerHTML += '<p>✅ Ruby WebAssembly VM initialized</p>';
+
+                // Test HTMLBeautifier
+                const testResult = vm.eval(`
+                    require "bundler/setup"
+                    require "htmlbeautifier"
+
+                    # Test HTML beautification
+                    ugly_html = "<div><span>Hello</span><p>World</p></div>"
+                    pretty_html = HtmlBeautifier.beautify(ugly_html)
+
+                    puts "Original: #{ugly_html}"
+                    puts "Beautified: #{pretty_html}"
+
+                    "SUCCESS: HTMLBeautifier working in WebAssembly"
+                `);
+
+                output.innerHTML += `<p>✅ ${testResult}</p>`;
+                output.innerHTML += '<p>🎉 HTMLBeautifier test completed successfully!</p>';
+
+            } catch (error) {
+                output.innerHTML += `<p>❌ Error: ${error.message}</p>`;
+                console.error('Test failed:', error);
+            }
+        }
+
+        // Run the test when page loads
+        window.addEventListener('load', testHtmlBeautifier);
+    </script>
+</body>
+</html>

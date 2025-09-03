@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monaco Editor Test</title>
+</head>
+<body>
+  <h1>Monaco Editor Test</h1>
+  <div id="editor-container" style="height: 300px; border: 1px solid #ccc;"></div>
+  <div id="status"></div>
+
+  <!-- Monaco Editor -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.min.js?v=20250911" crossorigin="anonymous"></script>
+
+  <script>
+    const status = document.getElementById('status');
+
+    // Check if Monaco loader is available
+    if (typeof require !== 'undefined') {
+      status.innerHTML = '✅ Monaco loader available';
+
+      // Try to load Monaco
+      require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs' } });
+
+      require(['vs/editor/editor.main'], function() {
+        status.innerHTML += '<br>✅ Monaco Editor loaded successfully';
+
+        // Create editor
+        const editor = monaco.editor.create(document.getElementById('editor-container'), {
+          value: '# Test Markdown\n\nThis is a test of Monaco Editor loading.',
+          language: 'markdown',
+          theme: 'vs-light'
+        });
+
+        status.innerHTML += '<br>✅ Editor created successfully';
+      });
+    } else {
+      status.innerHTML = '❌ Monaco loader not available';
+    }
+  </script>
+</body>
+</html>
+

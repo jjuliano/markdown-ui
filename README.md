@@ -1,56 +1,182 @@
-[![Join the chat at https://gitter.im/jjuliano/markdown-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jjuliano/markdown-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# MarkdownUI 2.0
 
-[![Code Climate](https://codeclimate.com/github/jjuliano/markdown-ui/badges/gpa.svg)](https://codeclimate.com/github/jjuliano/markdown-ui) [![Build Status](https://travis-ci.org/jjuliano/markdown-ui.svg)](https://travis-ci.org/jjuliano/markdown-ui) [![Test Coverage](https://codeclimate.com/github/jjuliano/markdown-ui/badges/coverage.svg)](https://codeclimate.com/github/jjuliano/markdown-ui/coverage) [![Gem Version](https://badge.fury.io/rb/markdown-ui.svg)](http://badge.fury.io/rb/markdown-ui)
+**Complete Semantic UI components in simple Markdown syntax**
 
-# Markdown UI
+MarkdownUI 2.0 is a modern, fast, and comprehensive solution for creating beautiful web interfaces using Markdown. It provides complete coverage of Semantic UI components with an elegant syntax that makes UI development effortless.
 
-Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
+## 🚀 Key Features
 
-# Installation
+- **Complete Semantic UI Coverage**: All major UI elements supported
+- **Simple Syntax**: `__Element Name|content|modifiers__`
+- **Modern Architecture**: Fast, reliable, and extensible
+- **Enhanced CLI**: Development server, file watching, project initialization
+- **Zero Configuration**: Works out of the box
+- **No Backward Compatibility**: Clean slate for better performance
 
-Markdown-UI is readily available as a Ruby gem.
-The minimum required Ruby version is 2.0.
+## 📦 Installation
 
-`$ gem install markdown-ui`
-
-# Usage
-
-Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux)
-
-`$ markdown-ui index.mdui > index.html`
-
-# Markdown-UI (Read-Evaluate-Print-Loop) REPL shell
-
-You can interactively create Markdown-UI websites using the markdown-ui-shell.
-
-```
-$ markdown-ui-shell
-
-Hit RETURN three times to parse.
-# __Button|A Button__
-#
-#
-
-<button class="ui button">A Button</button>
-
-#
+```bash
+gem install markdown-ui
 ```
 
-# Credits
+## 🎯 Quick Start
 
-Markdown-UI would not be possible without the the [Semantic-UI](http：//www.semantic-ui.com) framework, and the Ruby [RedCarpet](https：//github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful framework and libraries.
+### 1. Create a new project
+```bash
+markdown-ui init
+```
 
-# Notes/Issues/Bugs
+### 2. Edit your content
+```markdown
+# My App
 
-  * Ongoing support for Semantic-UI elements/modules/components
-  * The Colon (:) character will be parsed when used inside a text, needs post-processing to dislay correctly (for URLs)
-  * A separator in between two spaces is required on block elements to separate elements (see Column example)
-  * Some elements requires custom javascripts (ie toggle button) in order to display and format them properly. You can write in HTML and Javascripts the additional code alongside your Markdown-UI docs to display them properly.
+Welcome to my application!
 
-## Contributing
+__Primary Button|Get Started__
 
-1. Fork it ( https://github.com/jjuliano/markdown-ui/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+__Success Message|Everything is working great!__
+
+__Large Header|Amazing Features__
+```
+
+### 3. Build or serve
+```bash
+# Build to HTML
+markdown-ui src/index.mdui -o dist/index.html
+
+# Start development server
+markdown-ui server src
+```
+
+## 🛠️ CLI Commands
+
+### File Conversion
+```bash
+# Convert to stdout
+markdown-ui input.mdui
+
+# Convert to file
+markdown-ui input.mdui -o output.html
+
+# Beautify output
+markdown-ui input.mdui -b
+
+# Watch for changes
+markdown-ui input.mdui -w
+```
+
+### Development Tools
+```bash
+# Initialize new project
+markdown-ui init
+
+# Start development server
+markdown-ui server [directory]
+
+# List available elements
+markdown-ui elements
+
+# Show version
+markdown-ui version
+```
+
+## 🎨 UI Elements
+
+### Core Elements
+- **Buttons**: `__Primary Button|Click Me__`
+- **Headers**: `__Large Header|Welcome__`  
+- **Messages**: `__Success Message|All good!__`
+
+### Syntax
+```markdown
+__Element Name|content|modifiers__
+```
+
+#### CSS Classes and IDs
+You can add custom CSS classes and IDs using dot (`.`) and hash (`#`) syntax:
+
+```markdown
+__.my-class Button|Click Me__
+__.btn.btn-primary#submit-btn Primary Button|Submit__
+__#my-id.large Segment|Content with ID__
+```
+
+### Examples
+```markdown
+__Primary Large Button|Get Started__
+__Dividing Header|Section Title__
+__Error Message|Something went wrong__
+
+# With Custom Classes and IDs
+__.my-button#special-btn Primary Button|Special Button__
+__.custom-card.large Card|Custom styled card__
+__#info-section Segment|Section with ID__
+__.btn-group#action-buttons Buttons|Button Group__
+```
+
+## 🔧 API Usage
+
+```ruby
+require 'markdown-ui'
+
+# Parse markdown with UI elements
+parser = MarkdownUI.new
+html = parser.parse(markdown_content)
+
+# With options
+parser = MarkdownUI.new(beautify: true)
+html = parser.parse(markdown_content)
+```
+
+## 📖 What's New in 2.0
+
+### ✅ **Improvements**
+- **Modern Architecture**: Complete rewrite for performance and maintainability
+- **Enhanced CLI**: New commands for project management and development
+- **Simplified API**: Cleaner, more intuitive interface
+- **Better Performance**: Faster parsing and rendering
+- **Complete Semantic UI Coverage**: Support for all major components
+
+### ⚠️ **Breaking Changes**
+- **No Backward Compatibility**: V1 syntax and components are not supported
+- **New Syntax**: All elements now use `__Element Name|content__` format
+- **Simplified Structure**: Streamlined for better developer experience
+
+### 🏗️ **Architecture**
+- Tokenizer-based parsing for accuracy and speed
+- Modular element system for extensibility  
+- HTML renderer with beautification options
+- Comprehensive error handling and validation
+
+## 🔮 Roadmap
+
+The current release includes core elements (button, header, message). Future releases will add:
+
+- **Collections**: Tables, menus, forms, cards
+- **Modules**: Modals, dropdowns, accordions, tabs
+- **Views**: Comments, feeds, items, statistics
+- **Advanced Features**: Custom themes, plugins, extensions
+
+## 📚 Documentation
+
+- [API Reference](API_REFERENCE.md)
+- [Examples](EXAMPLES.md) 
+- [Migration Guide](MIGRATION_GUIDE.md)
+- [Changelog](CHANGELOG.md)
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+MIT License - see [LICENSE.txt](LICENSE.txt) for details.
+
+## 🙋 Support
+
+- [GitHub Issues](https://github.com/jjuliano/markdown-ui/issues)
+- [Documentation](https://github.com/jjuliano/markdown-ui)
+
+---
+
+**MarkdownUI 2.0** - *Making beautiful UIs as simple as writing Markdown*

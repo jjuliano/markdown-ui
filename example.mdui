@@ -1,0 +1,46 @@
+# Welcome to Markdown-UI
+
+This is a sample document showing the power of Markdown-UI.
+
+## Buttons
+
+__Button|Click Me__
+
+__Button|Primary Action|primary__
+
+__Button|Save Changes|green__
+
+## Container with Content
+
+> Container:
+  This is a container with some sample content.
+  
+  __Button|Learn More|blue__
+
+## Messages
+
+__Message|Success!|success|Your action was completed successfully.__
+
+__Message|Warning|warning|Please be careful with this action.__
+
+## Grid Layout
+
+> Grid:
+  > Column:
+    ### Column 1
+    This is the first column with some content.
+    
+    __Button|Action 1|secondary__
+    
+  > Column:
+    ### Column 2
+    This is the second column with different content.
+    
+    __Button|Action 2|primary__
+
+## Segment
+
+> Segment:
+  This is a content segment that contains important information about our product.
+  
+  __Button|Get Started|large green__

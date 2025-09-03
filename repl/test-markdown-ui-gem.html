@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkdownUI Gem Test</title>
+    <style>
+        body { font-family: monospace; margin: 20px; }
+        .success { color: green; }
+        .error { color: red; }
+        .step { margin: 10px 0; padding: 10px; border-left: 4px solid #ccc; }
+        .step.success { border-left-color: green; background: #f0fff0; }
+        .step.error { border-left-color: red; background: #fff0f0; }
+    </style>
+</head>
+<body>
+    <h1>Testing MarkdownUI Gem Loading in WebAssembly</h1>
+    <div id="test-results"></div>
+
+    <script type="module">
+        const results = document.getElementById('test-results');
+
+        function addStep(message, success = null) {
+            const step = document.createElement('div');
+            step.className = 'step';
+            step.textContent = new Date().toLocaleTimeString() + ': ' + message;
+
+            if (success === true) {
+                step.classList.add('success');
+            } else if (success === false) {
+                step.classList.add('error');
+            }
+
+            results.appendChild(step);
+            console.log(message);
+        }
+
+        async function testMarkdownUIGem() {
+            try {
+                addStep('Starting MarkdownUI gem test...');
+
+                // Check WebAssembly support
+                if (typeof WebAssembly === 'undefined') {
+                    addStep('❌ WebAssembly not supported in this browser', false);
+                    return;
+                }
+                addStep('✅ WebAssembly supported', true);
+
+                // Load the WebAssembly module
+                addStep('📥 Loading markdown-ui.wasm...');
+                const response = await fetch('build/markdown-ui.wasm');
+                if (!response.ok) {
+                    addStep(`❌ Failed to load WebAssembly: ${response.status}`, false);
+                    return;
+                }
+
+                const moduleBuffer = await response.arrayBuffer();
+                addStep(`✅ Loaded WebAssembly module: ${moduleBuffer.byteLength} bytes`, true);
+
+                // Test Ruby VM initialization
+                addStep('🔧 Initializing Ruby VM...');
+                const { DefaultRubyVM } = await import("https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm");
+
+                addStep('📚 Loading Ruby stdlib...');
+                const response_stdlib = await fetch("https://cdn.jsdelivr.net/npm/@ruby/3.4-wasm-wasi@2.7.1/dist/ruby+stdlib.wasm");
+                if (!response_stdlib.ok) {
+                    addStep(`❌ Failed to load Ruby stdlib: ${response_stdlib.status}`, false);
+                    return;
+                }
+
+                const module_stdlib = await WebAssembly.compileStreaming(response_stdlib);
+                addStep('✅ Ruby stdlib loaded', true);
+
+                addStep('🚀 Creating Ruby VM instance...');
+                const { vm } = await DefaultRubyVM(module_stdlib);
+                addStep('✅ Ruby VM created successfully', true);
+
+                // Test markdown-ui gem loading
+                addStep('🔧 Testing markdown-ui gem loading...');
+                const gemTestResult = vm.eval(`
+                    begin
+                        require "bundler/setup"
+                        puts "✅ Bundler setup successful"
+
+                        require "markdown-ui"
+                        puts "✅ markdown-ui gem loaded successfully"
+
+                        # Test basic functionality
+                        parser = MarkdownUI.new(beautify: true)
+                        puts "✅ MarkdownUI parser created successfully"
+
+                        # Test basic parsing functionality
+                        result = parser.parse("__Button|Test__")
+                        puts "✅ MarkdownUI parsing works: #{result.length} chars"
+
+                        "SUCCESS: All tests passed!"
+                    rescue => e
+                        puts "❌ Error: #{e.message}"
+                        "ERROR: #{e.message}"
+                    end
+                `);
+
+                if (gemTestResult && gemTestResult.toString().includes("SUCCESS")) {
+                    addStep('✅ MarkdownUI gem test successful!', true);
+                    addStep('🎉 WebAssembly with markdown-ui gem is working perfectly!', true);
+                } else {
+                    addStep(`❌ MarkdownUI gem test failed: ${gemTestResult}`, false);
+                }
+
+            } catch (error) {
+                addStep(`❌ Test failed: ${error.message}`, false);
+                console.error('Test error:', error);
+            }
+        }
+
+        // Start the test
+        window.addEventListener('load', testMarkdownUIGem);
+    </script>
+</body>
+</html>

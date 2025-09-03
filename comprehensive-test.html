@@ -1,0 +1,440 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Comprehensive-test</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <!-- Modern CDN links for better performance and reliability -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
+    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
+    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
+-->
+
+  </head>
+  <body>
+    <header>
+  <h1 class="ui header">Markdown-UI v0.3 Comprehensive Test Suite</h1>
+</header>
+This document tests all 30+ Semantic UI components supported in Markdown-UI v0.3 to ensure proper HTML generation.<header>
+  <h2 class="ui header">&#x1F9E9; Elements Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Buttons</h3>
+</header>
+<button class="ui button">Standard Button</button>
+
+<button id="primary" class="ui button">Primary Button</button>
+
+<button id="secondary" class="ui button">Secondary Button</button>
+
+<button id="basic" class="ui button">Basic Button</button>
+
+<button id="inverted" class="ui button">Inverted Button</button>
+<header>
+  <h3 class="ui header">Containers</h3>
+</header>
+<article class="ui container">This is a standard container with some content to test the container functionality.Text Container</article>
+<header>
+  <h3 class="ui header">Headers</h3>
+</header>
+<header>
+  <h1 class="ui header">Main Header</h1>
+</header>
+<header>
+  <h2 class="ui header">Sub Header</h2>
+</header>
+<header>
+  <h3 class="ui header">Smaller Header</h3>
+</header>
+<header>
+  <h4 class="ui header">Even Smaller Header</h4>
+</header>
+<header>
+  <div class="ui header">Custom Header Element</div>
+</header>
+
+<header>
+  <div class="ui header">Colored Header</div>
+</header>
+<header>
+  <h3 class="ui header">Icons</h3>
+</header>
+<i class='home flag'></i> <i class='user flag'></i> <i class='settings flag'></i> <i class='heart flag'></i> <i class='star flag'></i><header>
+  <h3 class="ui header">Images</h3>
+</header>
+
+
+
+<header>
+  <h3 class="ui header">Inputs</h3>
+</header>
+<input type="enter your name" class="ui input" />
+
+<input type="search..." placeholder="Icon search" class="ui input" />
+
+<input type="markdown-ui-prefilter-http//" placeholder="Labeled markdown-ui-prefilter-http//" class="ui input" />
+
+<input type="loading..." placeholder="Loading" class="ui input" />
+
+<input type="disabled input" placeholder="Disabled" class="ui input" />
+<header>
+  <h3 class="ui header">Labels</h3>
+</header>
+
+
+
+
+<header>
+  <h3 class="ui header">Segments</h3>
+</header>
+<section class="ui segment">This is a standard segment with some content.Inverted Segment</section>
+<header>
+  <h3 class="ui header">Dividers</h3>
+</header>
+Standard text above divider.Text below divider.Text after labeled divider.<header>
+  <h3 class="ui header">Flags</h3>
+</header>
+<i class='flag ad'></i> <i class='flag us'></i> <i class='flag gb'></i> <i class='flag de'></i> <i class='flag fr'></i><header>
+  <h3 class="ui header">Lists</h3>
+</header>
+<ul class="ui unordered list">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ul>
+<ol class="ui ordered list">
+  <li>First ordered item</li>
+  <li>Second ordered item</li>
+  <li>Third ordered item</li>
+</ol>
+<header>
+  <h3 class="ui header">Loaders</h3>
+</header>
+<section class="ui loading segment">This segment is loading.</section>
+<header>
+  <h2 class="ui header">&#x1F4CB; Collections Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Forms</h3>
+</header>
+<div class="ui form"><input type="first name" class="ui input" /><input type="last name" class="ui input" /><input type="email address" class="ui input" /><button id="primary" class="ui button">Submit Form</button>
+Loading Form</div>
+<header>
+  <h3 class="ui header">Tables</h3>
+</header>
+<header>
+  <h3 class="ui header">Grids</h3>
+</header>
+<article class="ui grid"><section class="ui column"><header><h3 class="ui header">First Column</h3></header>
+This is content in the first column of the grid.</section><!-- --><section class="ui column"><header><h3 class="ui header">Second Column</h3></header>
+This is content in the second column of the grid.</section>
+Three Column Grid</article>
+<header>
+  <h3 class="ui header">Menus</h3>
+</header>
+<nav class="ui menu"><a class="ui active item" href="#">Home</a><a class="ui item" href="#">Products</a><a class="ui item" href="#">Services</a><a class="ui item" href="#">Contact</a>
+Vertical Menu</nav>
+<header>
+  <h3 class="ui header">Messages</h3>
+</header>
+<div class="ui message">Success</div>
+
+<div class="ui message">Info</div>
+
+<div class="ui message">Warning</div>
+
+<div class="ui message">Error</div>
+<header>
+  <h2 class="ui header">&#x1F441;&#xFE0F; Views Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Cards</h3>
+</header>
+<div class="ui cards"></div>
+<header>
+  <h3 class="ui header">Card with Complex Content</h3>
+</header>
+<div class="ui card">
+  <header>
+    <div class="ui header">Product Details</div>
+  </header>
+  <div class="ui extra content">
+    <button id="primary" class="ui button">Add to Cart</button>
+    <button id="secondary" class="ui button">Learn More</button>
+  </div>
+</div>
+<header>
+  <h3 class="ui header">Statistics (if supported)</h3>
+</header>
+
+
+<header>
+  <h2 class="ui header">&#x2699;&#xFE0F; Modules Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Modals</h3>
+</header>
+<div class="ui modal"><header><div class="ui header">Complex Modal</div></header>
+
+This modal has multiple sections with different content types.Additional modal content goes here.<div class="ui actions"><button id="secondary" class="ui button">Cancel</button><button id="primary" class="ui button">Save Changes</button></div></div>
+<header>
+  <h3 class="ui header">Progress Bars</h3>
+</header>
+
+
+
+
+<header>
+  <h3 class="ui header">Progress with Different Sizes</h3>
+</header>
+
+
+<header>
+  <h3 class="ui header">Dropdowns (if supported)</h3>
+</header>
+
+<header>
+  <h3 class="ui header">Accordions (if supported)</h3>
+</header>
+<div class="ui accordion">
+  <div class="ui title">What is Markdown-UI?
+Content</div>
+</div>
+<header>
+  <h2 class="ui header">&#x1F3A8; Advanced Layout Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Complex Grid Layout</h3>
+</header>
+<article class="ui grid">
+  <section class="ui eight wide column">
+    <section class="ui segment">
+      <header>
+        <h3 class="ui header">Left Content Area</h3>
+      </header>
+      <div class="ui form">
+        <input type="full name" class="ui input" />
+        <input type="email address" class="ui input" />
+        <button id="primary" class="ui button">Save</button>
+      </div>
+    </section>
+  </section>
+<!-- -->
+  <section class="ui eight wide column">
+    <section class="ui segment">
+      <header>
+        <h3 class="ui header">Right Content Area</h3>
+      </header>
+    </section>
+  </section>
+</article>
+<header>
+  <h3 class="ui header">Nested Components Test</h3>
+</header>
+<article class="ui container">
+  <section class="ui inverted segment">
+    <header>
+      <h1 class="ui header">Welcome Section</h1>
+    </header>
+    <article class="ui grid">
+      <section class="ui column">
+        <div class="ui card"><header><div class="ui header">Featured Product</div></header>
+
+
+Special offer on our featured product.<div class="ui actions"><button id="primary" class="ui button">Buy Now</button><button id="secondary" class="ui button">Learn More</button></div></div>
+      </section>
+<!-- -->
+      <section class="ui column">
+        <div class="ui form">
+          <input type="your email" class="ui input" />
+          <button id="green" class="ui button">Subscribe</button>
+        </div>
+      </section>
+    </article>
+  </section>
+</article>
+<header>
+  <h3 class="ui header">Menu with Complex Structure</h3>
+</header>
+<nav class="ui stackable menu">
+  <a class="ui item" href="#">
+    <button id="basic" class="ui button">Home</button>
+  </a>
+  <a class="ui item" href="#">Services</a>
+  <a class="ui item" href="#">About</a>
+  <nav class="ui right menu">
+    <button id="primary" class="ui button">Login</button>
+    <button id="secondary" class="ui button">Sign Up</button>
+  </nav>
+</nav>
+<header>
+  <h2 class="ui header">&#x1F527; Component States Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Button States</h3>
+</header>
+<button id="active" class="ui button">Active Button</button>
+
+<button id="loading" class="ui button">Loading Button</button>
+
+<button id="disabled" class="ui button">Disabled Button</button>
+<header>
+  <h3 class="ui header">Input States</h3>
+</header>
+<input type="focused input" placeholder="Focus" class="ui input" />
+
+<input type="error input" placeholder="Error" class="ui input" />
+
+<input type="success input" placeholder="Success" class="ui input" />
+<header>
+  <h3 class="ui header">Form States</h3>
+</header>
+<div class="ui error form">
+  <div class="ui message">Validation Error</div>
+  <input type="invalid email" placeholder="Error" class="ui input" />
+</div>
+<header>
+  <h3 class="ui header">Loading States</h3>
+</header>
+<section class="ui loading segment">Content is loading...</section>
+<header>
+  <h2 class="ui header">&#x1F3AF; Variations Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Colored Components</h3>
+</header>
+<button id="red" class="ui button">Red Button</button>
+
+<button id="blue" class="ui button">Blue Button</button>
+
+<button id="green" class="ui button">Green Button</button>
+
+<button id="orange" class="ui button">Orange Button</button>
+
+
+
+
+<header>
+  <h3 class="ui header">Sized Components</h3>
+</header>
+<button id="mini" class="ui button">Mini Button</button>
+
+<button id="tiny" class="ui button">Tiny Button</button>
+
+<button id="small" class="ui button">Small Button</button>
+
+<button id="large" class="ui button">Large Button</button>
+
+<button id="big" class="ui button">Big Button</button>
+
+<button id="huge" class="ui button">Huge Button</button>
+
+<button id="massive" class="ui button">Massive Button</button>
+<header>
+  <h3 class="ui header">Inverted Components</h3>
+</header>
+<section class="ui inverted segment">
+  <button id="inverted" class="ui button">Inverted Button</button>
+  <input type="inverted input" placeholder="Inverted" class="ui input" />
+</section>
+<header>
+  <h2 class="ui header">&#x1F4F1; Responsive Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Stackable Grid</h3>
+</header>
+<article class="ui stackable grid">
+  <section class="ui column">Mobile-responsive content in column 1</section>
+<!-- -->
+  <section class="ui column">Mobile-responsive content in column 2</section>
+<!-- -->
+  <section class="ui column">Mobile-responsive content in column 3</section>
+</article>
+<header>
+  <h3 class="ui header">Fluid Components</h3>
+</header>
+<button id="fluid" class="ui button">Fluid Button</button>
+
+<input type="fluid input" placeholder="Fluid" class="ui input" />
+
+<header>
+  <h2 class="ui header">&#x1F9EA; Edge Cases Testing</h2>
+</header>
+<header>
+  <h3 class="ui header">Empty Components</h3>
+</header>
+__
+__
+__<header>
+  <h3 class="ui header">Special Characters</h3>
+</header>
+<button class="ui button">Button with <p>quotes</p>
+ &amp; symbols!</button>
+
+<input type="enter &lt;html&gt; &amp; &lt;p&gt;special&lt;/p&gt;  chars" class="ui input" />
+
+<header>
+  <h3 class="ui header">Long Content</h3>
+</header>
+<header>
+  <h3 class="ui header">Nested Quotes and HTML-like Content</h3>
+</header>
+<div class="ui message">Test Message</div>
+<header>
+  <h2 class="ui header">&#x1F4CB; Final Test Summary</h2>
+</header>
+This comprehensive test covers:
+- ✅ All Element types (10+ components)
+- ✅ All Collection types (6+ components) 
+- ✅ All View types (5+ components)
+- ✅ All Module types (6+ components)
+- ✅ Component states and variations
+- ✅ Nested and complex layouts
+- ✅ Edge cases and special characters
+- ✅ Responsive design featuresTotal components tested: 30+ with multiple variations each.<div class='ui divider'></div><i class='generated by markdown-ui v0.3 comprehensive test suite flag'></i>
+  </body>
+</html>

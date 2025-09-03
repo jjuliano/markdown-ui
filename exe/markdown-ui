@@ -1,113 +1,341 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  # Running as installed gem, bundler setup not needed
+end
+
 require 'markdown-ui'
+require 'optparse'
+require 'fileutils'
+require 'json'
 
-parser = MarkdownUI::Parser.new
-f = File.open(ARGV.first, 'r')
-basename = File.basename(ARGV.first, ".md")
-content = f.read
-content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
-content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
-content.gsub!(/file\:\/\//, "MARKDOWN-UI-PREFILTER-file//")
-content.gsub!(/ftp\:\/\//, "MARKDOWN-UI-PREFILTER-ftp//")
-content.gsub!(/mailto\:/, "MARKDOWN-UI-PREFILTER-mailto//")
-content.gsub!(/tel\:/, "MARKDOWN-UI-PREFILTER-tel//")
-content.gsub!(/javascript\:/, "MARKDOWN-UI-PREFILTER-javascript//")
-@content = parser.render content
-f.close
+# Enhanced CLI for MarkdownUI 2.0
+class MarkdownUICLI
+  VERSION = '2.0.0'
+  
+  def initialize
+    @options = {
+      output_file: nil,
+      beautify: false,
+      watch: false,
+      server: false,
+      port: 3000,
+      verbose: false
+    }
+    
+    @parser = create_option_parser
+  end
+  
+  def run(args)
+    begin
+      @parser.parse!(args)
+      
+      if args.empty?
+        show_help
+        exit(1)
+      end
+      
+      case args.first
+      when 'init'
+        init_project
+      when 'server'
+        start_server(args[1] || '.')
+      when 'elements'
+        list_elements
+      when 'version'
+        show_version
+      when 'help'
+        show_help
+      else
+        process_file(args.first)
+      end
+      
+    rescue OptionParser::InvalidOption => e
+      puts "Error: #{e.message}"
+      puts "Use 'markdown-ui help' for usage information."
+      exit(1)
+    rescue => e
+      puts "Error: #{e.message}"
+      exit(1) unless @options[:verbose]
+      raise
+    end
+  end
+  
+  private
+  
+  def create_option_parser
+    OptionParser.new do |opts|
+      opts.banner = "MarkdownUI v#{VERSION} - Convert Markdown with Semantic UI to HTML"
+      opts.separator ""
+      opts.separator "Usage:"
+      opts.separator "  markdown-ui <input-file>           Convert file to HTML"
+      opts.separator "  markdown-ui init                   Initialize new project"
+      opts.separator "  markdown-ui server [dir]           Start development server"
+      opts.separator "  markdown-ui elements               List available elements"
+      opts.separator "  markdown-ui version                Show version"
+      opts.separator "  markdown-ui help                   Show this help"
+      opts.separator ""
+      opts.separator "Options:"
+      
+      opts.on('-o', '--output FILE', 'Output to file instead of stdout') do |file|
+        @options[:output_file] = file
+      end
+      
+      opts.on('-b', '--beautify', 'Beautify HTML output') do
+        @options[:beautify] = true
+      end
+      
+      opts.on('-w', '--watch', 'Watch file for changes and rebuild') do
+        @options[:watch] = true
+      end
+      
+      opts.on('-p', '--port PORT', Integer, 'Server port (default: 3000)') do |port|
+        @options[:port] = port
+      end
+      
+      opts.on('-v', '--verbose', 'Verbose output') do
+        @options[:verbose] = true
+      end
+      
+      opts.on_tail('-h', '--help', 'Show this help') do
+        show_help
+        exit
+      end
+    end
+  end
+  
+  def process_file(filename)
+    unless File.exist?(filename)
+      puts "Error: File '#{filename}' not found"
+      exit(1)
+    end
+    
+    unless filename.end_with?('.mdui', '.md')
+      puts "Warning: File should have .mdui or .md extension"
+    end
+    
+    if @options[:watch]
+      watch_file(filename)
+    else
+      convert_file(filename)
+    end
+  end
+  
+  def convert_file(filename)
+    puts "Converting #{filename}..." if @options[:verbose]
+    
+    content = File.read(filename)
+    parser = MarkdownUI.new(beautify: @options[:beautify])
+    html_content = parser.parse(content)
+    
+    full_html = generate_html_document(filename, html_content)
+    
+    if @options[:output_file]
+      File.write(@options[:output_file], full_html)
+      puts "Output written to #{@options[:output_file]}"
+    else
+      puts full_html
+    end
+  end
+  
+  def watch_file(filename)
+    puts "Watching #{filename} for changes... (Press Ctrl+C to stop)"
+    
+    last_modified = File.mtime(filename)
+    
+    trap('INT') do
+      puts "\nStopping file watcher..."
+      exit
+    end
+    
+    loop do
+      sleep 1
+      current_modified = File.mtime(filename)
+      
+      if current_modified > last_modified
+        puts "File changed, rebuilding..."
+        convert_file(filename)
+        last_modified = current_modified
+        puts "Done. Watching for changes..."
+      end
+    end
+  end
+  
+  def start_server(directory)
+    puts "Starting MarkdownUI development server on port #{@options[:port]}..."
+    puts "Serving directory: #{File.expand_path(directory)}"
+    puts "Press Ctrl+C to stop"
+    
+    require 'webrick'
+    
+    server = WEBrick::HTTPServer.new(
+      Port: @options[:port],
+      DocumentRoot: File.expand_path(directory)
+    )
+    
+    # Add handler for .mdui files
+    server.mount_proc('/') do |req, res|
+      path = req.path
+      file_path = File.join(directory, path == '/' ? 'index.mdui' : path)
+      
+      if File.exist?(file_path) && file_path.end_with?('.mdui', '.md')
+        content = File.read(file_path)
+        parser = MarkdownUI.new(beautify: true)
+        html_content = parser.parse(content)
+        
+        res.content_type = 'text/html'
+        res.body = generate_html_document(file_path, html_content)
+      else
+        # Let WEBrick handle other files normally
+        raise WEBrick::HTTPStatus::NotFound
+      end
+    end
+    
+    trap('INT') do
+      server.shutdown
+      puts "\nServer stopped."
+    end
+    
+    server.start
+  end
+  
+  def init_project
+    puts "Initializing new MarkdownUI project..."
+    
+    # Create directory structure
+    dirs = ['src', 'dist', 'assets/css', 'assets/js', 'assets/images']
+    dirs.each do |dir|
+      FileUtils.mkdir_p(dir)
+      puts "Created #{dir}/"
+    end
+    
+    # Create example files
+    create_example_files
+    
+    puts ""
+    puts "MarkdownUI project initialized!"
+    puts "Edit src/index.mdui to get started"
+    puts "Run 'markdown-ui src/index.mdui -o dist/index.html' to build"
+    puts "Or 'markdown-ui server src' to start development server"
+  end
+  
+  def create_example_files
+    index_content = <<~MDUI
+      # Welcome to MarkdownUI 2.0!
 
-output = <<-EOS
-<!doctype html>
+      This is your starter project. MarkdownUI lets you create beautiful web interfaces using simple Markdown syntax combined with Semantic UI components.
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#{basename.capitalize}</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
-    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
-<!--
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
-    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
--->
+      ## Try Some Elements
 
-  </head>
-  <body>
-    #{@content}
-  </body>
-</html>
-EOS
+      __Primary Button|Get Started__
 
-output.gsub!(/MARKDOWN-UI-PREFILTER-http\/\//, "http://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-https\/\//, "https://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-file\/\//, "file://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-ftp\/\//, "ftp://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-mailto\/\//, "mailto:")
-output.gsub!(/MARKDOWN-UI-PREFILTER-tel\/\//, "tel:")
-output.gsub!(/MARKDOWN-UI-PREFILTER-javascript\/\//, "javascript:")
+      __Success Message|Your project is ready to go!__
 
-puts output
+      __Large Header|Build Amazing UIs__
+
+      ## Features
+
+      - **Complete Semantic UI Coverage**: All 45+ UI elements supported  
+      - **Simple Syntax**: Just use `__Element Name|content|modifiers__`
+      - **Modern Architecture**: Fast, reliable, and extensible
+      - **Development Tools**: Built-in server, file watching, and more
+
+      Ready to build something amazing? Edit this file and see the changes!
+    MDUI
+    
+    File.write('src/index.mdui', index_content)
+    puts "Created src/index.mdui"
+    
+    # Create package.json equivalent
+    config = {
+      name: 'my-markdownui-project',
+      version: '1.0.0',
+      description: 'A MarkdownUI project',
+      main: 'src/index.mdui'
+    }
+    
+    File.write('project.json', JSON.pretty_generate(config))
+    puts "Created project.json"
+  end
+  
+  def list_elements
+    parser = MarkdownUI.new
+    elements = parser.registered_elements
+    
+    puts "Available UI Elements (#{elements.count}):"
+    puts "=" * 40
+    elements.each do |element|
+      puts "  #{element}"
+    end
+    puts ""
+    puts "Usage: __Element Name|content|modifiers__"
+    puts "Example: __Primary Button|Click Me__"
+  end
+  
+  def generate_html_document(filename, content)
+    basename = File.basename(filename, File.extname(filename))
+    
+    <<~HTML
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>#{basename.capitalize}</title>
+          
+          <!-- Semantic UI CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+          
+          <!-- jQuery & Semantic UI JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+          
+          <style>
+            body { padding: 2rem; }
+            .ui.container { max-width: none !important; }
+          </style>
+        </head>
+        <body>
+          <div class="ui container">
+            #{content}
+          </div>
+          
+          <script>
+            // Initialize Semantic UI components
+            $(document).ready(function() {
+              $('.ui.dropdown').dropdown();
+              $('.ui.modal').modal();
+              $('.ui.accordion').accordion();
+              $('.ui.tab').tab();
+              $('.ui.popup').popup();
+            });
+          </script>
+        </body>
+      </html>
+    HTML
+  end
+  
+  def show_version
+    puts "MarkdownUI v#{VERSION}"
+    puts "Complete Semantic UI coverage with modern architecture"
+  end
+  
+  def show_help
+    puts @parser
+    puts ""
+    puts "Examples:"
+    puts "  markdown-ui index.mdui                    # Convert to stdout"
+    puts "  markdown-ui index.mdui -o dist/index.html # Convert to file"
+    puts "  markdown-ui index.mdui -b -w              # Beautify and watch"
+    puts "  markdown-ui server src                    # Development server"
+    puts "  markdown-ui init                          # Create new project"
+  end
+end
+
+# Run CLI
+if __FILE__ == $0
+  cli = MarkdownUICLI.new
+  cli.run(ARGV)
+end
