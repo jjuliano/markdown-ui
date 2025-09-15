@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkdownUI Online REPL (Ruby WebAssembly)</title>
+
+  <!-- Semantic UI CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/dist/semantic.min.css">
+
+  <!-- Monaco Editor -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.min.js?v=20250911" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/repl.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="https://semantic-ui.com/images/logo.png">
+        MarkdownUI REPL (Ruby WASM)
+      </a>
+      <div class="right menu">
+        <div class="item">
+          <button class="ui primary button" id="run-btn">
+            <i class="play icon"></i>
+            Run
+          </button>
+        </div>
+        <div class="item">
+          <button class="ui button" id="export-btn">
+            <i class="download icon"></i>
+            Export
+          </button>
+        </div>
+        <div class="item">
+          <button class="ui button" id="share-btn">
+            <i class="share icon"></i>
+            Share
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="ui container" style="margin-top: 60px;">
+    <div class="ui stackable grid">
+      <!-- Editor Panel -->
+      <div class="eight wide column">
+        <div class="ui segment">
+          <div class="ui top attached label">
+            <i class="code icon"></i>
+            MarkdownUI Code
+          </div>
+          <div id="editor-container" style="height: 500px; border: 1px solid #ddd;"></div>
+        </div>
+
+        <!-- Element Browser -->
+        <div class="ui segment">
+          <div class="ui top attached label">
+            <i class="list icon"></i>
+            UI Elements
+          </div>
+          <div class="ui styled accordion" id="elements-accordion">
+            <div class="title active">
+              <i class="dropdown icon"></i>
+              Core Elements
+            </div>
+            <div class="content active">
+              <div class="ui list" id="core-elements">
+                <div class="item" data-element="button">
+                  <i class="hand pointer icon"></i>
+                  <div class="content">
+                    <div class="header">Button</div>
+                    <div class="description">Clickable action elements</div>
+                  </div>
+                </div>
+                <div class="item" data-element="header">
+                  <i class="heading icon"></i>
+                  <div class="content">
+                    <div class="header">Header</div>
+                    <div class="description">Text headings and titles</div>
+                  </div>
+                </div>
+                <div class="item" data-element="message">
+                  <i class="comment icon"></i>
+                  <div class="content">
+                    <div class="header">Message</div>
+                    <div class="description">Informational messages</div>
+                  </div>
+                </div>
+                <div class="item" data-element="segment">
+                  <i class="square icon"></i>
+                  <div class="content">
+                    <div class="header">Segment</div>
+                    <div class="description">Content containers</div>
+                  </div>
+                </div>
+                <div class="item" data-element="icon">
+                  <i class="icons icon"></i>
+                  <div class="content">
+                    <div class="header">Icon</div>
+                    <div class="description">Semantic UI icons</div>
+                  </div>
+                </div>
+                <div class="item" data-element="image">
+                  <i class="image icon"></i>
+                  <div class="content">
+                    <div class="header">Image</div>
+                    <div class="description">Image display elements</div>
+                  </div>
+                </div>
+                <div class="item" data-element="label">
+                  <i class="tag icon"></i>
+                  <div class="content">
+                    <div class="header">Label</div>
+                    <div class="description">Text labels and tags</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title">
+              <i class="dropdown icon"></i>
+              Collections
+            </div>
+            <div class="content">
+              <div class="ui list" id="collection-elements">
+                <div class="item" data-element="menu">
+                  <i class="bars icon"></i>
+                  <div class="content">
+                    <div class="header">Menu</div>
+                    <div class="description">Navigation menus</div>
+                  </div>
+                </div>
+                <div class="item" data-element="form">
+                  <i class="wpforms icon"></i>
+                  <div class="content">
+                    <div class="header">Form</div>
+                    <div class="description">Input forms and fields</div>
+                  </div>
+                </div>
+                <div class="item" data-element="grid">
+                  <i class="grid layout icon"></i>
+                  <div class="content">
+                    <div class="header">Grid</div>
+                    <div class="description">Responsive grid layouts</div>
+                  </div>
+                </div>
+                <div class="item" data-element="table">
+                  <i class="table icon"></i>
+                  <div class="content">
+                    <div class="header">Table</div>
+                    <div class="description">Data tables</div>
+                  </div>
+                </div>
+                <div class="item" data-element="breadcrumb">
+                  <i class="right chevron icon"></i>
+                  <div class="content">
+                    <div class="header">Breadcrumb</div>
+                    <div class="description">Navigation breadcrumbs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title">
+              <i class="dropdown icon"></i>
+              Views
+            </div>
+            <div class="content">
+              <div class="ui list" id="view-elements">
+                <div class="item" data-element="card">
+                  <i class="clone icon"></i>
+                  <div class="content">
+                    <div class="header">Card</div>
+                    <div class="description">Content cards</div>
+                  </div>
+                </div>
+                <div class="item" data-element="comment">
+                  <i class="comments icon"></i>
+                  <div class="content">
+                    <div class="header">Comment</div>
+                    <div class="description">Comment threads</div>
+                  </div>
+                </div>
+                <div class="item" data-element="feed">
+                  <i class="list alternate icon"></i>
+                  <div class="content">
+                    <div class="header">Feed</div>
+                    <div class="description">Activity feeds</div>
+                  </div>
+                </div>
+                <div class="item" data-element="item">
+                  <i class="sticky note icon"></i>
+                  <div class="content">
+                    <div class="header">Item</div>
+                    <div class="description">List items</div>
+                  </div>
+                </div>
+                <div class="item" data-element="statistic">
+                  <i class="chart bar icon"></i>
+                  <div class="content">
+                    <div class="header">Statistic</div>
+                    <div class="description">Numerical statistics</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title">
+              <i class="dropdown icon"></i>
+              Modules
+            </div>
+            <div class="content">
+              <div class="ui list" id="module-elements">
+                <div class="item" data-element="modal">
+                  <i class="window maximize icon"></i>
+                  <div class="content">
+                    <div class="header">Modal</div>
+                    <div class="description">Modal dialogs</div>
+                  </div>
+                </div>
+                <div class="item" data-element="dropdown">
+                  <i class="caret down icon"></i>
+                  <div class="content">
+                    <div class="header">Dropdown</div>
+                    <div class="description">Selection dropdowns</div>
+                  </div>
+                </div>
+                <div class="item" data-element="accordion">
+                  <i class="dropdown icon"></i>
+                  <div class="content">
+                    <div class="header">Accordion</div>
+                    <div class="description">Collapsible content</div>
+                  </div>
+                </div>
+                <div class="item" data-element="tab">
+                  <i class="folder icon"></i>
+                  <div class="content">
+                    <div class="header">Tab</div>
+                    <div class="description">Tabbed content</div>
+                  </div>
+                </div>
+                <div class="item" data-element="progress">
+                  <i class="spinner icon"></i>
+                  <div class="content">
+                    <div class="header">Progress</div>
+                    <div class="description">Progress bars</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="eight wide column">
+        <div class="ui segment">
+          <div class="ui top attached label">
+            <i class="eye icon"></i>
+            Live Preview
+          </div>
+          <div id="preview-container" class="preview-content">
+            <div class="ui placeholder">
+              <div class="image header">
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+              <div class="paragraph">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="ui segment">
+          <div class="ui top attached label">
+            <i class="code icon"></i>
+            Generated HTML
+          </div>
+          <pre id="html-output" class="html-output"></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="ui bottom attached segment">
+      <div class="ui mini horizontal list">
+        <div class="item">
+          <i class="clock icon"></i>
+          <div class="content">
+            <div class="header">Status</div>
+            <div id="status-text">Loading Ruby WebAssembly...</div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="cog icon"></i>
+          <div class="content">
+            <div class="header">Ruby WASM</div>
+            <div id="wasm-status">Initializing...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/dist/semantic.min.js" crossorigin="anonymous"></script>
+  <script src="js/ruby-wasm-integration.js"></script>
+  <script src="js/repl-interface.js"></script>
+
+  <!-- Initialize the REPL -->
+  <script>
+    // Wait for all scripts to load before initializing
+    window.addEventListener('load', function() {
+      // Check if MarkdownUIREPL is available
+      if (typeof window.MarkdownUIREPL !== 'undefined' && typeof window.MarkdownUIREPL.init === 'function') {
+        console.log('Initializing MarkdownUI REPL...');
+        window.MarkdownUIREPL.init().catch(function(error) {
+          console.error('Failed to initialize REPL:', error);
+        });
+      } else {
+        console.error('MarkdownUIREPL not found. Scripts may not have loaded properly.');
+      }
+    });
+  </script>
+</body>
+</html>

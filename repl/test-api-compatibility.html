@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkdownUI API Compatibility Test</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+  <style>
+    body { padding: 20px; }
+    .test-result { margin: 10px 0; padding: 10px; }
+    .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+    .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+  </style>
+</head>
+<body>
+  <div class="ui container">
+    <h1 class="ui header">MarkdownUI API Compatibility Test</h1>
+    <div id="test-results"></div>
+    <div class="ui segment">
+      <h2>Test Input</h2>
+      <pre>__Button|Click Me__</pre>
+      <h2>Expected Output (using correct API)</h2>
+      <div id="expected-output">Testing...</div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+
+  <script>
+    function addTestResult(message, success) {
+      const div = document.createElement('div');
+      div.className = `test-result ${success ? 'success' : 'error'}`;
+      div.textContent = message;
+      document.getElementById('test-results').appendChild(div);
+    }
+
+    async function testAPI() {
+      addTestResult('Starting MarkdownUI API compatibility test...', true);
+
+      try {
+        // Test 1: Load Ruby WebAssembly
+        addTestResult('Loading Ruby WebAssembly...', true);
+        const { DefaultRubyVM } = await import('https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm');
+
+        const { vm } = await DefaultRubyVM();
+        addTestResult('✅ Ruby WebAssembly loaded successfully', true);
+
+        // Test 2: Test direct Ruby code execution
+        addTestResult('Testing basic Ruby execution...', true);
+        const rubyResult = vm.eval(`
+          puts "Ruby is working!"
+          "Ruby execution successful"
+        `);
+        addTestResult(`✅ Ruby execution: ${rubyResult}`, true);
+
+        // Test 3: Test MarkdownUI API (this will likely fail without the gem)
+        addTestResult('Testing MarkdownUI API (will likely fail without custom WASM)...', true);
+        try {
+          const markdownResult = vm.eval(`
+            require "markdown-ui"
+            parser = MarkdownUI::Parser.new
+            result = parser.render("__Button|Click Me__")
+            result
+          `);
+          addTestResult(`✅ MarkdownUI API working: ${markdownResult}`, true);
+          document.getElementById('expected-output').innerHTML = markdownResult;
+        } catch (e) {
+          addTestResult(`⚠️ MarkdownUI API test failed (expected without custom WASM): ${e.message}`, false);
+          document.getElementById('expected-output').textContent = 'MarkdownUI gem not available in CDN version. Need custom WASM build.';
+        }
+
+        addTestResult('🎉 API compatibility test completed!', true);
+
+      } catch (error) {
+        addTestResult(`❌ Test failed: ${error.message}`, false);
+      }
+    }
+
+    // Run test when page loads
+    window.addEventListener('load', testAPI);
+  </script>
+</body>
+</html>

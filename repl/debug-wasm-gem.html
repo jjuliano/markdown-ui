@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug WASM Gem Loading</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+  <style>
+    body { padding: 20px; }
+    .test-result { margin: 10px 0; padding: 10px; border-radius: 4px; }
+    .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+    .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+    .info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+  </style>
+</head>
+<body>
+  <div class="ui container">
+    <h1 class="ui header">Debug WASM Gem Loading</h1>
+    <div id="test-results"></div>
+  </div>
+
+  <script>
+    function addResult(message, type = 'info') {
+      const div = document.createElement('div');
+      div.className = `test-result ${type}`;
+      div.textContent = message;
+      document.getElementById('test-results').appendChild(div);
+    }
+
+    async function debugGemLoading() {
+      addResult('🔍 Starting WASM gem debugging...', 'info');
+
+      try {
+        // Load Ruby WebAssembly
+        addResult('Loading Ruby WebAssembly...', 'info');
+        const { DefaultRubyVM } = await import('https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm');
+        const { vm } = await DefaultRubyVM();
+        addResult('✅ Ruby WebAssembly loaded successfully', 'success');
+
+        // Test 1: Check if markdown-ui gem is available
+        addResult('🔍 Testing markdown-ui gem availability...', 'info');
+        try {
+          const gemTest = vm.eval(`
+            begin
+              require "markdown-ui"
+              "SUCCESS: markdown-ui gem loaded"
+            rescue LoadError => e
+              "ERROR: #{e.message}"
+            end
+          `);
+          addResult(`Gem loading result: ${gemTest}`, gemTest.includes('SUCCESS') ? 'success' : 'error');
+        } catch (e) {
+          addResult(`Gem loading failed: ${e.message}`, 'error');
+        }
+
+        // Test 2: Check MarkdownUI constants and classes
+        addResult('🔍 Checking MarkdownUI module structure...', 'info');
+        try {
+          const moduleCheck = vm.eval(`
+            if defined?(MarkdownUI)
+              constants = MarkdownUI.constants.inspect
+              "MarkdownUI constants: #{constants}"
+            else
+              "MarkdownUI module not defined"
+            end
+          `);
+          addResult(moduleCheck, 'info');
+        } catch (e) {
+          addResult(`Module check failed: ${e.message}`, 'error');
+        }
+
+        // Test 3: Try to instantiate Parser
+        addResult('🔍 Testing MarkdownUI::Parser instantiation...', 'info');
+        try {
+          const parserTest = vm.eval(`
+            if defined?(MarkdownUI::Parser)
+              parser = MarkdownUI::Parser.new
+              methods = parser.methods.grep(/render/).inspect
+              "Parser created successfully. Render methods: #{methods}"
+            else
+              "MarkdownUI::Parser not defined"
+            end
+          `);
+          addResult(parserTest, parserTest.includes('successfully') ? 'success' : 'error');
+        } catch (e) {
+          addResult(`Parser test failed: ${e.message}`, 'error');
+        }
+
+        // Test 4: Try the actual render call
+        addResult('🔍 Testing render method call...', 'info');
+        try {
+          const renderTest = vm.eval(`
+            begin
+              parser = MarkdownUI::Parser.new
+              result = parser.render("__Button|Test__")
+              "RENDER SUCCESS: #{result}"
+            rescue => e
+              "RENDER ERROR: #{e.class.name}: #{e.message}"
+            end
+          `);
+          addResult(renderTest, renderTest.includes('SUCCESS') ? 'success' : 'error');
+        } catch (e) {
+          addResult(`Render test failed: ${e.message}`, 'error');
+        }
+
+        addResult('🎉 Debugging completed!', 'success');
+
+      } catch (error) {
+        addResult(`❌ Debug failed: ${error.message}`, 'error');
+      }
+    }
+
+    // Run debug when page loads
+    window.addEventListener('load', debugGemLoading);
+  </script>
+</body>
+</html>

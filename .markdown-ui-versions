@@ -1,0 +1,19 @@
+# MarkdownUI Version Configuration
+# Set these environment variables to override default versions
+
+# Fomantic UI version (default: 2.9.3)
+# export MARKDOWN_UI_FOMANTIC_VERSION=2.9.3
+
+# jQuery version (default: 3.7.1)
+# export MARKDOWN_UI_JQUERY_VERSION=3.7.1
+
+# Usage:
+# 1. Uncomment and modify versions above
+# 2. Source this file: source .markdown-ui-versions
+# 3. Run markdown-ui with your custom versions
+
+# Or use command-line options:
+# markdown-ui --fomantic-version 2.8.8 --jquery-version 3.6.4 document.md
+
+# Supported Fomantic UI versions: 2.8.0+
+# Supported jQuery versions: 3.6.0+

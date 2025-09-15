@@ -1,0 +1,24 @@
+{
+  "name": "markdown-ui-assets",
+  "version": "1.0.0",
+  "description": "Local assets for MarkdownUI with configurable versions",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "fomantic-ui": "^2.9.3"
+  },
+  "scripts": {
+    "postinstall": "echo 'Assets installed. Use --local-assets flag with markdown-ui to use these local packages.'",
+    "update-fomantic": "npm install fomantic-ui@latest",
+    "update-jquery": "npm install jquery@latest",
+    "upgrade": "npm update && echo 'All dependencies updated. Consider testing with your MarkdownUI documents.'"
+  },
+  "config": {
+    "fomantic-version": "2.9.3",
+    "jquery-version": "3.7.1"
+  },
+  "keywords": ["markdown", "ui", "fomantic-ui"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure WebAssembly Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>MarkdownUI Pure WebAssembly Test</h1>
+    
+    <div id="test-results"></div>
+    
+    <div class="test info">
+        <h3>Testing Pure WebAssembly Implementation</h3>
+        <p>This page tests the pure WebAssembly implementation without any fallbacks.</p>
+    </div>
+    
+    <button onclick="runTests()">Run Tests</button>
+    
+    <script>
+        let testResults = document.getElementById('test-results');
+        
+        function addResult(title, content, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `test ${type}`;
+            div.innerHTML = `<h4>${title}</h4><p>${content}</p>`;
+            testResults.appendChild(div);
+        }
+        
+        async function runTests() {
+            testResults.innerHTML = '';
+            
+            // Test 1: WebAssembly Support
+            try {
+                if (typeof WebAssembly !== 'undefined') {
+                    addResult('✅ Test 1: WebAssembly Support', 'WebAssembly is supported in this browser', 'success');
+                } else {
+                    addResult('❌ Test 1: WebAssembly Support', 'WebAssembly is not supported', 'error');
+                    return;
+                }
+            } catch (e) {
+                addResult('❌ Test 1: WebAssembly Support', `Error: ${e.message}`, 'error');
+            }
+            
+            // Test 2: WebAssembly File Loading
+            try {
+                const response = await fetch('markdown-ui.wasm');
+                if (response.ok) {
+                    const contentType = response.headers.get('content-type');
+                    const size = parseInt(response.headers.get('content-length'));
+                    addResult('✅ Test 2: WebAssembly File', `File loaded successfully (${(size / 1024 / 1024).toFixed(2)} MB, ${contentType})`, 'success');
+                    
+                    // Check magic bytes
+                    const buffer = await response.arrayBuffer();
+                    const magic = new Uint8Array(buffer.slice(0, 4));
+                    const magicString = Array.from(magic).join(',');
+                    if (magicString === '0,97,115,109') {
+                        addResult('✅ Test 3: WebAssembly Magic Bytes', 'Valid WebAssembly magic bytes detected', 'success');
+                    } else {
+                        addResult('❌ Test 3: WebAssembly Magic Bytes', `Invalid magic bytes: ${magicString}`, 'error');
+                    }
+                } else {
+                    addResult('❌ Test 2: WebAssembly File', `Failed to load file: ${response.status}`, 'error');
+                    return;
+                }
+            } catch (e) {
+                addResult('❌ Test 2: WebAssembly File', `Error: ${e.message}`, 'error');
+            }
+            
+            // Test 3: @ruby/wasm-wasi Loading
+            try {
+                const { DefaultRubyVM } = await import('https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm');
+                addResult('✅ Test 4: @ruby/wasm-wasi', 'Ruby WebAssembly library loaded successfully', 'success');
+                
+                // Test 4: Full WebAssembly Initialization
+                try {
+                    const response = await fetch('markdown-ui.wasm');
+                    const module = await response.arrayBuffer();
+                    
+                    const { vm } = await DefaultRubyVM(module);
+                    addResult('✅ Test 5: Ruby VM Initialization', 'Ruby WebAssembly VM initialized successfully', 'success');
+                    
+                    // Test 5: MarkdownUI Parser
+                    try {
+                        const result = vm.eval('puts "Ruby WebAssembly is working!"');
+                        addResult('✅ Test 6: Ruby Execution', 'Ruby code executed successfully in WebAssembly', 'success');
+                        
+                        // Test actual MarkdownUI parsing
+                        try {
+                            const testMarkdown = '__Button|Test__';
+                            const parsed = vm.eval(`parse_markdown(${JSON.stringify(testMarkdown)})`);
+                            addResult('✅ Test 7: MarkdownUI Parser', `MarkdownUI parsed successfully: ${parsed.length} characters`, 'success');
+                        } catch (e) {
+                            addResult('❌ Test 7: MarkdownUI Parser', `Error: ${e.message}`, 'error');
+                        }
+                        
+                    } catch (e) {
+                        addResult('❌ Test 6: Ruby Execution', `Error: ${e.message}`, 'error');
+                    }
+                    
+                } catch (e) {
+                    addResult('❌ Test 5: Ruby VM Initialization', `Error: ${e.message}`, 'error');
+                }
+                
+            } catch (e) {
+                addResult('❌ Test 4: @ruby/wasm-wasi', `Failed to load Ruby WebAssembly: ${e.message}`, 'error');
+            }
+        }
+        
+        // Auto-run tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(runTests, 1000);
+        });
+    </script>
+</body>
+</html>

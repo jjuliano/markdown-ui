@@ -1,0 +1,18 @@
+{
+  "name": "markdown-ui-repl",
+  "version": "1.0.0",
+  "description": "Online REPL for MarkdownUI using Ruby WebAssembly",
+  "main": "build/index.html",
+  "scripts": {
+    "build": "ruby build.rb",
+    "clean": "rm -rf build/ temp-wasm-build/",
+    "serve": "python3 -m http.server 8080",
+    "dev": "npm run serve"
+  },
+  "dependencies": {
+    "@ruby/3.4-wasm-wasi": "^2.7.1",
+    "@ruby/wasm-wasi": "^2.7.1",
+    "monaco-editor": "^0.45.0"
+  },
+  "devDependencies": {}
+}

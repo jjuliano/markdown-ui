@@ -1,113 +1,435 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'bundler/setup'
 require 'markdown-ui'
+require 'optparse'
+require 'readline'
 
-parser = MarkdownUI::Parser.new
-f = File.open(ARGV.first, 'r')
-basename = File.basename(ARGV.first, ".md")
-content = f.read
-content.gsub!(/http\:\/\//, "MARKDOWN-UI-PREFILTER-http//")
-content.gsub!(/https\:\/\//, "MARKDOWN-UI-PREFILTER-https//")
-content.gsub!(/file\:\/\//, "MARKDOWN-UI-PREFILTER-file//")
-content.gsub!(/ftp\:\/\//, "MARKDOWN-UI-PREFILTER-ftp//")
-content.gsub!(/mailto\:/, "MARKDOWN-UI-PREFILTER-mailto//")
-content.gsub!(/tel\:/, "MARKDOWN-UI-PREFILTER-tel//")
-content.gsub!(/javascript\:/, "MARKDOWN-UI-PREFILTER-javascript//")
-@content = parser.render content
-f.close
+class MarkdownUIProcessor
+  PROTOCOL_FILTERS = {
+    'http://' => 'MARKDOWN-UI-PREFILTER-http//',
+    'https://' => 'MARKDOWN-UI-PREFILTER-https//',
+    'file://' => 'MARKDOWN-UI-PREFILTER-file//',
+    'ftp://' => 'MARKDOWN-UI-PREFILTER-ftp//',
+    'mailto:' => 'MARKDOWN-UI-PREFILTER-mailto//',
+    'tel:' => 'MARKDOWN-UI-PREFILTER-tel//',
+    'javascript:' => 'MARKDOWN-UI-PREFILTER-javascript//'
+  }.freeze
 
-output = <<-EOS
-<!doctype html>
+  def initialize(input_file, options = {})
+    @input_file = input_file
+    @options = options
+    @parser = MarkdownUI::Parser.new
+    validate_input! if input_file
+  end
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#{basename.capitalize}</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reset.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/site.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/container.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/button.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/checkbox.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/divider.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dropdown.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/form.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/grid.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/header.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/icon.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/image.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/input.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/item.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/label.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/list.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/transition.min.css" />
-    <script src='/bower_components/semantic/dist/components/checkbox.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/dropdown.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/form.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/site.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/transition.min.js'></script>
-<!--
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/accordion.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/ad.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/breadcrumb.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/card.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/comment.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/dimmer.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/embed.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/feed.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/flag.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/loader.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/message.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/modal.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/nag.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/popup.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/progress.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rail.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/rating.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/reveal.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/search.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/shape.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sidebar.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/statistic.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/step.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/sticky.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/components/table.min.css" />
-    <script src='/bower_components/semantic/dist/components/accordion.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/api.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/dimmer.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/embed.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/modal.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/nag.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/popup.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/progress.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/rating.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/search.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/shape.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/sidebar.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/state.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/sticky.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/tab.min.js'></script>
-    <script src='/bower_components/semantic/dist/components/visibility.min.js'></script>
--->
+  def process
+    content = read_file
+    process_content(content)
+  end
 
-  </head>
-  <body>
-    #{@content}
-  </body>
-</html>
-EOS
+  def process_content(content)
+    filtered_content = apply_protocol_filters(content)
+    @parser.render(filtered_content)
+  end
 
-output.gsub!(/MARKDOWN-UI-PREFILTER-http\/\//, "http://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-https\/\//, "https://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-file\/\//, "file://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-ftp\/\//, "ftp://")
-output.gsub!(/MARKDOWN-UI-PREFILTER-mailto\/\//, "mailto:")
-output.gsub!(/MARKDOWN-UI-PREFILTER-tel\/\//, "tel:")
-output.gsub!(/MARKDOWN-UI-PREFILTER-javascript\/\//, "javascript:")
+  private
 
-puts output
+  def validate_input!
+    raise ArgumentError, "Input file is required" if @input_file.nil? || @input_file.empty?
+    raise ArgumentError, "File does not exist: #{@input_file}" unless File.exist?(@input_file)
+    raise ArgumentError, "File is not readable: #{@input_file}" unless File.readable?(@input_file)
+  end
+
+  def read_file
+    File.read(@input_file, encoding: 'UTF-8')
+  rescue Encoding::InvalidByteSequenceError => e
+    raise ArgumentError, "Invalid file encoding: #{e.message}"
+  rescue StandardError => e
+    raise ArgumentError, "Failed to read file: #{e.message}"
+  end
+
+  def apply_protocol_filters(content)
+    PROTOCOL_FILTERS.each do |protocol, filter|
+      content.gsub!(protocol, filter)
+    end
+    content
+  end
+end
+
+class MarkdownUIShell
+  WELCOME_MESSAGE = <<~MSG
+    MarkdownUI Interactive Shell
+
+    Commands:
+      - Type markdown and press ENTER three times to parse
+      - 'exit', 'quit', or 'bye' to exit
+      - 'help' for this message
+      - 'clear' to clear the screen
+      - 'version' for version information
+
+    Start typing your markdown...
+  MSG
+
+  EXIT_COMMANDS = %w[exit quit bye].freeze
+  HELP_COMMANDS = %w[help ?].freeze
+
+  def initialize(options = {})
+    @parser = MarkdownUI::Parser.new
+    @history = []
+    @options = options
+    setup_readline
+  end
+
+  def start
+    puts WELCOME_MESSAGE
+    main_loop
+  rescue Interrupt
+    puts "\nGoodbye!"
+    exit 0
+  end
+
+  private
+
+  def setup_readline
+    Readline.completion_append_character = " "
+    Readline.completion_proc = proc do |s|
+      %w[help clear version exit quit bye].grep(/^#{Regexp.escape(s)}/)
+    end
+  end
+
+  def main_loop
+    while input = prompt
+      process_input(input.strip)
+    end
+  end
+
+  def prompt
+    print "markdown> "
+    collect_multiline_input
+  end
+
+  def collect_multiline_input
+    lines = []
+    input_buffer = ""
+
+    loop do
+      begin
+        line = Readline.readline("", true)
+        return nil if line.nil?
+
+        input_buffer += line + "\n"
+        lines << line
+
+        if input_buffer.include?("\n\n\n") || input_buffer.end_with?("\n\n")
+          break
+        elsif line.empty? && lines.length > 1
+          print "# "
+        else
+          print "# "
+        end
+      rescue Interrupt
+        puts "\nUse 'exit' to quit"
+        return ""
+      end
+    end
+
+    input_buffer.chomp
+  end
+
+  def process_input(input)
+    return if input.empty?
+
+    case input.downcase
+    when *EXIT_COMMANDS
+      puts "Goodbye!"
+      exit 0
+    when *HELP_COMMANDS
+      puts WELCOME_MESSAGE
+      return
+    when 'clear'
+      system('clear') || system('cls')
+      return
+    when 'version'
+      puts "MarkdownUI version #{MarkdownUI::VERSION}"
+      return
+    end
+
+    render_markdown(input)
+  end
+
+  def render_markdown(markdown)
+    if @options[:interactive_html]
+      processor = MarkdownUIProcessor.new(nil, @options)
+      content = processor.process_content(markdown)
+      generator = HTMLGenerator.new(content, "Interactive", @options)
+      output = generator.generate
+      puts "\nHTML output:"
+      puts "=" * 50
+      puts output
+      puts "=" * 50
+    else
+      output = @parser.render(markdown)
+      puts "\nRendered output:"
+      puts "=" * 50
+      puts output
+      puts "=" * 50
+    end
+    puts
+
+    @history << { input: markdown, output: output, timestamp: Time.now }
+  rescue StandardError => e
+    puts "Error rendering markdown: #{e.message}"
+    puts "Please check your markdown syntax and try again."
+  end
+end
+
+def parse_options
+  options = {}
+
+  OptionParser.new do |opts|
+    opts.banner = "Usage: #{$0} [options] [markdown_file]"
+    opts.separator ""
+    opts.separator "If no file is provided, interactive mode is started."
+    opts.separator ""
+    opts.separator "Options:"
+
+    opts.on('-i', '--interactive', 'Start interactive shell mode') do
+      options[:interactive] = true
+    end
+
+    opts.on('--interactive-html', 'Generate full HTML in interactive mode') do
+      options[:interactive_html] = true
+    end
+
+    opts.on('--local-assets', 'Use local npm packages instead of CDN') do
+      options[:local_assets] = true
+    end
+
+    opts.on('--fomantic-version VERSION', 'Specify Fomantic UI version (default: 2.9.3)') do |version|
+      options[:fomantic_version] = version
+    end
+
+    opts.on('--jquery-version VERSION', 'Specify jQuery version (default: 3.7.1)') do |version|
+      options[:jquery_version] = version
+    end
+
+    opts.on('-h', '--help', 'Show this help message') do
+      puts opts
+      exit
+    end
+
+    opts.on('-v', '--version', 'Show version') do
+      puts MarkdownUI::VERSION
+      exit
+    end
+  end.parse!
+
+  options
+end
+
+begin
+  options = parse_options
+
+  # Start interactive mode if no file provided or --interactive flag used
+  if ARGV.empty? || options[:interactive]
+    shell = MarkdownUIShell.new(options)
+    shell.start
+    exit 0
+  end
+
+  input_file = ARGV.first
+  basename = File.basename(input_file, '.md')
+
+  processor = MarkdownUIProcessor.new(input_file, options)
+  content = processor.process
+
+  class HTMLGenerator
+    # Default versions - can be overridden via options or environment variables
+    DEFAULT_FOMANTIC_VERSION = '2.9.3'
+    DEFAULT_JQUERY_VERSION = '3.7.1'
+
+    # CDN base URLs
+    FOMANTIC_CDN_BASE = 'https://cdn.jsdelivr.net/npm/fomantic-ui'
+    JQUERY_CDN_BASE = 'https://cdn.jsdelivr.net/npm/jquery'
+
+    def initialize(content, title, options = {})
+      @content = content
+      @title = title
+      @options = options
+      @fomantic_version = resolve_fomantic_version
+      @jquery_version = resolve_jquery_version
+    end
+
+    def generate
+      html = build_html_template
+      restore_protocols(html)
+    end
+
+    private
+
+    def build_html_template
+      <<~HTML
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="Generated by MarkdownUI">
+            <title>#{@title.capitalize}</title>
+            #{css_includes}
+            #{js_includes}
+          </head>
+          <body>
+            #{@content}
+          </body>
+        </html>
+      HTML
+    end
+
+    def css_includes
+      if @options[:local_assets]
+        local_css_includes
+      else
+        cdn_css_includes
+      end
+    end
+
+    def js_includes
+      if @options[:local_assets]
+        local_js_includes
+      else
+        cdn_js_includes
+      end
+    end
+
+    def local_css_includes
+      <<~CSS
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/reset.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/site.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/container.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/button.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/checkbox.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/divider.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/dropdown.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/form.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/grid.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/header.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/icon.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/image.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/input.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/item.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/label.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/menu.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/list.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/segment.min.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/fomantic-ui/dist/components/transition.min.css">
+      CSS
+    end
+
+    def local_js_includes
+      <<~JS
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/fomantic-ui/dist/components/checkbox.min.js"></script>
+        <script src="/node_modules/fomantic-ui/dist/components/dropdown.min.js"></script>
+        <script src="/node_modules/fomantic-ui/dist/components/form.min.js"></script>
+        <script src="/node_modules/fomantic-ui/dist/components/site.min.js"></script>
+        <script src="/node_modules/fomantic-ui/dist/components/transition.min.js"></script>
+      JS
+    end
+
+    def cdn_css_includes
+      <<~CSS
+        <link rel="stylesheet" type="text/css" href="#{fomantic_css_url}" crossorigin="anonymous">
+      CSS
+    end
+
+    def cdn_js_includes
+      <<~JS
+        <script src="#{jquery_js_url}"#{jquery_integrity} crossorigin="anonymous"></script>
+        <script src="#{fomantic_js_url}" crossorigin="anonymous"></script>
+      JS
+    end
+
+    def restore_protocols(html)
+      MarkdownUIProcessor::PROTOCOL_FILTERS.each do |original, filtered|
+        html.gsub!(filtered, original)
+      end
+      html
+    end
+
+    private
+
+    def resolve_fomantic_version
+      version = @options[:fomantic_version] ||
+                ENV['MARKDOWN_UI_FOMANTIC_VERSION'] ||
+                DEFAULT_FOMANTIC_VERSION
+
+      unless validate_version(version)
+        warn "Warning: Invalid Fomantic UI version '#{version}', using default #{DEFAULT_FOMANTIC_VERSION}"
+        version = DEFAULT_FOMANTIC_VERSION
+      end
+
+      version
+    end
+
+    def resolve_jquery_version
+      version = @options[:jquery_version] ||
+                ENV['MARKDOWN_UI_JQUERY_VERSION'] ||
+                DEFAULT_JQUERY_VERSION
+
+      unless validate_version(version)
+        warn "Warning: Invalid jQuery version '#{version}', using default #{DEFAULT_JQUERY_VERSION}"
+        version = DEFAULT_JQUERY_VERSION
+      end
+
+      version
+    end
+
+    def fomantic_css_url
+      "#{FOMANTIC_CDN_BASE}@#{@fomantic_version}/dist/semantic.min.css"
+    end
+
+    def fomantic_js_url
+      "#{FOMANTIC_CDN_BASE}@#{@fomantic_version}/dist/semantic.min.js"
+    end
+
+    def jquery_js_url
+      "#{JQUERY_CDN_BASE}@#{@jquery_version}/dist/jquery.min.js"
+    end
+
+    def jquery_integrity
+      # Known integrity hashes for common jQuery versions
+      integrity_hashes = {
+        '3.7.1' => 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=',
+        '3.7.0' => 'sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=',
+        '3.6.4' => 'sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=',
+        '3.6.3' => 'sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=',
+        '3.6.0' => 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4='
+      }
+
+      hash = integrity_hashes[@jquery_version]
+      hash ? %[ integrity="#{hash}"] : ''
+    end
+
+    def validate_version(version)
+      return false if version.nil? || version.empty?
+      # Basic semver pattern validation
+      version.match?(/^\d+\.\d+\.\d+(-[a-zA-Z0-9\-\.]+)?$/)
+    end
+  end
+
+  generator = HTMLGenerator.new(content, basename, options)
+  output = generator.generate
+
+  puts output
+
+rescue ArgumentError => e
+  warn "Error: #{e.message}"
+  exit 1
+rescue StandardError => e
+  warn "Unexpected error: #{e.message}"
+  warn e.backtrace.join("\n") if ENV['DEBUG']
+  exit 1
+end

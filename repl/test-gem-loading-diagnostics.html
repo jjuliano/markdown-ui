@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Gem Loading Diagnostics</title>
+    <style>
+        body { font-family: monospace; margin: 20px; background: #f5f5f5; }
+        .log-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 600px;
+            overflow-y: auto;
+            font-size: 12px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+        .status { margin: 10px 0; padding: 10px; border-radius: 4px; }
+        .status.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .status.info { background: #cce7ff; color: #004085; border: 1px solid #b3d7ff; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        button:hover { background: #0056b3; }
+        button:disabled { background: #6c757d; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Gem Loading Diagnostics</h1>
+    <p>This page will show detailed diagnostics for the markdown-ui gem loading process in WebAssembly.</p>
+
+    <button id="startTest">Start Diagnostics Test</button>
+    <div id="status" class="status info">Click "Start Diagnostics Test" to begin...</div>
+
+    <h2>WebAssembly Debug Output:</h2>
+    <div id="logContainer" class="log-container">Waiting for test to start...</div>
+
+    <script type="module">
+        let rubyWasm = null;
+        const statusDiv = document.getElementById('status');
+        const logContainer = document.getElementById('logContainer');
+        const startButton = document.getElementById('startTest');
+
+        // Override console.log to capture WebAssembly output
+        const originalLog = console.log;
+        const originalError = console.error;
+
+        let capturedLogs = [];
+
+        console.log = function(...args) {
+            capturedLogs.push('[LOG] ' + args.join(' '));
+            logContainer.textContent = capturedLogs.join('\n');
+            logContainer.scrollTop = logContainer.scrollHeight;
+            originalLog.apply(console, args);
+        };
+
+        console.error = function(...args) {
+            capturedLogs.push('[ERROR] ' + args.join(' '));
+            logContainer.textContent = capturedLogs.join('\n');
+            logContainer.scrollTop = logContainer.scrollHeight;
+            originalError.apply(console, args);
+        };
+
+        async function runDiagnostics() {
+            try {
+                startButton.disabled = true;
+                statusDiv.className = 'status info';
+                statusDiv.textContent = 'Initializing WebAssembly...';
+                capturedLogs = [];
+                logContainer.textContent = 'Starting diagnostics...\n';
+
+                // Load the WebAssembly module
+                statusDiv.textContent = 'Loading WebAssembly module...';
+                const response = await fetch('build/markdown-ui.wasm');
+                if (!response.ok) {
+                    throw new Error(`Failed to load WebAssembly: ${response.status}`);
+                }
+
+                const moduleBuffer = await response.arrayBuffer();
+                console.log(`✅ Loaded WebAssembly module: ${moduleBuffer.byteLength} bytes`);
+
+                // Initialize Ruby VM
+                statusDiv.textContent = 'Initializing Ruby VM...';
+                const { DefaultRubyVM } = await import("https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm");
+
+                console.log('📚 Loading Ruby stdlib...');
+                const response_stdlib = await fetch("https://cdn.jsdelivr.net/npm/@ruby/3.4-wasm-wasi@2.7.1/dist/ruby+stdlib.wasm");
+                const module_stdlib = await WebAssembly.compileStreaming(response_stdlib);
+
+                console.log('🚀 Creating Ruby VM instance...');
+                const { vm } = await DefaultRubyVM(module_stdlib);
+
+                console.log('✅ Ruby VM created successfully');
+                rubyWasm = vm;
+
+                // Run the enhanced diagnostics
+                statusDiv.textContent = 'Running gem loading diagnostics...';
+                console.log('🔧 Running enhanced gem loading diagnostics...');
+
+                const result = vm.eval(`
+                    begin
+                      puts "=== ENHANCED GEM LOADING DIAGNOSTICS ==="
+                      puts "Ruby Version: #{RUBY_VERSION}"
+                      puts "LOAD_PATH: #{$LOAD_PATH.inspect}"
+                      puts ""
+
+                      puts "=== CHECKING GEM DIRECTORIES ==="
+                      gem_dirs = [
+                        "/usr/local/lib/ruby/gems",
+                        "/usr/local/bundle/gems",
+                        "/usr/bundle/gems"
+                      ]
+
+                      gem_dirs.each do |base_dir|
+                        puts "Checking #{base_dir}:"
+                        if Dir.exist?(base_dir)
+                          puts "  ✅ Directory exists"
+                          Dir.glob("#{base_dir}/*markdown-ui*").each do |path|
+                            puts "  📦 Found markdown-ui: #{path}"
+                          end
+                          Dir.glob("#{base_dir}/*").select {|d| d.include?("markdown") }.each do |path|
+                            puts "  📦 Found related: #{path}"
+                          end
+                        else
+                          puts "  ❌ Directory does not exist"
+                        end
+                        puts ""
+                      end
+
+                      puts "=== TRYING GEM LOADING APPROACHES ==="
+
+                      # Approach 1: Direct require
+                      puts "1. Trying direct require 'markdown-ui'..."
+                      begin
+                        require "markdown-ui"
+                        puts "   ✅ SUCCESS: Direct require worked!"
+                        success = true
+                      rescue => e
+                        puts "   ❌ FAILED: #{e.message}"
+                        success = false
+                      end
+
+                      # Approach 2: Check available gems
+                      unless success
+                        puts "2. Checking what gems are available..."
+                        begin
+                          gem_list = \`gem list --local\`
+                          puts "   Available gems:"
+                          gem_list.each_line do |line|
+                            puts "   #{line.strip}"
+                          end
+                        rescue => e
+                          puts "   Could not list gems: #{e.message}"
+                        end
+                      end
+
+                      # Approach 3: Manual path search
+                      unless success
+                        puts "3. Manual path search..."
+                        ["/usr/local/lib/ruby/gems/3.4.0/gems/markdown-ui-2.0.0/lib/markdown-ui.rb",
+                         "/usr/local/bundle/gems/markdown-ui-2.0.0/lib/markdown-ui.rb",
+                         "/usr/bundle/gems/markdown-ui-2.0.0/lib/markdown-ui.rb"].each do |path|
+                          if File.exist?(path)
+                            puts "   ✅ Found markdown-ui.rb at: #{path}"
+                            puts "   Trying to load it..."
+                            begin
+                              load path
+                              puts "   ✅ SUCCESS: Loaded via direct path!"
+                              success = true
+                            rescue => e
+                              puts "   ❌ FAILED to load: #{e.message}"
+                            end
+                            break
+                          else
+                            puts "   ❌ Not found at: #{path}"
+                          end
+                        end
+                      end
+
+                      puts ""
+                      if success
+                        puts "🎉 GEM LOADING SUCCESSFUL!"
+                        "DIAGNOSTICS_SUCCESS"
+                      else
+                        puts "❌ ALL GEM LOADING APPROACHES FAILED"
+                        puts ""
+                        puts "=== FINAL SUMMARY ==="
+                        puts "Ruby VM is working, but markdown-ui gem cannot be loaded."
+                        puts "This suggests the gem is not properly packaged in the WebAssembly bundle."
+                        "DIAGNOSTICS_FAILED"
+                      end
+
+                    rescue => e
+                      puts "❌ DIAGNOSTICS CRASHED: #{e.message}"
+                      puts "Backtrace:"
+                      puts e.backtrace.join("\n")
+                      "DIAGNOSTICS_CRASHED"
+                    end
+                `);
+
+                console.log('=== DIAGNOSTICS RESULT ===');
+                console.log('Result:', result);
+
+                if (result && result.toString().includes("SUCCESS")) {
+                    statusDiv.className = 'status success';
+                    statusDiv.textContent = '✅ Diagnostics completed successfully! Gem loading is working.';
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = '❌ Diagnostics failed. Check the log output for details.';
+                }
+
+            } catch (error) {
+                console.error('❌ Test failed:', error);
+                statusDiv.className = 'status error';
+                statusDiv.textContent = `❌ Test failed: ${error.message}`;
+            } finally {
+                startButton.disabled = false;
+            }
+        }
+
+        startButton.addEventListener('click', runDiagnostics);
+    </script>
+</body>
+</html>

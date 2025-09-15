@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Test</title>
+</head>
+<body>
+    <h1>Testing DefaultRubyVM Import</h1>
+    <div id="result"></div>
+
+    <script>
+        async function testImport() {
+            const resultDiv = document.getElementById('result');
+
+            try {
+                console.log('Testing import...');
+                const { DefaultRubyVM } = await import('https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm');
+                console.log('Import successful:', typeof DefaultRubyVM);
+                resultDiv.innerHTML = '<div style="color: green;">✅ Import successful! DefaultRubyVM is ' + typeof DefaultRubyVM + '</div>';
+
+                // Test if it's actually a function
+                if (typeof DefaultRubyVM === 'function') {
+                    resultDiv.innerHTML += '<div style="color: green;">✅ DefaultRubyVM is a function as expected</div>';
+                } else {
+                    resultDiv.innerHTML += '<div style="color: red;">❌ DefaultRubyVM is not a function: ' + typeof DefaultRubyVM + '</div>';
+                }
+
+            } catch (error) {
+                console.error('Import failed:', error);
+                resultDiv.innerHTML = '<div style="color: red;">❌ Import failed: ' + error.message + '</div>';
+            }
+        }
+
+        // Auto-run test
+        window.addEventListener('load', testImport);
+    </script>
+</body>
+</html>

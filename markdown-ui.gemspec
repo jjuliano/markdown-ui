@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Create responsive UI/UX for mobile and web using Markdown Syntax}
   spec.homepage      = "https://github.com/jjuliano/markdown-ui"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 3.0"
 
   # Prevent pushing this gem to RubyGems.org by setting "allowed_push_host", or
   # delete this section to allow pushing this gem to any host.
@@ -22,17 +23,18 @@ Gem::Specification.new do |spec|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|repl)/}) }
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["markdown-ui"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "bundler", "~> 1.10", "~> 1.9"
-  spec.add_dependency "redcarpet", "~> 3.3"
-  spec.add_dependency "nokogiri", "~> 1.5", "~> 1.6"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "byebug", "~> 6.0"
-  spec.add_development_dependency "test-unit", "~> 3.0"
-  spec.add_development_dependency "simplecov", "~> 0.10"
-  spec.add_development_dependency "codeclimate-test-reporter", "~> 0.4"
+  spec.add_dependency "bundler", "~> 2.7"
+  spec.add_dependency "redcarpet", "~> 3.6.1"
+  spec.add_dependency "htmlbeautifier", "~> 1.4.3"
+  spec.add_dependency "ostruct", "~> 0.6.1"
+  spec.add_development_dependency "rake", "~> 13.3"
+  spec.add_development_dependency "debug", "~> 1.11"
+  spec.add_development_dependency "test-unit", "~> 3.7"
+  spec.add_development_dependency "simplecov", "~> 0.22"
+  spec.add_development_dependency "simplecov_json_formatter", "~> 0.1.4"
 end

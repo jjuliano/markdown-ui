@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebAssembly-Only Test</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/dist/semantic.min.js"></script>
+  <style>
+    body { padding: 20px; }
+    .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 4px; }
+    .success { border-color: #21ba45; background: #f8fff8; }
+    .error { border-color: #db2828; background: #fff8f8; }
+    .warning { border-color: #fbbf24; background: #fffef8; }
+  </style>
+</head>
+<body>
+  <div class="ui container">
+    <h1 class="ui header">WebAssembly-Only Test</h1>
+    <p>Testing that the REPL works only with WebAssembly and no JavaScript fallbacks.</p>
+
+    <div id="test-results">
+      <div class="test-section" id="test-1">
+        <h3>🔧 Test 1: WebAssembly Support Check</h3>
+        <p id="result-1">Checking WebAssembly support...</p>
+      </div>
+
+      <div class="test-section" id="test-2">
+        <h3>📦 Test 2: SharedArrayBuffer Support</h3>
+        <p id="result-2">Checking SharedArrayBuffer support...</p>
+      </div>
+
+      <div class="test-section" id="test-3">
+        <h3>🎯 Test 3: Pure WebAssembly Parsing</h3>
+        <p id="result-3">Testing that no JavaScript parsing methods exist...</p>
+      </div>
+
+      <div class="test-section" id="test-4">
+        <h3>🚀 Test 4: REPL Initialization</h3>
+        <p id="result-4">Testing REPL initialization...</p>
+      </div>
+    </div>
+
+    <div class="ui message" id="summary">
+      <h3>Test Summary</h3>
+      <p id="summary-text">Running WebAssembly-only tests...</p>
+    </div>
+  </div>
+
+  <!-- Test Scripts -->
+  <script src="js/ruby-wasm-integration.js"></script>
+  <script src="js/repl-interface.js"></script>
+
+  <script>
+    let testsPassed = 0;
+    let totalTests = 4;
+
+    function updateTestResult(testId, status, message) {
+      const testDiv = document.getElementById(`test-${testId}`);
+      const resultP = document.getElementById(`result-${testId}`);
+
+      testDiv.className = `test-section ${status}`;
+      resultP.textContent = message;
+
+      if (status === 'success') {
+        testDiv.querySelector('h3').innerHTML = '✅ ' + testDiv.querySelector('h3').textContent.substring(2);
+        testsPassed++;
+      } else if (status === 'warning') {
+        testDiv.querySelector('h3').innerHTML = '⚠️ ' + testDiv.querySelector('h3').textContent.substring(2);
+      } else if (status === 'error') {
+        testDiv.querySelector('h3').innerHTML = '❌ ' + testDiv.querySelector('h3').textContent.substring(2);
+      }
+
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const summaryText = document.getElementById('summary-text');
+      summaryText.textContent = `${testsPassed}/${totalTests} tests passed`;
+
+      const summaryDiv = document.getElementById('summary');
+      if (testsPassed === totalTests) {
+        summaryDiv.className = 'ui positive message';
+      } else if (testsPassed >= totalTests - 1) {
+        summaryDiv.className = 'ui warning message';
+      } else {
+        summaryDiv.className = 'ui negative message';
+      }
+    }
+
+    // Test 1: Check WebAssembly support
+    function test1() {
+      setTimeout(() => {
+        if (typeof WebAssembly !== 'undefined') {
+          updateTestResult(1, 'success', 'WebAssembly is supported in this browser');
+        } else {
+          updateTestResult(1, 'error', 'WebAssembly is not supported - REPL will not work');
+        }
+      }, 100);
+    }
+
+    // Test 2: Check SharedArrayBuffer support
+    function test2() {
+      setTimeout(() => {
+        if (typeof SharedArrayBuffer !== 'undefined') {
+          updateTestResult(2, 'success', 'SharedArrayBuffer is supported');
+        } else {
+          updateTestResult(2, 'warning', 'SharedArrayBuffer not supported (expected on GitHub Pages)');
+        }
+      }, 200);
+    }
+
+    // Test 3: Check that no JavaScript parsing methods exist
+    function test3() {
+      setTimeout(() => {
+        let hasJSParser = false;
+
+        if (window.MarkdownUIREPL) {
+          // Check for any JavaScript parsing methods
+          const methods = ['parseMarkdownJavaScript', 'parseBlockquotes', 'generateBlockquoteHtml'];
+          methods.forEach(method => {
+            if (typeof window.MarkdownUIREPL[method] === 'function') {
+              hasJSParser = true;
+            }
+          });
+        }
+
+        if (!hasJSParser) {
+          updateTestResult(3, 'success', 'No JavaScript parsing methods found - using pure WebAssembly');
+        } else {
+          updateTestResult(3, 'error', 'JavaScript parsing methods found - should be WebAssembly-only');
+        }
+      }, 500);
+    }
+
+    // Test 4: Check REPL initialization
+    function test4() {
+      setTimeout(() => {
+        if (typeof window.MarkdownUIREPL !== 'undefined') {
+          updateTestResult(4, 'success', 'MarkdownUIREPL object is available - ready for WebAssembly initialization');
+        } else {
+          updateTestResult(4, 'error', 'MarkdownUIREPL object not found');
+        }
+      }, 1000);
+    }
+
+    // Run all tests
+    window.addEventListener('load', () => {
+      console.log('Running WebAssembly-only tests...');
+
+      test1();
+      test2();
+      test3();
+      test4();
+
+      setTimeout(() => {
+        console.log('All tests completed');
+        console.log(`Results: ${testsPassed}/${totalTests} tests passed`);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
+
