@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'ruby_wasm'
+gem "markdown-ui", path: "../"
+gem 'js'
+
+gem "ruby-next", "~> 1.1"
+gem "htmlbeautifier", "~> 1.4.3"
+gem "redcarpet", "~> 3.6.1"

@@ -1,0 +1,1 @@
+export * from '@ruby/wasm-wasi/dist/browser';
