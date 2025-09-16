@@ -14,11 +14,7 @@ class ContainerTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui container">
-  <p>Lorem Ipsum Dolor</p>
-</div>
-', output
+    assert_equal "<article class='ui container'>\n  <p>Lorem Ipsum Dolor</p>\n</article>", output
   end
 
   def test_text_container
@@ -30,12 +26,7 @@ class ContainerTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui text container">
-  <h1 class="ui header">Header</h1>
-  <p>Lorem Ipsum Dolor</p>
-</div>
-', output
+    assert_equal "<article class='ui text container'>\n  <header>\n    <h1 class='ui header'>Header</h1>\n  </header>\n  <p>Lorem Ipsum Dolor</p>\n</article>", output
   end
 
   def test_text_alignment
@@ -46,9 +37,7 @@ class ContainerTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui left aligned container">Left Aligned</div>
-', output
+    assert_equal "<article class='ui left aligned container'>Left Aligned</article>", output
 
     markdown =
         '
@@ -57,9 +46,7 @@ class ContainerTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui right aligned container">Right Aligned</div>
-', output
+    assert_equal "<article class='ui right aligned container'>Right Aligned</article>", output
 
     markdown =
         '
@@ -68,9 +55,7 @@ class ContainerTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui center aligned container">Center Aligned</div>
-', output
+    assert_equal "<article class='ui center aligned container'>Center Aligned</article>", output
   end
 
   def test_custom_container
@@ -81,12 +66,7 @@ class ContainerTest < Redcarpet::TestCase
 > "Lorem Ipsum Dolor"
 '
     output   = @parser.render(markdown)
-    assert_equal \
-'<div class="ui very cool container">
-  <h1 class="ui header">Header</h1>
-  <p>Lorem Ipsum Dolor</p>
-</div>
-', output
+    assert_equal "<article class='ui very cool container'>\n  <header>\n    <h1 class='ui header'>Header</h1>\n  </header>\n  <p>Lorem Ipsum Dolor</p>\n</article>", output
   end
 
 end
