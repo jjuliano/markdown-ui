@@ -16,13 +16,7 @@ class MenuTest < Redcarpet::TestCase
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui three item menu">
-  <a class="ui active item" href="#">Editorials</a>
-  <a class="ui item" href="#">Reviews</a>
-  <a class="ui item" href="#">Upcoming Events</a>
-</div>
-', output
+    assert_equal "<nav class='ui three item menu'><a class='ui active item' href='#'>Editorials</a>\n  <a class='ui item' href='#'>Reviews</a>\n  <a class='ui item' href='#'>Upcoming Events</a></nav>", output
   end
 
   def test_menu_alternative
@@ -32,13 +26,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui three item menu">
-  <a class="ui active item" href="#">Editorials</a>
-  <a class="ui item" href="#">Reviews</a>
-  <a class="ui item" href="#">Upcoming Events</a>
-</div>
-', output
+    assert_equal "<nav class='ui three item menu'><a class='ui active item' href='#'>Editorials</a> <a class='ui item' href='#'>Reviews</a> <a class='ui item' href='#'>Upcoming Events</a></nav>", output
   end
 
   def test_secondary_menu
@@ -53,16 +41,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui secondary menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-', output
+    assert_equal "<nav class='ui secondary menu'><a class='ui active item' href='#'>Home</a>\n  <a class='ui item' href='#'>Messages</a>\n  <a class='ui item' href='#'>Friends</a><nav class='ui right menu'><a class='ui item' href='#'>Logout</a></nav></nav>", output
   end
 
   def test_pointing_menu
@@ -82,20 +61,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui pointing menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-<p></p>
-<div class="ui segment">
-  <p></p>
-</div>
-', output
+    assert_equal "<nav class='ui pointing menu'><a class='ui active item' href='#'>Home</a>\n  <a class='ui item' href='#'>Messages</a>\n  <a class='ui item' href='#'>Friends</a><nav class='ui right menu'><a class='ui item' href='#'>Logout</a></nav></nav><p></p><section class='ui segment'>\n  <p></p>\n</section>", output
   end
 
   def test_secondary_pointing_menu
@@ -115,20 +81,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui secondary pointing menu">
-  <a class="ui active item" href="#">Home</a>
-  <a class="ui item" href="#">Messages</a>
-  <a class="ui item" href="#">Friends</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-<p></p>
-<div class="ui segment">
-  <p></p>
-</div>
-', output
+    assert_equal "<nav class='ui secondary pointing menu'><a class='ui active item' href='#'>Home</a>\n  <a class='ui item' href='#'>Messages</a>\n  <a class='ui item' href='#'>Friends</a><nav class='ui right menu'><a class='ui item' href='#'>Logout</a></nav></nav><p></p><section class='ui segment'>\n  <p></p>\n</section>", output
   end
 
   def test_tabular_menu
@@ -140,12 +93,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui tabular menu">
-  <a class="ui active item" href="#">Bio</a>
-  <a class="ui item" href="#">Photos</a>
-</div>
-', output
+    assert_equal "<nav class='ui tabular menu'><a class='ui active item' href='#'>Bio</a>\n  <a class='ui item' href='#'>Photos</a></nav>", output
   end
 
   def test_tabular_attached_menu
@@ -164,19 +112,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui top attached tabular menu">
-  <a class="ui active item" href="#">Bio</a>
-  <a class="ui item" href="#">Photos</a>
-  <div class="ui right menu">
-    <a class="ui item" href="#">Logout</a>
-  </div>
-</div>
-<p></p>
-<div class="ui bottom attached segment">
-  <p></p>
-</div>
-', output
+    assert_equal "<nav class='ui top attached tabular menu'><a class='ui active item' href='#'>Bio</a>\n  <a class='ui item' href='#'>Photos</a><nav class='ui right menu'><a class='ui item' href='#'>Logout</a></nav></nav><p></p><section class='ui bottom attached segment'>\n  <p></p>\n</section>", output
   end
 
   def test_vertical_fluid_tabular_menu
@@ -192,18 +128,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui grid">
-  <div class="ui four wide column">
-    <div class="ui vertical fluid tabular menu">
-      <a class="ui active item" href="#">Bio</a>
-      <a class="ui item" href="#">Pics</a>
-      <a class="ui item" href="#">Companies</a>
-      <a class="ui item" href="#">Links</a>
-    </div>
-  </div>
-</div>
-', output
+    assert_equal "<article class='ui grid'>\n  <section class='ui four wide column'><nav class='ui vertical fluid tabular menu'><a class='ui active item' href='#'>Bio</a>\n      <a class='ui item' href='#'>Pics</a>\n      <a class='ui item' href='#'>Companies</a>\n      <a class='ui item' href='#'>Links</a></nav></section>\n</article>", output
   end
 
   def test_text_menu
@@ -216,13 +141,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui text menu">
-  <a class="ui active item" href="#">Closest</a>
-  <a class="ui item" href="#">Most Comments</a>
-  <a class="ui item" href="#">Most Popular</a>
-</div>
-', output
+    assert_equal "<nav class='ui text menu'><a class='ui active item' href='#'>Closest</a>\n  <a class='ui item' href='#'>Most Comments</a>\n  <a class='ui item' href='#'>Most Popular</a></nav>", output
   end
 
   def test_vertical_menu
@@ -235,13 +154,7 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui vertical menu">
-  <a class="ui active teal item" href="#">Inbox <div class="teal pointing left label">1</div></a>
-  <a class="ui item" href="#">Spam <div class="label">51</div></a>
-  <a class="ui item" href="#">Updates <div class="label">1</div></a>
-</div>
-', output
+    assert_equal "<nav class='ui vertical menu'><a class='ui active teal item' href='#'>Inbox \n    <div class='teal pointing left label'>1</div>\n  </a>\n  <a class='ui item' href='#'>Spam \n    <div class='label'>51</div>\n  </a>\n  <a class='ui item' href='#'>Updates \n    <div class='label'>1</div>\n  </a></nav>", output
   end
 
   def test_pagination_menu
@@ -256,14 +169,6 @@ __Three Item Menu|[Editorials](# "active") [Reviews](#) [Upcoming Events](#)__
 '
 
     output = @parser.render(markdown)
-    assert_equal \
-'<div class="ui pagination menu">
-  <a class="ui active item" href="#">1</a>
-  <a class="ui disabled item" href="#">...</a>
-  <a class="ui item" href="#">10</a>
-  <a class="ui item" href="#">11</a>
-  <a class="ui item" href="#">12</a>
-</div>
-', output
+    assert_equal "<nav class='ui pagination menu'><a class='ui active item' href='#'>1</a>\n  <a class='ui disabled item' href='#'>...</a>\n  <a class='ui item' href='#'>10</a>\n  <a class='ui item' href='#'>11</a>\n  <a class='ui item' href='#'>12</a></nav>", output
   end
 end
