@@ -67,3 +67,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 reference/
+*.wasm
+rubies/
+node_modules/
