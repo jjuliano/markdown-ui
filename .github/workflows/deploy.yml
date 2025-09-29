@@ -44,20 +44,13 @@ jobs:
     - name: Install ruby_wasm gem
       run: gem install ruby_wasm
 
-    - name: Build repl
-      run: |
-        cd repl
-        bundle install
-        npm install
-        npm run build
-
     - name: Setup Pages
       uses: actions/configure-pages@v4
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './repl/build'
+        path: './repl'
 
     - name: Deploy to GitHub Pages
       id: deployment
