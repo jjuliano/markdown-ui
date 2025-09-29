@@ -70,3 +70,7 @@ reference/
 *.wasm
 rubies/
 node_modules/
+*.log
+temp-wasm-build/
+build-info.json
+**/*.log
