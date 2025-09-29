@@ -12,10 +12,10 @@ module MarkdownUI::Input
     def render
       element = @element.join(' ').strip
       # content = MarkdownUI::Content::Parser.new(@content).parse
-      klass   = "ui #{element} #{@klass} input"
+      klass   = "ui #{element} input"
       _id     = @id
 
-      MarkdownUI::InputTag.new(@content, klass, _id).render
+      "<div class='#{klass}'><input type='text' placeholder='#{@content}' /></div>"
     end
   end
 end

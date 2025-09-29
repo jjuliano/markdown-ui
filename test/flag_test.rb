@@ -9,13 +9,14 @@ class FlagTest < Redcarpet::TestCase
   def test_flag
     markdown =
         '
+_NL_
 _AE Flag_
 _France Flag_
 _Myanmar Flag_
 '
 
     output = @parser.render(markdown)
-    assert_equal "<i class='ae flag'></i>\n<i class='france flag'></i>\n<i class='myanmar flag'></i>", output
+    assert_equal "<i class='nl flag'></i>\n<i class='ae flag'></i>\n<i class='france flag'></i>\n<i class='myanmar flag'></i>", output
   end
 
 end

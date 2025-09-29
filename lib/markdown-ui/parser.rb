@@ -34,11 +34,24 @@ module MarkdownUI
         return '<p></p>'
       end
 
+      # Preprocess emoji syntax :emoji_name:
+      markdown_str = preprocess_emojis(markdown_str)
+
       @parser.render(markdown_str)
     rescue => e
       # Log error and return safe fallback
       puts "MarkdownUI parsing error: #{e.message}"
       "<div class='ui error message'>Error parsing markdown</div>"
+    end
+
+    private
+
+    def preprocess_emojis(markdown_str)
+      # Replace :emoji_name: with <i class='ui emoji'>emoji_name</i>
+      markdown_str.gsub(/:(\w+):/) do |match|
+        emoji_name = $1
+        "<i class='ui emoji'>#{emoji_name}</i>"
+      end
     end
   end
 end

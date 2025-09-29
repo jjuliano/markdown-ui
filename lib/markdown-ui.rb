@@ -23,29 +23,54 @@ module MarkdownUI
     include MarkdownUI::Renderers::Paragraph
     include MarkdownUI::Renderers::HorizontalRule
 
+    # Collection Renderers
+    include MarkdownUI::Renderers::Breadcrumb
+    include MarkdownUI::Renderers::Form
+    include MarkdownUI::Renderers::Grid
+    include MarkdownUI::Renderers::Menu
+    include MarkdownUI::Renderers::Message
+    include MarkdownUI::Renderers::Table
+
     # Module Renderers
     include MarkdownUI::Renderers::Accordion
+    include MarkdownUI::Renderers::Calendar
     include MarkdownUI::Renderers::Checkbox
     include MarkdownUI::Renderers::Dimmer
     include MarkdownUI::Renderers::Dropdown
     include MarkdownUI::Renderers::Embed
+    include MarkdownUI::Renderers::Flyout
     include MarkdownUI::Renderers::Modal
+    include MarkdownUI::Renderers::Nag
     include MarkdownUI::Renderers::Popup
     include MarkdownUI::Renderers::Progress
     include MarkdownUI::Renderers::Rating
     include MarkdownUI::Renderers::Search
     include MarkdownUI::Renderers::Shape
     include MarkdownUI::Renderers::Sidebar
+    include MarkdownUI::Renderers::Slider
     include MarkdownUI::Renderers::Sticky
     include MarkdownUI::Renderers::Tab
+    include MarkdownUI::Renderers::Toast
     include MarkdownUI::Renderers::Transition
 
     # Element Renderers
+    include MarkdownUI::Renderers::Button
+    include MarkdownUI::Renderers::Container
+    include MarkdownUI::Renderers::Divider
+    include MarkdownUI::Renderers::Emoji
+    include MarkdownUI::Renderers::Field
+    include MarkdownUI::Renderers::Flag
+    include MarkdownUI::Renderers::Icon
+    include MarkdownUI::Renderers::Image
+    include MarkdownUI::Renderers::Input
+    include MarkdownUI::Renderers::Label
     include MarkdownUI::Renderers::Loader
     include MarkdownUI::Renderers::Placeholder
     include MarkdownUI::Renderers::Rail
     include MarkdownUI::Renderers::Reveal
+    include MarkdownUI::Renderers::Segment
     include MarkdownUI::Renderers::Step
+    include MarkdownUI::Renderers::Text
 
     # View Renderers
     include MarkdownUI::Renderers::Advertisement
@@ -54,6 +79,11 @@ module MarkdownUI
     include MarkdownUI::Renderers::Feed
     include MarkdownUI::Renderers::Item
     include MarkdownUI::Renderers::Statistic
+
+    # Behavior Renderers
+    include MarkdownUI::Renderers::Api
+    include MarkdownUI::Renderers::State
+    include MarkdownUI::Renderers::Visibility
 
     protected
 
