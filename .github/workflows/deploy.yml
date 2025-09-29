@@ -30,11 +30,26 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
 
-    - name: Build website
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Install ruby_wasm gem
+      run: gem install ruby_wasm
+
+    - name: Build repl
       run: |
-        cd website
-        chmod +x compile.sh
-        ./compile.sh
+        cd repl
+        bundle install
+        npm install
+        npm run build
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -42,7 +57,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './website/docs'
+        path: './repl/build'
 
     - name: Deploy to GitHub Pages
       id: deployment
