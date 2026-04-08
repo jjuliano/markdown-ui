@@ -244,78 +244,78 @@ See [COMPONENTS.md](COMPONENTS.md) for a full reference with syntax examples for
 
 | Component | Example |
 |-----------|---------|
-| Button | `__Primary Button\|Save__` |
-| Container | `__Container\|Page content__` |
-| Divider | `__Section Divider\|Section Break__` |
+| Button | `__Primary Button|Save__` |
+| Container | `__Container|Page content__` |
+| Divider | `__Section Divider|Section Break__` |
 | Emoji | `:rocket:` |
-| Flag | `__Flag\|us__` |
-| Header | `__Large Header\|Welcome__` |
-| Icon | `__Large Icon\|home__` |
-| Image | `__Circular Image\|https://example.com/avatar.jpg__` |
-| Input | `__Icon Input\|Search__` |
-| Label | `__Red Label\|Error__` |
+| Flag | `__Flag|us__` |
+| Header | `__Large Header|Welcome__` |
+| Icon | `__Large Icon|home__` |
+| Image | `__Circular Image|https://example.com/avatar.jpg__` |
+| Input | `__Icon Input|Search__` |
+| Label | `__Red Label|Error__` |
 | List | Standard Markdown list syntax |
-| Loader | `__Active Loader\|Processing__` |
-| Placeholder | `__Placeholder\|Loading content__` |
-| Rail | `__Rail\|Sidebar content__` |
-| Reveal | `__Reveal\|Hover me__` |
-| Segment | `__Raised Segment\|Content__` |
-| Step | `__Step\|Shipping__` |
-| Text | `__Muted Text\|Secondary info__` |
+| Loader | `__Active Loader|Processing__` |
+| Placeholder | `__Placeholder|Loading content__` |
+| Rail | `__Rail|Sidebar content__` |
+| Reveal | `__Reveal|Hover me__` |
+| Segment | `__Raised Segment|Content__` |
+| Step | `__Step|Shipping__` |
+| Text | `__Muted Text|Secondary info__` |
 
 ### Collections
 
 | Component | Example |
 |-----------|---------|
-| Breadcrumb | `__Large Breadcrumb\|Home / Library / Data__` |
-| Form | `__Form\|Form content__` |
-| Field | `__Required Field\|Field content__` |
-| Grid | `__Two Column Grid\|Left\|Right__` |
-| Menu | `__Vertical Menu\|Home\|About\|Contact__` |
-| Message | `__Warning Message\|Header:Heads up!,Text:"Please review."__` |
-| Table | `__Striped Table\|Name\|Age\|Alice\|30__` |
+| Breadcrumb | `__Large Breadcrumb|Home / Library / Data__` |
+| Form | `__Form|Form content__` |
+| Field | `__Required Field|Field content__` |
+| Grid | `__Two Column Grid|Left|Right__` |
+| Menu | `__Vertical Menu|Home|About|Contact__` |
+| Message | `__Warning Message|Header:Heads up!,Text:"Please review."__` |
+| Table | `__Striped Table|Name|Age|Alice|30__` |
 
 ### Views
 
 | Component | Example |
 |-----------|---------|
-| Advertisement | `__Advertisement\|Ad content__` |
-| Card | `__Card\|Card content__` |
-| Comment | `__Comment\|Comment text__` |
-| Feed | `__Feed\|Feed content__` |
-| Item | `__Item\|Item content__` |
-| Statistic | `__Statistic\|Value\|Label__` |
+| Advertisement | `__Advertisement|Ad content__` |
+| Card | `__Card|Card content__` |
+| Comment | `__Comment|Comment text__` |
+| Feed | `__Feed|Feed content__` |
+| Item | `__Item|Item content__` |
+| Statistic | `__Statistic|Value|Label__` |
 
 ### Modules
 
 | Component | Example |
 |-----------|---------|
-| Accordion | `__Styled Accordion\|Section\|Content__` |
-| Calendar | `__Date Picker Calendar\|Select Date__` |
-| Checkbox | `__Toggle Checkbox\|Dark Mode__` |
-| Dimmer | `__Dimmer\|Overlay text__` |
-| Dropdown | `__Selection Dropdown\|Choose Item__` |
-| Flyout | `__Flyout\|Side panel content__` |
-| Modal | `__Small Modal\|Modal content__` |
-| Nag | `__Nag\|Cookie notice__` |
-| Popup | `__Popup\|Tooltip text__` |
-| Progress | `__Indicating Progress\|60__` |
-| Rating | `__Rating\|Star__` |
-| Search | `__Search\|Query__` |
-| Shape | `__Shape\|Content__` |
-| Sidebar | `__Sidebar\|Sidebar content__` |
-| Slider | `__Slider\|50__` |
-| Tab | `__Tabular Menu\|Page 1\|Page 2__` |
-| Toast | `__Success Toast\|Saved successfully!__` |
-| Transition | `__Transition\|Animated content__` |
-| Visibility | `__Visibility\|Content__` |
+| Accordion | `__Styled Accordion|Section|Content__` |
+| Calendar | `__Date Picker Calendar|Select Date__` |
+| Checkbox | `__Toggle Checkbox|Dark Mode__` |
+| Dimmer | `__Dimmer|Overlay text__` |
+| Dropdown | `__Selection Dropdown|Choose Item__` |
+| Flyout | `__Flyout|Side panel content__` |
+| Modal | `__Small Modal|Modal content__` |
+| Nag | `__Nag|Cookie notice__` |
+| Popup | `__Popup|Tooltip text__` |
+| Progress | `__Indicating Progress|60__` |
+| Rating | `__Rating|Star__` |
+| Search | `__Search|Query__` |
+| Shape | `__Shape|Content__` |
+| Sidebar | `__Sidebar|Sidebar content__` |
+| Slider | `__Slider|50__` |
+| Tab | `__Tabular Menu|Page 1|Page 2__` |
+| Toast | `__Success Toast|Saved successfully!__` |
+| Transition | `__Transition|Animated content__` |
+| Visibility | `__Visibility|Content__` |
 
 ### Behaviors
 
 | Component | Example |
 |-----------|---------|
-| API | `__API\|/api/users__` |
-| State | `__State\|active__` |
+| API | `__API|/api/users__` |
+| State | `__State|active__` |
 
 ---
 
