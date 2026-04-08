@@ -28,6 +28,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
+        bundler: '2.7'
         bundler-cache: true
 
     - name: Setup Node.js
@@ -71,6 +72,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
+        bundler: '2.7'
         bundler-cache: true
 
     - name: Get version
