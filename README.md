@@ -2,9 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/markdown-ui.svg)](https://badge.fury.io/rb/markdown-ui)
 [![Build Status](https://github.com/jjuliano/markdown-ui/actions/workflows/deploy.yml/badge.svg)](https://github.com/jjuliano/markdown-ui/actions)
-[![Code Climate](https://codeclimate.com/github/jjuliano/markdown-ui/badges/gpa.svg)](https://codeclimate.com/github/jjuliano/markdown-ui)
-[![Test Coverage](https://codeclimate.com/github/jjuliano/markdown-ui/badges/coverage.svg)](https://codeclimate.com/github/jjuliano/markdown-ui/coverage)
-[![Chat on Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jjuliano/markdown-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 
 > Write responsive web UIs in plain Markdown syntax.
