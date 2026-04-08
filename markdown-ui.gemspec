@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Create responsive UI/UX for mobile and web using Markdown Syntax}
   spec.homepage      = "https://github.com/jjuliano/markdown-ui"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.2"
 
   # Prevent pushing this gem to RubyGems.org by setting "allowed_push_host", or
   # delete this section to allow pushing this gem to any host.
