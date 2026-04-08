@@ -12,13 +12,7 @@ jobs:
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
 
     permissions:
-      contents: read
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
 
     steps:
     - name: Checkout
@@ -45,17 +39,11 @@ jobs:
     - name: Install ruby_wasm gem
       run: gem install ruby_wasm
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './repl'
-
     - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./repl
 
   publish-gem:
     runs-on: ubuntu-latest
