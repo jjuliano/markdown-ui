@@ -34,6 +34,7 @@ build/
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
 Gemfile.lock
+!repl/Gemfile.lock
 .ruby-version
 .ruby-gemset
 
@@ -68,6 +69,7 @@ Temporary Items
 .apdisk
 reference/
 *.wasm
+!repl/markdown-ui.wasm
 rubies/
 node_modules/
 *.log

@@ -1,0 +1,53 @@
+name: Build WASM
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'lib/**'
+      - 'repl/Gemfile'
+      - 'repl/Gemfile.lock'
+      - '.github/workflows/build-wasm.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: false
+
+      - name: Install Rust with WASM target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-wasi
+
+      - name: Install dependencies
+        working-directory: repl
+        run: bundle install
+
+      # IMPORTANT: No secrets are set as env vars in this step.
+      # wasi-vfs embeds the build environment into the WASM binary,
+      # so secrets must never be present here.
+      - name: Build WASM
+        working-directory: repl
+        run: bundle exec rbwasm build -o markdown-ui.wasm
+
+      - name: Commit WASM
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add repl/markdown-ui.wasm
+          git diff --staged --quiet && echo "No changes to WASM" && exit 0
+          git commit -m "ci: rebuild WASM [skip ci]"
+          git push
