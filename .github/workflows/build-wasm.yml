@@ -30,7 +30,7 @@ jobs:
       - name: Install Rust with WASM target
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: wasm32-unknown-wasi
+          targets: wasm32-wasip1
 
       - name: Install dependencies
         working-directory: repl
