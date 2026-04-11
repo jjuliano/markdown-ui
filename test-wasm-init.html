@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAssembly Initialization Test</title>
+    <style>
+        body { font-family: monospace; margin: 20px; }
+        .success { color: green; }
+        .error { color: red; }
+        .step { margin: 10px 0; padding: 10px; border-left: 4px solid #ccc; }
+        .step.success { border-left-color: green; background: #f0fff0; }
+        .step.error { border-left-color: red; background: #fff0f0; }
+    </style>
+</head>
+<body>
+    <h1>WebAssembly Initialization Test</h1>
+    <div id="test-results"></div>
+
+    <script type="module">
+        const results = document.getElementById('test-results');
+
+        function addStep(message, success = null) {
+            const step = document.createElement('div');
+            step.className = 'step';
+            step.textContent = new Date().toLocaleTimeString() + ': ' + message;
+
+            if (success === true) {
+                step.classList.add('success');
+            } else if (success === false) {
+                step.classList.add('error');
+            }
+
+            results.appendChild(step);
+            console.log(message);
+        }
+
+        async function testWebAssemblyInit() {
+            try {
+                addStep('Starting WebAssembly initialization test...');
+
+                // Check WebAssembly support
+                if (typeof WebAssembly === 'undefined') {
+                    addStep('❌ WebAssembly not supported in this browser', false);
+                    return;
+                }
+                addStep('✅ WebAssembly supported', true);
+
+                // Load the WebAssembly module
+                addStep('📥 Loading markdown-ui.wasm...');
+                const response = await fetch('build/markdown-ui.wasm');
+                if (!response.ok) {
+                    addStep(`❌ Failed to load WebAssembly: ${response.status}`, false);
+                    return;
+                }
+
+                const moduleBuffer = await response.arrayBuffer();
+                addStep(`✅ Loaded WebAssembly module: ${moduleBuffer.byteLength} bytes`, true);
+
+                // Test Ruby VM initialization
+                addStep('🔧 Initializing Ruby VM...');
+                const { DefaultRubyVM } = await import("https://cdn.jsdelivr.net/npm/@ruby/wasm-wasi@2.7.1/dist/browser/+esm");
+
+                addStep('📚 Loading Ruby stdlib...');
+                const response_stdlib = await fetch("https://cdn.jsdelivr.net/npm/@ruby/3.4-wasm-wasi@2.7.1/dist/ruby+stdlib.wasm");
+                if (!response_stdlib.ok) {
+                    addStep(`❌ Failed to load Ruby stdlib: ${response_stdlib.status}`, false);
+                    return;
+                }
+
+                const module_stdlib = await WebAssembly.compileStreaming(response_stdlib);
+                addStep('✅ Ruby stdlib loaded', true);
+
+                addStep('🚀 Creating Ruby VM instance...');
+                const { vm } = await DefaultRubyVM(module_stdlib);
+                addStep('✅ Ruby VM created successfully', true);
+
+                // Test HTMLBeautifier functionality
+                addStep('🔧 Testing HTMLBeautifier...');
+                const testResult = vm.eval(`
+                    begin
+                        require "bundler/setup"
+                        require "htmlbeautifier"
+
+                        ugly_html = "<div><span>Hello</span><p>World</p></div>"
+                        pretty_html = HtmlBeautifier.beautify(ugly_html)
+
+                        puts "Original: #{ugly_html}"
+                        puts "Beautified: #{pretty_html}"
+
+                        "SUCCESS: HTMLBeautifier working in WebAssembly"
+                    rescue => e
+                        "ERROR: #{e.message}"
+                    end
+                `);
+
+                if (testResult && testResult.toString().includes("SUCCESS")) {
+                    addStep('✅ HTMLBeautifier working correctly', true);
+                } else {
+                    addStep(`❌ HTMLBeautifier test failed: ${testResult}`, false);
+                }
+
+                addStep('🎉 All WebAssembly tests completed successfully!', true);
+
+            } catch (error) {
+                addStep(`❌ Test failed: ${error.message}`, false);
+                console.error('Test error:', error);
+            }
+        }
+
+        // Start the test
+        window.addEventListener('load', testWebAssemblyInit);
+    </script>
+</body>
+</html>

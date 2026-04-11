@@ -1,0 +1,141 @@
+/* MarkdownUI REPL Styles */
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.ui.container {
+  padding-top: 2em;
+}
+
+.preview-content {
+  min-height: 500px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.html-output {
+  background-color: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 15px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor {
+  border-radius: 4px;
+}
+
+.monaco-editor .margin {
+  background-color: #f8f9fa !important;
+}
+
+/* Element Browser */
+.ui.list .item {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.ui.list .item:hover {
+  background-color: #f8f9fa;
+}
+
+.ui.list .item[data-element] {
+  position: relative;
+}
+
+.ui.list .item[data-element]:after {
+  content: "+";
+  position: absolute;
+  right: 10px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Status Indicators */
+.status-ready {
+  color: #21ba45;
+}
+
+.status-error {
+  color: #db2828;
+}
+
+.status-loading {
+  color: #fbbd08;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ui.stackable.grid > .column {
+    padding: 0.5rem !important;
+  }
+
+  .preview-content {
+    min-height: 300px;
+  }
+
+  #editor-container {
+    height: 300px !important;
+  }
+}
+
+/* Custom Semantic UI overrides */
+.ui.segment {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.ui.top.attached.label {
+  border-radius: 4px 4px 0 0;
+  font-weight: 600;
+}
+
+/* Button hover effects */
+.ui.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+/* Syntax highlighting for HTML output */
+.html-output .token.tag {
+  color: #e74c3c;
+}
+
+.html-output .token.attr-name {
+  color: #3498db;
+}
+
+.html-output .token.attr-value {
+  color: #27ae60;
+}
+
+.html-output .token.comment {
+  color: #95a5a6;
+  font-style: italic;
+}
+

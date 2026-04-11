@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test .wasm File</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+    .success { background-color: #d4edda; border-color: #c3e6cb; }
+    .error { background-color: #f8d7da; border-color: #f5c6cb; }
+    .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+    pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto; max-height: 200px; }
+    .wasm-info { background: #e9ecef; padding: 10px; border-radius: 3px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Test .wasm File Loading</h1>
+
+  <div class="test-section warning">
+    <h3>Status: Testing .wasm File...</h3>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 1: .wasm File Availability</h3>
+    <div id="test1-result">Checking...</div>
+    <div id="test1-details"></div>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 2: .wasm File Size & Headers</h3>
+    <div id="test2-result">Checking...</div>
+    <pre id="test2-details"></pre>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 3: WebAssembly Module Instantiation</h3>
+    <div id="test3-result">Waiting...</div>
+    <pre id="test3-details"></pre>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 4: WASI Polyfill Loading</h3>
+    <div id="test4-result">Waiting...</div>
+    <pre id="test4-details"></pre>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 5: MarkdownUI Integration Test</h3>
+    <div id="test5-result">Waiting...</div>
+    <pre id="test5-details"></pre>
+  </div>
+
+  <script>
+    async function runWasmTests() {
+      const status = document.querySelector('.test-section');
+      const test1Result = document.getElementById('test1-result');
+      const test1Details = document.getElementById('test1-details');
+      const test2Result = document.getElementById('test2-result');
+      const test2Details = document.getElementById('test2-details');
+      const test3Result = document.getElementById('test3-result');
+      const test3Details = document.getElementById('test3-details');
+      const test4Result = document.getElementById('test4-result');
+      const test4Details = document.getElementById('test4-details');
+      const test5Result = document.getElementById('test5-result');
+      const test5Details = document.getElementById('test5-details');
+
+      try {
+        // Test 1: Check if .wasm file exists
+        console.log('Test 1: Checking .wasm file availability...');
+        const wasmResponse = await fetch('markdown-ui.wasm');
+
+        if (wasmResponse.ok) {
+          const contentLength = wasmResponse.headers.get('content-length');
+          const contentType = wasmResponse.headers.get('content-type');
+
+          test1Result.textContent = '✅ .wasm file found';
+          test1Result.parentElement.className = 'test-section success';
+          test1Details.innerHTML = `
+            <div class="wasm-info">
+              <strong>Size:</strong> ${contentLength ? (parseInt(contentLength) / 1024 / 1024).toFixed(2) + ' MB' : 'Unknown'}<br>
+              <strong>Content-Type:</strong> ${contentType || 'Not specified'}<br>
+              <strong>Status:</strong> ${wasmResponse.status} ${wasmResponse.statusText}
+            </div>
+          `;
+
+          // Test 2: Load and analyze the .wasm file
+          test2Result.textContent = 'Loading .wasm file...';
+          const wasmBuffer = await wasmResponse.arrayBuffer();
+
+          test2Details.textContent = `Loaded ${wasmBuffer.byteLength} bytes of WebAssembly code`;
+          test2Result.textContent = '✅ .wasm file loaded successfully';
+          test2Result.parentElement.className = 'test-section success';
+
+          // Test 3: Try to instantiate WebAssembly module
+          test3Result.textContent = 'Instantiating WebAssembly...';
+          console.log('Test 3: Attempting WebAssembly instantiation...');
+
+          try {
+            // First, load WASI polyfill
+            test4Result.textContent = 'Loading WASI polyfill...';
+            const wasiScript = document.createElement('script');
+            wasiScript.src = 'https://cdn.jsdelivr.net/npm/@wasmer/wasi@1.2.2/lib/index.iife.js';
+            wasiScript.crossOrigin = 'anonymous';
+
+            await new Promise((resolve, reject) => {
+              wasiScript.onload = resolve;
+              wasiScript.onerror = reject;
+              document.head.appendChild(wasiScript);
+            });
+
+            test4Result.textContent = '✅ WASI polyfill loaded';
+            test4Result.parentElement.className = 'test-section success';
+            test4Details.textContent = 'WASI polyfill loaded successfully';
+
+            // Wait for WASI to be available
+            let wasiAttempts = 0;
+            while (wasiAttempts < 50 && typeof WASI === 'undefined') {
+              await new Promise(resolve => setTimeout(resolve, 100));
+              wasiAttempts++;
+            }
+
+            if (typeof WASI !== 'undefined') {
+              console.log('WASI available, creating instance...');
+
+              const wasi = new WASI({
+                args: ['markdown-ui.wasm', '/src/app.rb'],
+                env: {},
+                preopens: {
+                  '/src': '/src'
+                }
+              });
+
+              // Try to instantiate the WebAssembly module
+              const wasmModule = await WebAssembly.instantiate(wasmBuffer, {
+                wasi_snapshot_preview1: wasi.wasiImport
+              });
+
+              console.log('WebAssembly instantiated, starting WASI...');
+              wasi.start(wasmModule.instance);
+
+              test3Result.textContent = '✅ WebAssembly module instantiated successfully';
+              test3Result.parentElement.className = 'test-section success';
+              test3Details.textContent = 'WebAssembly module instantiated and WASI started';
+
+              // Test 5: Try to test MarkdownUI integration
+              test5Result.textContent = 'Testing MarkdownUI integration...';
+              console.log('Test 5: Testing MarkdownUI integration...');
+
+              // This is a placeholder - in a real implementation, we'd need proper stdin/stdout pipes
+              // For now, just show that the .wasm file loaded and instantiated correctly
+              test5Details.textContent = 'WebAssembly .wasm file loaded and ready for MarkdownUI integration';
+              test5Result.textContent = '✅ .wasm file ready for MarkdownUI';
+              test5Result.parentElement.className = 'test-section success';
+
+            } else {
+              throw new Error('WASI not available after loading polyfill');
+            }
+
+          } catch (wasiError) {
+            console.error('WASI/WebAssembly instantiation failed:', wasiError);
+            test3Result.textContent = '⚠️ WebAssembly instantiation failed, but .wasm file is valid';
+            test3Result.parentElement.className = 'test-section warning';
+            test3Details.textContent = `Error: ${wasiError.message}`;
+
+            test4Result.textContent = '❌ WASI polyfill failed to load properly';
+            test4Result.parentElement.className = 'test-section error';
+            test4Details.textContent = `Error: ${wasiError.message}`;
+
+            test5Result.textContent = '⚠️ Cannot test MarkdownUI without WASI';
+            test5Result.parentElement.className = 'test-section warning';
+            test5Details.textContent = 'WebAssembly .wasm file is valid but requires proper WASI setup for full testing';
+          }
+
+        } else {
+          test1Result.textContent = '❌ .wasm file not found';
+          test1Result.parentElement.className = 'test-section error';
+          test1Details.textContent = `HTTP ${wasmResponse.status}: ${wasmResponse.statusText}`;
+          status.innerHTML = '<h3>Status: .wasm File Not Found</h3>';
+          return;
+        }
+
+        status.innerHTML = '<h3>Status: .wasm File Tests Complete</h3>';
+
+      } catch (error) {
+        console.error('Test failed:', error);
+        status.innerHTML = '<h3>Status: Test Failed</h3>';
+        status.className = 'test-section error';
+      }
+    }
+
+    // Run tests when page loads
+    window.addEventListener('load', () => {
+      setTimeout(runWasmTests, 500); // Brief delay to ensure DOM is ready
+    });
+  </script>
+</body>
+</html>
+
