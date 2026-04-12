@@ -1,25 +1,60 @@
-[![Join the chat at https://gitter.im/jjuliano/markdown-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jjuliano/markdown-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![Code Climate](https://codeclimate.com/github/jjuliano/markdown-ui/badges/gpa.svg)](https://codeclimate.com/github/jjuliano/markdown-ui) [![Build Status](https://travis-ci.org/jjuliano/markdown-ui.svg)](https://travis-ci.org/jjuliano/markdown-ui) [![Test Coverage](https://codeclimate.com/github/jjuliano/markdown-ui/badges/coverage.svg)](https://codeclimate.com/github/jjuliano/markdown-ui/coverage) [![Gem Version](https://badge.fury.io/rb/markdown-ui.svg)](http://badge.fury.io/rb/markdown-ui)
+[![Join the chat at https://gitter.im/jjuliano/markdown-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jjuliano/markdown-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Code Climate](https://codeclimate.com/github/jjuliano/markdown-ui/badges/gpa.svg)](https://codeclimate.com/github/jjuliano/markdown-ui) [![Build Status](https://travis-ci.org/jjuliano/markdown-ui.svg)](https://travis-ci.org/jjuliano/markdown-ui) [![Test Coverage](https://codeclimate.com/github/jjuliano/markdown-ui/badges/coverage.svg)](https://codeclimate.com/github/jjuliano/markdown-ui/coverage) [![Gem Version](https://badge.fury.io/rb/markdown-ui.svg)](http://badge.fury.io/rb/markdown-ui)
 
 # Markdown UI
 
-Write UI in Markdown Syntax. See http://jjuliano.github.io/markdown-ui/
+**Write responsive web UIs in plain Markdown syntax.**
 
-# Installation
+Markdown-UI translates extended Markdown into fully styled [Fomantic-UI](https://fomantic-ui.com) HTML — buttons, forms, grids, modals, and 60+ other components — with no knowledge of HTML or CSS required.
 
-Markdown-UI is readily available as a Ruby gem.
-The minimum required Ruby version is 2.0.
+Project website: <http://jjuliano.github.io/markdown-ui/>
 
-`$ gem install markdown-ui`
+---
 
-# Usage
+## Table of Contents
 
-Output is via standard out, which can be piped to create an HTML file. (Under Mac and Linux)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [CLI Options](#cli-options)
+- [Interactive Shell (REPL)](#interactive-shell-repl)
+- [Version Configuration](#version-configuration)
+- [Local Assets](#local-assets)
+- [Supported Components](#supported-components)
+- [Syntax Quick Reference](#syntax-quick-reference)
+- [Notes / Known Limitations](#notes--known-limitations)
+- [Credits](#credits)
+- [Contributing](#contributing)
 
-`$ markdown-ui index.mdui > index.html`
+---
 
-### Options
+## Requirements
+
+- Ruby **3.0** or newer
+- Bundler 2.7+
+
+---
+
+## Installation
+
+Install the gem from [RubyGems](https://rubygems.org/gems/markdown-ui):
+
+```bash
+gem install markdown-ui
+```
+
+---
+
+## Usage
+
+Pass a Markdown file and redirect standard output to produce an HTML file:
+
+```bash
+markdown-ui index.md > index.html
+```
+
+The generated HTML includes a full `<!DOCTYPE html>` document that loads Fomantic-UI and jQuery from a CDN by default.
+
+### CLI Options
 
 ```
 Usage: markdown-ui [options] [markdown_file]
@@ -27,18 +62,20 @@ Usage: markdown-ui [options] [markdown_file]
 If no file is provided, interactive mode is started.
 
 Options:
-    -i, --interactive            Start interactive shell mode
-        --interactive-html       Generate full HTML in interactive mode
-        --local-assets           Use local npm packages instead of CDN
+    -i, --interactive               Start interactive shell mode
+        --interactive-html          Generate full HTML in interactive mode
+        --local-assets              Use local npm packages instead of CDN
         --fomantic-version VERSION  Specify Fomantic UI version (default: 2.9.3)
         --jquery-version VERSION    Specify jQuery version (default: 3.7.1)
-    -h, --help                   Show this help message
-    -v, --version                Show version
+    -h, --help                      Show this help message
+    -v, --version                   Show version
 ```
 
-# Markdown-UI (Read-Evaluate-Print-Loop) REPL shell
+---
 
-You can interactively create Markdown-UI websites using the built-in interactive shell.
+## Interactive Shell (REPL)
+
+Start the built-in read-evaluate-print loop to experiment with Markdown-UI syntax in real time:
 
 ```
 $ markdown-ui --interactive
@@ -63,58 +100,174 @@ Rendered output:
 ==================================================
 ```
 
-# Version Configuration
-
-You can customise the Fomantic UI and jQuery CDN versions used in generated HTML either via command-line options or environment variables. A `.markdown-ui-versions` file is provided in the repository as a reference:
+Add `--interactive-html` to receive a complete HTML document instead of a bare snippet:
 
 ```bash
-# Fomantic UI version (default: 2.9.3)
-export MARKDOWN_UI_FOMANTIC_VERSION=2.9.3
-
-# jQuery version (default: 3.7.1)
-export MARKDOWN_UI_JQUERY_VERSION=3.7.1
+markdown-ui --interactive --interactive-html
 ```
 
-Or pass them directly on the command line:
+---
 
+## Version Configuration
+
+Fomantic-UI and jQuery CDN versions can be overridden via environment variables or CLI flags.
+
+**Environment variables** (source `.markdown-ui-versions` for a ready-made template):
+
+```bash
+export MARKDOWN_UI_FOMANTIC_VERSION=2.9.3   # default
+export MARKDOWN_UI_JQUERY_VERSION=3.7.1     # default
 ```
-$ markdown-ui --fomantic-version 2.9.3 --jquery-version 3.7.1 index.md > index.html
+
+**Command-line flags** (take precedence over environment variables):
+
+```bash
+markdown-ui --fomantic-version 2.9.3 --jquery-version 3.7.1 index.md > index.html
 ```
 
-# Supported Components
+Supported version ranges: Fomantic-UI **2.8.0+**, jQuery **3.6.0+**.
 
-See [COMPONENTS.md](COMPONENTS.md) for a full reference of all supported UI components and their syntax.
+---
+
+## Local Assets
+
+When deploying to an environment without internet access, install Fomantic-UI and jQuery via npm and serve assets locally:
+
+```bash
+npm install fomantic-ui jquery
+markdown-ui --local-assets index.md > index.html
+```
+
+The `--local-assets` flag rewrites all asset references to `/node_modules/…` paths instead of CDN URLs.
+
+---
+
+## Supported Components
+
+See [COMPONENTS.md](COMPONENTS.md) for the full syntax reference. The table below lists every supported component by category.
 
 ### Elements
-Buttons, Containers, Dividers, Emojis, Fields, Flags, Icons, Images, Inputs, Labels, Loaders, Placeholders, Rails, Reveals, Segments, Steps, Text
+
+| Component   | Component   | Component   |
+|-------------|-------------|-------------|
+| Buttons     | Containers  | Dividers    |
+| Emojis      | Fields      | Flags       |
+| Headers     | Icons       | Images      |
+| Inputs      | Labels      | Loaders     |
+| Placeholders| Rails       | Reveals     |
+| Segments    | Steps       | Text        |
 
 ### Collections
-Breadcrumbs, Forms, Grids, Menus, Messages, Tables
+
+| Component   | Component   | Component   |
+|-------------|-------------|-------------|
+| Breadcrumbs | Forms       | Grids       |
+| Menus       | Messages    | Tables      |
 
 ### Modules
-Accordions, Calendars, Checkboxes, Dimmers, Dropdowns, Embeds, Flyouts, Modals, Nags, Popups, Progress Bars, Ratings, Search, Shapes, Sidebars, Sliders, Sticky, Tabs, Toasts, Transitions
+
+| Component     | Component   | Component   |
+|---------------|-------------|-------------|
+| Accordions    | Calendars   | Checkboxes  |
+| Dimmers       | Dropdowns   | Embeds      |
+| Flyouts       | Modals      | Nags        |
+| Popups        | Progress    | Ratings     |
+| Search        | Shapes      | Sidebars    |
+| Sliders       | Sticky      | Tabs        |
+| Toasts        | Transitions |             |
 
 ### Views
-Advertisements, Cards, Comments, Feeds, Items, Statistics
+
+| Component      | Component | Component  |
+|----------------|-----------|------------|
+| Advertisements | Cards     | Comments   |
+| Feeds          | Items     | Statistics |
 
 ### Behaviors
-API, State, Visibility
 
-# Credits
+| Behavior   | Behavior | Behavior   |
+|------------|----------|------------|
+| API        | State    | Visibility |
 
-Markdown-UI would not be possible without the [Fomantic-UI](https://fomantic-ui.com) framework (the community fork of Semantic-UI), and the Ruby [RedCarpet](https://github.com/vmg/redcarpet) library. A huge thanks and credit goes to the people behind these wonderful frameworks and libraries.
+---
 
-# Notes/Issues/Bugs
+## Syntax Quick Reference
 
-  * Ongoing support for Fomantic-UI elements/modules/components
-  * The Colon (:) character will be parsed when used inside a text, needs post-processing to display correctly (for URLs)
-  * A separator in between two spaces is required on block elements to separate elements (see Column example)
-  * Some elements require custom JavaScript (e.g. toggle button) in order to display and format them properly. You can write HTML and JavaScript alongside your Markdown-UI docs to handle these cases.
+Below are the most common patterns. See [COMPONENTS.md](COMPONENTS.md) for the full list.
+
+### Short-hand (inline) syntax
+
+```markdown
+__button|Click Me__
+__primary button|Save__
+__icon|home__
+__label|New__
+__input|Enter text__
+__segment|Content goes here__
+__message|Hello world__
+__progress|75__
+```
+
+### Block syntax (block-quote nesting)
+
+```markdown
+> Container:
+> > Grid:
+> > > Column:
+> > > Content for column one
+> > > Column:
+> > > Content for column two
+```
+
+### Emoji shortcodes
+
+```markdown
+:smile:   :heart:   :thumbsup:   :fire:
+```
+
+### Menus and navigation
+
+```markdown
+> Menu:
+> [Home](#)
+> [About](#about)
+> [Contact](#contact)
+> > Right Menu:
+> > [Login](#login)
+```
+
+---
+
+## Notes / Known Limitations
+
+- **Ongoing component support** — new Fomantic-UI components are added incrementally; check [TODO.md](TODO.md) for status.
+- **Colon character** — a bare `:` inside body text is interpreted as a block-element separator; use `&#58;` or a full-width colon `：` for literal colons (e.g. in URLs).
+- **Block-element spacing** — a `<!-- -->` comment or a blank line with two spaces is required between sibling block elements (e.g. adjacent columns).
+- **JavaScript-dependent components** — some Fomantic-UI components (e.g. toggle buttons, modals, dropdowns) require JavaScript to function. Embed a `<script>` block alongside your Markdown-UI source to initialise them.
+
+---
+
+## Credits
+
+Markdown-UI is built on top of two excellent open-source projects:
+
+- [Fomantic-UI](https://fomantic-ui.com) — the community-maintained fork of Semantic-UI that provides all CSS components and JavaScript behaviours.
+- [RedCarpet](https://github.com/vmg/redcarpet) — the fast and flexible Markdown parser that drives the rendering pipeline.
+
+A huge thanks to the contributors behind both projects.
+
+---
 
 ## Contributing
 
-1. Fork it ( https://github.com/jjuliano/markdown-ui/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
+1. Fork the repository ( <https://github.com/jjuliano/markdown-ui/fork> )
+2. Create a feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+5. Open a Pull Request
+
+Please run the test suite before submitting:
+
+```bash
+bundle exec rake test
+```
