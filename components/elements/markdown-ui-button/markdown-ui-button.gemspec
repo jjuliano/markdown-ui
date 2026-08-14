@@ -32,6 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'htmlbeautifier', '~> 1.4.3'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'test-unit', '~> 3.6'
-  spec.add_development_dependency 'simplecov', '~> 0.22'
+  spec.add_development_dependency 'simplecov', '~> 1.1'
   spec.add_development_dependency 'simplecov_json_formatter', '~> 0.1'
 end
